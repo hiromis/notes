@@ -1,19 +1,15 @@
 # Lesson 1
-[Webpage](http://course-v3.fast.ai/) / [Video](https://www.youtube.com/watch?v=7hX8yKCX6xM)
+[Webpage](http://course-v3.fast.ai/) / [Video](https://youtu.be/BWWm4AzsdLk)
 
 
 
-## Welcome!  [[52:22](https://youtu.be/7hX8yKCX6xM?t=3142)]
-
- 
+## Welcome! 
 
 Make sure your GPU environment is set up and you can run Jupyter Notebook
 
 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/00_notebook_tutorial.ipynb)
 
-
-[[53:21](https://youtu.be/7hX8yKCX6xM?t=3201)]
-
+ 
 Four shortcuts:
 
 - <kbd>Shift</kbd>+<kbd>Enter</kbd>: Runs the code or markdown on a cell
@@ -25,7 +21,7 @@ Four shortcuts:
 - <kbd>0</kbd>+<kbd>0</kbd>: Restart Kernel
 
 
-[[55:04](https://youtu.be/7hX8yKCX6xM?t=3304)] 
+[[2:45](https://youtu.be/BWWm4AzsdLk?t=165)] 
 
 Jupyter Notebook is a really interesting device for data scientists because it lets you run interactive experiments and give you not just a static piece of information but something you can interactively experiment with.
 
@@ -36,7 +32,7 @@ How to use notebooks and the materials well based on the last three years of exp
    - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.
    - Don't try and stop and understand everything the first time. 
 
-[[56:49](https://youtu.be/7hX8yKCX6xM?t=3409)]
+[[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
 You can do world-class practitioner level deep learning. 
 
@@ -46,19 +42,25 @@ Main places to be looking for things are:
 - [http://course-v3.fast.ai/](http://course-v3.fast.ai/)
 - [https://forums.fast.ai/](https://forums.fast.ai/latest)
 
-[[57:45](https://youtu.be/7hX8yKCX6xM?t=3465)]
+
+
+[[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
 
 A little bit about why we should listen to Jeremy:
 
 ![](lesson1/2.png)
 
-[[59:05](https://youtu.be/7hX8yKCX6xM?t=3545)]
+
+
+[[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
 
 Using machine learning to do useful things:
 
 ![](lesson1/3.png)
 
-[[59:44](https://youtu.be/7hX8yKCX6xM?t=3584)]
+
+
+[[7:26](https://youtu.be/BWWm4AzsdLk?t=446)]
 
 ![](lesson1/4.png)
 
@@ -74,7 +76,9 @@ Not toy examples of any of these but actually things that can come top 10 in Kag
 The prerequisite is one year of coding and high school math.
 
 
-[[1:01:23](https://youtu.be/7hX8yKCX6xM?t=3683)]
+
+
+[[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
 
 What people say about deep learning which are either pointless or untrue:
 
@@ -87,20 +91,22 @@ What people say about deep learning which are either pointless or untrue:
 - You don't need lots of hardware. 36 cents an hour server is more than enough to get world-class results for most problems.
 - It is true that maybe this is not going to help you build a sentient brain, but that's not our focus. We are focused on solving interesting real-world problems.
 
-[[1:02:42](https://youtu.be/7hX8yKCX6xM?t=3762)]
+
+
+[[10:24](https://youtu.be/BWWm4AzsdLk?t=624)]
 
 ![](lesson1/6.png)
 
 Baseball vs. Cricket - An example by Nikhil of what you are going to be able to do by the end of lesson 1:
 
 
-[[1:03:20](https://youtu.be/7hX8yKCX6xM?t=3800)]
+[[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
 
 ![](lesson1/7.png)
 
 We are going to start by looking at code which is different to many of academic courses. We are going to learn to build a useful thing today. That means that at the end of today, you won't know all the theory. There will be lots of aspects of what we do that you don't know why or how it works. That's okay! You will learn why and how it works over the next 7 weeks. But for now, we've found that what works really well is to actually get your hands dirty coding - not focusing on theory. 
 
-## What's your pet [[1:04:45](https://youtu.be/7hX8yKCX6xM?t=3885)]
+## What's your pet [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
 
 [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
 
@@ -136,7 +142,7 @@ Currently fastai supports four applications:
 4. Collaborative filtering
 
 
-[[1:08:04](https://youtu.be/7hX8yKCX6xM?t=4084)]
+[[15:45](https://youtu.be/BWWm4AzsdLk?t=945)]
 
 `import *` - something you've all been told to never ever do.
 
@@ -146,7 +152,7 @@ With the fastai library, we actually support both approaches. In Jupyter Noteboo
 
 The other thing to mention is that the fastai library is designed in a very interesting modular way and when you do use import *, there's far less clobbering of things than you might expect. It's all explicitly designed to allow you to pull in things and use them quickly without having problems.
 
-## Looking at the data [[1:10:13](https://youtu.be/7hX8yKCX6xM?t=4213)]
+## Looking at the data [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
 
 Two main places that we will be tending to get data from for the course:
 
@@ -163,7 +169,9 @@ Pet dataset is going to ask us to distinguish between 37 different categories of
 
 So why have we changed the dataset? We've got to the point now where deep learning os so fast and so easy that the dogs versus cats problem which a few years ago was considered extremely difficult ~80% accuracy was the state of the art, it's now too easy. Our models were basically getting everything right all the time without any tuning and so there weren't really a lot of opportunities for me to show you how to do more sophisticated stuff. So we've picked a harder problem this year. 
 
-[[1:13:09](https://youtu.be/7hX8yKCX6xM?t=4389)]
+
+
+[[20:51](https://youtu.be/BWWm4AzsdLk?t=1251)]
 
 This kind of thing where you have to distinguish between similar categories is called fine grained classification in the academic context.  
 
@@ -208,7 +216,7 @@ In Jupyter Notebook, you can just write a variable on its own (semicolon is just
 
 Next time you run this, since you've already downloaded it, it won't download it again. Since you've already untared it, it won't untar it again. So everything is designed to be pretty automatic and easy.
 
-[[1:16:08](https://youtu.be/7hX8yKCX6xM?t=4568)]
+[[23:50](https://youtu.be/BWWm4AzsdLk?t=1430)]
 
 There are some things in Python that are less convenient for interactive use than they should be. For example, when you do have a path object, seeing what's in it actually takes a lot more typing than I would like. So sometimes we add functionality into existing Python stuff. One of the things we do is add a `ls()` method to path.
 
@@ -221,7 +229,7 @@ path.ls()
 
 These are what's inside this path, so that's what we just downloaded. 
 
-### Python 3 pathlib [[1:16:44](https://youtu.be/7hX8yKCX6xM?t=4604)]
+### Python 3 pathlib [[24:25](https://youtu.be/BWWm4AzsdLk?t=1465)]
 
 ```python
 path_anno = path/'annotations'
@@ -230,11 +238,11 @@ path_img = path/'images'
 
 If you are an experienced Python programmer, you may not be familiar with this approach of using a slash like this. This is a really convenient function that's part of Python 3. It's functionality from [pathlib](https://docs.python.org/3/library/pathlib.html). Path object is much better to use than strings. They let you use basically create sub paths like this. It doesn't matter if you're on Windows, Linux, or Mac. It is always going to work exactly the same way. `path_img` is the path to the images in that dataset.
 
-[[1:17:15](https://youtu.be/7hX8yKCX6xM?t=4635)]
+[[24:57](https://youtu.be/BWWm4AzsdLk?t=1497)]
 
 So if you are starting with a brand new dataset trying to do some deep learning on it. What do you do? Well, the first thing you would want to do is probably see what's in there. So we found that `annotations` and `images` are the directories in there, so what's in this images? 
 
-### get_image_files [1:17:33](https://youtu.be/7hX8yKCX6xM?t=4653)
+### get_image_files [25:15](https://youtu.be/BWWm4AzsdLk?t=1515)
 
 get_image_files will just grab an array of all of the image files based on extension in a path. 
 
@@ -281,13 +289,15 @@ data = ImageDataBunch.from_name_re(path_img, fnames, pat, ds_tfms=get_transforms
 data.normalize(imagenet_stats)
 ```
 
-[1:21:45](https://youtu.be/7hX8yKCX6xM?t=4905)
+[29:16](https://youtu.be/BWWm4AzsdLk?t=1756)
 
 `ImageDataBunch.from_name_re` is going to return a DataBunch object. In fastai, everything you model with is going to be a DataBunch object. Basically DataBunch object contains 2 or 3 datasets - it contains your training data, validation data, and optionally test data. For each of those, it contains your images and your labels, your texts and your labels, or your tabular data and your labels, or so forth. And that all sits there in this one place(i.e. `data`). 
 
-Something we will learn more about i a little bit is normalization. But generally in nearly all machine learning tasks, you have to make all of your data about the same "size" - they are specifically about the same mean and standard deviation.  So there is a normalize function that we can use to normalize our data bunch in that way.
+Something we will learn more about in a little bit is normalization. But generally in nearly all machine learning tasks, you have to make all of your data about the same "size" - they are specifically about the same mean and standard deviation.  So there is a normalize function that we can use to normalize our data bunch in that way.
 
-[1:22:55](https://youtu.be/7hX8yKCX6xM?t=4975)
+
+
+[30:25](https://youtu.be/BWWm4AzsdLk?t=1825)
 
 Question: What does the function do if the image size is not 224? 
 
@@ -307,7 +317,7 @@ Something else we are going to learn about is we also use this to do something c
 Basic the basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
 
 
-[1:24:24](https://youtu.be/7hX8yKCX6xM?t=5064)
+[31:51](https://youtu.be/BWWm4AzsdLk?t=1911)
 
 Question: What does it mean to normalize the images? 
 
@@ -316,13 +326,13 @@ Normalizing the images, we're going to be learning more about later in the cours
 If your data is not normalized, it can be quite difficult for your model to train well. So if you have trouble training a model, one thing to check is that you've normalized it.
 
 
-[1:25:40](https://youtu.be/7hX8yKCX6xM?t=5140)
+[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)
 Question: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
 
 The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2*2*2*2*2), then you end up with something that's a good size.
 
 
-[1:26:15](https://youtu.be/7hX8yKCX6xM?t=5175)
+[33:27](https://youtu.be/BWWm4AzsdLk?t=2007)
 
 We will get to all these details but the key thing is I wanted to get to training a model as quickly as possible. 
 
@@ -345,7 +355,7 @@ len(data.classes),data.c
 
  That's all of the possible labels that we found by using that regular expression on the file names. We learnt earlier on at the top that there are 37 possible categories, so just checking `len(data.classes)`, it is indeed 37. DataBunch will always have a property called `c`. We will get to the technical detail later, but for now, you can kind of think of it as being the number of classes. For things like regression problems and multi-label classification, that's not exactly accurate, but it'll do for now. It is important to know that `data.c` is a really important piece of information that is something like, or at least for classification problems it is, the number of classes. 
 
- ## Training [[1:27:54](https://youtu.be/7hX8yKCX6xM?t=5274)]
+ ## Training [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
 
  Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
  
@@ -364,3 +374,17 @@ For now, the most important thing for you to know is that there's a particular k
 
 That is all the information we need to create a convolutional neural network learner. 
 
+There is one other thing I'm going to give it though which is a list of metrics. Metrics are literally just things that gets printed out as it's training. So I'm saying I would like you to print out error rate. 
+
+[37:25](https://youtu.be/BWWm4AzsdLk?t=2245)
+
+![](lesson1/c1.png)
+
+The first time I run this on a newly installed box, it downloads the ResNet34 pre-trained weights. What that means is that this particular model has actually already been trained for a particular task. And that particular task is that it was trained on looking at about one and a half million pictures of all kinds of different things, a thousand categories of things, using an image dataset called ImageNet. So we can download those pre-trained weights so that we don't start with a model that knows nothing about anything, but we actually start with a model that knows how to recognize a thousand categories of things in ImageNet. I don't think all of these 37 categories of pet are in ImageNet but there were certainly some kinds of dog and some kinds of cat. So this pre-trained model knows quite a little bit about what pets look like, and it certainly knows quite a lot about what animals look like and what photos look like. So the idea is that we don't start with a model that knows nothing at all, but we start by downloading a model that knows something about recognizing images already. So it downloads for us automatically, the first time we use it, a pre-trained model and then from now on, it won't need to download it again - it'll just use the one we've got. 
+
+## Transfer learning [38:54](https://youtu.be/BWWm4AzsdLk?t=2334)
+
+This is really important. We are going to learn a lot about this. It's kind of the focus of the whole course which is how to do this thing called "transfer learning." How to take a model that already knows how to do something pretty well and make it so that it can do your thing really well. We will take a pre-trained model, and then we fit it so that instead of predicting a thousand categories of ImageNet with ImageNet data, it predicts the 37 categories of pets using your pet data. By doing this, you can train models in 1/100 or less of the time of regular model training with 1/100 or less of the data of regular model training. Potentially, many thousands of times less. Remember I showed you the slide of Nikhil's lesson 1 project from last year? He used 30 images. There are not cricket and baseball images in ImageNet but it turns out that ImageNet is already so good at recognizing things in the world that just 30 examples of people playing baseball and cricket was enough to build a nearly perfect classifier. 
+
+
+## Validation set [40:05](https://youtu.be/BWWm4AzsdLk?t=2405)
