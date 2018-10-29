@@ -365,10 +365,10 @@ len(data.classes),data.c
  Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
 
  - **DataBunch**: A general fastai concept for your data, and from there, there are subclasses for particular applications like ImageDataBunch
- - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is one called ConvLearner (something that will create a convolutional neural network for you).
+ - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
 
 ```python
-learn = ConvLearner(data, models.resnet34, metrics=error_rate)
+learn = create_cnn(data, models.resnet34, metrics=error_rate)
 ```
 
 For now, just know that to create a learner for a convolutional neural network, you just have to tell it two things:
