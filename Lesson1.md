@@ -1,5 +1,5 @@
 # Lesson 1
-[Webpage](http://course-v3.fast.ai/) / [Video](https://youtu.be/BWWm4AzsdLk)
+[Webpage](http://course-v3.fast.ai/) / [Video](https://youtu.be/BWWm4AzsdLk) /  [Lesson Forum](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 
 
 
@@ -20,7 +20,6 @@ Four shortcuts:
 
 - <kbd>0</kbd>+<kbd>0</kbd>: Restart Kernel
 
-  
 
 
 [[2:45](https://youtu.be/BWWm4AzsdLk?t=165)] 
@@ -166,6 +165,7 @@ Two main places that we will be tending to get data from for the course:
     - We are going to start with an academic dataset called the pet dataset.
 2. Kaggle competition datasets
   
+
 Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
 
 Academic datasets, academics write down in papers what the state of the art is so how well did they go with using models on that dataset. So this is what we are going to do. We are going to try to create models that get right up towards the top of Kaggle competitions, preferably in the top 10, not just top 10% or that meet or exceed academic state-of-the-art published results. So when you use an academic dataset, it's important to cite it. You don't need to read that paper right now, but if you are interested in learning more about it and why it was created and how it was created, all the details are there. 
@@ -285,6 +285,7 @@ With this factory method, we can basically say:
 - ds_tfm: we'll talk about transforms later
 - size: what size images do you want to work with.
   
+
 This might seem weird because images have size. This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
 
 
