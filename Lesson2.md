@@ -15,7 +15,7 @@ Two important forum topics:
 - [Lesson 2 official resources and updates](https://forums.fast.ai/t/lesson-2-official-resources-and-updates/28630)
 
 
-####Summarize This Topic [[2:32]](https://youtu.be/Egp4Zajhzog?t=152)
+#### "Summarize This Topic" [[2:32]](https://youtu.be/Egp4Zajhzog?t=152)
 
 After just one week, the most popular thread has 1.1k replies which is intimidatingly large number. You shouldn't need to read all of it.  What you should do is click "Summarize This Topic" and it will only show the most liked ones.
 
