@@ -508,19 +508,13 @@ First of all, let's look at examples of some problems. The problems basically wi
 
 So we are going to learn about what those mean and why they matter. But first of all, because we are experimentalists, let's try them. 
 
+#### Learning rate (LR) too high
 
-
-
-
-### Learning rate (LR) too high
-
-
+So let's grow with our teddy bear detector and let's make our learning rate really high. The default learning rate is 0.003 that works most of the time. So what if we try a learning rate of 0.5. That's huge. What happens? Our validation loss gets pretty darn high. Remember, this is something that's normally something underneath 1. So if you see your validation loss do that, before we even learn what validation loss is, just know this, if it does that, your learning rate is too high. That's all you need to know. Make it lower. Doesn't matter how many epochs you do. If this happens, there's no way to undo this. You have to go back and create your neural net again and fit from scratch with a lower learning rate.
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
 ```
-
-
 
 ```python
 learn.fit_one_cycle(1, max_lr=0.5)
@@ -534,9 +528,9 @@ epoch  train_loss  valid_loss  error_rate
 
 
 
-### Learning rate (LR) too low
+#### Learning rate (LR) too low [[48:02](https://youtu.be/Egp4Zajhzog?t=2882)]
 
-
+What if we used a learning rate not of 0.003 but 1e-5 (0.00001)? 
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
@@ -544,7 +538,7 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 
 
 
-Previously we had this result:
+This is just copied and pasted what happened when we trained before with a default learning rate:
 
 ```
 Total time: 00:57
@@ -555,7 +549,11 @@ epoch  train_loss  valid_loss  error_rate
 4      0.316883    0.050197    0.021277    (00:15)
 ```
 
+And within one epoch, we were down to a 2 or 3% error rate.
 
+
+
+With this really low learning rate, our error rate does get better but very very slowly. 
 
 ```python
 learn.fit_one_cycle(5, max_lr=1e-5)
@@ -571,7 +569,7 @@ epoch  train_loss  valid_loss  error_rate
 5      1.320978    0.978108    0.446809    (00:13)
 ```
 
-
+And you can plot it. So `learn.recorder`  is an object which is going to keep track of lots of things happening while you train. You can call `plot_losses` to plot out the validation and training loss. And you can just see them gradually going down so slow. If you see that happening, then you have a learning rate which is too small. So bump it by 10 or bump it up by 100 and try again. The other thing you see if your learning rate is too small is that your training loss will be higher than your validation loss. You never want a model where your training loss is higher than your validation loss. That always means you haven't fitted enough which means either your learning rate is too low or your number of epochs is too low. So if you have a model like that, train it some more or train it with a higher learning rate. 
 
 ```python
 learn.recorder.plot_losses()
@@ -585,15 +583,13 @@ As well as taking a really long time, it's getting too many looks at each image,
 
 
 
-### Too few epochs
+#### Too few epochs [[49:42](https://youtu.be/Egp4Zajhzog?t=2982)]
 
-
+What if we train for just one epoch? Our error rate is certainly better than random, 5%. But look at this, the difference between training loss and validation loss ﹣ a training loss is much higher than the validation loss. So too few epochs and too lower learning rate look very similar. So you can just try running more epochs and if it's taking forever, you can try a higher learning rate. If you try a higher learning rate and the loss goes off to 100,000 million, then put it back to where it was and try a few more epochs. That's the balance. That's all you care about 99% of the time. And this is only the 1 in 20 times that the defaults don't work for you.
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate, pretrained=False)
 ```
-
-
 
 ```python
 learn.fit_one_cycle(1)
@@ -607,9 +603,15 @@ epoch  train_loss  valid_loss  error_rate
 
 
 
-### Too many epochs
+#### Too many epochs [[50:30](https://youtu.be/Egp4Zajhzog?t=3030)]
 
+Too many epochs create something called "overfitting". If you train for too long as we're going to learn about it, it will learn to recognize your particular teddy bears but not teddy bears in general. Here is the thing. Despite what you may have heard, it's very hard to overfit with deep learning. So we were trying today to show you an example of overfitting and I turned off everything. I turned off all the data augmentation, dropout, and weight decay. I tried to make it overfit as much as I can. I trained it on a small-ish learning rate, I trained it for a really long time. And maybe I started to get it to overfit. Maybe. 
 
+So the only thing that tells you that you're overfitting is that the error rate improves for a while and then starts getting worse again. You will see a lot of people, even people that claim to understand machine learning, tell you that if your training loss is lower than your validation loss, then you are overfitting. As you will learn today in more detail and during the rest of course, that is **absolutely not true**. 
+
+> Any morel that is trained correctly will always have train loss lower than validation loss. 
+
+That is not a sign of overfitting. That is not a sign you've done something wrong. That is a sign you have done something right. The sign that you're overfitting is that your error starts getting worse, because that's what you care about. You want your model to have a low error. So as long as you're training and your model error is improving, you're not overfitting. How could you be?
 
 ```python
 np.random.seed(42)
@@ -618,14 +620,10 @@ data = ImageDataBunch.from_folder(path, train=".", valid_pct=0.9, bs=32,
                               ),size=224, num_workers=4).normalize(imagenet_stats)
 ```
 
-
-
 ```python
 learn = create_cnn(data, models.resnet50, metrics=error_rate, ps=0, wd=0)
 learn.unfreeze()
 ```
-
-
 
 ```python
 learn.fit_one_cycle(40, slice(1e-6,1e-4))
@@ -678,63 +676,85 @@ epoch  train_loss  valid_loss  error_rate
 
 
 
+[52:23](https://youtu.be/Egp4Zajhzog?t=3143)
+
+So they are the main four things that can go wrong. There are some other details that we will learn about during the rest of this course but honestly if you stopped listening now (please don't, that would be embarrassing) and you're just like okay I'm going to go and download images, I'm going to create CNNs with resnet32 or resnet50, I'm going to make sure that my learning rate and number of epochs is okay and then I'm going to chuck them up in a Starlette web API, most of the time you are done. At least for computer vision. Hopefully you will stick around because you want to learn about NLP, collaborative filtering, tabular data, and segmentation, etc as well. 
+
+ 
+
+[53:10](https://youtu.be/Egp4Zajhzog?t=3190)
+
+Let's now understand what's actually going on. What does "loss" mean? What does "epoch" mean? What does "learning rate" mean? Because for you to really understand these ideas, you need to know what's going on. So we are going to go all the way to the other side. Rather than creating a state of the art cougar detector, we're going to go back and create the simplest possible linear model. So we're going to actually seeing a little bit of math. But don't be turned off. It's okay. We're going to do a little bit of math but it's going to be totally fine. Even if math is not your thing. Because the first thing we're going to realize is that when we see a picture like this number eight:
+
+![](lesson2/18.png)
+
+It's actually just a bunch of numbers. For this grayscale one, it's a matrix of numbers. If it was a color image, it would have a third dimension. So when you add an extra dimension, we call it a tensor rather than a matrix. It would be a 3D tensor of numbers ﹣ red, green, and blue. 
+
+
+
+![](lesson2/19.png)
+
+So when we created that teddy bear detector, what we actually did was we created a mathematical function that took the numbers from the images of the teddy bears and a mathematical function converted those numbers into, in our case, three numbers: a number for the probability that it's a teddy, a probability that it's a grizzly, and the probability that it's a black bear. In this case, there's some hypothetical function that's taking the pixel representing a handwritten digit and returning ten numbers: the probability for each possible outcome (i.e. the numbers from zero to nine). 
+
+So what you'll often see in our code and other deep learning code is that you'll find this bunch of probabilities and then you'll find a function called max or argmax attached to it. What that function is doing is, it's saying find the highest number (i.e. probability) and tell me what the index is.  So `np.argmax` or `torch.argmax` of the above array would return the index 8. 
+
+
+
+In fact, let's try it. We know that the function to predict something is called `learn.predict`. So we can chuck two question marks before or after it to get the source code.
+
+![](lesson2/20.png) 
+
+And here it is. `pred_max = res.argmax()`. Then what is the class? We just pass that into the classes array. So you should find that the source code in the fastai library can both strengthen your understanding of the concepts and make sure that you know what's going on and really help you here.
+
+![](lesson2/21.png)
+
+
+
+**Question**:  Can we have a definition of the error rate being discussed and how it is calculated? I assume it's cross validation error [[56:38](https://youtu.be/Egp4Zajhzog?t=3398)]. 
+
+Sure. So one way to answer the question of how is error rate calculated would be to type `error_rate??` and look at the source code, and it's 1 - accuracy.
+
+![](lesson2/22.png) 
+
+So then a question might be what is accuracy:
+
+![](lesson2/23.png)
+
+It is argmax. So we now know that means find out which particular thing it is, and then look at how often that equals the target (i.e. the actual value) and take the mean. So that's basically what it is. So then the question is, okay, what does that being applied to and always in fastai, metrics (i.e. the things that we pass in) are always going to be applied to the validation set. Any time you put a metric here, it'll be applied to the validation set because that's your best practice:
+
+![](lesson2/24.png)
+
+That's what you always want to do is make sure that you're checking your performance on data that your model hasn't seen, and we'll be learning more about the validation set shortly. 
+
+Remember, you can also type `doc` if the source code is not what you want which might well not be, you actually want the documentation, that will both give you a summary of the types in and out of the function and a link to the full documentation where you can find out all about how metrics work and what other metrics there are and so forth. Generally speaking, you'll also find links to more information where, for example, you will find complete run through and sample code showing you how to use all these things. So don't forget that the `doc` function is your friend. Also both in the doc function and in documentation, you'll see a source link. This is like `??` but what the source link does is it takes you into the exact line of code in Github. So you can see exactly how that's iplemented and what else is around it. So lots of good stuff there. 
+
+
+
+**Question**: Why were you using `3e` for your learning rates earlier? With `3e-5` and `3e-4` [[59:11](https://youtu.be/Egp4Zajhzog?t=3551)]? 
+
+We found that 3e-3 is just a really good default learning rate. It works most of the time for your initial fine-tuning before you unfreeze. And then, I tend to kind of just multiply from there. So then the next stage, I will pick 10 times lower than that for the second part of the slice, and whatever the LR finder found for the first part of the slice. The second part of the slice doesn't come from the LR finder. It's just a rule of thumb which is 10 times less than your first part which defaults to 3e-3, and then the first part of the slice is what comes out of the LR finder. We'll be learning a lot more about these learning rate details both today and in the coming lessons. But for now, all you need to remember is that your basic approach looks like this:
+
+- `learn.fit_one_cycle`
+  - Some number of epochs, I often pick 4
+  - Some learning rate which defaults to 3e-3. I'll just type it up fully so you can see. 
+- Then we do that for a bit and then we unfreeze it. 
+- Then we learn some more and so this is a bit where I just take whatever I did last time and divide it by 10. Then I also write like that (`slice`) then I have to put one more number in here and that's the number I get from the learning rate finder﹣a bit where it's got the strongest slope.
+
+```python
+learn.fit_one_cycle(4, 3e-3)
+learn.unfreeze()
+learn.fit_one_cycle(4, slice(xxx, 3e-4))
+```
+
+So that's kind of don't have to think about it, don't really have to know what's going on rule of thumb that works most of the time. But let's now dig in and actually understand it more completely.
+
+
+
+[1:01:17](https://youtu.be/Egp4Zajhzog?t=3677)
 
 
 
 
-Putting your model in production
-
-CPU for inference
-
-Claire 
-
-
-
-Starlette
-
-
-
-Python anywhere
-
-
-
-BREAK
-
-clean up validation set and test set
-
-ipywidget
-
-
-
-
-
-When you have a problem
-
-
-
-`learn.recorder.plot_losses()`
-
-Training loss should never be higher than validation loss. # epoch too low or LR too low
-
-
-
-don't compare train_loss to valid loss to check overfitting
-
-error starts getting worse.
-
-
-
-
-
-argmax
-
-
-
-Question:  error_Rate
-
-
-
-Question: Why 3e-3 good learning rate before unfreezing. then 3e-4. min is out of learning rate finder.
 
 
 
