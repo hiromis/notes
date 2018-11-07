@@ -350,7 +350,7 @@ epoch  train_loss  valid_loss  error_rate
 2      0.070725    0.041957    0.014184    (00:13)
 ```
 
-So we've got 1.4% error rate after doing another couple of epochs, so that's looking great. 
+So we've got 1.4% error rate after doing another couple of epochs, so that's looking great. So we've downloaded some images from Google image search, created a classifier, and we've got 1.4% error rate, let's save it.
 
 ```python
 learn.save('stage-2')
@@ -358,33 +358,29 @@ learn.save('stage-2')
 
 
 
-## Interpretation
+### Interpretation [[29:38](https://youtu.be/Egp4Zajhzog?t=1778)]
 
-
+As per usual, we can use the ClassificationInterpretation class to have a look at what's going on.
 
 ```python
 learn.load('stage-2')
 ```
 
-
-
 ```python
 interp = ClassificationInterpretation.from_learner(learn)
 ```
-
-
 
 ```python
 interp.plot_confusion_matrix()
 ```
 
+![](lesson2/14.png)
 
+In this case, we made one mistake. There was one black bear classified as grizzly bear. So that's a really good step. We've come a long way. But possibly you could do even better if your dataset was less noisy. Maybe Google image search didn't give you exactly the right images all the time. So how do we fix that? We want to clean it up. So combining human expert with a computer learner is a really good idea. Very very few people publish on this or teach this, but to me, it's the most useful skill, particularly for you. Most of the people watching this are domain experts, not computer science experts, so this is where you can use your knowledge of point mutations in genomics or Panamanian buses or whatever. So let's see how that would work. What I'm going to do is, do you remember the plot top losses from last time where we saw the images which it was either the most wrong about or the least confident about. We are going to look at those and decide which of those are noisy. If you think about it, it's very unlikely that if there is a mislabeled data that it's going to be predicted correctly and with high confidence. That's really unlikely to happen. So we're going to focus on the ones which the model is saying either it's not confident of or it was confident of and it was wrong about. They are the things which might be mislabeled. 
 
-![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARoAAAEmCAYAAAC9C19sAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4wLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvqOYd8AAAHZdJREFUeJzt3XmclWX9//HXGwYQBcVdGUQFBAIjFSi3XHMLocxyL1HLn2n69Wtupbm0qrR8Lcvccs0lLXOr1CxzQ9lE3JdCE3BfEBEFx8/vj/sePOIwzADXXOfMvJ+Pxzyc+7qX8zm3h/dc93UvRxGBmVlKnXIXYGbtn4PGzJJz0JhZcg4aM0vOQWNmyTlozCw5B421mKTukm6SNFvStcuwnf0l3bY8a8tF0mclPZm7jmonX0fT/kjaDzgGGAzMAaYCP4qIe5Zxu18FjgS2jIj3l7nQKicpgI0i4pnctdQ692jaGUnHAP8H/BhYG+gL/Ab4wnLY/PrAUx0hZFpCUl3uGmpGRPinnfwAqwBvA19pZpluFEE0q/z5P6BbOW87YAbwbeBl4AXgoHLe6cB8YEH5GocApwFXVGx7AyCAunJ6LPAfil7VdGD/ivZ7KtbbEpgIzC7/u2XFvDuBHwD3ltu5DVhjMe+tsf7jK+r/IvB54CngdeC7Fct/GhgPvFkuew7QtZx3V/le5pbvd++K7Z8AvAhc3thWrtO/fI3NyunewKvAdrk/G7l/shfgn+X4PxN2Bd5v/Ie+mGW+D9wPrAWsCdwH/KCct125/veBLuU/0HeAVcv5iwbLYoMGWAl4CxhUzlsXGFr+vjBogNWAN4CvluvtW06vXs6/E/g3MBDoXk6fsZj31lj/KWX93wBeAa4EegJDgXeBfuXyw4HNy9fdAHgcOLpiewEMaGL7Z1IEdvfKoCmX+Ua5nRWBW4Gf5v5cVMOPD53al9WBV6P5Q5v9ge9HxMsR8QpFT+WrFfMXlPMXRMRfKP6aD1rKej4ANpbUPSJeiIhHm1hmFPB0RFweEe9HxFXAE8DoimUujoinImIe8Adgk2ZecwHFeNQC4GpgDeDsiJhTvv6jwDCAiJgcEfeXr/sscB6wbQve06kR8V5Zz0dExAXA08ADFOF60hK21yE4aNqX14A1ljB20Bt4rmL6ubJt4TYWCap3gB6tLSQi5lIcbhwGvCDpFkmDW1BPY031FdMvtqKe1yKiofy9MQheqpg/r3F9SQMl3SzpRUlvUYxrrdHMtgFeiYh3l7DMBcDGwK8i4r0lLNshOGjal/EUhwZfbGaZWRSDuo36lm1LYy7FIUKjdSpnRsStEbETxV/2Jyj+AS6pnsaaZi5lTa1xLkVdG0XEysB3AS1hnWZP00rqQTHudRFwmqTVlkehtc5B045ExGyK8YlfS/qipBUldZG0m6SzysWuAk6WtKakNcrlr1jKl5wKbCOpr6RVgO80zpC0tqQxklYC3qM4BGtoYht/AQZK2k9SnaS9gSHAzUtZU2v0pBhHervsbX1zkfkvAf1auc2zgckR8XXgFuC3y1xlO+CgaWci4ucU19CcTDEQ+jzwLeDP5SI/BCYB04CHgSll29K81u3ANeW2JvPRcOhEcfZqFsWZmG2Bw5vYxmvA7uWyr1GcMdo9Il5dmppa6VhgP4qzWRdQvJdKpwGXSnpT0l5L2pikL1AMyB9WNh0DbCZp/+VWcY3yBXtmlpx7NGaWnIPGzJJz0JhZcg4aM0uuw94U1mWlXtFt1XWWvGAHM2jtVl+bZx3YlCmTX42INZe0XIcNmm6rrsOwo87PXUbV+ccx2+QuwWpI9y5a9KruJvnQycySc9CYWXIOGjNLzkFjZsk5aMwsOQeNmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcg4aM0vOQWNmyTlozCw5B42ZJeegMbPkHDRmlpyDxsySc9CYWXIOmgw6CS45cDPG7TkUgFN3H8xVXx/BFQcN57u7DqRzJ2WuMK/bbv0bw4YOYujgAYw764zc5VSNWt4vDpoM9hpez7OvvbNw+rbHXmLfCydxwMWT6dalE2OGrZOxurwaGho4+qgjuOGmv/LgtMe49uqrePyxx3KXlV2t7xcHTRtbs0dXtuy/GjdNe3Fh2/j/vLHw98demMNaPbvlKK0qTJwwgf79B7Bhv3507dqVr+y9DzffdEPusrKr9f3ioGljR+/Yn1/fOZ0PIj42r3MnsevQtbh/+usZKqsOs2bNpE+f9RZO19f3YebMmRkrqg61vl+yBI2kDSQ90kT7nZJGLMX2xko6Z/lUl86W/VfjjXcW8ORLbzc5/7idBjD1+dk8NOOtNq6sekQTASx17DErqP39Upe7gI5kWP3KbD1gdbbotxpdO3dipW6dOXXUIE6/5UkO3rIvvVbswpnXP527zKzq6/swY8bzC6dnzpxB7969M1ZUHWp9v+Q8dKqTdKmkaZKuk7Ri5UxJ50qaJOlRSadXtI+UdJ+khyRNkNRzkfVGSRovaY22eiMt9du7nuWL5z7AnudN4JSbHmfyf9/k9FueZPSwdfjMhqtyyk1P8PG/Wx3LiJEjeeaZp3l2+nTmz5/Ptddczajdx+QuK7ta3y85ezSDgEMi4l5JvwMOX2T+SRHxuqTOwB2ShgFPANcAe0fEREkrA/MaV5C0B3AM8PmIeGOR7SHpUOBQgK691k7yppbGcTtvxEuz3+X8/TcB4F9Pv8rF9/03c1V51NXV8Yuzz2H0qF1oaGjgwLEHM2To0NxlZVfr+0VNHfslf1FpA+CuiOhbTu8AHAX0Ao6NiEmSDqMIhTpgXeBI4FHgtxGx1SLbGwscB8wBdo6IJQ5y9OgzOIYddf7yekvtxj+O2SZ3CVZDunfR5IhY4rhqzkOnRRNu4bSkDYFjgR0jYhhwC7ACoCbWa/QfoCcwcPmXambLImfQ9JW0Rfn7vsA9FfNWBuYCsyWtDexWtj8B9JY0EkBST0mNh3/PAV8CLpNUO31Ksw4gZ9A8DhwoaRqwGnBu44yIeAh4kOJQ6XfAvWX7fGBv4FeSHgJup+jpNK73JLA/cK2k/m30PsxsCbIMBkfEs8CQJmZtV7HM2MWsOxHYfJHmS8ofIuLBxWzbzDLxlcFmlpyDxsySc9CYWXIOGjNLzkFjZsk5aMwsOQeNmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcg4aM0vOQWNmyTlozCw5B42ZJeegMbPkHDRmlpyDxsySc9CYWXIOGjNLzkFjZsnV5S4gl0Fr9+Afx2yTu4yqc9T1j+QuoSr9co+Nc5dQ09yjMbPkHDRmlpyDxsySc9CYWXIOGjNLzkFjZsk5aMwsOQeNmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcg4aM0vOQWNmyS3261Yk3QTE4uZHxJgkFZlZu9Pc9zr9tM2qMLN2bbFBExH/astCzKz9WuI3VUraCPgJMARYobE9IvolrMvM2pGWDAZfDJwLvA9sD1wGXJ6yKDNrX1oSNN0j4g5AEfFcRJwG7JC2rI7htlv/xrChgxg6eADjzjojdznZ1HUS39mxH9/bqT+n7TyA0UPWAuBrI+r53k79OWWnAfy/LdajW+eOfZK0lj8vSzx0At6V1Al4WtK3gJnAWmnLav8aGho4+qgjuOWvt1Pfpw9bbz6S3XcfwyeGDMldWpt7/4Pg53c+y3sNH9BZcPz2/XjkxTn8YeoLvPv+BwB85VPrsP2A1fjbk69mrjaPWv+8tORPxNHAisBRwHDgq8CBKYvqCCZOmED//gPYsF8/unbtylf23oebb7ohd1nZvNdQBErnTqJzJwEsDBmALp21+GstOoBa/7wssUcTERPLX98GDkpbTscxa9ZM+vRZb+F0fX0fJkx4IGNFeQk4eaf+rNmjK3c+8zrTX58HwIEj6vnkuj154a13ue6hF/MWmVGtf15actbpnzRx4V5ELLdxGkmHAe9ExGWtWGcsMCIivrW86mhLER//+ywpQyXVIYAf3P5vunfpxOFb9qX3yt2Y9dZ7XDppJgL23XRdRqy3Cvc9+2buUrOo9c9LS8Zojq34fQVgT4ozUMuFpLqI+O3y2l6tqK/vw4wZzy+cnjlzBr17985YUXWYt+ADnnxlLkPX6cGst94DihCa9Pxsdh60RocNmlr/vLTk0GnyIk33SmrxxXySvgfsDzwPvApMBnYH7gO2Am6U1JPi0OxK4C8Vq38S6AdUHowOAnat2H5PYBowMCIWSFq5nN4oIha0tM62NmLkSJ555mmenT6d3vX1XHvN1Vxy+ZW5y8qiR9fONEQwb8EHdOkkPrFWD2598lXWXKkrr8ydD8Cw3ivz4pz5mSvNp9Y/Ly05dFqtYrITxYDwOi3ZuKQRFD2gTcvXmkIRNAC9ImLbcrnTACJiFrBJ2XYEsG1EPFfRNho4niKkNizXmSPpTmAU8GdgH+CPTYWMpEOBQwHW69u3JW8hmbq6On5x9jmMHrULDQ0NHDj2YIYMHZq1plxW6V7HQSP70ElCKnovD78wh+O235DuXToDMOPNd/n9lFmZK82n1j8vLTl0mkzRexXFIdN04JAWbn9r4IaImAcLb9RsdM3iVpK0FfB14LMVbRsB44Adyp5L5SoXUgTQnykGrL/R1HYj4nzgfIDhw0dkP4mx626fZ9fdPp+7jOxmzn6PH/793x9rP+uf0zNUU71q+fPSkqD5RES8W9kgqVsLt9/caNXcJleQ1gUuAsZExNtl20rAH4BvlL2ej4iIeyVtIGlboHNEPNLC+sysDbTkOpr7mmgb38Lt3wOMlrSCpB4UhzeLJakLRaCcEBFPVcy6GLg4Iu5uZvXLgKvKZc2sijT3PJp1gHqgu6RN+bB3sjLFBXxLFBETJd0IPAQ8B0wCZjezypbASOB0SaeXbV8AvgwMlHRw2fb1Jtb9PfBDirAxsyrS3KHTLsBYoA/wMz4MmreA77biNX4aEadJWhG4C/hZRFxQuUB5/1SjFfi4pnpek4BLKqa3Bq6LiI55/tOsijX3PJpLgUsl7RkRf1yG1zhfUuMjJi6NiCnLsK0mSfoVsBtQmyNlZu1cSwaDh0u6o7GnIGlV4NsRcXJLXiAi9luWAlv4Gkemfg0zW3otGQzerfJwJCLewD0HM2uFlgRN58rT2ZK6Ay09vW1m1qJDpyuAOyQ1njY+CLg0XUlm1t605F6nsyRNAz5Hcebpb8D6qQszs/ajpc9GfBH4gOK+pR2Bx5NVZGbtTnMX7A2kuEFxX+A1inuTFBHbt1FtZtZONHfo9ARwNzA6Ip4BkPS/bVKVmbUrzR067UlxyPRPSRdI2pHmb5I0M2vSYoMmIq6PiL2BwcCdwP8Ca0s6V9LObVSfmbUDSxwMjoi5EfH7iNid4r6nqcCJySszs3ajVd/IFRGvR8R5y/PB5GbW/nXsr/4zszbhoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcg4aM0vOQWNmyTlozCy5lnyBnHUgv9xj49wlVKVVR34rdwk1zT0aM0vOQWNmyTlozCw5B42ZJeegMbPkHDRmlpyDxsySc9CYWXIOGjNLzkFjZsk5aMwsOQeNmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcg4aM0vOQWNmyTlozCw5B01Gt936N4YNHcTQwQMYd9YZucupGt4vH1qlR3euHHcIU/90Mg/+8WQ+M2zDhfOO/uqOzHvwHFbvtVLGClumLncBHVVDQwNHH3UEt/z1dur79GHrzUey++5j+MSQIblLy8r75aN+evyXue2+x9jvuIvoUteZFVfoCkCftXuxw+aD+e8Lr2eusGXco8lk4oQJ9O8/gA379aNr1658Ze99uPmmG3KXlZ33y4d6rrQCW2/Wn0uuHw/AgvcbmP32PADOOnZPTjr7z0REzhJbzEGTyaxZM+nTZ72F0/X1fZg5c2bGiqqD98uHNqxfnVffeJvzTz+A8VedwG9O2Y8VV+jKqG0/yayX3+Thp2pnvyQJGkm9JB3eynVOk3RsE+0bSHpk+VVXHZr6SyQpQyXVxfvlQ3V1ndlk8HpccO3dbLHvmbwz7z1OPuzznHDILnz/3Ftyl9cqqXo0vYBWBU1HU1/fhxkznl84PXPmDHr37p2xourg/fKhmS+9wcyX32TiI88BcP3fp7LJ4PVYv351JlzzHZ645XTq1+rF+CtPYO3Ve2autnmpguYMoL+kqZLGSTpO0kRJ0ySd3riQpJMkPSnp78Cgivbhkh6SNB44oqL9bkmbVEzfK2mYpG3L15oq6UFJ1b3XgREjR/LMM0/z7PTpzJ8/n2uvuZpRu4/JXVZ23i8feum1Ocx48Q02Wn8tALb79CCmPvE86+/4HQaPOpXBo05l5stvssV+Z/LSa3MyV9u8VGedTgQ2johNJO0MfBn4NCDgRknbAHOBfYBNyzqmAJPL9S8GjoyIf0kaV7HdC4GxwNGSBgLdImKapJuAIyLiXkk9gHebKkrSocChAOv17btc33Br1dXV8Yuzz2H0qF1oaGjgwLEHM2To0Kw1VQPvl4865sxrufjHY+la15lnZ77KoadekbukpaIUo9aSNgBujoiNJf2UImjeLGf3AH4C9ARWi4hTynV+DswCLgAejoi+Zfsw4MpyWysC04BPAD8AZkTEOZJOBPYAfg/8KSJmLKnG4cNHxL0PTFpeb9nauVVHfit3CVXp3am/nhwRI5a0XFucdRLwk4jYpPwZEBEXlfOaSjktpp2IeAe4HfgCsBdwZdl+BvB1oDtwv6TBy/k9mNkySBU0cyh6LAC3AgeXhzRIqpe0FnAXsIek7uWYymiAiHgTmC1p63L9/RfZ9oXAL4GJEfF6uc3+EfFwRJwJTAIcNGZVJMkYTUS8Vg7UPgL8laLnMb48Tfk2cEBETJF0DTAVeA64u2ITBwG/k/QORVBVbnuypLcoxnEaHS1pe6ABeKx8TTOrEsluQYiI/RZpOruJZX4E/KiJ9snApyqaTmv8RVJvip7YbRXLH7mM5ZpZQjV1ZbCkrwEPACdFxAe56zGzlqmpmyoj4jLgstx1mFnr1FSPxsxqk4PGzJJz0JhZcg4aM0vOQWNmyTlozCw5B42ZJeegMbPkHDRmlpyDxsySc9CYWXIOGjNLzkFjZsk5aMwsOQeNmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJOWjMLDkHjZkl56Axs+QcNGaWnIPGzJJz0JhZcoqI3DVkIekV4LncdZTWAF7NXUQV8n5pWjXtl/UjYs0lLdRhg6aaSJoUESNy11FtvF+aVov7xYdOZpacg8bMknPQVIfzcxdQpbxfmlZz+8VjNGaWnHs0Zpacg8bMknPQmFlyDppMJK3WRNuGOWqpFpI6567B0nDQ5HOTpJUbJyQNAW7KWE81eEbSuHJfWEnSSpI6lb8PlDRGUpfcdbWGgyafH1OETQ9Jw4FrgQMy15TbMOAp4EJJ90s6tDKMO7C7gBUk1QN3AAcBl2StqJV8ejsjSV8Ejgd6Al+KiKczl1Q1JG0DXAX0Aq4DfhARz+StKg9JUyJiM0lHAt0j4ixJD0bEprlra6m63AV0NJJ+BVSm+8rAf4AjJRERR+WpLL9yjGYUxV/sDYCfAb8HPgv8BRiYrbi8JGkLYH/gkLKtpv7t1lSx7cSkRaYnZ6miOj0N/BMYFxH3VbRfV/ZwOqr/Ab4DXB8Rj0rqR7GfaoYPnTKRtBLwbkQ0lNOdgW4R8U7eyvKR1CMi3s5dR7WRtHFEPJK7jmXhoMlE0v3A5xr/YUnqAdwWEVvmraztNXE4+REd+XASQNI9QFeKAeArI+LNvBW1ng+d8lmh8q93RLwtacWcBWW06OGkVYiIrSUNpBi7miRpAnBJRNyWubQWc9DkM1fSZhExBaA8xT0vc01ZRMSlAJI+C9zXeDhZtm2WrbAqEhFPSTqZIpR/CWwqScB3I+JPeatbMh86ZSJpJHA1MKtsWhfYOyI67OCwpHeAicBeEfFS2TYlIjp02EgaRtGbGQXcDlwUEVMk9QbGR8T6WQtsAfdoMomIiZIGA4MAAU9ExILMZeX2JDAOuFPSIeWZJ2WuqRqcA1xI0XtZ2OuNiFllL6fquUeTkaSNgSHACo1tEXFZvoryqrgwbSPgGuB3wMEdvUfTHrhHk4mkU4HtKILmL8BuwD1Ahw0ayt5LRDwtaWuKsyzDslaUkaSHaf5sXM3sGwdNPl8GPgU8GBEHSVqbonvckY1p/KW8nmgvSX0z1pPb7uV/jyj/e3n53/2BmrreyjdV5jMvIj4A3i9vHHwZ6Je5ptz+I+mqRU7z/zlbNZlFxHMR8RywVUQcHxEPlz8nArvkrq81HDT5TJLUC7iA4jaEKcCEvCVl9whwN3C3pP5lmweDYaXyUBIASVsCK2Wsp9U8GFwFJG0ArBwR0zKXklXFYPBWFAF8AnB6Rx8MLq+x+h2wStn0JsUg+ZR8VbWOg6aNLekCtFr68CxvlY8+kLQuxZmnERHRUa+Y/ojyEFsRMTt3La3loGljkirvuq3c+QIiInZo45KqhqR1I+KFiuk6YMuIuCtjWdlIOqa5+RHx87aqZVn5rFMbi4jtASR1Bw4HtqYInLuBczOWlo2kAyLiCmDf4qr6j+mQQUPxQDQoLuocCdxYTo+mxvaJgyafS4G3KO5bAdiX4hqavbJVlE/jwGbPZpfqYCLidABJtwGbRcSccvo0ike/1gwHTT6DIuJTFdP/lPRQtmoyiojzyufxvBURv8hdTxXqC8yvmJ5P8QTCmuHT2/k8KGnzxglJnwHuzVhPVuUd22OWuGDHdDkwQdJp5RXlD1BjV5B7MLiNVVxW3oXi2Pu/5fT6wGMRsXHG8rKS9COKU7jXAHMb2zvymbhG5dnKz5aTd0XEgznraS0HTRuT1Owt/eWVoB1SxRm5xg9lhz8T16i8YG+jiLhY0ppAj4iYnruulnLQWNWQ9G2KkGk89RQUA+aTImJqtsIyKw+XRlCM6w0sn0NzbURslbm0FvMYjVWT4cBhFA8B6w0cCmwLXCDp+JyFZbYHxfjVXCieQ0ONnaHzWSerJqtTnMZtfGD7qRRfHrcNxf1gZ2WsLaf5ERGSAhZ+g0ZNcY/Gqsmip3EXAOuXT5V7L09JVeEPks4Dekn6BvB3invBaoZ7NFZNrgTul3RDOT0auKr8C/5YvrKyW5OiZ/cWxZnKU4DPZa2olTwYbFWlvFN5a4oB4XsiosN/FUtTD2iXNK2WnrDnoDGrUpK+SXE/XD/g3xWzegL3RsQBWQpbCg4asyolaRVgVeAnwIkVs+ZExOt5qlo6DhozS85nncwsOQeNmSXnoLFlIqlB0lRJj0i6dpFvMGjttraTdHP5+xhJJzazbC9Jhy/Fa5wm6dilrdGWjoPGltW8iNikvOt8PsUtBAup0OrPWUTcGBFnNLNIL4ozMlYDHDS2PN0NDJC0gaTHJf2G4mtk1pO0s6TxkqaUPZ8eAJJ2lfSEpHuALzVuSNJYSeeUv68t6XpJD5U/WwJnAP3L3tS4crnjJE2UNE3S6RXbOknSk5L+TnHBm7UxB40tF+WDxHcDHi6bBgGXld9qMBc4GfhceeHZJOAYSStQXEo/muJZK+ssZvO/BP5VPpFwM+BRitO9/y57U8dJ2hnYCPg0sAkwXNI25QWA+wCbUgTZyOX81q0FfAuCLavukhof4XA3cBHFndfPRcT9ZfvmFN8xfm/58PGuwHhgMDA9Ip4GkHQFxR3bi9oB+BosfBLfbEmrLrLMzuVP4wOhelAET0/g+vIrdpF0I9bmHDS2rOZFxCaVDWWYzK1sAm6PiH0XWW4TmvkS+1YS8JOIOG+R1zh6Ob6GLSUfOllbuB/YStIAAEkrShoIPAFsWPH1t/suZv07gG+W63Yuv0htDh99JsutwMEVYz/1ktai+FqSPSR1l9ST4jDN2piDxpKLiFeAsRR3Yk+jCJ7BEfEuxaHSLeVg8OIeY/o/wPbl85YnA0Mj4jWKQ7FHJI2LiNso7v4eXy53HdCzfN7wNcBU4I8Uh3fWxnwLgpkl5x6NmSXnoDGz5Bw0Zpacg8bMknPQmFlyDhozS85BY2bJ/X9i7PUElzwM0AAAAABJRU5ErkJggg==%0A)
+A big shout-out to the San Francisco fastai study group who created this new widget this week called the FileDeleter. Zach, Jason, and Francisco built this thing where we basically can take the top losses from that interpretation object we just created. There is not just `plot_top-losses` but there's also `top_losses` and top_losses returns two things: the losses of the things that were the worst and the indexes into the dataset of the things that were the worst. If you don't pass anything at all, it's going to actually return the entire dataset, but sorted so the first things will be the highest losses. Every dataset in fastai has `x` and `y` and the `x` contains the things that are used to, in this case, get the images. So this is the image file names and the `y`'s will be the labels. So if we grab the indexes and pass them into the dataset's `x`, this is going to give us the file names of the dataset ordered by which ones had the highest loss (i.e. which ones it was either confident and wrong about or not confident about). So we can pass that to this new widget that they've created.
 
-
-
-
+Just to clarify, this `top_loss_paths` contains all of the file names in our dataset. When I say "out dataset", this particular one is our validation dataset. So what this is going to do is it's going to clean up mislabeled images or images that shouldn't be there and we're going to remove them from a validation set so that our metrics will be more correct. You then need to rerun these two steps replacing `valid_ds` with `train_ds` to clean up your training set to get the noise out of that as well. So it's a good practice to do both. We'll talk about test sets later as well, if you also have a test set, you would then repeat the same thing. 
 
 ```python
 from fastai.widgets import *
@@ -393,43 +389,47 @@ losses,idxs = interp.top_losses()
 top_loss_paths = data.valid_ds.x[idxs]
 ```
 
-
-
-
-
 ```python
 fd = FileDeleter(file_paths=top_loss_paths)
 ```
 
+![](/Users/hiromi/git/notes/lesson2/16.png)
+
+So we run FileDeleter passing in that sorted list of paths and so what pops up is basically the same thing as `plot_top_losses`. In other words, these are the ones which is either wrong about or least confident about. So not surprisingly, this one her (the second from left) does not appear to be a teddy bear, black bear, or grizzly bear. So this shouldn't be in our dataset. So what I do is I wack on the delete button, all the rest do look indeed like bears, so I can click confirm and it'll bring up another five. 
+
+What I tend to do when I do this is I'll keep going confirm until I get to a coupe of screen full of the things that all look okay and that suggests to me that I've got past the worst bits of the data. So that's it so now you can go back for the training set as well and retrain your model. 
+
+I'll just note here that what our San Francisco study group did here was that they actually built a little app inside Jupyter notebook which you might not have realized as possible. But not only is it possible, it's actually surprisingly straightforward. Just like everything else, you can hit double question mark to find out their secrets. So here is the source code. 
+
+![](lesson2/17.png)
+
+Really, if you've done any GUI programming before, it'll look incredibly normal. There's basically call backs for what happens when you click on a button where you just do standard Python things and to actually render it, you just use widgets and you can lay it out using standard boxes. So this idea of creating applications inside notebooks is really underused but it's super neat because it lets you create tools for your fellow practitioners or experimenters. And you could definitely envisage taking this a lot further. In fact, by the time you're watching this on the MOOC, you will probably find that there's a whole a lot more buttons here because we've already got a long list of to-do that we're going to add to this particular thing. 
+
+I'd love for you to have a think about, now that you know it's possible to write applications in your notebook, what are you going to write and if you google for "[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)", you can learn about the little GUI framework to find out what kind of widgets you can create, what they look like, and how they work, and so forth. You'll find it's actually a pretty complete GUI programming environment you can play with. And this will all work nice with your models. It's not a great way to productionize an application because it is sitting inside a notebook. This is really for things which are going to help other practitioners or experimentalists. For productionizing things, you need to actually build a production web app which we will look at next. 
+
+### Putting your model in production [[37:36](https://youtu.be/Egp4Zajhzog?t=2256)]
+
+After you have cleaned up your noisy images, you can then retrain your model and hopefully you'll find it's a little bit more accurate. One thing you might be interested to discover when you do this is it actually doesn't matter most of the time very much. On the whole, these models are pretty good at dealing with moderate amounts of noisy data. The problem would occur is if your data was not randomly noisy but biased noisy. So I guess the main thing I'm saying is if you go through this process of cleaning up your data and then rerun your model and find it's .001% better, that's normal. It's fine. But it's still a good idea just to make sure that you don't have too much noise in your data in case it is biased.
+
+At this point, we're ready to put our model in production and this is where I hear a lot of people ask me about which mega Google Facebook highly distributed serving system they should use and how do they use a thousand GPUs at the same time. For the vast majority of things you all do, you will want to actually run in production on a CPU, not a GPU. Why is that? Because GPU is good at doing lots of things at the same time, but unless you have a very busy website, it's pretty unlikely that you're going to have 64 images to classify at the same time to put into a batch into a GPU. And if you did, you've got to deal with all that queuing and running it all together, all of your users have to wait until that batch has got filled up and run﹣it's whole a lot of hassle. Then if you want to scale that, there's another whole lot of hassle. It's much easier if you just wrap one thing, throw it at a CPU to get it done, and comes back again. Yes, it's going to take maybe 10 or 20 times longer so maybe it'll take 0.2 seconds rather than 0.01 seconds. That's about the kind of times we are talking about. But it's so easy to scale. You can chuck it on any standard serving infrastructure. It's going to be cheap, and you can horizontally scale it really easily.  So most people I know who are running apps that aren't at Google scale, based on deep learning are using CPUs. And the term we use is "inference". When you are not training a model but you've got a trained model and you're getting it to predict things, we call that inference. That's why we say here:
+
+> You probably want to use CPU for inference
 
 
-```python
-Button(button_style='primary', description='Confirm', style=ButtonStyle())
-```
 
+At inference time, you've got your pre-trained model, you saved those weights, and how are you going to use them to create something like Simon Willison's cougar detector?
 
-
-
-
-
-
-## Putting your model in production
-
-
+The first thing you're going to need to know is what were the classes that you trained with. You need to know not just what are they but what were the order. So you will actually need to serialize that or just type them in, or in some way make sure you've got exactly the same classes that you trained with. 
 
 ```python
 data.classes
 ```
 
-
-
 ```
 ['black', 'grizzly', 'teddys']
 ```
 
-
-
-
+If you don't have a GPU on your server, it will use the CPU automatically. If you have a GPU machine and you want to test using a CPU, you can just uncomment this line and that tells fastai that you want to use CPU by passing it back to PyTorch.  
 
 ```python
 # fastai.defaults.device = torch.device('cpu')
@@ -437,16 +437,24 @@ data.classes
 
 
 
+[[41:14](https://youtu.be/Egp4Zajhzog?t=2474)]
+
+So here is an example. We don't have a cougar detector, we have a teddy bear detector. And my daughter Claire is about to decide whether to cuddle this friend. What she does is she takes daddy's deep learning model and she gets a picture of this and here is a picture that she's uploaded to the web app and here is a picture of the potentially cuddlesome object. We are going to store that in a variable called `img` , and open_image is how you open an image in fastai, funnily enough.
+
 ```python
 img = open_image(path/'black'/'00000021.jpg')
 img
 ```
 
-
-
 ![](lesson2/bear.png)
 
+Here is that list of classes that we saved earlier. And as per usual, we created a data bunch, but this time, we're not going to create a data bunch from a folder full of images, we're going to create a special kind of data bunch which is one that's going to grab one single image at a time. So we're not actually passing it any data. The only reason we pass it a path is so that it knows where to load our model from. That's just the path that's the folder that the model is going to be in. 
 
+But what we need to do is that we need to pass it the same information that we trained with. So the same transforms, the same size, the same normalization. This is all stuff we'll learn more about. But just make sure it's the same stuff that you used before. 
+
+Now you've got a data bunch that actually doesn't have any data in it at all. It's just something that knows how to transform a new image in the same way that you trained with so that you can now do inference. 
+
+You can now `create_cnn` with this kind of fake data bunch and again, you would use exactly the same model that you trained with. You can now load in those saved weights. So this is the stuff that you only do once﹣just once when your web app is starting up. And it takes 0.1 of a second to run this code.
 
 ```python
 classes = ['black', 'grizzly', 'teddys']
@@ -455,7 +463,7 @@ learn = create_cnn(data2, models.resnet34)
 learn.load('stage-2')
 ```
 
-
+Then you just go `learn.predict(img)` and it's lucky we did that because it's not a teddy bear. This is actually a black bear. So thankfully due to this excellent deep learning model, my daughter will avoid having a very embarrassing black bear cuddle incident. 
 
 ```python
 pred_class,pred_idx,outputs = learn.predict(img)
@@ -466,9 +474,11 @@ pred_class
 'black'
 ```
 
+So what does this look like in production? I took [Simon Willison's code](https://github.com/simonw/cougar-or-not), shamelessly stole it, made it probably a little bit worse, but basically it's going to look something like this. Simon used a really cool web app toolkit called [Starlette](https://www.starlette.io/). If you've ever used Flask, this will look extremely similar but it's kind of a more modern approach﹣by modern what I really mean is that you can use `await` which is basically means that you can wait for something that takes a while, such as grabbing some data, without using up a process. So for things like I want to get a prediction or I want to load up some data, it's really great to be able to use this modern Python 3 asynchronous stuff. So Starlette could come highly recommended for creating your web app.   
 
+You just create a route as per usual, in that you say this is `async` to ensure it doesn't steal the process while it's waiting for things. 
 
-So you might create a route something like this ([thanks](https://github.com/simonw/cougar-or-not) to Simon Willison for the structure of this code):
+You open your image you call `learner.predict`  and you return that response. Then you can use Javascript client or whatever to show it. That's it. That's basically the main contents of your web app.  
 
 ```python
 @app.route("/classify-url", methods=["GET"])
@@ -485,19 +495,20 @@ async def classify_url(request):
     })
 ```
 
-(This example is for the [Starlette](https://www.starlette.io/) web app toolkit.)
+So give it a go this week. Even if you've never created a web application before, there's a lot of nice little tutorials online and kind of starter code, if in doubt, why don't you try Starlette. There's a free hosting that you can use, there's one called [PythonAnywhere](https://www.pythonanywhere.com/), for example. The one Simon has used, [Zeit Now](https://zeit.co/now), it's something you can basically package it up as a docker thing and shoot it off and it'll serve it up for you. So it doesn't even need to cost you any money and all these classifiers that you're creating, you can turn them into web application. I'll be really interested to see what you're able to make of that. That'll be really fun. 
+
+### Things that can go wrong [[46:06](https://youtu.be/Egp4Zajhzog?t=2766)]
+
+I mentioned that most of the time, the kind of rules of thumb I've shown you will probably work. And if you look at the share your work thread, you'll find most of the time, people are posting things saying I downloaded these images, I tried this thing, they worked much better than I expected, well that's cool. Then like 1 out of 20 says I had a problem. So let's have a talk about what happens when you have a problem. This is where we start getting into a little bit of theory because in order to understand why we have these problems and how we fix them, it really helps to know a little bit about what's going on.
+
+First of all, let's look at examples of some problems. The problems basically will be either:
+
+- Your learning rate is too high or low
+- Your number of epochs is too high or low 
+
+So we are going to learn about what those mean and why they matter. But first of all, because we are experimentalists, let's try them. 
 
 
-
-## Things that can go wrong
-
-
-
-- Most of the time things will train fine with the defaults
-- There's not much you really need to tune (despite what you've heard!)
-- Most likely are
-  - Learning rate
-  - Number of epochs
 
 
 
@@ -566,9 +577,7 @@ epoch  train_loss  valid_loss  error_rate
 learn.recorder.plot_losses()
 ```
 
-
-
-![img](data:image/png;base64,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%0A)
+![](lesson2/15.png)
 
 
 
@@ -670,10 +679,6 @@ epoch  train_loss  valid_loss  error_rate
 
 
 
-
-
-
-Strongest downslope that continues
 
 
 
