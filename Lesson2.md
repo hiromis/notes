@@ -61,7 +61,7 @@ Suvash has a new state of the art accuracy for Devanagari text recognition. I th
 
 
 
-[6:28](https://youtu.be/Egp4Zajhzog?t=388)
+[[6:28](https://youtu.be/Egp4Zajhzog?t=388)]
 
 ![](lesson2/5.png)
 
@@ -807,9 +807,7 @@ The way we do that is a lot like numpy indexing, but rather things in square bra
 
 <img src="http://latex.codecogs.com/gif.latex?\vec{y}&space;=&space;X\vec{a}" title="\vec{y} = X\vec{a}" />
 
-Rather than lots of different <img src="http://latex.codecogs.com/gif.latex?y_i" title="y_i" />'s, we can say there's one vector called <img src="http://latex.codecogs.com/gif.latex?y" title="y" /> which is equal to one matrix called <img src="http://latex.codecogs.com/gif.latex?X" title="X" /> times one vector called <img src="http://latex.codecogs.com/gif.latex?a" title="a" />. At this point, I know a lot of you don't remember that. That's fine. We have a picture to show you:
-
-<a href='http://matrixmultiplication.xyz/' target='_blank'>![](lesson2/matrix.png)</a>
+Rather than lots of different <img src="http://latex.codecogs.com/gif.latex?y_i" title="y_i" />'s, we can say there's one vector called <img src="http://latex.codecogs.com/gif.latex?y" title="y" /> which is equal to one matrix called <img src="http://latex.codecogs.com/gif.latex?X" title="X" /> times one vector called <img src="http://latex.codecogs.com/gif.latex?a" title="a" />. At this point, I know a lot of you don't remember that. That's fine. We have a picture to show you.
 
 Andre Staltz created this fantastic called http://matrixmultiplication.xyz/ and here we have a matrix by a vector, and we are going to do a matrix vector product.
 
