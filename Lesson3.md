@@ -647,12 +647,6 @@ learn.lr_find()
 learn.recorder.plot()
 ```
 
-
-
-
-
-
-
 ![](lesson3/n2.png)
 
 Then we fit a little bit more. Now in this case, I'm fitting with my original dataset. But you could create a new data bunch with just the misclassified instances and go ahead and fit. The misclassified ones are likely to be particularly interesting. So you might want to fit at a slightly higher learning rate to make them really mean more or you might want to run them through a few more epochs. But it's exactly the same thing. You just call fit with your misclassified examples and passing in the correct classification. That should really help your model quite a lot.
@@ -714,11 +708,7 @@ The answer is it depends. If you're using the web which I guess probably most of
 
 
 
-[48:50](https://youtu.be/PW2HKkzdkKY?t=2930)
-
-
-
-### How to choose good learning rates
+### How to choose good learning rates [[48:50](https://youtu.be/PW2HKkzdkKY?t=2930)]
 
 One thing to notice here is that before we unfreeze you'll tend to get this shape pretty much all the time:
 
@@ -925,180 +915,882 @@ path_img = path/'images'
 
 
 
-We'll take a look inside each of those. At this point like you can see there's some kind of coded filenames for the images and some kind of coded filenames for the segment masks and then you kind of have to figure out how to map from one to the other you know normally these kind of datasets will come with a readme you can look at or you can look at their website often it's kind of obvious in this case I can see like these ones always have this kind of particular format these ones always have exactly the same format with an underscore payee so I kind of but I did this honestly I just guessed I thought oh it's probably the same thing underscore P and so I created a little function that basically took the filename and added the underscore P and put it in the different place and I tried opening it and it I noticed it worked so you know so I've created this little function that converts from the image file names to the equivalent label file names I opened up that to make sure it works normally we use open image to open a file and then you can go to show to take a look at it but this as we described this is not a usual image file that contains integers so you have to use open masks rather than open image because we want to return integers not floats and first day I knows how to deal with masks so if you go mask touch show it will automatically color code it for you in some appropriate way that's why we said open masks so you know we can kind of have a look inside look at the data see what the size is so there's 720 by 960 we can take a look at the data inside and so forth the other thing you might have noticed is that they gave us a file called codes text and a file called valid text so codes text we can load it up and have a look inside and not surprisingly it's got a list telling us that for example number 4 is 0 1 2 3 4 it's building top left is building there you go okay so just like we had you know Grizzlies black bears and Teddy's here we've got the coding for what each one of these pixels means so we need to create a databank so to create a data bunch we can go through the data block API and say ok we've got a list of image files that are in a folder we need to create labels which we can use with that get Y function file name function we just created we then need to split into training and validation in this case I don't do it randomly why not because actually the pictures they've given us frames from videos so if I did them randomly I would be having like two frames next to each other one in the validation set one in the training set that would be far too easy that's treating right so the people that created this data set actually gave us a data set saying here is the list of file names that are meant to be in your validation set and their non-contiguous parts of the video so here's how you can split your validation and training using a file named fail so from that I can create my data sets and so I actually have a list of plus names so like often with stuff like the planet data set or the pets data set we actually have a string saying you know this is a this is a pug or this is a ragdoll or this is a Behrman or this is cloudy or whatever in this case you don't have every single pixel labeled with an entire string that would be incredibly inefficient they're each labeled with just a number and then there's a separate file telling you what those numbers mean so here's where we get to tell it and the data block API this is the list of what the numbers mean okay so these are the kind of parameters that the data block API gives you here's our transformations and so here's an interesting point remember I told you that for example sometimes we randomly flip an image right what if we randomly flip the independent variable image but we don't also randomly flip this one there now I'm not matching anymore right so we need to tell fast AI that I want to transform the Y so what so X is our independent variable Y is that a Penant I want to transform the Y as well so whatever you due to the X I also want you to do to the way so there's all these little parameters that we can play with and I can create our data bunch I'm using a smaller batch size because as you can imagine because I'm creating a classifier for every pixel that's going to take a lot more GPU right so I found a batch size of 8 is all I could handle and then normalize in the usual way and this is quite nice fast AI because it knows that you've given it a segmentation problem when you call show batch it actually combines the two pieces for you and it will color code the photo isn't that nice alright so you can see here the green on the trees and the red on the lines and this kind of color on the walls and so forth alright so you can see here here are the pedestrians this is the pedestrians backpack so this is what the ground truth data looks like so once we've got that we can go ahead and create a learner I'll show you some more details in a moment call allow find find the sharpest bit which looks about one a neg to call fit passing in slice LR and see the accuracy and save the model and unfreeze and train a little bit more so that's the basic idea ok and so we're gonna have a break and when we come back I'm going to show you some little tweaks that we can do and I'm also going to explain this custom metrics that we've created and then we'll be able to go on and look at some other cool things so let's all come back at 8 o'clock 6 minutes testing 1 2 3 check 1 2 testing one two three test testing one two testing one two you okay let's get goin thank you yep as a question okay so we're gonna kick off with a question Rachel what's okay welcome back everybody and we're going to start off with a question we got during the break could you use unsupervised learning here pixel classification with the bike example to avoid needing a human to label a heap of images what not exactly unsupervised learning but you can certainly get a sense of where things are without needing these kind of labels and time permitting we'll we'll try and see some examples of how to do that it's you're certainly not going to get as such a quality in such a specific exert as what you see here though if you want to get this level of segmentation mask you need a pretty good segmentation mask ground truth to work with and is there a reason we shouldn't deliberately make a lot of smaller data set up sets to step up from in tuning let's say 64 by 64 or 128 by 128 256 by 256 and so on yes you should totally do that it works great try it I found this idea it's something that I first came up with in the course a couple of years ago and I kind of thought it seemed obvious and just presented it as a good idea and then I later discovered that nobody had really published this before and then we started experimenting with it and there was basically the main tricks that we use to to to win the imagenet competition the dawn Banshee internet training competition and we're like well people this wasn't only not not only was this not standard nobody had heard of it before there's been now a few papers that use this trick for various specific purposes but it's still largely unknown and it means that you can train much faster it generalizes better there's still a lot of unknowns about exactly like how how small and how big and how much at each level and so forth but I guess in as much as it has a name now it probably does and I guess we call it progressive resizing I found that going much under 64 by 64 tends not to help very much but yeah it's it's a it's a great technique and I definitely try a few a few different sizes what does accuracy mean for pix pixel wise segmentation is it correctly classified pixels divided by the total number of pixels yep that's it so if you imagined each pixel was a separate you know object you're classifying it's exactly the same accuracy and so you actually can just pass the inaccuracy as geometric but in this case we actually don't we've created a new metric called accuracy cam vid and the reason for that is that when they labeled the images sometimes they labeled a pixel as void I'm not quite sure why maybe it was something that they didn't know or somebody felt it they'd made a mistake or whatever but some of the pixels are void and in the canvas paper they say when you're reporting accuracy you should remove the void pixels so we've created an accuracy camford so all metrics take the actual output of the neural net that's the input to the actor this is what they call the inbox is the input to the metric and the target ie the labels you're trying to predict so we then basically create a mask so we look for the places where the target is not equal to void and then we just take the input do the Arg max as per usual just the standard accuracy max but then we just grabbed those that not equal to the void code we do the same for the target and we take them in okay so it's it's just a standard accuracy it's almost exactly the same as the accuracy source code we saw before with the addition of this mask so this quite often happens that that the particular kegels competition metric you're using or the particular way your organization you know scores things or whatever there's often like little tweaks you have to do and it this is how easy it is right and so as you'll see to do this stuff the main thing you need to know pretty well is how to do basic mathematical operations in PyTorch so that's just something you kind of need to practice I've noticed that most of the examples and most of my models result in a training loss greater than the validation loss what are the best ways to correct that I should add that this still happens after trying many variations on number of epochs and learning rate okay good question so remember from last week if you're training loss is higher than your validation lost in your underfitting okay it definitely means that you're under fitting you want your training loss to be lower than your validation loss if you're under fitting you can train for longer you can train a train the last bit at a lower learning rate but if you're still under fitting then you're going to have to decrease regularization and we haven't talked about that yet so in the second half of this part of the course we're going to be talking quite a lot about regularization and specifically how to avoid overfitting or underfitting by using regularization if you want to skip ahead we're going to be learning about weight decay dropout and data augmentation will be the key things that are we talking about okay for segmentation we don't just create a compilation or neural network we can but actually a architecture called unit turns out to be better and actually the let's find it okay okay so this is what a unit looks like and this is from the University website where they talk about the unit and so we'll be learning about this both in this part of the course and in part two if you do it but basically this bit down on the left hand side is what a normal convolutional neural network looks like it's something which starts with a bigger big image and gradually makes it smaller and smaller and smaller and smaller until eventually you just have one prediction what a unit does is it then takes that and makes it bigger and bigger and bigger again and then it takes every stage of the downward path and kind of copies it across and it creates this new shape it's was originally actually created or published as a biomechanical image segmentation method but it turns out to be useful for far more than just biomedical image segmentation so it was presented at Mick I which is the main medical imaging conference and as of just yesterday it actually just became the most cited paper of all time from that conference so it's been incredibly useful over 3,000 citations you don't really need to know any details at this stage all you need to know is if you want to create a segmentation model you want to be saying learner don't create unit rather than create CNN but you pass it the normal stuff their data bunch and architecture and some metrics okay so having done that everything else works the same you can do the yellow finder find the slope train it for a while what's the accuracy go up save it from time to time unfreeze probably want to go about ten less what's still going up so probably ten less than that so one a nig 5 comma L R over 5 train a bit more and there we go all right now here's something interesting you can learn dot recorder is where we keep track of what's going on during training and it's got a number of nice methods one of which is plot losses and this plots your training loss and your validation loss and you'll see quite often they actually go up a bit before they go down why is that that's because you can also plot your learning rate over time and you'll see that the old learning rate goes up and then it goes down why is that because we said fit one cycle and that's what fit one cycle does it actually makes the learning rate start low go up and then go down again why is that a good idea well to find out why that's a good idea let's first of all look at a really cool project done by Jose Fernandez portal during the week he took our gradient descent demo notebook and actually plotted the weights over time not just the ground truth and model over time and he did it for a few different learning rates and so remember we had two weights we were doing basically y equals ax plus B or in his nomenclature here y equals W naught X plus W 1 and so we can actually look and see over time what happens to those weights and we know this is the correct answer yeah right so what a learning rate of 0.1 they're kind of like slides on in here and you can see that it takes a little bit of time to get to the right point and you can see the loss improving at a higher learning rate of 0.7 you can see that the ground truth the model jumps to the ground truth really quickly and you can see that the weights jump straight to the right place really quickly what if we have a learning rate that's really too high you can see it takes a very very very long time to get to the right point or if it's really too high it diverges okay so you can see here why getting the right learning rate is important when you get the right learning rate it really zooms into the best but very quickly now as you get closer to the final spot something interesting happens which is that you really want your learning rate to decrease right because you're kind of you're getting close to the right spot right and what actually happens so what actually happens is I can only draw 2d sorry you don't generally actually have some kind of loss function surface that looks like that and remember there's lots of dimensions but it actually tends to kind of look like bumpy like that right and so you kind of want a learning rate that's like high enough to jump over the bumps right but then once you get close to the middle you know once you get close to the the best answer you don't want to be just jumping backwards and forwards between bumps so you really want your learning rate to go down so that as you get closer you take smaller and smaller steps so that's why it is that we want our learning rate to go down at the end now this idea of decreasing the learning rate during training has been around forever and it's just called learning rate annealing but the idea of gradually increasing it at the start is much more recent and it mainly comes from a guy called Leslie Smith if you're in San Francisco next week actually you can come and join me and Leslie Smith we're having a meet-up where we'll be talking about this stuff so come along to that what Leslie discovered is that if you gradually increase your learning rate what tends to happen is that actually actually what tends to happen is that loss function surfaces tend to kind of look something like this bumpy bumpy bumpy bumpy bumpy flat bumpy bumpy bumpy bumpy bumpy something like this right they have flat areas and bumpy areas and if you end up in the bottom of a bumpy area that that solution will tend not to generalize very well because you've found a solution that's it's good in that one place but it's not very good in other places where else if you found one in the flat area it probably will generalize well because it's not only good in that one spot but it's good to kind of around it as well if you have a really small learning rate it'll tend to kind of plot down and stick in these places right but if you gradually increase the learning rate then it'll kind of like jump down and then as the learning rate goes up it's going to start kind of going up again like this right and then the learning rate now going to be up here it's going to be bumping backwards and forwards and eventually the learning rate starts to come down again and so it'll tend to find its way to these flat areas so it turns out that gradually increasing the learning rate is a really good way of helping the model to explore the whole function surface and try and find areas where both the loss is is low and also it's it's not bumpy because if it was bumpy it would get kicked out again and so this allows us to train at really high learning rates so it tends to mean that we solve our problem much more quickly and we tend to end up with much more generalizable solutions so if you call plot losses and find that it's just getting a little bit worse and then it gets a lot better you've found a really good maximum learning rate so when you actually call fit one cycle you're not actually passing in a learning rate you're actually passing in a maximum learning rate and if it's kind of always going down particularly after you unfreeze that suggests you could probably bump your your learning rates up a little because you really want to see this kind of shake it's going to train faster and generalize better just just a little bit right and you're tend to particularly see it in the validation set the orange is the validation set right and again the difference between kind of knowing the theory and being able to do it is looking at lots of these pictures right so like after you train stuff type learn dot recorder dot and hit tab and see what's in there right and particularly the things that start with plot and start getting a sense of like what are these pictures looking like when you're getting good results and then try making the learning rate much higher try making it much lower more epochs less epochs and get a sense for that it looked like so in this case we use two size and our transforms of the original image size over to these two slashes in Python means integer divide okay because obviously we can't have half pixel amounts in all sizes so integer divide divided by two and we used a batch size of eight and I found that fits on my GPU it might not fit on yours if it doesn't you can just decrease the batch size down to four and this isn't really solving the problem because the problem is to segment all of the pixels not half of the pixels so I'm going to use the same trick that I did last time which is I'm now going to put the size up to the full size of the source images which means I now have to have my batch size otherwise I ran out of GPU memory and I'm then going to set my learner I can either say learn data equals play new data well I actually found us had a lot of trouble with kind of GPU memory so I generally restarted my kernel came back here created a new learner and loaded up their weights that I saved last time but the key thing here being that this learner now has the same weights that I had here but the data is now the full image size so I can now do an LR find again find an area where it's kind of you know well before it goes up so I'm going to use one Enoch three and fit some more and then unfreeze and fit some more and you could go to learn dots show results to see how your predictions compare to the ground truth and you've got to say they really look pretty good not bad huh so how good is pretty good an accuracy of point of ninety two point one five the best paper I know of for segmentation was a paper called the hundred layers tiramisu which developed a convolutional dense net came out about two years ago so after I trained this today I went back and looked at the paper to find their state of the art accuracy here it is and I looked it up and there best was ninety one point five and we got ninety two point one so I got to say where this happened today I was like wow III don't know if better results have come out since this paper but I remember when this paper came out and it was a really big deal you know it's like wow this this is an exceptionally good segmentation result like when you compare it to the previous bests that they compared it to it was a big step up and so like in last year's course we spent a lot of time in the course re-implementing the hundred layers tiramisu and now with our totally default fast AI class I'm easily beating this and I also remember this I had to train for hours and hours and hours where else today's I trained in minutes so we've this is a super strong architecture for segmentation so yeah I'm not going to promise that this is the definite state of the art today because I haven't done a complete literature search to see what's happened in the last two years but it's certainly beating the world's best approach the last time I looked into this which was in last year's course basically and so these are kind of just all the little tricks I guess we've picked up along the way in terms of like how to Train things well things like using the pre train model and things like you know using the one cycle convergence and all these little tricks they work extraordinarily well and it's really nice to be able to like show something in class where we can say you know and we actually haven't published the paper on the exact details of how this variation of the unit works there's a few little tweaks we do but if you come back for part two we'll be going into all of the details about how we make this work so well but for you or you have to know at this stage is that you can say learn a doc create unit and you should get great results also there's another trick you can use if you're running out of memory a lot which is you can actually do something called mixed precision training and mixed precision training means that instead of using for those of you that have done a little bit of computer science instead of using single precision floating point numbers you can do all the calculus of the calculations in your model with half precision floating point numbers so 16 bits instead of 32 bits tradition I mean the very idea of this has only been around really for the last couple of years in terms of like hardware that actually does this reasonably quickly and then fast AI library I think is the first and probably still the only that makes it actually easy to use this if you add through FP 16 on the end of any learner call you're actually going to get a model that trains in 16-bit precision because it's so new you'll need to have kind of the most recent CUDA drivers and all that stuff for this even to work when I tried it this morning on some of the platforms it just killed the colonel so you need to make sure you've got the most recent drivers but if you've got a really recent GPU like a 28 ETA not only will it work but it'll work about twice as fast as otherwise now the reason I'm mentioning it is that it's going to lose less GPU Ram so even if you don't have like a 28 ETA you might find or you'll probably find that things that didn't fit into your GPU without this then do fit in with this now I actually have never seen people use 16 the mixed precision floating point for segmentation before just for a bit of a laugh I tried it and actually discovered that I got even better result so I only found this this morning so I don't have anything more to add here other than quite often when you make things a little bit less precise in deep learning it generalizes a little bit better and I you know I've never seen a 92.5 accuracy on camford before so yeah this not only will this be faster you'll be able to use bigger batch sizes but you might even find like I did that you get an even better result so that's a cool little trick now you just need to make sure that every time you create a learner you're at this 2fp 16 if your kernel dies it probably means you have slightly out of date CUDA drivers or maybe even an old to old graphics card I'm not sure exactly which cards support FP 16 okay so one more before we kind of rewind sorry Mon the first one I'm going to show you is an interesting data set called the B we impose data set and Gabrielle finale was kind enough to give us permission to use this in the class his team created this this cool data set here's what the data set looks it's pictures it's actually got a few things in it we're just going to do a simplified version and one of the things they do is they have a dot saying this is the center of the face and so we're going to try and create a model that can find the center of a face so for this data set there's a few data set specific things we have to do which I don't really even understand but I just know from the readme that you have to they use some kind of depth sensing camera I think they actually used a connect you know Xbox Kinect there's some kind of calibration numbers that they provide in a little file which I had to read in and then they provided a little function that you have to use to take their coordinates to change it from this this depth sensor calibration thing to end up with actual coordinates so when you when you open this and you see these at all conversion routines that's just you know I'm just doing what they told us to do basically it's got nothing particularly to do with deep learning to end up with this dot the interesting bit really is where we create something which is not an image or an image segment but an image points and we'll mainly learn about this later in the course but basically image points use this idea of kind of their coordinates right they're not pixel values they're XY coordinates there's just two numbers as you can see let me see let's do this let's go Oh CTI so here's an example for a particular image file name this particular image file and here it is the coordinates of the centre of the face are at 263 comma 428 and here it is so there's just true numbers which represent whereabouts on this picture is the centre of the face so if we're going to create a model that can find the centre of a face we need a neural network that spits out two numbers but note this is not a classification model these are not two numbers that you look up in a list to find out that they're Road or building or ragdoll cat or whatever their actual locations so so far everything we've done has been a classification model something that's created labels or classes this for the first time is what we'd call a regression model a lot of people think regression means linear regression it doesn't regression just means any kind of model where your output is some continuous number or set of numbers so this is we need to create an image regression model something that can predict these two numbers so how do you do that same way as always right so we can actually just say I've got a list of image files it's in a folder and I want to label them using this function that we wrote that basically does the stuff that the readme says to grab the coordinates out of their text files so that's going to give me the two numbers for everyone and then I'm going to split it according to some function and so in this case that the files they gave us again they're from videos and so I picked just one folder to be my validation set in other words a different person so again I was trying to think about like how do I validate this fairly so I said well the fair validation would be to make sure that it works well on a person that it's never seen before so my validation set is all going to be a particular person create a data set and so this data set I just tell it what kind of data set is it well there going to be a set of points so points means you know specific coordinates do some transforms again I have to say transform y equals true because that red dot needs to move if I flip or rotate or walk right pick some size I just picked a size that's going to work pretty quickly create a data bunch normalize it and again show batch there it is ok I noticed that there red dots don't always seem to be quite in the middle of the face I don't know exactly what their kind of internal algorithm for putting dots on they kind of sometimes looks like it's meant to be the nose but sometimes it's not quite the nose anyway you get the rights it's somewhere around the center of the face or the nose so how do we create a model we create a CNN but we're going to be learning a lot about loss functions in the next few lessons but generally that basically the loss function is that that that number that says how good is the model and so for classification we use this loss function called cross-entropy loss which says basically remember this from earlier lessons did you predict the correct class and were you confident of that prediction now we can't use that for regression so instead we use something called mean squared error and if you remember from last lesson we actually implemented mean square error from scratch it's just the difference between the two squared and added up together okay so we need to tell it this is not pacification so we use mean squared error join all these so this is not classification so we have to use mean squared error and then once we've created the learner we've taught it what loss function to use we can go ahead and do LR find we can then fit and you can see here within a minute and a half our mean squared error is 0.0004 the nice thing is about like mean squared error that's very easy to interpret right so we're trying to predict something which is somewhere around a few hundred and we're getting a squared error on average of 0.0004 so we can feel pretty confident that this is a really good model and then we can look at the results by learn Daksha results and we can see predictions ground truth it's doing a nearly perfect job okay so that's how you can do image regression models so anytime you've got something you're trying to predict which is some continuous value you use an approach that's something like this so last example before we look at some kind of more foundational theory stuff NLP and next week we're going to be looking at a lot more NLP but let's now do the same thing but rather than creating a classification of pictures let's try and classify documents and so we're going to go through this in a lot more detail next week but let's do the quick version rather than importing from faster I Division I now import for the first time from faster I dot text that's where you'll find all the application specific stuff for analyzing text documents and in this case we're going to use a data set called IMDB and IMDB has lots of movie reviews they're generally about a couple of thousand words and each movie review has been classified as either negative or positive so it's just in a CSV file so we can use pandas to read it we can take a little look we can take a look at a review and basically as per usual we can either use factory methods or the data block API to create a data bunch so here's the quick way to create a data bunch from a csv of texts data bunch from CSV and that's that and yeah at this point I could create a learner and start training it but we're going to show you a little bit more detail which we're mainly going to look at next week the steps that actually happen when you create these data button there's a few steps the first is it does something called tokenization which is it takes those words and it converts them into a standard form of tokens where there's basically each token represents a word but it does things like see here see how didn't has been turned here into two separate words and you see how everything's been lower cased see how your has been turned into two separate words so tokenization is trying to make sure that each each token each each thing that we've got with spaces around it here represents a single you know linguistic concept okay also it finds words that are really rare like really rare names and stuff like that and replaces them with a special token called unknown so anything starting with xx in fast AI is some special token so this is tokenization so we end up with something where we've got a list of tokenized words you'll also see that things like punctuation end up with spaces around them to make sure that they're separate tokens the next thing we do is we take a complete unique list of all of the possible tokens that's called the vocab and that gets created for us and so here's the first ten items of the vocab so here is every possible token the first ten of them that appear in our all of the movie reviews and we then replace every movie review with a list of numbers and the list of numbers simply says what numbered thing in the vocab is in this place so here 6 is 0 1 2 3 4 5 6 so this is the word ah and this is 3 0 1 2 3 this was a comma and so forth right so through tokenization and numerical ization this is a standard way in NLP of turning a document into a list of numbers we can do that with the data block API right so this time it's not image files list it's text spit data from a CSV convert them to datasets tokenize the numeric lies them create a data bunch and at that point we can start to create a model as we learn about next week when we do NLP classification we actually create two models the first model is something called a language model which as you can see we train in a kind of a usual way we say we want to create a language model learner we train it we can save it we unfreeze we train some more and then after we've created a language model we fine-tune it to create the classifier so here's the thing where we create the data bunch of the classifier we create a learner we train it and we end up with some accuracy so that's the really quick version we're going to go through it in more detail next week but you can see the basic idea of training and NLP classifier is very very very similar to creating every other model we've seen so far and this accuracy so the current state of the art for IMDB classification is actually the algorithm that we built and published with colleague quad as named Sebastian Reuter and this basically what I just showed you is pretty much the state of the art algorithm with some minor tweaks you can get this up to about 95% I'm if you try really hard so this is very close to the state of the art accuracy that we developed as a question okay there's a great time for question for a data set very different than imagenet like the satellite images or genomic images shown in lesson 2 we should use our own stats Jeremy once said if you're using a pre trained model you need to use the same stats that was trained with why is that isn't it that normalized data with its own stats will have roughly the same distribution like image net the only thing I can think of which may differ is skewness is it the possibility of skewness or something else the reason of your statement and does that mean you don't recommend using pre train models with very different data sets like the 1 point mutation that you mentioned in lesson 2 no as you can see I've used pre trade models for all of those things every time I've used an image a train pre train model and every time I've used image net stats why is that because that model was trained with those stats so for example imagine you're trying to classify different types of green frogs so if you were to use your own per channel means from your data set you would end up converting them to a mean of zero standard deviation of one for each of your red green and blue channels which means they don't look like green frogs anymore they now look like grey frogs right but imagenet expects frogs to be green okay so you need to normalize with the same stats that the imagenet training people normalized with otherwise the unique characteristics of your data set won't appear anymore you actually normalized them out in terms of the per channel statistics so you should always use the same stats that the model was trained with okay so in every case what we're doing here is we're using gradient descent with mini batches so stochastic gradient descent to fit some parameters of a model and those parameters are parameters to basically matrix multiplications and the second half of this part we're actually going to learn about a little tweak called convolutions but it's a basically a type of matrix multiplication the thing is though no amount of matrix multiplications is possibly going to create something that can read IMDB movie reviews and decide if it's positive or negative or look at satellite imagery and decide whether it's got a road in it that's far more than a linear classifier can do now we know these are deep neural networks and deep neural networks contain lots of these matrix multiplications but every matrix multiplication is just a linear model and a lot a linear function on top of a linear function is just another linear function if you remember back to your you know high school math you might remember that if you you know have a y equals ax plus B and then you stick another you know C Y plus D on top of that it's still just another slope and another intercept so no amount of stacking matrix multiplications is going to help in the slightest so what are these models actually what are we actually doing and here's the interesting thing all we're actually doing is we literally do have a matrix multiplication or a slight variation like a convolution that we'll learn about but after each one we do something called a non-linearity or an activation function an activation function is something that takes the result of that matrix multiplication and sticks it through some function and these are some of the functions that we use in the old days the most common function that we used to use was basically this shape these shapes are called sigmoid and they have you know particular mathematical definitions nowadays we almost never use those for these between H matrix multiply days where nearly always use this one it's called a rectified linear unit it's very important when you're doing deep learning to use big long words that sound impressive otherwise normal people might think they can do it too but just between you and me a rectified linear unit is defined using the following function that's it okay so and if you want to be really exclusive of course you then shorten the long version and you call it a rail you to show that you're really in the exclusive in the exclusive team so this is a rail you activation right so here's the crazy thing if you take your red green blue pixel inputs and you chuck them through a matrix modification and then you replace the negatives with zero and you put it through another matrix multiplication place negative zero and you keep doing that again and again and again you have a deep learning you're all networked that's it right so how the hell does that work so extremely cool guy called Michael Neilson and showed how this works he has a very nice website affecting more than a website it's a book neural networks and deep learning comm and he has these beautiful little JavaScript things where you can get to play around because this was back in the old days this was back when we used to use sigmoids right and what he shows is that if you have enough little these shows these little matrix multiplications if you have enough little matrix multiplications followed by sigmoids and there's exactly the same thing works for a matrix multiplication followed by over Lu you can actually create arbitrary shapes right and so this this this idea that these combinations of of linear functions and nonlinearities can create arbitrary shapes actually has a name and this name is the universal approximation theorem and what it says is that if you have stacks of linear functions and nonlinearities the thing you end up with can approximate any function arbitrarily closely so you just need to make sure that you have a big enough matrix to multiply by or enough of them so if you have you know now this this this this function which is just a sequence of matrix multiplies and nonlinearities where the nonlinearities can be you know basically any of these things we normally use this one if that can approximate anything then all you need is some way to find the particular values of the of the weight matrices in your matrix model place that solve the problem you want to solve and we already know how to find the values of parameters we can use gradient descent and so that's actually it right and this is the bit I find the hardest thing normally to explain to students is that we're actually done now people often come up to me after this lesson and they say what's the rest please explain to me the rest of deep learning but like no there's no rest like we have a function where we take our input pixels or whatever we multiply them by some weight matrix we replace the negatives with zeros we multiply it by another weight matrix replacing negative zeros we do that a few times we see how close it is to our target and then we use gradient descent to update our weight matrices using the derivatives and we do that a few times and eventually we end up with something that can classify movie reviews or can recognize pictures of reptile cats that that's actually it okay so it's it's the reason it's hard to understand intuitively is because we're talking about weight matrices that have you know once you read them all up something like a hundred million parameters they're very big weight matrices all right so your intuition about what multiplying something by a linear model and replacing the negatives of zeros a bunch of times can do your intuition doesn't hold right you just have to accept empirically the truth is doing that works really well so in part two of the course we're actually going to build these from scratch all right but I mean just to skip ahead you'll basically will find that you know it's going to be kind of five lines of code right it's going to be a little for loop that goes you know T equals you know X at weight matrix 1 T 2 equals max of T comma 0 stick that in a for loop that goes through which weight matrix and at the end calculate my loss function and of course we're not going to calculate the gradients ourselves because plate which does that for us and that's about it so yeah that's a good time ok question there's a question about tokenization I'm curious about how tokenizing words works when they depend on each other such as San Francisco yeah okay okay tokenization how do you tokenize something like san francisco san francisco contains two tokens san francisco that's it that's how you tokenized san francisco the question may be coming from people who have done like traditional NLP often need to kind of use these things called engrams and engrams are kind of this idea of like a lot of NLP in the old days was all built on top of linear models where you basically countered how many times particular strings of text appeared like the phrase san francisco that would be a bigram or an Engram with an ED of two the cool thing is that we're deep learning we don't have to worry about that like like with many things a lot of the complex feature engineering disappears when you do deep learning so with deep learning each token is literally just a word or in the case that the word really consists of two words like you're you split it into two words and then what we're going to do is we're going to then let the deep learning model figure out how best to combine words together now when we seed like let the big learning model figure it out of course all we really mean is find the weight matrices using gradient descent that gives the right answer like there's not really much more to it than that again there's some minor tweaks right in the second half of the course we're going to be learning about the particular tweak for image models which is using a convolution wcnn for language there's a particular tweak we do called using recurrent models or an RNN but they're very minor tweaks on on what we've just described so basically it turns out with an RNN that it it can learn that sand plus francisco has a different meaning when those two things are together some satellite images have four channels how can we deal with data that has four channels or channels when using pre-trained models yeah that's a good question I think that's something that we're going to try and incorporate into fast AI so hopefully by the time you watch this video there'll be easier ways to do this but the basic idea is a pre trained imagenet model expects a red green and blue pixels so if you've only got two channels there's a few things you can do but basically you'll want to create a third Channel and so you can create the third channel as either being all zeros or it could be the average of the other two channels and so you can just use you know normal PyTorch arithmetic to create that third channel you could either do that ahead of time in a little loop and save your three Channel versions or you could create a custom data set class that does that on demand for a four channel you probably don't want to get rid of the fourth Channel so instead what you'd have to do is to actually modify the model itself so to know how to do that we'll only know how to do that in a couple more lessons time but basically the idea is that the initial weight matrix weight matrix is really the wrong term they're not waiting matrices their weight tensors so they can have more than just two dimensions so that weight that initial weight matrix in the neural net it's going to have it's actually a tensor and one of its axes is going to have three three slices in it so you would just have to change that to add an extra slice which I would generally just initialize to zero or to some random numbers so that's the short version but really to answer this to understand exactly what I meant by that we're going to need a couple more lessons to get there okay so wrapping up what if we looked at today basically we started out by saying hey it's really easy now to create web apps we've got starter kits for you that show you how to create web apps and people have created some really cool web apps using what we've learnt so far which is single label classification but the cool thing is the exact same steps we use to do single label classification you can also do to do multi-label classification such as in the planet or you could use to do segmentation or you could use to do or you could use to do any kind of image regression or this is probably a bit early if you actually try this yet you could do for an LP classification and a lot more so and in each case all we're actually doing is we're doing gradient descent on not just two parameters but on maybe 100 million parameters but it still just plain gradient descent along with a non-linearity which is normally this one which it turns out the universal approximation theorem tells us lets us arbitrarily accurately approximate any given function including functions such as converting a spoken-- waveform into the thing the person was saying or converting a sentence in Japanese to a sentence in English while converting a picture of a dog into the word dog these are all mathematical functions that we can learn using this approach so this week see if you can come up with an interesting idea of a problem that you would like to solve which is either multi-label classification or regression or image segmentation something like that and see if you can try to solve that problem you will probably find the hardest part of solving that problem is coming up creating the data bunch and so then you'll need to dig into the data block API to try to figure out how to create the data bunch from the data you have and with some practice yeah you will start to get pretty good at that it's not a huge API there's a small number of pieces it's also very easy to add your own but for now you know ask on the forum if you try something and you get stuck okay great so next week we're going to come back and we're going to look at some more NLP we're going to learn some more about some details about how we actually train with SGD quickly we're going to learn about things like Adam and rmsprop and so forth and hopefully we're also going to show off lots of really cool web apps and models that you've all built during the week so I'll see you then. 
+We'll take a look inside each of those. 
+
+```
+fnames = get_image_files(path_img)
+fnames[:3]
+```
+
+```
+[PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/images/0016E5_08370.png'),
+ PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/images/Seq05VD_f04110.png'),
+ PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/images/0001TP_010170.png')]
+```
 
 
 
+```
+lbl_names = get_image_files(path_lbl)
+lbl_names[:3]
+```
+
+```
+[PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/labels/0016E5_01890_P.png'),
+ PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/labels/Seq05VD_f00330_P.png'),
+ PosixPath('/home/ubuntu/course-v3/nbs/dl1/data/camvid/labels/Seq05VD_f01140_P.png')]
+```
+
+You can see there's some kind of coded file names for the images and some kind of coded file names for the segment masks. Then you kind of have to figure out how to map from one to the other. Normally, these kind of datasets will come with a README you can look at or you can look at their website. 
+
+```python
+img_f = fnames[0]
+img = open_image(img_f)
+img.show(figsize=(5,5))
+```
+
+![](lesson3/c1.png)
+
+```python
+get_y_fn = lambda x: path_lbl/f'{x.stem}_P{x.suffix}'
+```
 
 
 
+Often it's obvious﹣in this case I just guessed. I thought it's probably the same thing `_P`, so I created a little function that basically took the filename and added the `_P` and put it in the different place (`path_lbl`) and I tried opening it and I noticed it worked.
+
+```python
+mask = open_mask(get_y_fn(img_f))
+mask.show(figsize=(5,5), alpha=1)
+```
+
+![](lesson3/c2.png)
+
+So I've created this little function that converts from the image file names to the equivalent label file names. I opened up that to make sure it works. Normally, we use `open_image` to open a file and then you can go `.show` to take a look at it, but as we described, this is not a usual image file that contains integers. So you have to use `open_masks` rather than `open_image` because we want to return integers not floats. Fastai knows how to deal with masks, so if you go `mask.show`, it will automatically color code it for you in some appropriate way. That's why we said `open_masks`. 
+
+```python
+src_size = np.array(mask.shape[1:])
+src_size,mask.data
+```
+
+```
+(array([720, 960]), tensor([[[30, 30, 30,  ...,  4,  4,  4],
+          [30, 30, 30,  ...,  4,  4,  4],
+          [30, 30, 30,  ...,  4,  4,  4],
+          ...,
+          [17, 17, 17,  ..., 17, 17, 17],
+          [17, 17, 17,  ..., 17, 17, 17],
+          [17, 17, 17,  ..., 17, 17, 17]]]))
+```
+
+We can kind of have a look inside look at the data see what the size is so there's 720 by 960. We can take a look at the data inside, and so forth. The other thing you might have noticed is that they gave us a file called `codes.txt` and a file called `valid.txt`.
+
+```python
+codes = np.loadtxt(path/'codes.txt', dtype=str); codes
+```
+
+```
+array(['Animal', 'Archway', 'Bicyclist', 'Bridge', 'Building', 'Car', 'CartLuggagePram', 'Child', 'Column_Pole',
+       'Fence', 'LaneMkgsDriv', 'LaneMkgsNonDriv', 'Misc_Text', 'MotorcycleScooter', 'OtherMoving', 'ParkingBlock',
+       'Pedestrian', 'Road', 'RoadShoulder', 'Sidewalk', 'SignSymbol', 'Sky', 'SUVPickupTruck', 'TrafficCone',
+       'TrafficLight', 'Train', 'Tree', 'Truck_Bus', 'Tunnel', 'VegetationMisc', 'Void', 'Wall'], dtype='<U17')
+```
+
+`code.txt` contains a list telling us that, for example, number 4 is`building`. Just like we had grizzlies, black bears, and teddies, here we've got the coding for what each one of these pixels means.
+
+#### Creating a data bunch [[1:05:53](https://youtu.be/PW2HKkzdkKY?t=3953)]
+
+To create a data bunch, we can go through the data block API and say:
+
+- We've got a list of image files that are in a folder 
+- We then need to split into training and validation. In this case I don't do it randomly because the pictures they've given us are frames from videos. If I did them randomly I would be having two frames next to each other: one in the validation set, one in the training set. That would be far too easy and treating. So the people that created this dataset actually gave us a list of file names (`valid.txt`) that are meant to be in your validation set and they are non-contiguous parts of the video. So here's how you can split your validation and training using a file name file.
+- We need to create labels which we can use that `get_y_fn` (get Y file name function) we just created .
+
+```python
+size = src_size//2
+bs=8
+```
+
+```python
+src = (SegmentationItemList.from_folder(path_img)
+       .split_by_fname_file('../valid.txt')
+       .label_from_func(get_y_fn, classes=codes))
+```
+
+From that, I can create my datasets. 
+
+So I actually have a list of class names. Often with stuff like the planet dataset or the pets dataset, we actually have a string saying this is a pug, this is a ragdoll, or this is a birman, or this is cloudy or whatever. In this case, you don't have every single pixel labeled with an entire string (that would be incredibly inefficient). They're each labeled with just a number and then there's a separate file telling you what those numbers mean. So here's where we get to tell the data block API this is the list of what the numbers mean. So these are the kind of parameters that the data block API gives you.
+
+
+```python
+data = (src.transform(get_transforms(), size=size, tfm_y=True)
+        .databunch(bs=bs)
+        .normalize(imagenet_stats))
+```
+
+Here's our transformations. Here's an interesting point. Remember I told you that, for example, sometimes we randomly flip an image? What if we randomly flip the independent variable image but we don't also randomly flip the target mask? Now I'm not matching anymore. So we need to tell fastai that I want to transform the Y (X is our independent variable, Y is our dependent)﹣I want to transform the Y as well. So whatever you do to the X, I also want you to do to the Y (`tfm_y=True`). There's all these little parameters that we can play with.
+
+I can create our data bunch. I'm using a smaller batch size (`bs=8`) because, as you can imagine, I'm creating a classifier for every pixel, that's going to take a lot more GPU right. I found a batch size of 8 is all I could handle. Then normalize in the usual way.
+
+```python
+data.show_batch(2, figsize=(10,7))
+```
+
+![](lesson3/c3.png)
+
+This is quite nice. Because fastai knows that you've given it a segmentation problem, when you call show batch, it actually combines the two pieces for you and it will color code the photo. Isn't that nice? So this is what the ground truth data looks.
+
+#### Training [[1:09:00](https://youtu.be/PW2HKkzdkKY?t=4140)]
+
+Once we've got that, we can go ahead and 
+
+- Create a learner. I'll show you some more details in a moment. 
+- Call `lr_find`, find the sharpest bit which looks about 1e-2.
+- Call `fit` passing in `slice(lr)` and see the accuracy.
+- Save the model.
+- Unfreeze and train a little bit more.
+
+That's the basic idea.  
+
+```python
+name2id = {v:k for k,v in enumerate(codes)}
+void_code = name2id['Void']
+
+def acc_camvid(input, target):
+    target = target.squeeze(1)
+    mask = target != void_code
+    return (input.argmax(dim=1)[mask]==target[mask]).float().mean()
+```
+
+```python
+metrics=acc_camvid
+# metrics=accuracy
+```
+
+```python
+learn = Learner.create_unet(data, models.resnet34, metrics=metrics)
+```
+
+```python
+lr_find(learn)
+learn.recorder.plot()
+```
 
 
 
+![](lesson3/c4.png)
+
+```
+lr=1e-2
+```
+
+```python
+learn.fit_one_cycle(10, slice(lr))
+```
+
+```
+Total time: 02:46
+epoch  train_loss  valid_loss  acc_camvid
+1      1.537235    0.785360    0.832015    (00:20)
+2      0.905632    0.677888    0.842743    (00:15)
+3      0.755041    0.759045    0.844444    (00:16)
+4      0.673628    0.522713    0.854023    (00:16)
+5      0.603915    0.495224    0.864088    (00:16)
+6      0.557424    0.433317    0.879087    (00:16)
+7      0.504053    0.419078    0.878530    (00:16)
+8      0.457378    0.371296    0.889752    (00:16)
+9      0.428532    0.347722    0.898966    (00:16)
+10     0.409673    0.341935    0.901897    (00:16)
+```
+
+```python
+learn.save('stage-1')
+```
+
+```python
+learn.load('stage-1');
+```
+
+```python
+learn.unfreeze()
+```
+
+```python
+lr_find(learn)
+learn.recorder.plot()
+```
+
+![](lesson3/c5.png)
+
+```python
+lrs = slice(1e-5,lr/5)
+```
+
+```python
+learn.fit_one_cycle(12, lrs)
+```
+
+```
+Total time: 03:36
+epoch  train_loss  valid_loss  acc_camvid
+1      0.399582    0.338697    0.901930    (00:18)
+2      0.406091    0.351272    0.897183    (00:18)
+3      0.415589    0.357046    0.894615    (00:17)
+4      0.407372    0.337691    0.904101    (00:18)
+5      0.402764    0.340527    0.900326    (00:17)
+6      0.381159    0.317680    0.910552    (00:18)
+7      0.368179    0.312087    0.910121    (00:18)
+8      0.358906    0.310293    0.911405    (00:18)
+9      0.343944    0.299595    0.912654    (00:18)
+10     0.332852    0.305770    0.911666    (00:18)
+11     0.325537    0.294337    0.916766    (00:18)
+12     0.320488    0.295004    0.916064    (00:18)
+```
+
+**Question**: Could you use unsupervised learning here (pixel classification with the bike example) to avoid needing a human to label a heap of images[[1:10:03](https://youtu.be/PW2HKkzdkKY?t=4203)]
+
+Not exactly unsupervised learning, but you can certainly get a sense of where things are without needing these kind of labels. Time permitting, we'll try and see some examples of how to do that. You're certainly not going to get as such a quality and such a specific output as what you see here though. If you want to get this level of segmentation mask, you need a pretty good segmentation mask ground truth to work with.
+
+**Question**: Is there a reason we shouldn’t deliberately make a lot of smaller datasets to step up from in tuning? let’s say 64x64, 128x128, 256x256, etc… [[1:10:51](https://youtu.be/PW2HKkzdkKY?t=4251)]
+
+Yes, you should totally do that. It works great. This idea, it's something that I first came up with in the course a couple of years ago and I thought it seemed obvious and just presented it as a good idea, then I later discovered that nobody had really published this before. And then we started experimenting with it. And it was basically the main tricks that we use to win the DAWNBench ImageNet training competition.
+
+Not only was this not standard, but nobody had heard of it before. There's been now a few papers that use this trick for various specific purposes but it's still largely unknown. It means that you can train much faster, it generalizes better. There's still a lot of unknowns about exactly how small, how big, and how much at each level and so forth. We call it "progressive resizing". I found that going much under 64 by 64 tends not to help very much. But yeah, it's a great technique and I definitely try a few a few different sizes.
+
+**Question**: [[1:12:35](https://youtu.be/PW2HKkzdkKY?t=4355)] What does accuracy mean for pixel wise segmentation? Is it 
+
+`#correctly classified pixels / #total number of pixels`?
+
+Yep, that's it. So if you imagined each pixel was a separate object you're classifying, it's exactly the same accuracy. So you actually can just pass in `accuracy` as your metric, but in this case, we actually don't. We've created a new metric called `acc_camvid` and the reason for that is that when they labeled the images, sometimes they labeled a pixel as `Void`. I'm not quite sure why but some of the pixels are `Void`. And in the CamVid paper, they say when you're reporting accuracy, you should remove the void pixels. So we've created a accuracy CamVid. so all metrics take the actual output of the neural net (i.e. that's the `input` to the metric) and the target (i.e. the labels we are trying to predict).
+
+![](lesson3/31.png)
+
+We then basically create a mask (we look for the places where the target is not equal to `Void`) and then we just take the input, do the `argmax` as per usual, but then we just grab those that are not equal to the void code. We do the same for the target and we take the mean, so it's just a standard accuracy. 
+
+It's almost exactly the same as the accuracy source code we saw before with the addition of this mask. This quite often happens. The particular Kaggle competition metric you're using or the particular way your organization scores things, there's often little tweaks you have to do. And this is how easy it is. As you'll see, to do this stuff, the main thing you need to know pretty well is how to do basic mathematical operations in PyTorch so that's just something you kind of need to practice.
+
+**Question**:  I've noticed that most of the examples and most of my models result in a training loss greater than the validation loss. What are the best ways to correct that? I should add that this still happens after trying many variations on number of epochs and learning rate. [[1:15:03](https://youtu.be/PW2HKkzdkKY?t=4503)]
+
+Remember from last week, if you're training loss is higher than your validation loss then you're **underfitting**. It definitely means that your underfitting. You want your training loss to be lower than your validation loss. If you're underfitting, you can:
+
+- Train for longer.
+- Train the last bit at a lower learning rate. 
+
+But if you're still under fitting, then you're going to have to decrease regularization. We haven't talked about that yet. In the second half of this part of the course, we're going to be talking quite a lot about regularization and specifically how to avoid overfitting or underfitting by using regularization. If you want to skip ahead, we're going to be learning about:
+
+- weight decay
+- dropout
+- data augmentation
+
+They will be the key things that are we talking about.
+
+### U-Net [[1:16:24](https://youtu.be/PW2HKkzdkKY?t=4584)]
+
+For segmentation, we don't just create a convolutional neural network. We can, but actually a architecture called U-Net turns out to be better.
+
+![](lesson3/u-net.png)
+
+This is what a U-Net looks like. This is from the [University website](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/) where they talk about the U-Net. So we'll be learning about this both in this part of the course and in part two if you do it. But basically this bit down on the left hand side is what a normal convolutional neural network looks like. It's something which starts with a big image and gradually makes it smaller and smaller until eventually you just have one prediction. What a U-Net does is it then takes that and makes it bigger and bigger and bigger again, and then it takes every stage of the downward path and copies it across, and it creates this U shape. 
+
+It's was originally actually created/published as a biomechanical image segmentation method. But it turns out to be useful for far more than just biomedical image segmentation. It was presented at MICCAI which is the main medical imaging conference, and as of just yesterday, it actually just became the most cited paper of all time from that conference. So it's been incredibly useful﹣over 3,000 citations.
+
+You don't really need to know any details at this stage. All you need to know is if you want to create a segmentation model, you want to be saying `Learner.create_unet` rather than `create_cnn`. But you pass it the normal stuff: their data bunch, architecture, and some metrics.
+
+Having done that, everything else works the same. 
+
+#### A little more about `learn.recorder` [[1:18:54](https://youtu.be/PW2HKkzdkKY?t=4734)]
+
+Here's something interesting. `learn.recorder` is where we keep track of what's going on during training. It's got a number nice methods one of which is plot losses.
 
 
-codes.txt - what the number means
 
-
-
-valid.txt - 
-
-
-
-tfm_y 
-
-
-
-show_batch
-
-
-
-BREAK
-
-
-
-Question: unsupervised learning?
-
-Question: 
-
-"progressive resizing"
-
-
-
-Question: 
-
-acc_camvid
-
-
-
-training loss > validation loss. Underfitting. Train for longer, last bit with lower learning rate. Decrease regularization. weight decay, dropout
-
-
-
-For segmentation 
-
-
-
-Unet! MICAI 3000 sitation
-
-https://twitter.com/ORonneberger/status/1059816543561891840
-
-
-
+```python
 learn.recorder.plot_losses()
+```
 
-plot_lr - fit one cycle
+![](lesson3/c6.png)
 
+```python
+learn.recorder.plot_lr()
+```
 
+![](lesson3/c7.png)
 
-Jose Fernandez Portal
+This plots your training loss and your validation loss. Quite often, they actually go up a bit before they go down. Why is that? That's because (you can also plot your learning rate over time and you'll see that) the learning rate goes up and then it goes down. Why is that? Because we said `fit_one_cycle`. That's what fit one cycle does. It actually makes the learning rate start low, go up, and then go down again.
 
+Why is that a good idea? To find out why that's a good idea, let's first of all look at [a really cool project]((https://forums.fast.ai/t/share-your-work-here/27676/300)) done by José Fernández Portal during the week. He took our gradient descent demo notebook and actually plotted the weights over time, not just the ground truth and model over time. He did it for a few different learning rates.
 
+Remember we had two weights we were doing basically <img src="https://latex.codecogs.com/gif.latex?y=ax&plus;b" title="y=ax+b" /> or in his nomenclature <img src="https://latex.codecogs.com/gif.latex?y=w_{0}x&plus;w_{1}" title="y=w_{0}x+w_{1}" />. 
 
-"Learning rate annealing"
 
-Leslie Smith
+We can actually look and see what happens to those weights over time. And we know this is the correct answer (marked with red X). A learning rate of 0.1, they're kind of like slides on in here and you can see that it takes a little bit of time to get to the right point. You can see the loss improving.
 
 
+![](lesson3/jose1.gif) 
 
-One Hundred Layers Tiramisu
 
 
+At a higher learning rate of 0.7, you can see that the model jumps to the ground truth really quickly. And you can see that the weights jump straight to the right place really quickly:
 
-Running out of memory a lot.
+![](lesson3/jose2.gif)
 
-Mixed precision training
 
-half precision floating point
 
-.to_fp16() when create learner. if kernel dies, old driver
+What if we have a learning rate that's really too high you can see it takes a very very long time to get to the right point:
 
+![](lesson3/jose4.gif)
 
 
-lesson3-head-pose.ipynb
 
+Or if it's really too high, it diverges:
 
+![](lesson3/jose5.gif)
 
-ImagePoints coordinates 
 
-Regression model
 
+So you can see why getting the right learning rate is important. When you get the right learning rate, it zooms into the best spot very quickly.
 
+Now as you get closer to the final spot, something interesting happens which is that you really want your learning rate to decrease because you're getting close to the right spot. 
 
-IMDB
+So what actually happens is (I can only draw 2d sorry), you don't generally have some kind of loss function surface that looks like that (remember there's lots of dimensions), but it actually tends to look bumpy like that. So you want a learning rate that's like high enough to jump over the bumps, but once you get close to the best answer, you don't want to be just jumping backwards and forwards between bumps. You want your learning rate to go down so that as you get closer, you take smaller and smaller steps. That's why it is that we want our learning rate to go down at the end.
 
-lesson3-imdb.ipynb
 
-fastai.text
 
+![](lesson3/whiteboard.gif)
 
 
-DataBunch.from_csv
 
+This idea of decreasing the learning rate during training has been around forever. It's just called **learning rate annealing**. But the idea of gradually increasing it at the start is much more recent and it mainly comes from a guy called Leslie Smith ([meetup with Leslie Smith](https://youtu.be/dxpyg3mP_rU)). 
 
+Loss function surfaces tend have flat areas and bumpy areas. If you end up in the bottom of a bumpy area, that solution will tend not to generalize very well because you've found a solution that's good in that one place but it's not very good in other places. Where else if you found one in the flat area, it probably will generalize well because it's not only good in that one spot but it's good to kind of around it as well.
 
-Question: https://forums.fast.ai/t/lesson-3-in-class-discussion/29733/333
+![](lesson3/whiteboard2.gif)
 
 
 
-stochastic (with mini batch) gradient descent
+If you have a really small learning rate, it'll tend to kind of plud down and stick in these places. But if you gradually increase the learning rate, then it'll kind of like jump down and as the learning rate goes up, it's going to start going up again like this. Then the learning rate is now going to be up here, it's going to be bumping backwards and forwards. Eventually the learning rate starts to come down again, and it'll tend to find its way to these flat areas.
 
+So it turns out that gradually increasing the learning rate is a really good way of helping the model to explore the whole function surface, and try and find areas where both the loss is low and also it's not bumpy. Because if it was bumpy, it would get kicked out again. This allows us to train at really high learning rates, so it tends to mean that we solve our problem much more quickly, and we tend to end up with much more generalizable solutions.
 
+### What you are looking for in `plot_losses` [[1:25:01](https://youtu.be/PW2HKkzdkKY?t=5101)]
 
-SAGAR SHARMA Activation Functions: Neural Networks
+If you call `plot_losses` and find that it's just getting a little bit worse and then it gets a lot better you've found a really good maximum learning rate.
 
+![](lesson3/c6.png)
 
+So when you actually call fit one cycle, you're not actually passing in a learning rate. You're actually passing in a maximum learning rate. if it's kind of always going down, particularly after you unfreeze, that suggests you could probably bump your learning rates up a little bit﹣because you really want to see this kind of shape. It's going to train faster and generalize better. You'll to tend to particularly see it in the validation set (the orange is the validation set). Again, the difference between kind of knowing this theory and being able to do it, is looking at lots of these pictures. So after you train stuff, type `learn.recorder.` and hit tab, and see what's in there﹣particularly the things that start with "plot" and start getting a sense of what are these pictures looking like when you're getting good results.  Then try making the learning rate much higher, try making it much lower, more epochs, less epochs, and get a sense for what these look like.
 
-Rectified Linear Unit = max(x, 0)
+#### Go big [[1:26:16](https://youtu.be/PW2HKkzdkKY?t=5176)]
 
+![](lesson3/33.png)
 
+In this case, we used  the size (in our transforms) of the `original image size/2`. These two slashes in Python means integer divide because obviously we can't have half pixel amounts in our sizes. We use the batch size of 8. Now I found that fits on my GPU, it might not fit on yours. If it doesn't, you can just decrease the batch size down to 4. 
 
-michael neilson
+This isn't really solving the problem because the problem is to segment all of the pixels﹣not half of the pixels. So I'm going to use the same trick that I did last time which is I'm now going to put the size up to the full size of the source images which means I now have to halve my batch size otherwise I'll run out of GPU memory.
 
+```python
+size = src_size
+bs=4
+```
 
+```python
+data = (src.transform(get_transforms(), size=size, tfm_y=True)
+        .databunch(bs=bs)
+        .normalize(imagenet_stats))
+```
 
-Universal approximation theorem
+```python
+learn = Learner.create_unet(data, models.resnet34, metrics=metrics)
+```
 
+```python
+learn.load('stage-2');
+```
 
+I can either say `learn.data = data` but I actually found it had a lot of trouble with GPU memory, so I generally restarted my kernel, came back here, created a new learner, and loaded up the weights that I saved last time.
 
-Question: tokenization San Francisco
+The key thing is that this learner now has the same weights that I had before, but the data is now the full image size.
 
-https://forums.fast.ai/t/lesson-3-in-class-discussion/29733/358?u=hiromi
+```python
+lr_find(learn)
+learn.recorder.plot()
+```
 
-Image model, CNN, recurrent model RNN, 
+![](lesson3/c8.png)
 
+```python
+lr=1e-3
+```
 
+```python
+learn.fit_one_cycle(10, slice(lr))
+```
 
-Question: satellite image 4 channel pretrained
+```
+Total time: 08:44
+epoch  train_loss  valid_loss  acc_camvid
+1      0.454597    0.349557    0.900428    (01:02)
+2      0.418897    0.351502    0.897495    (00:51)
+3      0.402104    0.330255    0.906775    (00:50)
+4      0.385497    0.313330    0.911832    (00:51)
+5      0.359252    0.297264    0.916108    (00:52)
+6      0.335910    0.297875    0.917553    (00:50)
+7      0.336133    0.305602    0.913439    (00:51)
+8      0.321016    0.305374    0.914063    (00:51)
+9      0.311554    0.299226    0.915997    (00:51)
+10     0.308389    0.301060    0.915253    (00:51)
+```
 
-2 channel: create a third channel with 0 or average of other two channels. do it ahead of time and save or custom 
+```python
+learn.save('stage-1-big')
+```
 
+```python
+learn.load('stage-1-big');
+```
 
+```python
+learn.unfreeze()
+```
 
-4 channel: modify the model itself. weight tensors . zeros or random versions. a couple more lessons.
+```python
+lrs = slice(1e-6,lr)
+```
 
+```python
+learn.fit_one_cycle(10, lrs, wd=1e-3)
+```
 
+```
+Total time: 09:30
+epoch  train_loss  valid_loss  acc_camvid
+1      0.323283    0.300749    0.915948    (00:56)
+2      0.329482    0.290447    0.918337    (00:56)
+3      0.324378    0.298494    0.920271    (00:57)
+4      0.316414    0.296469    0.918053    (00:56)
+5      0.305226    0.284694    0.920893    (00:57)
+6      0.301774    0.306676    0.914202    (00:57)
+7      0.279722    0.285487    0.919991    (00:57)
+8      0.269306    0.285219    0.920963    (00:57)
+9      0.260325    0.284758    0.922026    (00:57)
+10     0.251017    0.285375    0.921562    (00:57)
+```
 
-Wrapping up.
+```python
+learn.save('stage-2-big')
+```
 
-- started out with it's easy to make web apps! Single label classifications
-- multi-label classification such as planet. 
-- segmentation 
-- image regression
-- NLP classifications and a lot more
-- Gradient descent along with non linearity. Universal approximation theory tells
+```python
+learn.load('stage-2-big')
+```
 
-This week, see if you can come up with 
+```python
+learn.show_results()
+```
 
+![](lesson3/c9.png)
 
+You can go `learn.show_results()` to see how your predictions compare to the ground truth, and they really look pretty good.
 
-Next week, more NLP, SGD, Adam, RMSProp, webapps
+How good is pretty good? An accuracy of 92.15%, the best paper I know of for segmentation was a paper called [The One Hundred Layers Tiramisu](https://arxiv.org/abs/1611.09326) which developed a convolutional dense net came out about two years ago. After I trained this today, I went back and looked at the paper to find their state-of-the-art accuracy and their best was 91.5% and we got 92.1%. I don't know if better results have come out since this paper, but I remember when this paper came out and it was a really big deal. I said "wow, this this is an exceptionally good segmentation result." When you compare it to the previous bests that they compared it to it was a big step up.
 
+In last year's course, we spent a lot of time re-implementing the hundred layers tiramisu. Now with our totally default fastai class, and it's easily beating 91.5%. I also remember I had to train for hours and hours. Where else, today's version, I trained in minutes. So this is a super strong architecture for segmentation.
 
+I'm not going to promise that this is the definite state-of-the-art today, because I haven't done a complete literature search to see what's happened in the last two years. But it's certainly beating the world's best approach the last time I looked into this which was in last year's course basically. So these are all the little tricks we've picked up along the way in terms of how to train things well: things like using the pre-trained model and the one cycle convergence. All these little tricks they work extraordinarily well.
 
-https://forums.fast.ai/t/share-your-work-here/27676/300
+We actually haven't published the paper on the exact details of how this variation of the U-Net works﹣there's a few little tweaks we do, but if you come back for part 2, we'll be going into all of the details about how we make this work so well. But for you, all you have to know at this stage is that you can say `learner.create_unet` and you should get great results also.
 
+#### Another trick: Mixed precision training [[1:30:59](https://youtu.be/PW2HKkzdkKY?t=5459)]
 
+There's another trick you can use if you're running out of memory a lot which is you can actually do something called mixed precision training. Mixed precision training means that (for those of you that have done a little bit of computer science) instead of using single precision floating point numbers, you can do most of the calculations in your model with half precision floating point numbers﹣so 16 bits instead of 32 bits. The very idea of this has only been around for the last couple of years﹣in terms of like hardware that actually does this reasonably quickly. Then fastai library, I think, is the first and probably still the only that makes it actually easy to use this. 
 
+![](lesson3/34.png)
 
+If you add `to_fp16()` on the end of any learner call, you're actually going to get a model that trains in 16-bit precision. Because it's so new, you'll need to have the most recent CUDA drivers and all that stuff for this even to work. When I tried it this morning on some of the platforms, it just killed the kernel, so you need to make sure you've got the most recent drivers. If you've got a really recent GPU like 2080Ti, not only will it work, but it'll work about twice as fast as otherwise. The reason I'm mentioning it is that it's going to use less GPU RAM, so even if you don't have a 2080Ti, you'll probably find that things that didn't fit into your GPU without this do fit in. 
 
+I actually have never seen people use mixed precision floating point for segmentation before, just for a bit of a laugh I tried it and actually discovered that I got even better result. I only found this this morning so I don't have anything more to add here rather than quite often when you make things a little bit less precise in deep learning, it generalizes a little bit better.  I've never seen a 92.5% accuracy on CamVid before, so not only will this be faster, you'll be able to use bigger batch sizes, but you might even find like I did that you get an even better result. So that's a cool little trick.
+
+You just need to make sure that every time you create a learner you add at this `to_fp16()`. If your kernel dies, it probably means you have slightly out of date CUDA drivers or maybe even a too old graphics card I'm not sure exactly which cards support FP16.
+
+## Regression with BIWI head pose dataset [[1:34:03](https://youtu.be/PW2HKkzdkKY?t=5643)]
+
+[lesson3-head-pose.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson3-head-pose.ipynb)
+
+Two more before we kind of rewind. The first one I'm going to show you is an interesting data set called the [BIWI head pose dataset](https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html#db). Gabriele Fanelli was kind enough to give us permission to use this in the class. His team created this cool dataset.
+
+![](lesson3/b1.png)
+
+Here's what the data set looks like. It's actually got a few things in it. We're just going to do a simplified version, and one of the things they do is they have a dot saying this is the center of the face. So we're going to try and create a model that can find this ever face.
+
+```python
+%reload_ext autoreload
+%autoreload 2
+%matplotlib inline
+```
+
+```python
+from fastai import *
+from fastai.vision import *
+```
+
+For this dataset, there's a few dataset specific things we have to do which I don't really even understand but I just know from the readme that you have to. They use some kind of depth sensing camera, I think they actually use Xbox Kinect. 
+
+```python
+path = untar_data(URLs.BIWI_HEAD_POSE)
+```
+
+There's some kind of calibration numbers that they provide in a little file which I had to read in:
+
+```python
+cal = np.genfromtxt(path/'01'/'rgb.cal', skip_footer=6); cal
+```
+
+```
+array([[517.679,   0.   , 320.   ],
+       [  0.   , 517.679, 240.5  ],
+       [  0.   ,   0.   ,   1.   ]])
+```
+
+```python
+fname = '09/frame_00667_rgb.jpg'
+```
+
+```python
+def img2txt_name(f): return path/f'{str(f)[:-7]}pose.txt'
+```
+
+```python
+img = open_image(path/fname)
+img.show()
+```
+
+![](lesson3/b0.png)
+
+
+```python
+ctr = np.genfromtxt(img2txt_name(fname), skip_header=3); ctr
+```
+```
+array([187.332 ,  40.3892, 893.135 ])
+```
+Then they provided a little function that you have to use to take their coordinates to change it from this depth sensor calibration thing to end up with actual coordinates.
+```python
+def convert_biwi(coords):
+    c1 = coords[0] * cal[0][0]/coords[2] + cal[0][2]
+    c2 = coords[1] * cal[1][1]/coords[2] + cal[1][2]
+    return tensor([c2,c1])
+
+def get_ctr(f):
+    ctr = np.genfromtxt(img2txt_name(f), skip_header=3)
+    return convert_biwi(ctr)
+
+def get_ip(img,pts): return ImagePoints(FlowField(img.size, pts), scale=True)
+```
+
+
+So when you open this and you see these conversion routines, I'm just doing what they told us to do basically. It's got nothing particularly to do with deep learning to end up with this red dot.
+
+```
+get_ctr(fname)
+```
+
+```
+tensor([263.9104, 428.5814])
+```
+
+```
+ctr = get_ctr(fname)
+img.show(y=get_ip(img, ctr), figsize=(6, 6))
+```
+
+![](lesson3/b1.png)
+
+The interesting bit really is where we create something which is not an image or an image segment but an image points. We'll mainly learn about this later in the course, but basically image points use this idea of coordinates. They're not pixel values, they're XY coordinates (just two numbers).
+
+Here's an example for a particular image file name (`09/frame_00667_rgb.jpg`). The coordinates of the centre of the face are `[263.9104, 428.5814]`. So there's just two numbers which represent whereabouts on this picture is the center of the face. So if we're going to create a model that can find the center of a face, we need a neural network that spits out two numbers. But note, this is not a classification model. These are not two numbers that you look up in a list to find out that they're road or building or ragdoll cat or whatever. They're actual locations.
+
+So far, everything we've done has been a classification model﹣something that created labels or classes. This, for the first time, is what we call a regression model. A lot of people think regression means linear regression, it doesn't. Regression just means any kind of model where your output is some continuous number or set of numbers. So we need to create an image regression model (i.e. something that can predict these two numbers). How do you do that? Same way as always.
+
+```python
+data = (ImageItemList.from_folder(path)
+        .split_by_valid_func(lambda o: o.parent.name=='13')
+        .label_from_func(get_ctr, label_cls=PointsItemList)
+        .transform(get_transforms(), tfm_y=True, size=(120,160))
+        .databunch().normalize(imagenet_stats)
+       )
+```
+
+We can actually just say:
+
+- I've got a list of image files.
+- It's in a folder.
+- I'm going to split it according to some function. So in this case, the files they gave us are from videos. So I picked just one folder (`13`) to be my validation set (i.e. a different person). So again, I was trying to think about how do I validate this fairly, so I said the the fair validation would be to make sure that it works well on a person that it's never seen before. So my validation set is all going to be a particular person.
+- I want to label them using this function that we wrote that basically does the stuff that the readme says to grab the coordinates out of their text files. So that's going to give me the two numbers for every one.
+- Create a dataset. This data set, I just tell it what kind of data set it is ﹣ they're going to be a set of points of specific coordinates.
+- Do some transforms. Again, I have to say `tfm_y=True` because that red dot needs to move if I flip or rotate or warp.
+- Pick some size. I just picked a size that's going to work pretty quickly.
+- Create a data bunch.
+- Normalize it.
+
+```python
+data.show_batch(3, figsize=(9,6)
+```
+
+![](lesson3/b2.png)
+
+I noticed that their red dots don't always seem to be quite in the middle of the face. I don't know exactly what their internal algorithm for putting dots on. It sometimes looks like it's meant to be the nose, but sometimes it's not quite the nose. Anyway it's somewhere around the center of the face or the nose.
+
+#### Create a regression model [[1:38:59](https://youtu.be/PW2HKkzdkKY?t=5939)]
+
+So how do we create a model? We create a CNN. We're going to be learning a lot about loss functions in the next few lessons, but basically the loss function is that number that says how good is the model. For classification, we use this loss function called cross-entropy loss which says basically "did you predict the correct class and were you confident of that prediction?" We can't use that for regression, so instead we use something called mean squared error. If you remember from last lesson, we actually implemented mean squared error from scratch. It's just the difference between the two, squared, and added up together. 
+
+```python
+learn = create_cnn(data, models.resnet34)
+learn.loss_func = MSELossFlat()
+```
+
+So we need to tell it this is not classification so we have to use mean squared error. 
+
+```
+learn.lr_find()
+learn.recorder.plot()
+```
+![](lesson3/b3.png)
+
+```
+lr = 2e-2
+```
+
+```
+learn.fit_one_cycle(5, slice(lr))
+```
+
+```
+Total time: 07:28
+epoch  train_loss  valid_loss
+1      0.043327    0.010848    (01:34)
+2      0.015479    0.001792    (01:27)
+3      0.006021    0.001171    (01:28)
+4      0.003105    0.000521    (01:27)
+5      0.002425    0.000381    (01:29)
+```
+
+Once we've created the learner, we've told it what loss function to use, we can go ahead and do `lr_find`, then `fit` and you can see here within a minute and a half our mean squared error is 0.0004.
+
+The nice thing is about mean squared error, that's very easy to interpret. We're trying to predict something which is somewhere around a few hundred, and we're getting a squared error on average of 0.0004. So we can feel pretty confident that this is a really good model. Then we can look at the results:
+
+```
+learn.show_results()
+```
+
+![](lesson3/b4.png)
+
+It's doing nearly perfect job. That's how you can do image regression models. Anytime you've got something you're trying to predict which is some continuous value, you use an approach that's something like this.
+
+### IMDB [[1:41:07](https://youtu.be/PW2HKkzdkKY?t=6067)]
+
+[lesson3-imdb.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson3-imdb.ipynb)
+
+Last example before we look at more foundational theory stuff, NLP. Next week, we're going to be looking at a lot more NLP, but let's now do the same thing but rather than creating a classification of pictures, let's try and classify documents. We're going to go through this in a lot more detail next week, but let's do the quick version.
+
+```
+%reload_ext autoreload
+%autoreload 2
+%matplotlib inline
+```
+
+```python
+from fastai import *
+from fastai.text import *
+```
+
+Rather than importing from `fastai.vision`, I now import, for the first time, from `fastai.text`. That's where you'll find all the application specific stuff for analyzing text documents.
+
+In this case, we're going to use a dataset called IMDB. IMDB has lots of movie reviews. They're generally about a couple of thousand words, and each movie review has been classified as either negative or positive.
+
+```python
+path = untar_data(URLs.IMDB_SAMPLE)
+path.ls()
+```
+
+```
+[PosixPath('/home/jhoward/.fastai/data/imdb_sample/texts.csv'),
+ PosixPath('/home/jhoward/.fastai/data/imdb_sample/models')]
+```
+
+ It's just in a CSV file, so we can use pandas to read it and we can take a little look.
+
+```python
+df = pd.read_csv(path/'texts.csv')
+df.head()
+```
+
+|      | label    | text                                              | is_valid |
+| ---- | -------- | ------------------------------------------------- | -------- |
+| 0    | negative | Un-bleeping-believable! Meg Ryan doesn't even ... | False    |
+| 1    | positive | This is a extremely well-made film. The acting... | False    |
+| 2    | negative | Every once in a long while a movie will come a... | False    |
+| 3    | positive | Name just says it all. I watched this movie wi... | False    |
+| 4    | negative | This movie succeeds at being one of the most u... | False    |
+
+```
+df['text'][1]
+```
+
+```
+'This is a extremely well-made film. The acting, script and camera-work are all first-rate. The music is good, too, though it is mostly early in the film, when things are still relatively cheery. There are no really superstars in the cast, though several faces will be familiar. The entire cast does an excellent job with the script.<br /><br />But it is hard to watch, because there is no good end to a situation like the one presented. It is now fashionable to blame the British for setting Hindus and Muslims against each other, and then cruelly separating them into two countries. There is some merit in this view, but it\'s also true that no one forced Hindus and Muslims in the region to mistreat each other as they did around the time of partition. It seems more likely that the British simply saw the tensions between the religions and were clever enough to exploit them to their own ends.<br /><br />The result is that there is much cruelty and inhumanity in the situation and this is very unpleasant to remember and to see on the screen. But it is never painted as a black-and-white case. There is baseness and nobility on both sides, and also the hope for change in the younger generation.<br /><br />There is redemption of a sort, in the end, when Puro has to make a hard choice between a man who has ruined her life, but also truly loved her, and her family which has disowned her, then later come looking for her. But by that point, she has no option that is without great pain for her.<br /><br />This film carries the message that both Muslims and Hindus have their grave faults, and also that both can be dignified and caring people. The reality of partition makes that realisation all the more wrenching, since there can never be real reconciliation across the India/Pakistan border. In that sense, it is similar to "Mr & Mrs Iyer".<br /><br />In the end, we were glad to have seen the film, even though the resolution was heartbreaking. If the UK and US could deal with their own histories of racism with this kind of frankness, they would certainly be better off.'
+```
+
+Basically as per usual, we can either use factory methods or the data block API to create a data bunch. So here's the quick way to create a data bunch from a CSV of texts:
+
+```python
+data_lm = TextDataBunch.from_csv(path, 'texts.csv')
+```
+
+
+
+At this point I could create a learner and start training it, but we're going to show you a little bit more detail which we mainly going to look at next week. The steps that actually happen when you create these data bunches, there's a few steps:
+
+1. **Tokenization**: it takes those words and converts them into a standard form of tokens. Basically each token represents a word.
+
+   ![](lesson3/35.png)
+
+   But it does things like, see how "didn't" has been turned here into two separate words (`did` and `n't`)? And everything has been lowercased. See how "you're" has been turned into two separate words (`you` and `'re`)? So tokenization is trying to make sure that each "token" (i.e. each thing that we've got with spaces around it) represents a single linguistic concept. Also it finds words that are really rare (e.g. really rare names) and replaces them with a special token called unknown (`xxunk`). Anything's starting with `xx` in fastai is some special token. This is tokenization, so we end up with something where we've got a list of tokenized words. You'll also see that things like punctuation end up with spaces around them to make sure that they're separate tokens.
+
+2. **Numericalization**: The next thing we do is we take a complete unique list of all of the possible tokens﹣ that's called the `vocab` which gets created for us.
+
+   ```python
+   data.vocab.itos[:10]
+   ```
+
+   ```
+   ['xxunk', 'xxpad', 'the', ',', '.', 'and', 'a', 'of', 'to', 'is']
+   ```
+
+   So here is every possible token (the first ten of them) that appear in our all of the movie reviews. We then replace every movie review with a list of numbers.
+
+   ```python
+   data.train_ds[0][0].data[:10]
+   ```
+
+   ```
+   array([ 43,  44,  40,  34, 171,  62,   6, 352,   3,  47])
+   ```
+
+   The list of numbers simply says what numbered thing in the vocab is in this place. 
+
+So through tokenization and numericalization, this is the standard way in NLP of turning a document into a list of numbers.
+
+We can do that with the data block API:
+
+```
+data = (TextList.from_csv(path, 'texts.csv', cols='text')
+                .split_from_df(col=2)
+                .label_from_df(cols=0)
+                .databunch())
+```
+
+ This time, it's not ImageFilesList, it's TextList from a CSV and create a data bunch. At that point, we can start to create a model.
+
+As we learn about next week, when we do NLP classification, we actually create two models:
+
+1. The first model is something called a **language model** which we train in a kind of a usual way.
+
+   ```python
+   learn = language_model_learner(data_lm, pretrained_model=URLs.WT103, drop_mult=0.3)
+   ```
+
+   We say we want to create a language model learner, train it, save it, and we unfreeze, train some more. 
+
+2. After we've created a language model, we fine-tune it to create the **classifier**. We create the data bunch of the classifier, create a learner, train it and we end up with some accuracy.
+
+That's the really quick version. We're going to go through it in more detail next week, but you can see the basic idea of training and NLP classifier is very similar to creating every other model we've seen so far. The current state of the art for IMDB classification is actually the algorithm that we built and published with colleague named Sebastian Ruder and what I just showed you is pretty much the state of the art algorithm with some minor tweaks. You can get this up to about 95% if you try really hard. So this is very close to the state of the art accuracy that we developed.
+
+
+
+Question:  For a dataset very different than ImageNet like the satellite images or genomic images shown in lesson 2, we should use our own stats.
+
+Jeremy once said:
+
+> If you’re using a pretrained model you need to use the same stats it was trained with.
+
+Why it is that? Isn’t it that, normalized dataset with its own stats will have roughly the same distribution like ImageNet? The only thing I can think of, which may differ is skewness. Is it the possibility of skewness or something else the reason of your statement? And does that mean you don’t recommend using pre-trained model with very different dataset like the one-point mutation that you showed us in lesson 2? [[1:46:53](https://youtu.be/PW2HKkzdkKY?t=6413)]
+
+Nope. As you can see, I've used pre-trained models for all of those things. Every time I've used an ImageNet pre-trained model, I've used ImageNet stats. Why is that? Because that model was trained with those stats. For example, imagine you're trying to classify different types of green frogs. If you were to use your own per-channel means from your dataset, you would end up converting them to a mean of zero, a standard deviation of one for each of your red, green, and blue channels. Which means they don't look like green frogs anymore. They now look like grey frogs. But ImageNet expects frogs to be green. So you need to normalize with the same stats that the ImageNet training people normalized with. Otherwise the unique characteristics of your dataset won't appear anymore﹣you've actually normalized them out in terms of the per-channel statistics. So you should always use the same stats that the model was trained with.
+
+In every case, what we're doing here is we're using gradient descent with mini batches (i.e. stochastic gradient descent) to fit some parameters of a model. And those parameters are parameters to matrix multiplications. The second half of this part, we're actually going to learn about a little tweak called convolutions, but it's basically a type of matrix multiplication. 
+
+The thing is though, no amount of matrix multiplications is possibly going to create something that can read IMDB movie reviews and decide if it's positive or negative or look at satellite imagery and decide whether it's got a road in it﹣that's far more than a linear classifier can do. Now we know these are deep neural networks. Deep neural networks contain lots of these matrix multiplications, but every matrix multiplication is just a linear model. A linear function on top of a linear function is just another linear function. If you remember back to your high school math, you might remember that if you have a <img src="https://latex.codecogs.com/gif.latex?y&space;=&space;ax&space;&plus;&space;b" title="y = ax + b" /> and then you stick another<img src="https://latex.codecogs.com/gif.latex?cy&space;&plus;&space;d" title="cy + d" /> on top of that, it's still just another slope and another intercept. So no amount of stacking matrix multiplications is going to help in the slightest. 
+
+So what are these models actually? What are we actually doing? And here's the interesting thing﹣all we're actually doing is we literally do have a matrix multiplication (or a slight variation like a convolution that we'll learn about) but after each one, we do something called a non-linearity or an **activation function**. An activation function is something that takes the result of that matrix multiplication and sticks it through some function. These are some of the functions that we use ([by Sagar Sharma](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)):
+
+![](lesson3/sagar.png)
+
+
+
+In the old days, the most common function that we used to use was **sigmoid**. And they have particular mathematical definitions. Nowadays, we almost never use those for these between each matrix multiply. Nowadays, we nearly always use this one﹣it's called a **rectified linear unit**. It's very important, when you're doing deep learning, to use big long words that sound impressive. Otherwise normal people might think they can do it too 😆 But just between you and me,  a rectified linear unit is defined using the following function:
+
+```python
+max(x, 0)
+```
+
+
+
+That's it. And if you want to be really exclusive, of course, you then shorten the long version and you call it a ReLU to show that you're really in the exclusive team. So this is a ReLU activation.
+
+Here's the crazy thing. If you take your red green blue pixel inputs, and you chuck them through a matrix modification, and then you replace the negatives with zero, and you put it through another matrix modification, replace the negatives at zero, and you keep doing that again and again, you have a deep learning neural network. That's it. 
+
+#### Universal approximation theorem [[1:52:27](https://youtu.be/PW2HKkzdkKY?t=6747)]
+
+So how the heck does that work? An extremely cool guy called Michael Nielsen showed how this works. He has a very nice website (actually a book) http://neuralnetworksanddeeplearning.com and he has these beautiful little JavaScript things where you can get to play around. Because this was back in the old days, this was back when we used to use sigmoids. What he shows is that if you have enough little matrix multiplications followed by sigmoids (exactly the same thing works for a matrix multiplication followed by a ReLU), you can actually create arbitrary shapes. So this idea that these combinations of  linear functions and nonlinearities can create arbitrary shapes actually has a name and this name is the universal approximation theorem. 
+
+What it says is that if you have stacks of linear functions and nonlinearities, the thing you end up with can approximate any function arbitrarily closely. So you just need to make sure that you have a big enough matrix to multiply by or enough of them. If you have this function which is just a sequence of matrix multiplies and nonlinearities where the nonlinearities can be basically any of these activation functions, if that can approximate anything, then all you need is some way to find the particular values of the weight matrices in your matrix multiplies that solve the problem you want to solve. We already know how to find the values of parameters. We can use gradient descent. So that's actually it. 
+
+And this is the bit I find the hardest thing normally to explain to students is that we're actually done now. People often come up to me after this lesson and they say "what's the rest? Please explain to me the rest of deep learning." But no, there's no rest. We have a function where we take our input pixels or whatever, we multiply them by some weight matrix, we replace the negatives with zeros, we multiply it by another weight matrix, replace the negative zeros, we do that a few times. We see how close it is to our target and then we use gradient descent to update our weight matrices using the derivatives, and we do that a few times. And eventually, we end up with something that can classify movie reviews or can recognize pictures of ragdoll cats. That's actually it.
+
+The reason it's hard to understand intuitively is because we're talking about weight matrices that have (once you add them all up) something like a hundred million parameters. They're very big weight matrices. So your intuition about what multiplying something by a linear model and replacing the negative zeros a bunch of times can do, your intuition doesn't hold. You just have to accept empirically the truth is doing that works really well.
+
+In part two of the course, we're actually going to build these from scratch. But just to skip ahead, you basically will find that it's going to be five lines of code. It's going to be a little for loop that goes `t = x @ w1 ` , `t2 = max(t, 0)` , stick that in a for loop that goes through each weight matrix, and at the end calculate my loss function. Of course, we're not going to calculate the gradients ourselves because PyTorch does that for us. And that's about it.
+
+**Question**: There's a question about tokenization. I'm curious about how tokenizing words works when they depend on each other such as San Francisco. [[1:56:45](https://youtu.be/PW2HKkzdkKY?t=7005)]
+
+How do you tokenize something like San Francisco. San Francisco contains two tokens `San` `Francisco`. That's it. That's how you tokenize San Francisco. The question may be coming from people who have done traditional NLP which often need to use these things called n-grams. N-rams are this idea of a lot of NLP in the old days was all built on top of linear models where you basically counted how many times particular strings of text appeared like the phrase San Francisco. That would be a bigram for an n-gram with an n of 2. The cool thing is that with deep learning, we don't have to worry about that. Like with many things, a lot of the complex feature engineering disappears when you do deep learning. So with deep learning, each token is literally just a word (or in the case that the word really consists of two words like `you're` you split it into two words) and then what we're going to do is we're going to then let the deep learning model figure out how best to combine words together. Now when we see like let the beep learning model figure it out, of course all we really mean is find the weight matrices using gradient descent that gives the right answer. There's not really much more to it than that. 
+
+Again, there's some minor tweaks. In the second half of the course, we're going to be learning about the particular tweak for image models which is using a convolution that'll be a CNN, for language there's a particular tweak we do called using recurrent models or an RNN, but they're very minor tweaks on what we've just described. S o basically it turns out with an RNN, that it can learn that `San` plus `Francisco` has a different meaning when those two things are together.
+
+**Question**: Some satellite images have 4 channels. How can we deal with data that has 4 channels or 2 channels when using pre-trained models? [[1:59:09](https://youtu.be/PW2HKkzdkKY?t=7149)]  
+
+I think that's something that we're going to try and incorporate into fast AI. So hopefully, by the time you watch this video, there'll be easier ways to do this. But the basic idea is a pre-trained ImageNet model expects a red green and blue pixels. So if you've only got two channels, there's a few things you can do but basically you'll want to create a third channel. You can create the third channel as either being all zeros, or it could be the average of the other two channels. So you can just use you know normal PyTorch arithmetic to create that third channel. You could either do that ahead of time in a little loop and save your three channel versions, or you could create a custom dataset class that does that on demand. 
+
+For 4 channel, you probably don't want to get rid of the 4th channel. So instead, what you'd have to do is to actually modify the model itself. So to know how to do that, we'll only know how to do in a couple more lessons time. But basically the idea is that the initial weight matrix (weight matrix is really the wrong term, they're not weight matrices; their weight tensors so they can have more than just two dimensions), so that initial weight tensor in the neural net, one of its axes is going to have three slices in it. So you would just have to change that to add an extra slice, which I would generally just initialize to zero or to some random numbers. So that's the short version. But really to understand exactly what I meant by that, we're going to need a couple more lessons to get there.
+
+
+
+#### Wrapping up [[2:01:19](https://youtu.be/PW2HKkzdkKY?t=7279)]
+
+What have we looked at today? We started out by saying it's really easy now to create web apps. We've got starter kits for you that show you how to create web apps, and people have created some really cool web apps using what we've learned so far which is single label classification. 
+
+But the cool thing is the exact same steps we use to do single label classification, you can also do to do:
+
+- Multi-label classification such as in the planet
+- Image segmentation
+- Any kind of image regression
+- NLP classification
+-  and a lot more
+
+In each case, all we're actually doing is:
+
+- Gradient descent 
+- Non-linearity
+
+Universal approximation theorem tells us it lets us arbitrarily accurately approximate any given function including functions such as:
+
+- Converting a spoken waveform into the thing the person was saying
+- Converting a sentence in Japanese to a sentence in English
+- Converting a picture of a dog into the word dog 
+
+These are all mathematical functions that we can learn using this approach. 
+
+So this week, see if you can come up with an interesting idea of a problem that you would like to solve which is either multi-label classification, image regression, image segmentation, or something like that and see if you can try to solve that problem. You will probably find the hardest part of solving that problem is creating the data bunch and so then you'll need to dig into the data block API to try to figure out how to create the data bunch from the data you have. With some practice, you will start to get pretty good at that. It's not a huge API. There's a small number of pieces. It's also very easy to add your own, but for now, ask on the forum if you try something and you get stuck.
+
+Next week, we're going to come back and we're going to look at some more NLP. We're going to learn some more about some details about how we actually train with SGD quickly. We're going to learn about things like Adam and RMSProp and so forth. Snd hopefully, we're also going to show off lots of really cool web apps and models that you've all built during the week, so I'll see you then Thanks!
