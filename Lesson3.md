@@ -1,6 +1,6 @@
 # Lesson 3
 
-[Video](https://youtu.be/PW2HKkzdkKY)
+[Video](https://youtu.be/PW2HKkzdkKY) / [Lesson Forum](https://forums.fast.ai/t/lesson-3-official-resources-and-updates/29732)
 
 A quick correction on citation. This chart originally cane from Andrew Ng's excellent machine learning course on Coursera. Apologies for the incorrect citation. 
 
