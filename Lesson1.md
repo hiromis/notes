@@ -344,9 +344,9 @@ We will get to all these details but the key thing is I wanted to get to trainin
 
 ### It is important to look at the data
 
-One of the most important thing to be a really good practitioner is to be able to look at your data. So it's really important to remember to go `data.show_batch` and take a look. It's surprising how often when you actually look at the dataset you've been given that you realize it's got weird black borders on it, some of the things have text covering up some of it, or some of it is rotated in odd ways. So make you take a look.
+One of the most important thing to be a really good practitioner is to be able to look at your data. So it's really important to remember to go to `data.show_batch` and take a look. It's surprising how often when you actually look at the dataset you've been given that you realize it's got weird black borders on it, some of the things have text covering up some of it, or some of it is rotated in odd ways. So make sure you take a look.
 
-The other thing we want to do at is to look at the labels. All of the possible label names are called your classes. With DataBunch, you can print out your `data.classes`.
+The other thing we want to do is to look at the labels. All of the possible label names are called your classes. With DataBunch, you can print out your `data.classes`.
 
 ```python
 print(data.classes)
