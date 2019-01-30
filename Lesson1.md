@@ -335,7 +335,7 @@ If your data is not normalized, it can be quite difficult for your model to trai
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
 **Question**: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
 
-The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2*2*2*2*2), then you end up with something that's a good size.
+The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2^5), then you end up with something that's a good size.
 
 
 [[33:27](https://youtu.be/BWWm4AzsdLk?t=2007)]
