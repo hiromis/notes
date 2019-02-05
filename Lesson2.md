@@ -393,7 +393,7 @@ top_loss_paths = data.valid_ds.x[idxs]
 fd = FileDeleter(file_paths=top_loss_paths)
 ```
 
-![](/Users/hiromi/git/notes/lesson2/16.png)
+![](lesson2/16.png)
 
 So we run FileDeleter passing in that sorted list of paths and so what pops up is basically the same thing as `plot_top_losses`. In other words, these are the ones which is either wrong about or least confident about. So not surprisingly, this one her (the second from left) does not appear to be a teddy bear, black bear, or grizzly bear. So this shouldn't be in our dataset. So what I do is I wack on the delete button, all the rest do look indeed like bears, so I can click confirm and it'll bring up another five. 
 
