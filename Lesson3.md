@@ -698,7 +698,7 @@ They're the steps. We invented this API. I don't know if other people have indep
 
 Of course, you can then look at the source code if you've got some totally new application. You could create your own "part" of any of these stages. Pretty much all of these functions are very few lines of code. Maybe we could look an example of one. Let's try.
 
-![](/Users/hiromi/git/notes/lesson3/28.png)
+![](lesson3/28.png)
 
 You can look at the documentation to see exactly what that does. As you can see, most fastai functions are no more than a few lines of code. They're normally pretty straightforward to see what are all the pieces there and how can you use them. It's probably one of these things that, as you play around with it, you'll get a good sense of how it all gets put together. But if during the week there are particular things where you're thinking I don't understand how to do this please let us know and we'll try to help you.
 
@@ -769,7 +769,7 @@ learn.recorder.plot()
 ```
 
 
-![](/Users/hiromi/git/notes/lesson3/n3.png)
+![](lesson3/n3.png)
 
 Because I actually now have a pretty good model (it's pretty good for 128 by 128 so it's probably gonna be like at least okay for 256 by 256), I don't get that same sharp shape that I did before. But I can certainly see where it's way too high. So I'm gonna pick something well before where it's way too high. Again maybe 10x smaller. So here I'm gonna go `1e-2/2` ﹣ that seems well before it shoots up. 
 
@@ -825,7 +825,7 @@ Train a little bit more. 0.9314 so that's actually pretty good﹣somewhere aroun
 learn.recorder.plot_losses()
 ```
 
-![](/Users/hiromi/git/notes/lesson3/n4.png)
+![](lesson3/n4.png)
 
 ```python
 learn.save('stage-2-256-rn50') 
