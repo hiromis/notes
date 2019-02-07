@@ -1,0 +1,24 @@
+
+# install build tools:
+
+- prince: https://www.princexml.com/download/
+- pandoc: https://pandoc.org/installing.html
+
+# clone repo
+git clone https://github.com/hiromis/notes
+cd notes
+
+# make pdfs in 2 stages (pandoc fails to create pdfs directly on most Lesson*md files)
+for f in *.md; do \
+pandoc -s $f -o ${f%.md}.html; \
+prince -s pdf/build/prince.css --no-author-style -o ${f%.md}.pdf ${f%.md}.html;
+done
+
+adjust the path to ../prince.css, depending on where you are - can put it together with *mds then just ./prince.css
+
+# combine into one (needs java8) (optional)
+# install pdfsam: https://pdfsam.org/downloads/
+# combine:
+# JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 pdfsam
+# load the Lesson*pdf and merge them
+

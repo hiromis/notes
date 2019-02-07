@@ -1,0 +1,11 @@
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@page {
+/*  prince-shrink-to-fit: auto;*/
+  margin: 1cm;
+}
+
