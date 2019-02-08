@@ -8,6 +8,6 @@ Recommended workflow:
 
 watch lesson videos (multiple times)
 
-read / workthough main lesson notes
+read / workthrough main lesson notes
 
 refer back to individual topics for a refresh
