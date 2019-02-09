@@ -71,7 +71,7 @@ So that's what the U-Net's downsampling path (the left half is called the downsa
 learn.summary()
 ```
 
-```
+'''
 ======================================================================
 Layer (type)         Output Shape         Param #    Trainable
 ======================================================================
@@ -379,11 +379,12 @@ MergeLayer           [8, 99, 360, 480]    0          False
 ______________________________________________________________________
 Conv2d               [8, 12, 360, 480]    1200       True      
 ______________________________________________________________________
+'''
 
 Total params:  41133018
 Total trainable params:  19865370
 Total non-trainable params:  21267648
-```
+
 
 Eventually, you've got down to a point where, if you use U-Net architecture, it's 28 by 28 with 1,024 channels. With the ResNet architecture with a 224 pixel input, it would be 512 channels by 7 by 7. So it's a pretty small grid size on this feature map. Somehow, we've got to end up with something which is the same size as our original picture. So how do we do that? How do you do computation which increases the grid size? Well, we don't have a way to do that in our current bag of tricks. We can use a stride one conv to do computation and keeps grid size or a stride 2 conv to do computation and halve the grid size.
 

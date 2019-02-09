@@ -514,7 +514,7 @@ Embeddings are amazing, and I don't feel like anybody's even close to exploring 
 
 We were trying to make sure we understood what every line of code did in this some pretty good collab learner model we built. The one piece missing is this`wd` piece, and `wd` stands for weight decay. So what is weight decay? Weight decay is a type of regularization. What is regularization?
 
-![](lesson3/1.png)
+![](../lesson3/1.png)
 
 Let's start by going back to this nice little chart that Andrew Ng did in his terrific machine learning course where he plotted some data and then showed a few different lines through it. This one here, because Andrew's at Stanford he has to use Greek letters. We can say this is <img src="https://latex.codecogs.com/gif.latex?a&plus;bx" title="a+bx" /> but if you want to go there<img src="https://latex.codecogs.com/gif.latex?\theta_{0}&space;&plus;&space;\theta_{1}x" title="\theta_{0} + \theta_{1}x" /> is a line. It's a line even if it's got a Greek letters. Here's a second-degree polynomial <img src="https://latex.codecogs.com/gif.latex?a&space;&plus;bx&plus;cx^{2}" title="a +bx+cx^{2}" /> - bit of curve, and here's a high degree polynomial which is curvy as anything.
 
