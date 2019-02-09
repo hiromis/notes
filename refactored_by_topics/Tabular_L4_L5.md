@@ -6,7 +6,7 @@ Welcome to Lesson 4! We are going to finish our journey through these key applic
 
 ### Tabular [[33:10](https://youtu.be/C9UdVPE3ynA?t=1990)]
 
-![](lesson4/3.png)
+![](../lesson4/3.png)
 
 So that was NLP. We'll be learning more about NLP later in this course. But now, I wanted to switch over and look at tabular. Now tabular data is pretty interesting because it's the stuff that, for a lot of you, is actually what you use day-to-day at work in spreadsheets, in relational databases, etc.
 
@@ -30,7 +30,7 @@ Some of that idea comes from a researcher named Frank Hutter and one of his coll
 
 Let's talk about tabular data. Tabular data such as you might see in a spreadsheet, a relational database, or financial report, it can contain all kinds of different things. I tried to make a little list of some of the kinds of things that I've seen tabular data analysis used for:
 
-![](lesson4/4.png)
+![](../lesson4/4.png)
 
 Using neural nets for analyzing tabular data﹣when we first presented this, people were deeply skeptical. They thought it was a terrible idea to use neural nets to analyze tabular data, because everybody knows that you should use logistic regression, random forests, or gradient boosting machines (all of which have their place for certain types of things). But since that time, it's become clear that the commonly held wisdom is wrong. It's not true that neural nets are not useful for tabular data ,in fact they are extremely useful. We've shown this in quite a few of our courses, but what's really helped is that some really effective organizations have started publishing papers and posts describing how they've been using neural nets for analyzing tabular data.
 
@@ -155,7 +155,7 @@ epoch  train_loss  valid_loss  accuracy
 
 [[52:12](https://youtu.be/C9UdVPE3ynA?t=3132)]
 
-![](lesson4/5.png)
+![](../lesson4/5.png)
 
 We're gonna learn what `layers=` means either towards the end of class today or the start of class next week, but this is where we're basically defining our architecture just like when we chose ResNet 34 or whatever for conv nets. We'll look at more about metrics in a moment, but just to remind you, metrics are just the things that get printed out. They don't change our model at all. So in this case, we're saying I want you to print out the accuracy to see how we're doing.
 

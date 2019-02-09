@@ -236,7 +236,7 @@ plot_multi(_plot, 3, 3, figsize=(8,8))
 ```
 
 
-![](lesson7/4.png)
+![](../lesson7/4.png)
 
 [[10:27](https://youtu.be/nWpdkZE2_cc?t=627)]
 
@@ -257,7 +257,7 @@ All fast.ai data bunches have a show_batch which will show you what's in it in s
 data.show_batch(rows=3, figsize=(5,5))
 ```
 
-![](lesson7/5.png)
+![](../lesson7/5.png)
 
 
 
@@ -372,7 +372,7 @@ learn.lr_find(end_lr=100)
 learn.recorder.plot()
 ```
 
-![](lesson7/6.png)
+![](../lesson7/6.png)
 
 ```python
 learn.fit_one_cycle(3, max_lr=0.1)
@@ -442,11 +442,11 @@ They did something interesting. They said let's look at the training error. So f
 
 The 56 layer one has a lot more parameters. It's got a lot more of these stride 1 convs in the middle. So the one with more parameters should seriously over fit, right? So you would expect the 56 layer one to zip down to zero-ish training error pretty quickly and that is not what happens. It is worse than the shallower network.
 
-![](lesson7/7.png)
+![](../lesson7/7.png)
 
 When you see something weird happen, really good researchers don't go "oh no, it's not working" they go "that's interesting." So Kaiming He said "that's interesting. What's going on?" and he said "I don't know, but what I do know is this - I could take this 56 layer network and make a new version of it which is identical but has to be at least as good as the 20 layer network and here's how:
 
-![](lesson7/8.png)
+![](../lesson7/8.png)
 
 Every to convolutions, I'm going to add together the input to those two convolutions with the result of those two convolutions." In other words, he's saying instead of saying:
 
@@ -470,7 +470,7 @@ Here's a trick if you're interested in doing some research. Anytime you find som
 
 At NeurIPS, which Rachel, I, David, and Sylvain all just came back from, we saw a new presentation where they actually figured out how to visualize the loss surface of a neural net which is really cool. This is a fantastic paper and anybody who's watching this lesson 7 is at a point where they will understand the most of the important concepts in this paper. You can read this now. You won't necessarily get all of it, but I'm sure you'll get it enough to find it interesting.
 
-![](lesson7/9.png)
+![](../lesson7/9.png)
 
 The big picture was this one. Here's what happens if you if you draw a picture where x and y here are two projections of the weight space, and z is the loss. As you move through the weight space, a 56 layer neural network without skip connections is very very bumpy. That's why this got nowhere because it just got stuck in all these hills and valleys. The exact same network with identity connections (i.e. with skip connections) has this loss landscape (on the right). So it's kind of interesting how Kaiming He recognized back in 2015 this shouldn't happen, here's a way that must fix it and it took three years before people were able to say oh this is kind of why it fixed it. It kind of reminds me of the batch norm discussion we had a couple of weeks ago that people realizing a little bit after the fact sometimes what's going on and why it helps.
 
@@ -550,7 +550,7 @@ learn.lr_find(end_lr=100)
 learn.recorder.plot()
 ```
 
-![](lesson7/10.png)
+![](../lesson7/10.png)
 
 ```python
 learn.fit_one_cycle(12, max_lr=0.05)
@@ -575,11 +575,11 @@ Total time: 01:48
 
 That's interesting because we've trained this literally from scratch with an architecture we built from scratch, I didn't look out this architecture anywhere. It's just the first thing that came to mind. But in terms of where that puts us, 0.45% error is around about the state of the art for this data set as of three or four years ago.
 
-![](lesson7/11.png)
+![](../lesson7/11.png)
 
 Today MNIST considered a trivially easy dataset, so I'm not saying like wow, we've broken some records here. People have got beyond 0.45% error, but what I'm saying is this kind of ResNet is a genuinely extremely useful network still today. This is really all we use in our fast ImageNet training still. And one of the reasons as well is that it's so popular so the vendors of the library spend a lot of time optimizing it, so things tend to work fast. Where else, some more modern style architectures using things like separable or group convolutions tend not to actually train very quickly in practice. 
 
-![](lesson7/12.png)
+![](../lesson7/12.png)
 
 If you look at the definition of `res_block` in the fast.ai code, you'll see it looks a little bit different to this, and that's because I've created something called a `MergeLayer`. A `MergeLayer` is something which in the forward (just skip dense for a moment), the forward says `x+x.orig`. So you can see there's something ResNet-ish going on here. What is `x.orig`? Well, if you create a special kind of sequential model called a `SequentialEx`  so this is like fast.ai's sequential extended. It's just like a normal sequential model, but we store the input in `x.orig`. So this `SequentialEx`, `conv_layer`, `conv_layer`, `MergeLayer`, will do exactly the same as `ResBlock`. So you can create your own variations of ResNet blocks very easily with this `SequentialEx` and `MergeLayer`.
 
@@ -587,7 +587,7 @@ There's something else here which is when you create your MergeLayer, you can op
 
 The DenseNet was invented about a year after the ResNet, and if you read the DenseNet paper, it can sound incredibly complex and different, but actually it's literally identical but plus here is placed with cat. So you have your input coming into your dense block, and you've got a few convolutions in here, and then you've got some output coming out, and then you've got your identity connection, and remember it doesn't plus, it concats so the channel axis gets a little bit bigger. Then we do another dense block, and at the end of that, we have the result of the convolution as per usual, but this time the identity block is that big.
 
-![](lesson7/13.png)
+![](../lesson7/13.png)
 
 So you can see that what happens is that with dense blocks it's getting bigger and bigger and bigger, and kind of interestingly the exact input is still here. So actually, no matter how deep you get the original input pixels are still there, and the original layer 1 features are still there, and the original layer 2 features are still there. So as you can imagine, DenseNets are very memory intensive. There are ways to manage this. From time to time, you can have a regular convolution and it squishes your channels back down, but they are memory intensive. But, they have very few parameters. So for dealing with small datasets, you should definitely experiment with dense blocks and DenseNets. They tend to work really well on small datasets.
 

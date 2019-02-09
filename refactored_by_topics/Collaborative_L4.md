@@ -334,7 +334,7 @@ That's enough for today. So what we're going to do next week is we're going to k
 
 So we were looking at collaborative filtering last week.
 
-![](lesson5/7.png)
+![](../lesson5/7.png)
 
 And in the collaborative filtering example, we called `fit_one_cycle` and we passed in just a single number. That makes sense because in collaborative filtering, we only have one layer. There's a few different pieces in it, but there isn't a matrix multiply followed by an activation function followed by another matrix multiply.
 
@@ -354,7 +354,7 @@ I started this training last week by using solver in Exce,l and we never actuall
 
 Then I started to talk about this idea of embedding matrices. In order to understand that, let's put this worksheet aside and look at [another worksheet](https://github.com/fastai/course-v3/blob/master/files/xl/collab_filter.xlsx) ("movielens_1hot" tab).
 
-![](lesson5/8.png)
+![](../lesson5/8.png)
 
 Here's another worksheet. What I've done here is I have copied over those two weight matrices from the previous worksheet. Here's the one for users, and here's the one for movies. And the movies one I've transposed it, so it's now got exactly the same dimensions as the users one.
 
@@ -362,7 +362,7 @@ So here are two weight matrices (in orange). Initially they were random. We can 
 
 Now I'm going to replace user ID number 1 with this vector - the vector contains a 1 followed by 14 zeros. Then user number 2, I'm going to replace with a vector of 0 and then 1 and then 13 zeros. So movie ID 14, I've also replaced with another vector which is 13 zeros and then a 1 and then a 0. These are called one-hot encodings, by the way. This is not part of a neural net. This is just like some input pre-processing where I'm literally making this my new input:
 
-![](lesson5/9.png)
+![](../lesson5/9.png)
 
 So this is my new inputs for my movies, this is my new inputs for my users. These are the inputs to a neural net.
 
@@ -374,11 +374,11 @@ Well, here's the thing. This input, we claim, is this one hot encoded version of
 
 Having done that, we can then multiply those two sets together (just a dot product), and we can then find the loss squared, and then we can find the average loss.
 
-![](lesson5/10.png)
+![](../lesson5/10.png)
 
 And lo and behold, that number 0.39 is the same as this number (from the solver) because they're doing the same thing.
 
-![](lesson5/11.png)
+![](../lesson5/11.png)
 
 This one ("dotprod" version) was finding this particular users embedding vector, this one ("movielens_1hot" version) is just doing a matrix multiply, and therefore we know **they are mathematically identical**.
 
@@ -386,7 +386,7 @@ This one ("dotprod" version) was finding this particular users embedding vector,
 
 So let's lay that out again. Here's our final version (*recommend watching a video for this section*):
 
-![](lesson5/embedding.gif)
+![](../lesson5/embedding.gif)
 
 This is the same weight matrices again - exactly the same I've copied them over. And here's those user IDs and movie IDs again. But this time, I've laid them out just in a normal tabular form just like you would expect to seein the input to your model. And this time, I have got exactly the same set of activations here (user embedding) that I had in movielens_1hot. But in this case I've calculated these activations using Excels `OFFSET` function which is an array look up. This version (`movielens_emb`) is identical to `movielens_1hot` version, but obviously it's much less memory intensive and much faster because I don't actually create the one hot encoded matrix and I don't actually do a matrix multiply. That matrix multiply is nearly all multiplying by zero which is a total waste of time.
 

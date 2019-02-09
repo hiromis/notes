@@ -103,7 +103,7 @@ Two important forum topics:
 
 After just one week, the most popular thread has 1.1k replies which is intimidatingly large number. You shouldn't need to read all of it.  What you should do is click "Summarize This Topic" and it will only show the most liked ones.
 
-![](lesson2/1.png)
+![](../lesson2/1.png)
 
 ####  Returning to work [[3:19]](https://youtu.be/Egp4Zajhzog?t=199)
 
@@ -120,14 +120,14 @@ If things aren't working for you, if you get into some kind of messy situation, 
 
 [Share your work here](https://forums.fast.ai/t/share-your-work-here/27676/) 
 
-![](lesson2/2.png)
+![](../lesson2/2.png)
 
 - [Figuring out who is talking — is it Ben Affleck or Joe Rogan](https://forums.fast.ai/t/share-your-work-here/27676/143) 
 - [Cleaning up Watsapp downloaded images folder to get rid of memes](https://forums.fast.ai/t/share-your-work-here/27676/97)
 
 
 
-![](lesson2/3.png)
+![](../lesson2/3.png)
 
 [Forum post](https://forums.fast.ai/t/share-your-work-here/27676/215)
 
@@ -137,7 +137,7 @@ One of the really interesting projects was looking at the sound data that was us
 
 [[6:01](https://youtu.be/Egp4Zajhzog?t=361)]
 
-![](lesson2/4.png)
+![](../lesson2/4.png)
 
 [Forum post](https://forums.fast.ai/t/share-your-work-here/27676/38)
 
@@ -147,7 +147,7 @@ Suvash has a new state of the art accuracy for Devanagari text recognition. I th
 
 [[6:28](https://youtu.be/Egp4Zajhzog?t=388)]
 
-![](lesson2/5.png)
+![](../lesson2/5.png)
 
 [The Mystery of the Origin](https://medium.com/@alenaharley/the-mystery-of-the-origin-cancer-type-classification-using-fast-ai-libray-212eaf8d3f4e)
 
@@ -159,7 +159,7 @@ When we talked about last week this idea that this simple process is something w
 
 [[8:07](https://youtu.be/Egp4Zajhzog?t=487)]
 
-![](lesson2/6.png)
+![](../lesson2/6.png)
 
 Another cool result from Simon Willison and Natalie Downe, they created a cougar or not web application over the weekend and won the Science Hack Day award in San Francisco. So I think that's pretty fantastic. So lots of examples of people doing really interesting work. Hopefully this will be inspiring to you to think well to think wow, this is cool that I can do this with what I've learned. It can also be intimidating to think like wow, these people are doing amazing things. But it's important to realize that as thousands of people are doing this course, I'm just picking out a few of really amazing ones. And in fact Simon is one of these very annoying people like Christine Payne who we talked about last week who seems to be good at everything he does. He created Django which is the world's most popular web frameworks, he founded a very successful startup, etc. One of those annoying people who tends to keep being good at things, now turns out he's good at deep learning as well. So that's fine. Simon can go on and win a hackathon on his first week of playing with deep learning. Maybe it'll take you two weeks to win your first hackathon. That's okay. 
 
@@ -167,7 +167,7 @@ Another cool result from Simon Willison and Natalie Downe, they created a cougar
 
 [[9:22](https://youtu.be/Egp4Zajhzog?t=562)]
 
-![](lesson2/7.png)
+![](../lesson2/7.png)
 
 I think it's important to mention this because there was this really inspiring blog post this week from James Dellinger who talked about how he created a bird classifier using techniques from lesson 1. But what I really found interesting was at the end, he said he nearly didn't start on deep learning at all because he went through the scikit-learn website which is one of the most important libraries of Python and he saw this. And he described in this post how he was just like that's not something I can do. That's not something I understand. Then this kind of realization of like oh, I can do useful things without reading the Greek, so I thought that was really cool message. 
 
@@ -175,7 +175,7 @@ I think it's important to mention this because there was this really inspiring b
 
 [[10:01](https://youtu.be/Egp4Zajhzog?t=601)]
 
-![](lesson2/8.png)
+![](../lesson2/8.png)
 
 I really wanted to highlight Daniel Armstrong on the forum. I think really shows he's a great role model here. He was saying I want to contribute to the library and I looked at the docs and I just found it overwhelming. The next message, one day later, was I don't know what any of this is, I didn't know how much there is to it, caught me off guard, my brain shut down but I love the way it forces me to learn so much. And a day later, I just submitted my first pull request. So I think that's awesome. It's okay to feel intimidated. There's a lot. But just pick one piece and dig into it. Try and push a piece of code or a documentation update, or create a classifier or whatever.
 
@@ -200,13 +200,13 @@ So lots and lots of fascinating projects. So don't worry. It's only been one wee
 
 [[12:56]](https://youtu.be/Egp4Zajhzog?t=776)
 
-![](lesson2/9.png)
+![](../lesson2/9.png)
 
 So from today, after we did a bit deeper into really how to make these computer vision classifiers and particular work well, we're then going to look at the same thing for text. We're then going to look at the same thing for tabular data. They are more like spreadsheets and databases. Then we're going to look at collaborative filtering (i.e. recommendation systems). That's going to take us into a topic called embeddings which is a key underlying platform behind these applications. That will take us back into more computer vision and then back into more NLP. So the idea here is that it turns out that it's much better for learning if you see things multiple times so rather than being like okay, that's computer vision, you won't see it again for the rest of the course, we're actually going to come back to the two key applications NLP and computer vision a few weeks apart. That's going to force your brain to realize oh, I have to remember this. It's not must something I can throw away. 
 
 [[14:06]](https://youtu.be/Egp4Zajhzog?t=846)
 
-![](lesson2/10.png)
+![](../lesson2/10.png)
 
 For people who have more of a hard sciences background in particular, a lot of folks find this hey, here's some code, type it in, start running it approach rather than here's lots of theory approach confusing and surprising and odd at first. So for those of you, I just wanted to remind you this basic tip which is keep going. You're not expected to remember everything yet. You're not expected to understand everything yet. You're not expected to know why everything works yet. You just want to be in a situation where you can enter the code and you can run it and you can get something happening and then you can start to experiment and you get a feel for what's going on. Then push on. Most of the people who have done the course and have gone on to be really successful watch the videos at least three times. So they kind of go through the whole lot and then go through it slowly the second time, then they go through it really slowly the third time. I consistently hear them say I get a lot more out of it each time I go through. So don't pause at lesson 1 and stop until you can continue. 
 
@@ -216,7 +216,7 @@ This approach is based on a lot of academic research into learning theory. One g
 
 A quick correction on citation. This chart originally cane from Andrew Ng's excellent machine learning course on Coursera. Apologies for the incorrect citation. 
 
-![](lesson3/2.png)
+![](../lesson3/2.png)
 
 [Andrew Ng's machine learning course](https://www.coursera.org/learn/machine-learning) on Coursera is great. In some ways, it's a little dated but a lot of the content is as appropriate as ever and taught in a bottom-up style. So it can be quite nice to combine it with our top down style and meet somewhere in the middle. 
 
@@ -224,7 +224,7 @@ Also, if you are interested in machine learning foundations, you should check ou
 
 We started talking about deploying your web app last week. One thing that's going to make life a lot easier for you is that https://course-v3.fast.ai/ has a production section where right now we have one platform but more will be added showing you how to deploy your web app really easily. When I say easily, for example, here is [how to deploy on Zeit guide](https://course-v3.fast.ai/deployment_zeit.html) created by Navjot. 
 
-![](lesson3/3.png)
+![](../lesson3/3.png)
 
 As you can see, it's just a page. There's almost nothing to and it's free. It's not going to serve 10,000 simultaneous requests but it'll certainly get you started and I found it works really well. It's fast. Deploying a model doesn't have to be slow or complicated anymore. And the nice thing is, you can use this for a Minimum Viable Product (MVP) if you do find it's starting to get a thousand simultaneous requests, then you know that things are working out and you can start to upgrade your instance types or add to a more traditional big engineering approach. If you actually use this starter kit, it will create my teddy bear finder for you. So the idea is, this template is as simple as possible. So you can fill in your own style sheets, your own custom logic, and so forth. This is designed to be a minimal thing, so you can see exactly what's going on. The backend is a simple REST style interface that sends back JSON and the frontend is a super simple little Javascript thing. It should be a good way to get a sense of how to build a web app which talks to a PyTorch model. 
 
@@ -234,7 +234,7 @@ As you can see, it's just a page. There's almost nothing to and it's free. It's 
 
 Edward Ross built the what Australian car is that? app
 
-![](lesson3/4.png)
+![](../lesson3/4.png)
 
 I thought it was interesting that Edward said on the forum that building of this app was actually a great experience in terms of understanding how the model works himself better. It's interesting that he's describing trying it out on his phone. A lot of people think "oh, if I want something on my phone, I have to create some kind of mobile TensorFlow, ONNX, whatever tricky mobile app"﹣you really don't. You can run it all in the cloud and make it just a web app or use some kind of simple little GUI frontend that talks to a rest backend. It's not that often that you'll need to actually run stuff on the phone. So this is a good example of that. 
 
