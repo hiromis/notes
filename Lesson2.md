@@ -270,7 +270,7 @@ data.show_batch(rows=3, figsize=(7,8))
 
 ![](lesson2/bears.png)
 
-You can kind of double check here. Remember, `data.c` is the attribute which the classifiers tell us how many possible labels there are. We'll learn about some other more specific meanings of `c` later. We can see how many things are now training set, how many things are in validation set. So we've got 473 training set, 141 validation set.  
+You can kind of double check here. Remember, `data.c` is the attribute which the classifiers tell us how many possible labels there are. We'll learn about some other more specific meanings of `c` later. We can see how many things are now training set, how many things are in validation set. So we've got 473 training set, 140 validation set.  
 
 ```python
 data.classes, data.c, len(data.train_ds), len(data.valid_ds)
