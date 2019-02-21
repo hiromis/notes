@@ -349,7 +349,7 @@ Now the problem is that a sigmoid actually asymptotes at whatever the maximum is
 y_range = [0,5.5]
 ```
 
-The other trick I used is to add something called weight decay, and we're going to look at that next . After this section, we are going to learn about weight okay.
+The other trick I used is to add something called weight decay, and we're going to look at that next . After this section, we are going to learn about weight decay.
 
 ```python
 learn = collab_learner(data, n_factors=40, y_range=y_range, wd=1e-1)
