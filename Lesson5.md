@@ -357,7 +357,7 @@ learn = collab_learner(data, n_factors=40, y_range=y_range, wd=1e-1)
 
 How many factors do you want or what are factors? The number of factors is the width of the embedding matrix. So why don't we say embedding size? Maybe we should, but in the world of collaborative filtering they don't use that word. They use the word "factors" because of this idea of latent factors, and because the standard way of doing collaborative filtering has been with something called **matrix factorization**. In fact what we just saw happens to actually be a way of doing matrix factorization. So we've actually accidentally learned how to do matrix factorization today. So this is a term that's kind of specific to this domain. But you can just remember it as the width of the embedding matrix.
 
-Why 40? Well this is one of these architectural decisions you have to play around with and see what works. So I tried 10, 20, 40, and 80 and I found 40 seems to work pretty well. And it rained really quickly, so you can chuck it in a little for loop to try a few things and see what looks best.
+Why 40? Well this is one of these architectural decisions you have to play around with and see what works. So I tried 10, 20, 40, and 80 and I found 40 seems to work pretty well. And it trained really quickly, so you can chuck it in a little for loop to try a few things and see what looks best.
 
 ```python
 learn.lr_find()
