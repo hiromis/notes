@@ -2,7 +2,58 @@
 
 [Video](https://youtu.be/uQtTwhpv7Ew) / [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863) 
 
-Welcome everybody to lesson 5. And so we have officially peaked, and everything is down hill here from here as of halfway through the last lesson. 
+Welcome everybody to lesson 5. And so we have officially peaked, and everything is down hill here from here as of halfway through the last lessclass TestAPIRegistry:
+    "Tests register which API they validate using this class."
+    api_tests_map     = defaultdict(list)
+    some_tests_failed = False
+    has_this_tests = None
+    missing_this_tests = set()
+
+    @staticmethod
+    def this_tests(*funcs):
+        prev_frame = currentframe().f_back.f_back
+        filename, lineno, test_name, _, _ = getframeinfo(prev_frame)
+        parent_func_lineno, _ = get_parent_func(lineno, get_lines(filename))
+        entry = [{'file': relative_test_path(filename), 'test': test_name , 'line': parent_func_lineno}]
+        for func in funcs:
+            try:
+                func_fq = get_func_fq_name(func)
+            except:
+                raise Exception(f"'{func}' is not a function")
+            if re.match(r'fastai\.', func_fq):
+                if entry not in TestAPIRegistry.api_tests_map[func_fq]: 
+                    TestAPIRegistry.api_tests_map[func_fq].append(entry)
+            else:
+                raise Exception(f"'{func}' is not in the fastai API")
+        try: 
+            missing_this_test = 'file: '+ relative_test_path(filename) + ' / test: ' + test_name
+            TestAPIRegistry.missing_this_tests.remove(missing_this_test) 
+        except:
+            None
+        TestAPIRegistry.has_this_tests = None
+
+    def this_tests_flag_on(filename, test_name):
+        TestAPIRegistry.has_this_tests = test_name
+        missing_this_test = 'file: '+ filename + ' / test: ' + test_name
+        TestAPIRegistry.missing_this_tests.add(missing_this_test)
+       
+    def tests_failed(status=True):
+        TestAPIRegistry.some_tests_failed = status
+    
+    def this_tests_flag_check(filename, test_name):
+        if TestAPIRegistry.has_this_tests == test_name:
+            TestAPIRegistry.has_this_tests = None
+
+    def registry_save():
+        if TestAPIRegistry.missing_this_tests:
+            print('\n*** Warning: Pls register the following tests with TestAPIRegistry.this_tests:\n')
+            for missing_this_test in TestAPIRegistry.missing_this_tests:
+                print(str(missing_this_test) + '\t')
+        if TestAPIRegistry.api_tests_map and not TestAPIRegistry.some_tests_failed:
+            path = Path(__file__).parent.parent.resolve()/DB_NAME
+            print(f"\n*** Saving test api registry @ {path}")
+            with open(path, 'w') as f:
+                json.dump(obj=TestAPIRegistry.api_tests_map, fp=f, indent=4, sort_keys=True, default=_json_set_default)on. 
 
 We started with computer vision because it's the most mature out-of-the-box ready to use deep learning application. It's something which if you're not using deep learning, you won't be getting good results. So the difference, hopefully, between not during lesson one versus doing lesson one, you've gained a new capability you didn't have before. And you kind of get to see a lot of the tradecraft of training and effective neural net. 
 
@@ -640,7 +691,7 @@ plt.show()
 
 ![](lesson5/16.png)
 
-I've just cuddled them randomly to make them easier to see. This is just the top 50 most popular movies by how many times they've been rated. On this one factor, you've got The Terminators really high up here, and The English Patient and Schindler's List at the other end. Then The Godfather and Monty Python over here (on the right), and Independence Day and Liar Liar over there (on the left). So you get the idea. It's ind of fun. It would be interesting to see if you can come up with some stuff at work or other kind of datasets where you could try to pull out some features and play with them.
+I've just cuddled them randomly to make them easier to see. This is just the top 50 most popular movies by how many times they've been rated. On this one factor, you've got The Terminators really high up here, and The English Patient and Schindler's List at the other end. Then The Godfather and Monty Python over here (on the right), and Independence Day and Liar Liar over there (on the left). So you get the idea. It's kind of fun. It would be interesting to see if you can come up with some stuff at work or other kind of datasets where you could try to pull out some features and play with them.
 
 **Question**: Why am I sometimes getting negative loss when training? [[59:49](https://youtu.be/uQtTwhpv7Ew?t=3589)] 
 
