@@ -785,7 +785,7 @@ What you'll find is it's very likely if you try to do this, you will get an erro
 
 It's very likely that if you try to run this, you'll get an out of memory error and that's because it's just trying to do too much - too many parameter updates for the amount of RAM you have. That's easily fixed. `ImageDataBunch` constructor has a parameter at the end `bs` - a batch size. This basically says how many images do you train at one time. If you run out of memory, just make it smaller.
 
-It's fine to use a smaller bath size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
+It's fine to use a smaller batch size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
 
 ```python
 learn.fit_one_cycle(8, max_lr=slice(1e-3))
@@ -803,7 +803,7 @@ epoch  train_loss  valid_loss  error_rate
 8      0.097324    0.136638    0.042379    (00:54)
 ```
 
-Again, we fit it for a while and we get down to 4.2% error rage. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
+Again, we fit it for a while and we get down to 4.2% error rate. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
 
 ### Interpreting the results again [1:29:41](https://youtu.be/BWWm4AzsdLk?t=5381)
 
