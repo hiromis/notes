@@ -7,7 +7,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 1. [Lesson 1](/Lesson1.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=1)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=1) [Video Youtube](https://youtu.be/BWWm4AzsdLk) 
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=1) / [Video Youtube](https://youtu.be/BWWm4AzsdLk) 
 - [Lesson Forum](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936)
 - [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 - [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
@@ -15,7 +15,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 2. [Lesson 2](/Lesson2.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=2)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=2) [Video Youtube](https://youtu.be/Egp4Zajhzog)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=2) / [Video Youtube](https://youtu.be/Egp4Zajhzog)
 - [Lesson Forum](https://forums.fast.ai/t/lesson-2-official-resources-and-updates/28630)
 - [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/)
 - [lesson2-download.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb)
@@ -24,7 +24,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 3. [Lesson 3](/Lesson3.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=3)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=3) [Video Youtube](https://youtu.be/PW2HKkzdkKY)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=3) / [Video Youtube](https://youtu.be/PW2HKkzdkKY)
 - [Lesson Forum](https://forums.fast.ai/t/lesson-3-official-resources-and-updates/29732)
 - [lesson3-planet.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson3-planet.ipynb)
 - [lesson3-camvid.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson3-camvid.ipynb)
@@ -34,7 +34,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 4. [Lesson 4](/Lesson4.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=4)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=4) [Video Youtube](https://youtu.be/C9UdVPE3ynA)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=4) / [Video Youtube](https://youtu.be/C9UdVPE3ynA)
 - [Lesson Forum](https://forums.fast.ai/t/lesson-4-official-resources-and-updates/30317)
 - [lesson4-collab.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson4-collab.ipynb)
 - [lesson4-tabular.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson4-tabular.ipynb)
@@ -42,14 +42,14 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 5. [Lesson 5](/Lesson5.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=5)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=5) [Video Youtube](https://youtu.be/uQtTwhpv7Ew)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=5) / [Video Youtube](https://youtu.be/uQtTwhpv7Ew)
 - [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863)
 - [lesson5-sgd-mnist.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson5-sgd-mnist.ipynb)
 
 ## 6. [Lesson 6](/Lesson6.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=6)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=6) [Video Youtube](https://youtu.be/U7c-nYXrKD4)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=6) / [Video Youtube](https://youtu.be/U7c-nYXrKD4)
 - [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
 - [lesson6-rossmann.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson6-rossmann.ipynb)
 - [rossman_data_clean.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/rossman_data_clean.ipynb)
@@ -58,7 +58,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 ## 7. [Lesson 7](/Lesson7.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=7)
-- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=7) [Video Youtube](https://youtu.be/nWpdkZE2_cc)
+- [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=7) / [Video Youtube](https://youtu.be/nWpdkZE2_cc)
 - [Course Forum](https://forums.fast.ai/t/lesson-7-official-resources/32553)
 - [lesson7-resnet-mnist.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson7-resnet-mnist.ipynb)
 - [lesson7-superres-gan.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson7-superres-gan.ipynb)
