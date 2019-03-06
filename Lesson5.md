@@ -1130,7 +1130,7 @@ to
 opt = optim.SGD(model.parameters(), lr, momentum=0.9)
 ```
 
-Mmentum 0.9 is really common. It's so common it's always 0.9 (just about) four basic stuff. So that's how you do SGD with momentum. And again I didn't show you some simplified version, I showed you "the" version. That is SGD. Again you can write your own. Try it out. That would be a great assignment would be to take lesson 2 SGD and add momentum to it; or even the new notebook we've got MNIST, get rid of the `optim.` and write your own update function with momentum.
+Momentum 0.9 is really common. It's so common it's always 0.9 (just about) four basic stuff. So that's how you do SGD with momentum. And again I didn't show you some simplified version, I showed you "the" version. That is SGD. Again you can write your own. Try it out. That would be a great assignment would be to take lesson 2 SGD and add momentum to it; or even the new notebook we've got MNIST, get rid of the `optim.` and write your own update function with momentum.
 
 ### RMSProp [[1:53:30](https://youtu.be/uQtTwhpv7Ew?t=6810)]
 
