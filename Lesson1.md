@@ -1,16 +1,16 @@
-# Lesson 1
-[Webpage](http://course-v3.fast.ai/) / [Video](https://youtu.be/BWWm4AzsdLk) /  [Lesson Forum](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
+# 第一课
+[主页](http://course-v3.fast.ai/) / [视频](https://youtu.be/BWWm4AzsdLk) /  [第一课论坛](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [论坛](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 
 
 
-## Welcome! 
+## 欢迎! 
 
-Make sure your GPU environment is set up and you can run Jupyter Notebook
+确保已经设置好了GPU环境并且可以运行Jupyter Notebook
 
 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/00_notebook_tutorial.ipynb)
 
 
-Four shortcuts:
+快捷键:
 
 - <kbd>Shift</kbd>+<kbd>Enter</kbd>: Runs the code or markdown on a cell
 
@@ -24,22 +24,22 @@ Four shortcuts:
 
 [[2:45](https://youtu.be/BWWm4AzsdLk?t=165)] 
 
-Jupyter Notebook is a really interesting device for data scientists because it lets you run interactive experiments and give you not just a static piece of information but something you can interactively experiment with.
+Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你不仅可以获得静态的信息，还可以进行交互实验.
 
-How to use notebooks and the materials well based on the last three years of experience:
+基于过去三年的经验，这样使用notebook和学习材料最有效:
 
-1. Just watch a lesson end to end. 
-   - Don't try to follow along because it's not really designed to go the speed where you can follow along. It's designed to be something where you just take in the information, you get a general sense of all the pieces, how it all fits together.
-   - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.
-   - Don't try and stop and understand everything the first time. 
+直接从头到尾看视频. 
+   - 不必试图跟上课程内容，课程节奏的被设计地比较快，这样你可以快速地对各方面有一个初步的概念，并且了解到这些方面是怎样结合在一起的
+   - 看完第一遍后，再回过头来，重新看一遍视频，在需要的地方暂停，按照视频里讲的自己做一遍。确保你可以做出和我一样的结果，然后在这个基础上用你自己的方式做些拓展.
+   - 第一遍看视频时不要运行代码，中间不要停下来，不必试图理解所有内容. 
 
 
 
-### You can do world-class practitioner level deep learning [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
+### 你可以做世界顶尖水平的深度学习 [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
 ![](lesson1/1.png)
 
-Main places to be looking for things are:
+在这里获取课程资源:
 - [http://course-v3.fast.ai/](http://course-v3.fast.ai/)
 - [https://forums.fast.ai/](https://forums.fast.ai/latest)
 
@@ -47,7 +47,7 @@ Main places to be looking for things are:
 
 
 
-### A little bit about why we should listen to Jeremy [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
+### 为什么听Jeremy讲课 [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
 
 ![](lesson1/2.png)
 
@@ -55,7 +55,7 @@ Main places to be looking for things are:
 
 
 
-### Using machine learning to do useful things [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
+### 使用机器学习做有用的事情 [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
 
 ![](lesson1/3.png)
 
@@ -65,16 +65,16 @@ Main places to be looking for things are:
 
 ![](lesson1/4.png)
 
-If you follow along with 10 hours a week or so approach for the 7 weeks, by the end, you will be able to:
+如果你能坚持7周，每周花10个小时在课程上，最终你可以做到：
 
-1. Build an image classification model on pictures that you choose that will work at a world class level
-2. Classify text using whatever datasets you're interested in
-3. Make predictions of commercial applications like sales
-4. Build recommendation systems such as the one used by Netflix
+1. 为你选择的图片构建一个世界水平的分类器
+2. 对任何你感兴趣的数据集做文本分类
+3. 做商业预测，比如销售预测
+4. 构建像Netflix一样的推荐系统
 
-Not toy examples of any of these but actually things that can come top 10 in Kaggle competitions, that can beat everything that's in the academic community. 
+所有这些并非玩具示例，而是可以在Kaggle竞赛赢得前十的实战项目，这样的成绩足以超过学术社区. 
 
-The prerequisite is one year of coding and high school math.
+前提条件是一年的编程经验和高中数学知识.
 
 
 
