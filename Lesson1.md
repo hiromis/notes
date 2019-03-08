@@ -12,13 +12,13 @@
 
 快捷键:
 
-- <kbd>Shift</kbd>+<kbd>Enter</kbd>: Runs the code or markdown on a cell
+- <kbd>Shift</kbd>+<kbd>Enter</kbd>: 运行单元里的代码，选中下个单元
 
-- <kbd>Up Arrow</kbd>+<kbd>Down Arrow</kbd>: Toggle across cells
+- <kbd>Up Arrow</kbd>+<kbd>Down Arrow</kbd>: 在单元间切换
 
-- <kbd>b</kbd>: Create new cell
+- <kbd>b</kbd>: 创建新单元
 
-- <kbd>0</kbd>+<kbd>0</kbd>: Restart Kernel
+- <kbd>0</kbd>+<kbd>0</kbd>: 重启内核
 
 
 
@@ -81,16 +81,16 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 
 
-### What people say about deep learning which are either pointless or untrue [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
+### 关于深度学习的一些无意义或者不正确的说法 [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
 
 ![](lesson1/5.png)
 
-- It's not a black box. It's really great for interpreting what's going on.
-- It does not need much data for most practical applications.
-- You don't need a PhD. Rachel has one so it doesn't actually stop you from doing deep learning if you have a PhD.
-- It can be used very widely for lots of different applications, not just for vision.
-- You don't need lots of hardware. 36 cents an hour server is more than enough to get world-class results for most problems.
-- It is true that maybe this is not going to help you build a sentient brain, but that's not our focus. We are focused on solving interesting real-world problems.
+- 它不是一个黑盒子，它的工作是可以解释的.
+- 大部分实际的应用不需要太多数据.
+- 想掌握深度学习，并不需要你有一个博士学位，当然如果你有的话，也不会妨碍你从事深度学习.
+- 可以被广泛应用在很多不同的领域，并不单单是视觉领域
+- 你不需要太多硬件，36美分一小时的服务器足够求解大部分问题，并取得世界级的结果.
+- 它确实不能帮助你构建一个有意识的大脑，这并不是我们关心的，我们专注于解决有趣的现实问题.
 
 
 
@@ -98,25 +98,25 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ![](lesson1/6.png)
 
-Baseball vs. Cricket - An example by Nikhil of what you are going to be able to do by the end of lesson 1:
+棒球 VS. 板球 - Nikhil 提供的一个例子，学完第一课后，你将能够完成这个题目
 
 
 
-### Topdown approach [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
+### 由上至下的学习方式 [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
 
 ![](lesson1/7.png)
 
-We are going to start by looking at code which is different to many of academic courses. We are going to learn to build a useful thing today. That means that at the end of today, you won't know all the theory. There will be lots of aspects of what we do that you don't know why or how it works. That's okay! You will learn why and how it works over the next 7 weeks. But for now, we've found that what works really well is to actually get your hands dirty coding - not focusing on theory. 
+我们从阅读代码开始，这不同于大部分学校课程。今天我们将学习构建有用的程序。今天的课程结束后，你并不会学会所有的理论，有很多东西你可能并不清楚它们是怎样工作的，以及它们为什么是有效的。这没有关系，在接下来的7周里，你将会学会这些。现在，着手写代码而不是关注理论知识，这是更有效的学习方式
 
 
 
-## What's your pet [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
+## 什么是你的宠物 [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
 
 [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
 
-<kbd>Shift</kbd>+<kbd>Enter</kbd> to run a cell
+<kbd>Shift</kbd>+<kbd>Enter</kbd> 运行一个单元
 
-These three lines is what we start every notebook with:
+These three lines is what we start every notebook with :
 ```
 %reload_ext autoreload
 %autoreload 2
