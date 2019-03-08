@@ -1,5 +1,5 @@
 # 第一课
-[主页](http://course-v3.fast.ai/) / [视频](https://youtu.be/BWWm4AzsdLk) /  [第一课论坛](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [论坛](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
+[主页](http://course-v3.fast.ai/) / [视频](https://youtu.be/BWWm4AzsdLk) /  [论坛第一课板块](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [论坛](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 
 
 
@@ -116,25 +116,25 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 <kbd>Shift</kbd>+<kbd>Enter</kbd> 运行一个单元
 
-These three lines is what we start every notebook with :
+每一个notebook都以这三行代码开始:
 ```
 %reload_ext autoreload
 %autoreload 2
 %matplotlib inline
 ```
-These things starting `%` are special directives to Jupyter Notebook itself, they are not Python code. They are called "magics."
+`%` 开头的代码是对Jupyter Notebook的特殊指令, 不是python代码. 它们被称作"魔法"
 
-- If somebody changes underlying library code while I'm running this, please reload it automatically
-- If somebody asks to plot something, then please plot it here in this Jupyter Notebook
+- 如果程序执行时有人修改了依赖库的代码, 自动重新加载库
+- 如果有人要求画出一些内容，就把它们画在Jupyter Notebook上
 
-The next two lines load up the fastai library:
+接下来的两行引入了fastai库:
 
 ```python
 from fastai import *
 from fastai.vision import *
 ```
 
-What is fastai library? [http://docs.fast.ai/](http://docs.fast.ai/)
+什么是fastai库? [http://docs.fast.ai/](http://docs.fast.ai/)
 
 Everything we are going to do is going to be using either fastai or [PyTorch](https://pytorch.org/) which fastai sits on top of. PyTorch is fast growing extremely popular library. We use it because we used to use TensorFlow a couple years ago and we found we can do a lot more, a lot more quickly with PyTorch. 
 
