@@ -136,34 +136,34 @@ from fastai.vision import *
 
 什么是fastai库? [http://docs.fast.ai/](http://docs.fast.ai/)
 
-Everything we are going to do is going to be using either fastai or [PyTorch](https://pytorch.org/) which fastai sits on top of. PyTorch is fast growing extremely popular library. We use it because we used to use TensorFlow a couple years ago and we found we can do a lot more, a lot more quickly with PyTorch. 
+我们的所有工作都是基于fastai库或者[PyTorch](https://pytorch.org/)，fastai库本身也是基于PyTorch的。 PyTorch 是一个很流行的库，用户在快速增长。几年前我们使用TensorFlow，但是我们发现PyTorch用起来更快捷，所以我们改用了PyTorch。 
 
-Currently fastai supports four applications:
+目前fastai库支持四种应用:
 
-1. Computer vision
-2. Natural language text
-3. Tabular data
-4. Collaborative filtering
+1. 计算机视觉
+2. 自然语言文本
+3. 表格数据
+4. 协同过滤
 
 
 [[15:45](https://youtu.be/BWWm4AzsdLk?t=945)]
 
-`import *` - something you've all been told to never ever do.
+`import *` - 你们被告知永远不要这样做.
 
-There are very good reasons to not use `import *` in standard production code with most libraries. But things like MATLAB is the opposite. Everything is there for you all the time. You don't even have to import things a lot of the time. It's kind of funny - we've got these two extremes of how do I code. The scientific programming community has one way, and then software engineering community has the other. Both have really good reasons for doing things. 
+对于很多库来说，不在生产环境使用`import *` 是有充分的理由的。但对MATLAB这样的库来说，是另外一回事。所有的东西都已经准备好了。你不必多次引入各种库。这是一个有趣的现象，我们走了两个极端。在科学计算界里有一种方式，在软件工程界有另外一种方式。这两种方式都有充足的理由。 
 
-With the fastai library, we actually support both approaches. In Jupyter Notebook where you want to be able to quickly interactively try stuff out, you don't want to constantly going back up to the top and importing more stuff. You want to be able to use lots of tab complete and be very experimental, so `import *` is great. When you are building stuff in production, you can do the normal PEP8 style proper software engineering practices. This is a different style of coding. It's not that there are no rules in data science programming, the rules are different. When you're training models, the most important thing is to be able to interactively experiment quickly. So you will see we use a lot of different processes, styles, and stuff to what you are used to. But they are there for a reason and you'll learn about them over time. 
+对于fastai库，我们支持两种方式。当你想用Jupyter Notebook快速做些尝试时， 你不希望总是回到文件开头添加一些引用。你希望有很多代码能自动完成，做很多实验性的工作, 所以 `import *` 是合适的。当你构建生产环境程序时，你可以遵守PEP8这样的软件工程规范。这是一种不同的编程风格。数据科学编程并非没有规范，只不过是这里的规则不同于软件工程。在训练模型时，最重要的事情是能够快速尝试，所以你将看到很多不同的流程，风格和工具 。这是有原因的，慢慢地，你将了解到这些原因。
 
-The other thing to mention is that the fastai library is designed in a very interesting modular way and when you do use import *, there's far less clobbering of things than you might expect. It's all explicitly designed to allow you to pull in things and use them quickly without having problems.
+另外，fastai库是用非常有趣的模块化方法设计的，使用import *, 带来的问题会比你预期的少，它被特意设计，使得你能够非常方便地加载和使用里面的方法。
 
-## Looking at the data [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
+数据 [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
 
-Two main places that we will be tending to get data from for the course:
+课程中，我们主要从这两个地方获取数据:
 
-1. Academic datasets
-    - Academic datasets are really important. They are really interesting. They are things where academics spend a lot of time curating and gathering a dataset so that they can show how well different kinds of approaches work with that data. The idea is they try to design datasets that are challenging in some way and require some kind of breakthrough to do them well. 
-    - We are going to start with an academic dataset called the pet dataset.
-2. Kaggle competition datasets
+1. 学术数据集
+    - 学术数据集是很重要的。它们很有趣。学者们花费了大量时间搜集整理一个数据集，用来测试各种不同的算法在数据集上的表现。他们设计一个数据集，然后用不同的方式挑战，寻求能够获得突破，得到更好的结果。 
+    - 我们将从一个名为宠物数据的学术数据集开始
+2. Kaggle竞赛数据集
   
 
 Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
