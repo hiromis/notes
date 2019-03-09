@@ -166,13 +166,13 @@ from fastai.vision import *
 2. Kaggle竞赛数据集
   
 
-Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
+这两种数据集都是我们关注的，它们提供了有力的基线，可以很好地评价你做得如何。使用来自竞赛的Kaggle数据集，你可以把结果提交到Kaggle，看下你在竞赛中的成绩。如果你能进入前10%，那说明你做得相当好。
 
-Academic datasets, academics write down in papers what the state of the art is so how well did they go with using models on that dataset. So this is what we are going to do. We are going to try to create models that get right up towards the top of Kaggle competitions, preferably in the top 10, not just top 10% or that meet or exceed academic state-of-the-art published results. So when you use an academic dataset, it's important to cite it. You don't need to read that paper right now, but if you are interested in learning more about it and why it was created and how it was created, all the details are there. 
+对于学术数据集，学者们在论文里写下了他们在这个数据集上取得的最好结果。这就是我们将要做的。我们创建争取能够在Kaggle竞赛里取得高排名的模型，最好是前十，而不仅是前10%，或者能达到或超过学术论文里发表的最佳结果。在你使用一个学术数据库时，把它放在参考文献里。你不必立即阅读这论文，当你希望了解到数据集的更多信息，它为什么被创建，是如何被创建的，这时你可以从中了解到细节。 
 
-Pet dataset is going to ask us to distinguish between 37 different categories of dog breed and cat breed. So that's really hard. In fact, every course until this one, we've used a different dataset which is one where you just have to decide if something is a dog or a cat. So you've got a 50-50 chance right away and dogs and cats look really different. Or else lots of dog breeds and cat breeds look pretty much the same. 
+宠物数据集要求我们区分出37种不同的猫和狗的品种。这是一个困难的任务。事实上，在之前的课程里，我们使用另外一个数据集，它只要求分辨出图片里是狗还是猫。所以你有一半的机会猜对，并且猫和狗的区别很大。而不同品种的猫狗之间的差别并不大。 
 
-So why have we changed the dataset? We've got to the point now where deep learning is so fast and so easy that the dogs versus cats problem which a few years ago was considered extremely difficult ~80% accuracy was the state of the art, it's now too easy. Our models were basically getting everything right all the time without any tuning and so there weren't really a lot of opportunities for me to show you how to do more sophisticated stuff. So we've picked a harder problem this year. 
+为什么我们更换了数据集？我们意识到，深度学习很快很简单，现在区分猫和狗这个问题对深度学习来说太简单了，尽管几年前这被认为是非常困难的，达到80%的准确率就是最好水平。我们的模型可以在不做任何优化的情况下直接输出完全正确的结果，这样我们就不能讲授一些复杂的技术，所以今年我们选择了一个更难的问题。 
 
 
 
