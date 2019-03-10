@@ -178,11 +178,11 @@ from fastai.vision import *
 
 [[20:51](https://youtu.be/BWWm4AzsdLk?t=1251)]
 
-This kind of thing where you have to distinguish between similar categories is called fine grained classification in the academic context.  
+学术上，区分相似分类被叫做细粒度分类.  
 
 ### untar_data
 
-The first thing we have to do is download and extract the data that we want. We're going to be using this function called `untar_data` which will download it automatically and untar it. AWS has been kind enough to give us lots of space and bandwidth for these datasets so they'll download super quickly for you.
+我们要做的第一件事情是下载和解压数据，我们将使用`untar_data`这个函数，它会自动下载并解压数据。AWS给我们提供了许多空间和带宽，数据集可以被很快的下载下来。
 
 ```python
 path = untar_data(URLs.PETS); path
