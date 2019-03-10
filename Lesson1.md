@@ -190,9 +190,9 @@ path = untar_data(URLs.PETS); path
 
 ### help 
 
-The first question then would be how do I know what `untar_data` does. You could just type help and you will find out what module it came from (since we did `import *` you don't necessarily know that), what it does, and something you might not have seen before even if you are an experienced programmer is what exactly you pass to it. You're probably used to seeing the names: url, fname, dest, but you might not be used to seeing `Union[pathlib.Path, str]`. These bits are types and if you're used to typed programming language, you would be used to seeing them, but Python programmers are less used to it. But if you think about it, you don't actually know how to use a function unless you know what type each thing is that you're providing it. So we make sure that we give you that type information directly here in the help. 
+怎样可以知道`untar_data`是什么？你可以输入help，这样你可以看到这个方法来源于那个模块(因为我们使用了`import *`，所以你不必知道所属的模块), 它会做什么, 以及一些你以前不知道的事情，或许你是一个有经验的开发者，但可能并不清楚究竟应该传递什么参数。你可能很熟悉这些名字: url, fname, dest, 但你可能没怎么见过`Union[pathlib.Path, str]`. 这是参数的类型，如果你熟悉类型编程语言的话，你可能会经常见到它们,但Python开发者可能对它不怎么熟悉。只有你知道了每一个传入的参数的类型，你才能知道怎样使用一个函数，所以我们在帮助里说明了类型信息。
 
-In this case, `url` is a string, `fname` is either path or a string and defaults to nothing (`Union` means "either"). `dest` is either a string or a path and defaults to nothing. 
+对于这个函数, `url` 是一个字符串, `fname` 是一个 path 或者一个字符串，默认是None(`Union` 表示 "或者"). `dest` 是一个 path 或者一个字符串
 
 ```python
 help(untar_data)
