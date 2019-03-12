@@ -205,11 +205,11 @@ untar_data(url:str, fname:Union[pathlib.Path, str]=None, dest:Union[pathlib.Path
     Download `url` if doesn't exist to `fname` and un-tgz to folder `dest`
 ```
 
-We'll learn more shortly about how to get more documentation about the details of this, but for now, we can see we don't have to pass in a file name `fname` or a destination `dest`, it'll figure them out for us from the URL. 
+从代码里可以看到，我们不需要传递文件名 `fname` 和目录 `dest`参数，程序会根据url自动生成这些参数。稍后我们会学习如何获取关于这个功能的详细文档
 
-For all the datasets we'll be using in the course, we already have constants defined for all of them. So in this [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) class, you can see where it's going to grab it from.
+对于课程里的所有数据集，我们都定义了对应的常量。在这个 [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) 类里，你可以看到程序是怎样下载数据的。
 
-`untar_data` will download that to some convenient path and untar it for us and it will then return the value of path. 
+`untar_data` 会下载数据集到一个方便使用的目录，把数据集解压，返回文件路径。 
 
 ```python
 path = untar_data(URLs.PETS); path
@@ -217,13 +217,13 @@ path = untar_data(URLs.PETS); path
 ```
 PosixPath('/data1/jhoward/git/course-v3/nbs/dl1/data/oxford-iiit-pet')
 ```
-In Jupyter Notebook, you can just write a variable on its own (semicolon is just an end of statement in Python) and it prints it. You can also say `print(path)` but again, we are trying to do everything fast and interactively, so just write it and here is the path where it's given us our data. 
+在Jupyter Notebook里，你可以仅仅写一个变量 (分号只是一个python语句的结尾)，它就可以被打印出来。你也可以用`print(path)`，但我们尽可能用最简便的方式，所以只写了一个变量。这里输出的就是数据的路径。 
 
-Next time you run this, since you've already downloaded it, it won't download it again. Since you've already untared it, it won't untar it again. So everything is designed to be pretty automatic and easy.
+下次再执行这段代码时，因为数据以及被下载过了，它就不会被重复下载。它以及被解压了，也就不会被重复解压。所有的功能都被设计得很简便，很自动。
 
 [[23:50](https://youtu.be/BWWm4AzsdLk?t=1430)]
 
-There are some things in Python that are less convenient for interactive use than they should be. For example, when you do have a path object, seeing what's in it actually takes a lot more typing than I would like. So sometimes we add functionality into existing Python stuff. One of the things we do is add a `ls()` method to path.
+在Python里，有些语法不是很方便交互。比如，对一个路径对象，想查看路径下的文件，需要不少代码。所以，我们为python对象拓展了一些方法。其中一个就是为path添加了一个`ls()`方法
 
 ```python
 path.ls()
@@ -232,7 +232,7 @@ path.ls()
 ['annotations', 'images']
 ```
 
-These are what's inside this path, so that's what we just downloaded. 
+这是目录下的文件。我们刚刚下载下来的东西。 
 
 ### Python 3 pathlib [[24:25](https://youtu.be/BWWm4AzsdLk?t=1465)]
 
@@ -241,7 +241,7 @@ path_anno = path/'annotations'
 path_img = path/'images'
 ```
 
-If you are an experienced Python programmer, you may not be familiar with this approach of using a slash like this. This is a really convenient function that's part of Python 3. It's functionality from [pathlib](https://docs.python.org/3/library/pathlib.html). Path object is much better to use than strings. They let you use basically create sub paths like this. It doesn't matter if you're on Windows, Linux, or Mac. It is always going to work exactly the same way. `path_img` is the path to the images in that dataset.
+如果你不是一个经验丰富的Python开发者，你可能会不太熟悉斜杠的这种用法。这是Python 3里一个非常方便的函数。它是在[pathlib](https://docs.python.org/3/library/pathlib.html)定义的。Path对象比字符串好用得多。使用它你可以这样创建子目录。无论你用的是 Windows, Linux, 还是 Mac，它的行为都是一样的。`path_img` 数据集里图片的路径。
 
 [[24:57](https://youtu.be/BWWm4AzsdLk?t=1497)]
 
