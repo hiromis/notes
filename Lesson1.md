@@ -284,7 +284,7 @@ pat = r'/([^/]+)_\d+.jpg$'
 - size: 你想处理的图片的尺寸
   
 
-图片需要按固定的尺寸来处理，这看起来有点怪。这是目前深度学习技术的一个缺点。为了处理地更快，GPU需要对同时处理的一组数据执行相同的指令。如果图片的形状尺寸不同，这就做不到了。所以我们需要让所有图片有相同的形状尺寸。在课程的第一部分，我们会把图片做成正方形。第二部分，我们会学习使用矩形。这两者有些奇特的区别。非常多的人在很多ut pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
+图片需要按固定的尺寸来处理，这看起来有点怪。这是目前深度学习技术的一个缺点。为了处理地更快，GPU需要对同时处理的一组数据执行相同的指令。如果图片的形状尺寸不同，这就做不到了。所以我们需要让所有图片有相同的形状尺寸。在课程的第一部分，我们会把图片做成正方形。第二部分，我们会学习使用矩形。这两者有些奇特的区别。很多的人在很多计算机视觉模型里都是用的正方形的方法。224 * 224，是一个极其常见的尺寸，大部分模型都使用这个尺寸，如果你直接使用这个尺寸，大部分情况下很容易得到不错的结果。原因我们晚些再介绍。这是我想教给大家的一个小技巧，它通常很有效。你们尽管使用这个尺寸，在大部分情况下它都是有效的。
 
 
 
@@ -295,9 +295,9 @@ data.normalize(imagenet_stats)
 
 [[29:16](https://youtu.be/BWWm4AzsdLk?t=1756)]
 
-`ImageDataBunch.from_name_re` is going to return a DataBunch object. In fastai, everything you model with is going to be a DataBunch object. Basically DataBunch object contains 2 or 3 datasets - it contains your training data, validation data, and optionally test data. For each of those, it contains your images and your labels, your texts and your labels, or your tabular data and your labels, or so forth. And that all sits there in this one place(i.e. `data`). 
+`ImageDataBunch.from_name_re` 将会返回一个dataBunch对象。在fastai里，所有你用来建模的东西都是一个DataBunch对象。DataBunch对象基本上会包含 2个或者3个数据集 - 训练数据，验证数据，有时会有测试数据。每一个都包含图片和标签，或者文本和标签，或者表格和标签，等等。它们都被放在一个地方(比如 `data`)。
 
-Something we will learn more about in a little bit is normalization. But generally in nearly all machine learning tasks, you have to make all of your data about the same "size" - they are specifically about the same mean and standard deviation.  So there is a normalize function that we can use to normalize our data bunch in that way.
+一个需要多说明一点的是标准化。在几乎所有机器学习任务里，你需要让数据有相同的“尺寸”，就是说有相同的平均值和标准差。所以fastai里有一个标准化函数，我们可以用这样的方式来标准化数据。
 
 
 
