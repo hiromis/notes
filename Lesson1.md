@@ -245,11 +245,11 @@ path_img = path/'images'
 
 [[24:57](https://youtu.be/BWWm4AzsdLk?t=1497)]
 
-So if you are starting with a brand new dataset trying to do some deep learning on it. What do you do? Well, the first thing you would want to do is probably see what's in there. So we found that `annotations` and `images` are the directories in there, so what's in this images? 
+如果你想用一个新的数据集做深度学习，第一件事情大概就是看看数据集里有什么。我们可以看到数据集里有`annotations` 和 `images` 两个目录，来看下images 目录里有什么? 
 
 ### get_image_files [[25:15](https://youtu.be/BWWm4AzsdLk?t=1515)]
 
-get_image_files will just grab an array of all of the image files based on extension in a path. 
+get_image_files 可以取到一个包含所有图片路径的数组. 
 
 ```python
 fnames = get_image_files(path_img)
@@ -263,30 +263,28 @@ fnames[:5]
  PosixPath('/data1/jhoward/git/course-v3/nbs/dl1/data/oxford-iiit-pet/images/Bombay_151.jpg')]
 ```
 
- This is a pretty common way for computer vision datasets to get passed around - just one folder with a whole bunch of files in it. So the interesting bit then is how do we get the labels. In machine learning, the labels refer to the thing we are trying to predict. If we just eyeball this, we could immediately see that the labels are actually part of the file names. It's kind of like `path/label_number.extension`. We need to somehow get a list of `label` bits of each file name, and that will give us our labels. Because that's all you need to build a deep learning model:
- - Pictures (files containing the images)
- - Labels
+ 把所有的文件放在一个文件夹下，这是处理计算机视觉数据集的常见方式。下一步有趣的事是获取标签。在机器学习中，标签是指我们想要预测的东西。如果我们浏览下这些文件，可以看出标签就是文件名的一部分。 文件名的格式是 `目录/标签_编号.拓展名`。我们要想办法获取到文件名中`标签`部分的列表, 这样就可以得到标签。这些就是用来构建一个深度学习模型的所有东西:
+ - 图片文件
+ - 标签
 
-In fastai, this is made really easy. There is an object called `ImageDataBunch`. An ImageDataBunch represents all of the data you need to build a model and there's some factory method which try to make it really easy for you to create that data bunch - a training set, a validation set with images and labels. 
+在fastai里，这被设计的很简单。有一个叫做`ImageDataBunch`的对象，一个ImageDataBunch 代表你创建一个模型所需要的所有数据，使用工厂方法可以很方便得创建一个包含训练集和验证集的ImageDataBunch，训练集和验证集里都包含图片和标签。 
 
-In this case, we need to extract the labels from the names. We are going to use `from_name_re`. `re` is the module in Python that does regular expressions - things that's really useful for extracting text. 
-
-Here is the regular expression that extract the label for this dataset:
+在这个案例里，我们需要从文件名提取标签。我们会使用 `from_name_re`. `re` 是python里做正则表达式的模块，正则表达对提取文本是非常有用的。这是提取标签的正则表达式:
 
 ```python
 np.random.seed(2)
 pat = r'/([^/]+)_\d+.jpg$'
 ```
-With this factory method, we can basically say:
+对于这个工厂方法，我们可以传入这些参数
 
-- path_img: a path containing images
-- fnames: a list of file names
-- pat: a regular expression (i.e. pattern) to be used to extract the label from the file name
-- ds_tfm: we'll talk about transforms later
-- size: what size images do you want to work with.
+- path_img: 存放图片的目录
+- fnames: 存放文件名的列表
+- pat: 从文件名中提取标签的正则表达式
+- ds_tfm: 变形，我们稍后再讲
+- size: 你想处理的图片的尺寸
   
 
-This might seem weird because images have size. This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
+图片需要按固定的尺寸来处理，这看起来有点怪。这是目前深度学习技术的一个缺点。 This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
 
 
 
