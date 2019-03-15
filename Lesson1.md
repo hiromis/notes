@@ -303,31 +303,31 @@ data.normalize(imagenet_stats)
 
 [[30:25](https://youtu.be/BWWm4AzsdLk?t=1825)]
 
-Question: What does the function do if the image size is not 224? 
+提问：如果图片尺寸不是224，这个函数会做些什么？ 
 
-This is what we are going to learn about shortly. Basically this thing called transforms is used to do a number of the things and one of the things it does is to make something size 224. 
+我们稍后会学习这部分内容。变形操作会对图片做一些处理，其中一个就是把图片尺寸编程224。 
 
 
 ### data.show_batch
-Let's take a look at a few pictures. Here are a few pictures of things from my data bunch. So you can see data.show_batch can be used to show me some of the contents in my data bunch. So you can see roughly what's happened is that they all seem to have being zoomed and cropped in a reasonably nice way. So basically what it'll do is something called by default center cropping which means it'll grab the middle bit and it'll also resize it. We'll talk more about the detail of this because it turns out to actually be quite important, but basically a combination of cropping and resizing is used.
+我们来看看这些图片。 这是data bunch里的一些图片。data.show_batch可以显示data bunch里的内容。可以看出，这些图片都被恰当地缩放或者裁剪过。这种方法叫中心裁剪，它抓取出图片的中间部分，然后调整图片尺寸。我们将会学习这个方法的更多细节，它是相当重要的。 它基本上是裁剪和调整尺寸两种方法的组合。
 
 ```python
 data.show_batch(rows=3, figsize=(7,6))
 ```
 ![](lesson1/8.png)
 
-Something else we are going to learn about is we also use this to do something called data augmentation. So there's actually some randomization in how much and where it crops and stuff like that. 
+我们也会用它来做数据增强。对于裁剪多少和在哪里裁剪之类的问题，是有些随机性的。 
 
-Basic the basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
+基本思路是裁剪，缩放和设置边距。做数据增强时，根据不同情况有很多不同的方式，我们稍后将会学习这些内容。 
 
 
 [[31:51](https://youtu.be/BWWm4AzsdLk?t=1911)]
 
-**Question**: What does it mean to normalize the images? 
+**提问**: 标准化图片是什么意思？ 
 
-Normalizing the images, we're going to be learning more about later in the course, but in short, it means that the pixel values start out from naught to 255. And some channels might tend to be really bright, some might tend to be really not bright at all, some might vary a lot, and some might not very much at all. It really helps train a deep learning model if each one of those red green and blue channels has a mean of zero and a standard deviation of one. 
+后面我们会学习更多关于标准化图片的知识。简单来讲，一个像素有红绿蓝三个通道，每个值介于0到255之间，有的通道会太亮，有的会太暗，有的变化比较大，有的没什么变化。如果我们让三个通道的均值都是0，标准差都是1，会有利于我们训练深度学习模型。 
 
-If your data is not normalized, it can be quite difficult for your model to train well. So if you have trouble training a model, one thing to check is that you've normalized it.
+如果数据没有标准化，难以训练出好的模型。如果你的模型不效果不好，需要检查下是否标准化了数据。
 
 
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
