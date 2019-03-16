@@ -611,7 +611,7 @@ Too many epochs create something called "overfitting". If you train for too long
 
 So the only thing that tells you that you're overfitting is that the error rate improves for a while and then starts getting worse again. You will see a lot of people, even people that claim to understand machine learning, tell you that if your training loss is lower than your validation loss, then you are overfitting. As you will learn today in more detail and during the rest of course, that is **absolutely not true**. 
 
-> Any morel that is trained correctly will always have train loss lower than validation loss. 
+> Any model that is trained correctly will always have a lower training loss than validation loss. 
 
 That is not a sign of overfitting. That is not a sign you've done something wrong. That is a sign you have done something right. The sign that you're overfitting is that your error starts getting worse, because that's what you care about. You want your model to have a low error. So as long as you're training and your model error is improving, you're not overfitting. How could you be?
 
