@@ -331,20 +331,20 @@ data.show_batch(rows=3, figsize=(7,6))
 
 
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
-**Question**: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
+**提问**: GPU内存是2的指数，相比于224来说，是不是256对于利用GPU更有效？
 
-The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2^5), then you end up with something that's a good size.
+简单来说，模型的最后一层的尺寸是7*7，所以我们希望的输入是7乘以2的指数。
 
 
 [[33:27](https://youtu.be/BWWm4AzsdLk?t=2007)]
 
-We will get to all these details but the key thing is I wanted to get to training a model as quickly as possible. 
+我们将学习所有这些细节。但重要的是，我希望能尽快开始训练模型。 
 
-### It is important to look at the data
+### 查看数据是重要的
 
-One of the most important thing to be a really good practitioner is to be able to look at your data. So it's really important to remember to go to `data.show_batch` and take a look. It's surprising how often when you actually look at the dataset you've been given that you realize it's got weird black borders on it, some of the things have text covering up some of it, or some of it is rotated in odd ways. So make sure you take a look.
+一个优秀的从业者的一个重要能力就是能够查看数据。使用`data.show_batch`方法来看看数据是很重要的。 当你查看你拿到的数据时，你会发现这些情况会很常见：图片有奇怪的黑色边框，在图片中的一些物品上有文字，有些图片被旋转过。一定要查看下这些数据。
 
-The other thing we want to do is to look at the labels. All of the possible label names are called your classes. With DataBunch, you can print out your `data.classes`.
+另外一件我们要做的是查看标签。所有可能的标签都是一种分类，使用DataBunch，你可以打印`data.classes`
 
 ```python
 print(data.classes)
@@ -357,22 +357,22 @@ len(data.classes),data.c
 (37, 37)
 ```
 
- That's all of the possible labels that we found by using that regular expression on the file names. We learnt earlier on at the top that there are 37 possible categories, so just checking `len(data.classes)`, it is indeed 37. DataBunch will always have a property called `c`. We will get to the technical detail later, but for now, you can kind of think of it as being the number of classes. For things like regression problems and multi-label classification, that's not exactly accurate, but it'll do for now. It is important to know that `data.c` is a really important piece of information that is something like, or at least for classification problems it is, the number of classes. 
+这是我们使用正则表达式找出的所有的可能的标签。之前我们讲过有37中可能的分类，检查下`len(data.classes)`，确实是 37。DataBunch也有一个叫做 `c`的属性。我们稍后再学习这些技术细节，现在你可以把它理解为类别的数量。对于回归和多标签分类问题，这不是很准确，但对于目前这样的解释够用了。 `data.c` 是一个很重要的信息，这点要记住，它基本上表示类别的数量，至少对于分类问题是这样的。 
 
- ## Training [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
+ ## 训练 [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
 
- Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
+信不信由你，我们现在已经准备好训练模型了。在fastai里我们使用 "learner" 来训练模型。
 
- - **DataBunch**: A general fastai concept for your data, and from there, there are subclasses for particular applications like ImageDataBunch
- - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
+ - **DataBunch**: 一个fastai里广泛使用的概念，代表你的数据。对具体的应用，有对应的子类，比如ImageDataBunch
+ - **Learner**: 一个fastai里广泛使用的概念，代表学习拟合一个模型的操作。 在各种具体的应用中有很多对应的子类，用来简化使用，比如有一个convnet learner，可以用来创建一个卷积神经网络。
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
 ```
 
-For now, just know that to create a learner for a convolutional neural network, you just have to tell it two things:
-`data`: What's your data. Not surprisingly, it takes a data bunch.
-`arch`: What's your architecture. There are lots of different ways of constructing a convolutional neural network. 
+目前，创建一个卷积神经网络的learner，只需要知道两个参数:
+`data`: 你的数据，一个data bunch.
+`arch`: 模型的结构。有很多不同的方式构建一个卷积神经网络. 
 
 For now, the most important thing for you to know is that there's a particular kind of model called ResNet which works extremely well nearly all the time. For a while, at least, you really only need to be doing choosing between two things which is what size ResNet do you want. There are ResNet34 and ResNet50. When we are getting started with something, I'll pick a smaller one because it'll train faster. That's as much as you need to know to be a pretty good practitioner about architecture for now which is that there are two variants of one architecture that work pretty well: ResNet34 and ResNet50. Start with a smaller one and see if it's good enough.
 
