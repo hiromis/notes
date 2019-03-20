@@ -374,11 +374,11 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 `data`: 你的数据，一个data bunch.
 `arch`: 模型的结构。有很多不同的方式构建一个卷积神经网络. 
 
-For now, the most important thing for you to know is that there's a particular kind of model called ResNet which works extremely well nearly all the time. For a while, at least, you really only need to be doing choosing between two things which is what size ResNet do you want. There are ResNet34 and ResNet50. When we are getting started with something, I'll pick a smaller one because it'll train faster. That's as much as you need to know to be a pretty good practitioner about architecture for now which is that there are two variants of one architecture that work pretty well: ResNet34 and ResNet50. Start with a smaller one and see if it's good enough.
+现在，你需要知道有一种叫做ResNet的模型，它几乎总是非常有效的。你只需要选择ResNet的大小，ResNet有ResNet34 和 ResNet50两种大小。当我们开始做一个任务时，我会先用这个小些的模型，它训练地更快。想成为一个好的实践者，现在只需要知道有两种架构效果很好：ResNet34 和 ResNet50。先试下小的，看看效果是否足够好。
 
-That is all the information we need to create a convolutional neural network learner. 
+这是我们要创建一个卷积神经网络learner所需要知道的所有信息。 
 
-There is one other thing I'm going to give it though which is a list of metrics. Metrics are literally just things that gets printed out as it's training. So I'm saying I would like you to print out error rate. 
+另外一个传入的参数是metrics（度量），metrics是训练时逐个地打印出来的东西。传入error_rate就是让它打印出错误率。
 
 [[37:25](https://youtu.be/BWWm4AzsdLk?t=2245)]
 
