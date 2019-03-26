@@ -66,7 +66,7 @@ To start with, we definitely need to train these new weights because they're ran
 
 ![](lesson5/6.png)
 
-Let's freeze all of those other layers. So what does that mean? All that means is that we're asking fastai and PytTorch that when we train (however many epochs we do), when we call fit, don't back propagate the gradients back into those layers. In other words, when you go `parameters=parameters - learning rate * gradient`, only do it for the new layers, don't bother doing it for the other layers, That's what freezing means - just means don't update those parameters.
+Let's freeze all of those other layers. So what does that mean? All that means is that we're asking fastai and PyTorch that when we train (however many epochs we do), when we call fit, don't back propagate the gradients back into those layers. In other words, when you go `parameters=parameters - learning rate * gradient`, only do it for the new layers, don't bother doing it for the other layers, That's what freezing means - just means don't update those parameters.
 
 So it'll be a little bit faster as well because there's a few less calculations to do. It'll take up a little bit less memory because there's a few less gradients that we have to store. But most importantly it's not going to change weights that are already better than nothing - they're better than random at the very least.
 
@@ -433,7 +433,7 @@ array(['Star Wars (1977)', 'Contact (1997)', 'Fargo (1996)', 'Return of the Jedi
        'Independence Day (ID4) (1996)'], dtype=object)
 ```
 
-So the top thousand are the movies that have been rated the most, and so there hopefully movies that we might have seen.That's the only reason I'm doing this. So I've called this `top_movies` by which I mean not good movies, just movies we likely to have seen.
+So the top thousand are the movies that have been rated the most, and so there hopefully movies that we might have seen. That's the only reason I'm doing this. So I've called this `top_movies` by which I mean not good movies, just movies we likely to have seen.
 
 Not surprisingly, Star Wars is the one, at that point, the most people had put a rating to. Independence Day, there you go. We can then take our learner that we trained and asked it for the bias of the items listed here.
 
@@ -640,7 +640,7 @@ plt.show()
 
 ![](lesson5/16.png)
 
-I've just cuddled them randomly to make them easier to see. This is just the top 50 most popular movies by how many times they've been rated. On this one factor, you've got The Terminators really high up here, and The English Patient and Schindler's List at the other end. Then The Godfather and Monty Python over here (on the right), and Independence Day and Liar Liar over there (on the left). So you get the idea. It's ind of fun. It would be interesting to see if you can come up with some stuff at work or other kind of datasets where you could try to pull out some features and play with them.
+I've just cuddled them randomly to make them easier to see. This is just the top 50 most popular movies by how many times they've been rated. On this one factor, you've got The Terminators really high up here, and The English Patient and Schindler's List at the other end. Then The Godfather and Monty Python over here (on the right), and Independence Day and Liar Liar over there (on the left). So you get the idea. It's kind of fun. It would be interesting to see if you can come up with some stuff at work or other kind of datasets where you could try to pull out some features and play with them.
 
 **Question**: Why am I sometimes getting negative loss when training? [[59:49](https://youtu.be/uQtTwhpv7Ew?t=3589)] 
 
@@ -790,7 +790,7 @@ x_train.shape
 
 ![](lesson5/27.png)
 
-So that's our data. We've seen MNIST before in its pre-reshaped version, here it is in flattened version. S o I'm going to be using it in its flattened version.
+So that's our data. We've seen MNIST before in its pre-reshaped version, here it is in flattened version. So I'm going to be using it in its flattened version.
 
 Currently they are numpy arrays. I need them to be tensors. So I can just map `torch.tensor` across all of them, and so now they're tensors.
 
@@ -1022,7 +1022,7 @@ So this is why this idea of neural nets is so easy. Once you have something that
 
 ![](lesson5/31.png)
 
-Now you're saying to PyTorch i want you to take these parameters and optimize them using SGD. So this now, rather than saying `for p in parameters: p -= lr * p.grad`, you just say `opt.step()`. It's the same thing. It's just less code and it does the same thing. But the reason it's kind of particularly interesting is that now you can replace `SGD` with `Adam` for example and you can even add things like weight decay because there's more stuff in these things for you. So that's why we tend to use `optim.blah`. So behind the scenes, this is actually what we do in fastai. 
+Now you're saying to PyTorch I want you to take these parameters and optimize them using SGD. So this now, rather than saying `for p in parameters: p -= lr * p.grad`, you just say `opt.step()`. It's the same thing. It's just less code and it does the same thing. But the reason it's kind of particularly interesting is that now you can replace `SGD` with `Adam` for example and you can even add things like weight decay because there's more stuff in these things for you. So that's why we tend to use `optim.blah`. So behind the scenes, this is actually what we do in fastai. 
 
 [[1:42:54](https://youtu.be/uQtTwhpv7Ew?t=6174)]
 
@@ -1044,7 +1044,7 @@ It diverged. We've seen a great picture of that from one of our students who sho
 
 ![](lesson5/34.png)
 
-Okay, there's a better learning rate. But look at this - we're down underneath 0.5 by about epoch 200. Where else before (with SGD), I'm not even sure we ever got to quite that level. So what's going on? What's Adam? Let me show you.
+Okay, there's a better learning rate. But look at this - we're down underneath 0.5 by about epoch 200. Whereas before (with SGD), I'm not even sure we ever got to quite that level. So what's going on? What's Adam? Let me show you.
 
 ### Adam [[1:43:56](https://youtu.be/uQtTwhpv7Ew?t=6236)]
 
