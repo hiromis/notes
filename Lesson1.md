@@ -384,7 +384,7 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 
 ![](lesson1/c1.png)
 
-第一次，我在一个新安装的环境里运行这些代码，它下载了 ResNet34 预训练权重。也就是说，这是一个针对真实任务训练过的实战模型。                                 . What that means is that this particular model has actually already been trained for a particular task. And that particular task is that it was trained on looking at about one and a half million pictures of all kinds of different things, a thousand categories of things, using an image dataset called ImageNet. So we can download those pre-trained weights so that we don't start with a model that knows nothing about anything, but we actually start with a model that knows how to recognize a thousand categories of things in ImageNet. I don't think all of these 37 categories of pet are in ImageNet but there were certainly some kinds of dog and some kinds of cat. So this pre-trained model knows quite a little bit about what pets look like, and it certainly knows quite a lot about what animals look like and what photos look like. So the idea is that we don't start with a model that knows nothing at all, but we start by downloading a model that knows something about recognizing images already. So it downloads for us automatically, the first time we use it, a pre-trained model and then from now on, it won't need to download it again - it'll just use the one we've got. 
+第一次，我在一个新安装的环境里运行这些代码，它下载了 ResNet34 预训练权重。也就是说，这是一个针对真实任务训练过的实战模型。这个任务是训练模型看50万张各种物品的图片，这些物品属于1000个种类，这个图片数据集叫ImageNet。所以我们可以下载这些预训练过的参数，不必从一个一无所知的模型，而是从一个已经能够识别ImageNet里1000种类别物品的模型开始。并非所有37种品种都在ImageNet里，但里面确实有几种猫和几种狗。所以这个模型知道一些猫狗的品种，并且知道很多动物和很多照片。所以我们不需要从一个空模型开始，而是基于一个已经懂得识别一些图片的模型。预训练模型会在第一次被使用时被自动下载，以后就不会再下载了，而是直接使用先前下载的那个。 
 
 ## Transfer learning [[38:54](https://youtu.be/BWWm4AzsdLk?t=2334)]
 
