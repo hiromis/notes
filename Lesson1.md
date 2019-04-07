@@ -396,10 +396,10 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 等等，你怎么知道这个模型可以广泛识别出人们打板球和篮球的图片。或许它只是会识别出这30张图片，或许这只是作弊。这被称作“过拟合”。我们将在课程中讲解和多关于过拟合的内容。过拟合是指你的模型并没有学会识别图片，比如区分板球和篮球，而是仅仅能识别这几张特定图片里的板球运动员和这几张特定图片里的篮球运动员。我们必须确认我们没有过拟合。使用验证数据集可以检查有没有过拟合。验证集是你的模型没有使用过的一组图片。基于验证集的度量值(比如错误率)被自动地打印出来。当我们创建数据组时，它会自动创建一个验证集。我们将学习很多种创建和使用验证集地方法。因为我们尝试集成所有最佳实践，你几乎无法不使用验证集。因为如果你不使用验证集，你就不知道你是否过拟合。所以我们总是打印出验证集的度量。我们总是保证模型不接触到验证集。这些都是已经实现了的，这些方法都已经被集成在data bunch对象中。
 
 
-## Fitting your model [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
-So now we have a ConvLearner, we can fit it. You can just use a method called `fit` but in practice, you should nearly always use a method called `fit_one_cycle`. In short, one cycle learning is [a paper](https://arxiv.org/pdf/1803.09820.pdf) that was released in April and turned out to be dramatically better both more accurate and faster than any previous approach. Again, I don't want to teach you how to do 2017 deep learning. In 2018, the best way to fit models is to use something called one cycle. 
+## 拟合模型 [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
+现在我们有了一个ConvLearner，我们可以开始拟合它。你可以使用一个叫`fit`的方法。但实践中，你应该总是使用`fit_one_cycle`这个方法。简单来讲，one cycle learning 是4月份发表的 [一篇论文](https://arxiv.org/pdf/1803.09820.pdf) ，它明显比以前的方法更快更准确。再重复一遍，我不想教大家怎样用2017年的方法做深度学习。在2018年，最好的拟合模型的方法是使用one cycle。 
 
-For now, just know that this number, 4, basically decides how many times do we go through the entire dataset, how many times do we show the dataset to the model so that it can learn from it. Each time it sees a picture, it's going to get a little bit better. But it's going to take time and it means it could overfit. If it sees the same picture too many times, it will just learn to recognize that picture, not pets in general. We'll learn all about how to tune this number during the next couple of lessons but starting out with 4 is a pretty good start just to see how it goes and you can actually see after four epochs or four cycles, we got an error rate of 6%. And it took 1 minute and 56 seconds. 
+现在我们遍历整个数据集四次，我们把数据展示给模型看四次来训练它。每次它看到一个图片，它会变得更好些。但这会花费时间，并且这意味着会过拟合。如果它看太多次同一个图片，它只会学会识别这个图片，而不是区分宠物品种。接下来的课程里我们将学习如何调整遍历次数，现在我们选择使用4次，来看看程序是怎样运行的，你可以看到，遍历4次后，错误率是6%，这花费了1分56秒。
 
 ```python
 learn.fit_one_cycle(4)
