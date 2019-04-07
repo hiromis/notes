@@ -391,9 +391,9 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 这部分很重要。我们将学习很多有关迁移学习的内容。这是整个课程的重点。迁移学习研究的是如何使用一个已经能很好地完成一些任务的模型来完成新的任务。我们使用一个预训练的模型，然后调整它，不再使用ImageNet数据来预测一千种分类，而是使用宠物数据集来预测 37 种品种。这样的话，相对于一次常规的训练，你训练一个模型仅需百分之一的时间和数据，甚至更少。有可能会少于千分之一。记得我在展示的Nikhil的去年第一课项目的幻灯片吗，他只用了30张图片。ImageNet里没有板球和篮球的图片，但最终ImageNet还是很擅长识别世界里的各种事物，仅仅30个打篮球和板球的例子就足够构建一个几乎完美的分类器。 
 
 
-## Overfitting [[40:05](https://youtu.be/BWWm4AzsdLk?t=2405)]
+## 过拟合 [[40:05](https://youtu.be/BWWm4AzsdLk?t=2405)]
 
-Wait a minute, how do you know it can actually recognize pictures of people playing cricket versus baseball in general? Maybe it just learnt to recognize those 30. Maybe it's just cheating. That's called "overfitting". We'll be talking a lot about that during this course. But overfitting is where you don't learn to recognize pictures of say cricket versus baseball, but just these particular cricketers in these particular photos and these particular baseball players in these particular photos. We have to make sure that we don't overfit. The way to do that is using something called a validation set. A validation set is a set of images that your model does not get to look at. So these metrics (e.g. error_rate) get printed out automatically using the validation set - a set of images that our model never got to see.  When we created our data bunch, it automatically created a validation set for us. We'll learn lots of ways of creating and using validation sets, but because we're trying to bake in all of the best practices, we actually make it nearly impossible for you not to use a validation set. Because if you're not using a validation set, you don't know if you're overfitting. So we always print out the metrics on a validation, we've always hold it out, we always make sure that the model doesn't touch it. That's all done for you, and all built into this data bunch object.
+等等，你怎么知道这个模型可以广泛识别出人们打板球和篮球的图片。或许它只是会识别出这30张图片，或许这只是作弊。这被称作“过拟合”。我们将在课程中讲解和多关于过拟合的内容。过拟合是指你的模型并没有学会识别图片，比如区分板球和篮球，而是仅仅能识别这几张特定图片里的板球运动员和这几张特定图片里的篮球运动员。我们必须确认我们没有过拟合。使用验证数据集可以检查有没有过拟合。验证集是你的模型没有使用过的一组图片。基于验证集的度量值(比如错误率)被自动地打印出来。当我们创建数据组时，它会自动创建一个验证集。我们将学习很多种创建和使用验证集地方法。因为我们尝试集成所有最佳实践，你几乎无法不使用验证集。因为如果你不使用验证集，你就不知道你是否过拟合。所以我们总是打印出验证集的度量。我们总是保证模型不接触到验证集。这些都是已经实现了的，这些方法都已经被集成在data bunch对象中。
 
 
 ## Fitting your model [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
