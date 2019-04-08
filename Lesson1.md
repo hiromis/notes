@@ -413,27 +413,27 @@ epoch  train loss  valid loss  error_rate
 3      0.336315    0.211106    0.067199    (00:17)
 4      0.233666    0.191813    0.057219    (00:17)
 ```
-So 94% of the time, we correctly picked the exact right one of those 37 dog and cat breeds which feels pretty good to me. But to get a sense of how good it is, maybe we should go back and look at the paper. Remember, I said the nice thing about using academic papers or Kaggle dataset is we can compare our solution to whatever the best people in Kaggle did or in the academics did. This particular dataset of pet breeds is from 2012 and if I scroll through the paper, you'll generally find in any academic paper there'll be a section called experiments about 2/3 of the way through. If you find a section on experiments, then you can find a section on accuracy and they've got lots of different models and their models. The models as you'll read about in the paper, it's really pet specific. They learn something about how pet heads look and how pet bodies look, and pet image in general look. And they combine them all together and once they use all of this complex code and math, they got an accuracy of 59%. So in 2012, this highly pet specific analysis got an accuracy of 59%. These were the top researchers from Oxford University. Today in 2018, with basically about three lines of code, we got 94% (i.e. 6% error). So that gives you a sense of how far we've come with deep learning, and particularly with PyTorch and fastai, how easy things are.
+94%的情况下，我们可以在37个猫狗的品种中选择出正确的那个，我认为这个结果很不错。要衡量这个结果好到什么程度，或许我们应该回过头来看看论文。记住，我说过使用学术或者kaggle数据集的好处是我们可以把我们的方案和Kaggle或者学术界里的最好成绩做对比。宠物品种数据集最初出现在2012年，如果浏览这些文章，你在论文里找到一个实验的章节。在实验章节里，你可以找到准确率的部分。他们实现了很多不同的模型，就像你在文章里读到的一样，这些模型是专门针对宠物识别的，他们学习了宠物的头长什么样，身体长什么样，宠物的图形一般长什么样。然后把这些组合在一起。他们使用这些复杂的代码和算法得到了59%的准确率。所以在2012，这项专门针对宠物的分析得到了59%的准确率。他们是哈佛的顶尖研究者。现在，在2018，使用简单的三行代码，我们得到了94%的准确率 (也就是 6% 的错误率)。可见我们使用深度学习取得了多大的进步，以及，使用PyTorch和fastai，这是多么容易做到。
 
 
 [[46:43](https://youtu.be/BWWm4AzsdLk?t=2803)]
-We just trained a model. We don't know exactly what that involved or how it happened but we do know that with 3 or 4 lines of code, we've built something which smashed the accuracy of the state-of-the-art of 2012. 6% error certainly sounds like pretty impressive for something that can recognize different dog breeds and cat breeds, but we don't really know why it work, but we will. That's okay.
+我们仅仅训练了一个模型。我们还不是非常清楚这是如何做到的，但我们知道我们使用三四行代码，我们做到了远远超过2012年顶尖水平的准确率。对于识别不同品种的猫狗来说，6%的错误率听起来令人印象深刻。我们还不太了解它是怎样工作的，但我们将会学习这些。这就够了。
 
-### The number one regret of past students:
+### 过去的学生最后悔的事:
 
 ![](lesson1/102.png)
 
 
 
-> ### **So please run the code. Really run the code.** [[47:54](https://youtu.be/BWWm4AzsdLk?t=2874)]
+> ### **所以请运行代码。真正地去运行代码** [[47:54](https://youtu.be/BWWm4AzsdLk?t=2874)]
 
 
 
-Your most important skills to practice are learning and understanding what goes in and what comes out. 
+实践的最重要的技巧是学习和理解给程序输入了什么，程序输出了什么。 
 
 ![](lesson1/103.png)
 
-Fastai library is pretty new, but it's getting an extraordinary amount of traction. It's making a lot of things a lot easier, but it's also making new things possible. So really understanding the fastai software is something which is going to take you a long way. And the best way to really understand the fastai software well is by using the [fastai documentation](http://docs.fast.ai/).
+Fastai库很新，但它得到了很多关注。它让很多事情简单了很多，也让做一些新东西变得可能。真正理解fastai程序要花很不少精力。最好的方式是使用[fastai 文档](http://docs.fast.ai/).
 
 
 
