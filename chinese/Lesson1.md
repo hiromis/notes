@@ -452,12 +452,12 @@ fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简�
 
 
 
-How far can you take it? All of the research that we do at fastai uses the library and an example of the research we did which was recently featured in Wired describes a new breakthrough in a natural language processing which people are calling the ImageNet moment which is basically we broke a new state-of-the-art result in text classification which OpenAI then built on top of our paper with more computing, more data to do different tasks to take it even further. This is an example of something we've done in the last 6 months in conjunction with my colleague Sebastian Ruder - an example of something that's being built in the fastai library and you are going to learn how to use this brand new model in three lessons time. You're actually going to get this exact result from this exact paper yourself.
+用它能做到什么水平? 我们在fastai做的研究都是使用这个库，我们最近的一项研究就是一个例子，这项研究被Wired报道，这项突破被称为自然语言处理的ImageNet时刻，我们刷新了文本分类的记录，OpenAI基于我们的论文使用更多的机器和更多的数据来执行不同的任务，取得了很大进展。这是过去六个月我和我的同事Sebastian Ruder所做的事情中的一个例子，这是基于fastai库构建的应用的一个例子，你将在三节课的时间里学习使用这个新的模型。你将能独自取得和论文一致的结果。 
 
 
 [[51:50](https://youtu.be/BWWm4AzsdLk?t=3110)]
 ![](/lesson1/107.png)
-Another example, one of our alumni, Hamel Husain built a new system for natural language semantic code search, you can find it on Github where you can actually type in English sentences and find snippets of code that do the thing you asked for. Again, it's being built with the fastai library using the techniques you'll learn in the next seven weeks.
+另外一个例子，Hamel Husain ，他是我们的一个学员，他构建了一个自然语言语义代码搜索系统，你可以在Github上找到这个系统，你向它输入英文语句，它可以找出你想要的代码。它也是使用fastai库构建的，你们也将在接下来的七周里学习用来实现它的技术。
 
 
 
