@@ -1,45 +1,45 @@
-# 第一课
-[主页](http://course-v3.fast.ai/) / [视频](https://youtu.be/BWWm4AzsdLk) /  [论坛第一课板块](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [论坛](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
+# Lesson 1
+[Webpage](http://course-v3.fast.ai/) / [Video](https://youtu.be/BWWm4AzsdLk) /  [Lesson Forum](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 
 
 
-## 欢迎! 
+## Welcome! 
 
-确保已经设置好了GPU环境并且可以运行Jupyter Notebook
+Make sure your GPU environment is set up and you can run Jupyter Notebook
 
 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/00_notebook_tutorial.ipynb)
 
 
-快捷键:
+Four shortcuts:
 
-- <kbd>Shift</kbd>+<kbd>Enter</kbd>: 运行单元里的代码，选中下个单元
+- <kbd>Shift</kbd>+<kbd>Enter</kbd>: Runs the code or markdown on a cell
 
-- <kbd>Up Arrow</kbd>+<kbd>Down Arrow</kbd>: 在单元间切换
+- <kbd>Up Arrow</kbd>+<kbd>Down Arrow</kbd>: Toggle across cells
 
-- <kbd>b</kbd>: 创建新单元
+- <kbd>b</kbd>: Create new cell
 
-- <kbd>0</kbd>+<kbd>0</kbd>: 重启内核
+- <kbd>0</kbd>+<kbd>0</kbd>: Restart Kernel
 
 
 
 [[2:45](https://youtu.be/BWWm4AzsdLk?t=165)] 
 
-Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你不仅可以获得静态的信息，还可以进行交互实验.
+Jupyter Notebook is a really interesting device for data scientists because it lets you run interactive experiments and give you not just a static piece of information but something you can interactively experiment with.
 
-基于过去三年的经验，这样使用notebook和学习材料最有效:
+How to use notebooks and the materials well based on the last three years of experience:
 
-直接从头到尾看视频. 
-   - 不必试图跟上课程内容，课程节奏的被设计地比较快，这样你可以快速地对各方面有一个初步的概念，并且了解到这些方面是怎样结合在一起的
-   - 看完第一遍后，再回过头来，重新看一遍视频，在需要的地方暂停，按照视频里讲的自己做一遍。确保你可以做出和我一样的结果，然后在这个基础上用你自己的方式做些拓展.
-   - 第一遍看视频时不要运行代码，中间不要停下来，不必试图理解所有内容. 
+1. Just watch a lesson end to end. 
+   - Don't try to follow along because it's not really designed to go the speed where you can follow along. It's designed to be something where you just take in the information, you get a general sense of all the pieces, how it all fits together.
+   - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.
+   - Don't try and stop and understand everything the first time. 
 
 
 
-### 你可以做世界顶尖水平的深度学习 [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
+### You can do world-class practitioner level deep learning [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
 ![](lesson1/1.png)
 
-在这里获取课程资源:
+Main places to be looking for things are:
 - [http://course-v3.fast.ai/](http://course-v3.fast.ai/)
 - [https://forums.fast.ai/](https://forums.fast.ai/latest)
 
@@ -47,7 +47,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 
 
-### 为什么听Jeremy讲课 [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
+### A little bit about why we should listen to Jeremy [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
 
 ![](lesson1/2.png)
 
@@ -55,7 +55,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 
 
-### 使用机器学习做有用的事情 [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
+### Using machine learning to do useful things [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
 
 ![](lesson1/3.png)
 
@@ -65,32 +65,32 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ![](lesson1/4.png)
 
-如果你能坚持7周，每周花10个小时在课程上，最终你可以做到：
+If you follow along with 10 hours a week or so approach for the 7 weeks, by the end, you will be able to:
 
-1. 为你选择的图片构建一个世界水平的分类器
-2. 对任何你感兴趣的数据集做文本分类
-3. 做商业预测，比如销售预测
-4. 构建像Netflix一样的推荐系统
+1. Build an image classification model on pictures that you choose that will work at a world class level
+2. Classify text using whatever datasets you're interested in
+3. Make predictions of commercial applications like sales
+4. Build recommendation systems such as the one used by Netflix
 
-所有这些并非玩具示例，而是可以在Kaggle竞赛赢得前十的实战项目，这样的成绩足以超过学术社区. 
+Not toy examples of any of these but actually things that can come top 10 in Kaggle competitions, that can beat everything that's in the academic community. 
 
-前提条件是一年的编程经验和高中数学知识.
-
-
+The prerequisite is one year of coding and high school math.
 
 
 
 
-### 关于深度学习的一些无意义或者不正确的说法 [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
+
+
+### What people say about deep learning which are either pointless or untrue [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
 
 ![](lesson1/5.png)
 
-- 它不是一个黑盒子，它的工作是可以解释的.
-- 大部分实际的应用不需要太多数据.
-- 想掌握深度学习，并不需要你有一个博士学位，当然如果你有的话，也不会妨碍你从事深度学习.
-- 可以被广泛应用在很多不同的领域，并不单单是视觉领域
-- 你不需要太多硬件，36美分一小时的服务器足够求解大部分问题，并取得世界级的结果.
-- 它确实不能帮助你构建一个有意识的大脑，这并不是我们关心的，我们专注于解决有趣的现实问题.
+- It's not a black box. It's really great for interpreting what's going on.
+- It does not need much data for most practical applications.
+- You don't need a PhD. Rachel has one so it doesn't actually stop you from doing deep learning if you have a PhD.
+- It can be used very widely for lots of different applications, not just for vision.
+- You don't need lots of hardware. 36 cents an hour server is more than enough to get world-class results for most problems.
+- It is true that maybe this is not going to help you build a sentient brain, but that's not our focus. We are focused on solving interesting real-world problems.
 
 
 
@@ -98,91 +98,91 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ![](lesson1/6.png)
 
-棒球 VS. 板球 - Nikhil 提供的一个例子，学完第一课后，你将能够完成这个题目
+Baseball vs. Cricket - An example by Nikhil of what you are going to be able to do by the end of lesson 1:
 
 
 
-### 由上至下的学习方式 [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
+### Topdown approach [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
 
 ![](lesson1/7.png)
 
-我们从阅读代码开始，这不同于大部分学校课程。今天我们将学习构建有用的程序。今天的课程结束后，你并不会学会所有的理论，有很多东西你可能并不清楚它们是怎样工作的，以及它们为什么是有效的。这没有关系，在接下来的7周里，你将会学会这些。现在，着手写代码而不是关注理论知识，这是更有效的学习方式
+We are going to start by looking at code which is different to many of academic courses. We are going to learn to build a useful thing today. That means that at the end of today, you won't know all the theory. There will be lots of aspects of what we do that you don't know why or how it works. That's okay! You will learn why and how it works over the next 7 weeks. But for now, we've found that what works really well is to actually get your hands dirty coding - not focusing on theory. 
 
 
 
-## 什么是你的宠物 [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
+## What's your pet [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
 
 [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
 
-<kbd>Shift</kbd>+<kbd>Enter</kbd> 运行一个单元
+<kbd>Shift</kbd>+<kbd>Enter</kbd> to run a cell
 
-每一个notebook都以这三行代码开始:
+These three lines is what we start every notebook with:
 ```
 %reload_ext autoreload
 %autoreload 2
 %matplotlib inline
 ```
-`%` 开头的代码是对Jupyter Notebook的特殊指令, 不是python代码. 它们被称作"魔法"
+These things starting `%` are special directives to Jupyter Notebook itself, they are not Python code. They are called "magics."
 
-- 如果程序执行时有人修改了依赖库的代码, 自动重新加载库
-- 如果有人要求画出一些内容，就把它们画在Jupyter Notebook上
+- If somebody changes underlying library code while I'm running this, please reload it automatically
+- If somebody asks to plot something, then please plot it here in this Jupyter Notebook
 
-接下来的两行引入了fastai库:
+The next two lines load up the fastai library:
 
 ```python
 from fastai import *
 from fastai.vision import *
 ```
 
-什么是fastai库? [http://docs.fast.ai/](http://docs.fast.ai/)
+What is fastai library? [http://docs.fast.ai/](http://docs.fast.ai/)
 
-我们的所有工作都是基于fastai库或者[PyTorch](https://pytorch.org/)，fastai库本身也是基于PyTorch的。 PyTorch 是一个很流行的库，用户在快速增长。几年前我们使用TensorFlow，但是我们发现PyTorch用起来更快捷，所以我们改用了PyTorch。 
+Everything we are going to do is going to be using either fastai or [PyTorch](https://pytorch.org/) which fastai sits on top of. PyTorch is fast growing extremely popular library. We use it because we used to use TensorFlow a couple years ago and we found we can do a lot more, a lot more quickly with PyTorch. 
 
-目前fastai库支持四种应用:
+Currently fastai supports four applications:
 
-1. 计算机视觉
-2. 自然语言文本
-3. 表格数据
-4. 协同过滤
+1. Computer vision
+2. Natural language text
+3. Tabular data
+4. Collaborative filtering
 
 
 [[15:45](https://youtu.be/BWWm4AzsdLk?t=945)]
 
-`import *` - 你们被告知永远不要这样做.
+`import *` - something you've all been told to never ever do.
 
-对于很多库来说，不在生产环境使用`import *` 是有充分的理由的。但对MATLAB这样的库来说，是另外一回事。所有的东西都已经准备好了。你不必多次引入各种库。这是一个有趣的现象，我们走了两个极端。在科学计算界里有一种方式，在软件工程界有另外一种方式。这两种方式都有充足的理由。 
+There are very good reasons to not use `import *` in standard production code with most libraries. But things like MATLAB is the opposite. Everything is there for you all the time. You don't even have to import things a lot of the time. It's kind of funny - we've got these two extremes of how do I code. The scientific programming community has one way, and then software engineering community has the other. Both have really good reasons for doing things. 
 
-对于fastai库，我们支持两种方式。当你想用Jupyter Notebook快速做些尝试时， 你不希望总是回到文件开头添加一些引用。你希望有很多代码能自动完成，做很多实验性的工作, 所以 `import *` 是合适的。当你构建生产环境程序时，你可以遵守PEP8这样的软件工程规范。这是一种不同的编程风格。数据科学编程并非没有规范，只不过是这里的规则不同于软件工程。在训练模型时，最重要的事情是能够快速尝试，所以你将看到很多不同的流程，风格和工具 。这是有原因的，慢慢地，你将了解到这些原因。
+With the fastai library, we actually support both approaches. In Jupyter Notebook where you want to be able to quickly interactively try stuff out, you don't want to constantly going back up to the top and importing more stuff. You want to be able to use lots of tab complete and be very experimental, so `import *` is great. When you are building stuff in production, you can do the normal PEP8 style proper software engineering practices. This is a different style of coding. It's not that there are no rules in data science programming, the rules are different. When you're training models, the most important thing is to be able to interactively experiment quickly. So you will see we use a lot of different processes, styles, and stuff to what you are used to. But they are there for a reason and you'll learn about them over time. 
 
-另外，fastai库是用非常有趣的模块化方法设计的，使用import *, 带来的问题会比你预期的少，它被特意设计，使得你能够非常方便地加载和使用里面的方法。
+The other thing to mention is that the fastai library is designed in a very interesting modular way and when you do use import *, there's far less clobbering of things than you might expect. It's all explicitly designed to allow you to pull in things and use them quickly without having problems.
 
-数据 [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
+## Looking at the data [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
 
-课程中，我们主要从这两个地方获取数据:
+Two main places that we will be tending to get data from for the course:
 
-1. 学术数据集
-    - 学术数据集是很重要的。它们很有趣。学者们花费了大量时间搜集整理一个数据集，用来测试各种不同的算法在数据集上的表现。他们设计一个数据集，然后用不同的方式挑战，寻求能够获得突破，得到更好的结果。 
-    - 我们将从一个名为宠物数据的学术数据集开始
-2. Kaggle竞赛数据集
+1. Academic datasets
+    - Academic datasets are really important. They are really interesting. They are things where academics spend a lot of time curating and gathering a dataset so that they can show how well different kinds of approaches work with that data. The idea is they try to design datasets that are challenging in some way and require some kind of breakthrough to do them well. 
+    - We are going to start with an academic dataset called the pet dataset.
+2. Kaggle competition datasets
   
 
-这两种数据集都是我们关注的，它们提供了有力的基线，可以很好地评价你做得如何。使用来自竞赛的Kaggle数据集，你可以把结果提交到Kaggle，看下你在竞赛中的成绩。如果你能进入前10%，那说明你做得相当好。
+Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
 
-对于学术数据集，学者们在论文里写下了他们在这个数据集上取得的最好结果。这就是我们将要做的。我们创建争取能够在Kaggle竞赛里取得高排名的模型，最好是前十，而不仅是前10%，或者能达到或超过学术论文里发表的最佳结果。在你使用一个学术数据库时，把它放在参考文献里。你不必立即阅读这论文，当你希望了解到数据集的更多信息，它为什么被创建，是如何被创建的，这时你可以从中了解到细节。 
+Academic datasets, academics write down in papers what the state of the art is so how well did they go with using models on that dataset. So this is what we are going to do. We are going to try to create models that get right up towards the top of Kaggle competitions, preferably in the top 10, not just top 10% or that meet or exceed academic state-of-the-art published results. So when you use an academic dataset, it's important to cite it. You don't need to read that paper right now, but if you are interested in learning more about it and why it was created and how it was created, all the details are there. 
 
-宠物数据集要求我们区分出37种不同的猫和狗的品种。这是一个困难的任务。事实上，在之前的课程里，我们使用另外一个数据集，它只要求分辨出图片里是狗还是猫。所以你有一半的机会猜对，并且猫和狗的区别很大。而不同品种的猫狗之间的差别并不大。 
+Pet dataset is going to ask us to distinguish between 37 different categories of dog breed and cat breed. So that's really hard. In fact, every course until this one, we've used a different dataset which is one where you just have to decide if something is a dog or a cat. So you've got a 50-50 chance right away and dogs and cats look really different. Or else lots of dog breeds and cat breeds look pretty much the same. 
 
-为什么我们更换了数据集？我们意识到，深度学习很快很简单，现在区分猫和狗这个问题对深度学习来说太简单了，尽管几年前这被认为是非常困难的，达到80%的准确率就是最好水平。我们的模型可以在不做任何优化的情况下直接输出完全正确的结果，这样我们就不能讲授一些复杂的技术，所以今年我们选择了一个更难的问题。 
+So why have we changed the dataset? We've got to the point now where deep learning is so fast and so easy that the dogs versus cats problem which a few years ago was considered extremely difficult ~80% accuracy was the state of the art, it's now too easy. Our models were basically getting everything right all the time without any tuning and so there weren't really a lot of opportunities for me to show you how to do more sophisticated stuff. So we've picked a harder problem this year. 
 
 
 
 [[20:51](https://youtu.be/BWWm4AzsdLk?t=1251)]
 
-学术上，区分相似分类被叫做细粒度分类.  
+This kind of thing where you have to distinguish between similar categories is called fine grained classification in the academic context.  
 
 ### untar_data
 
-我们要做的第一件事情是下载和解压数据，我们将使用`untar_data`这个函数，它会自动下载并解压数据。AWS给我们提供了许多空间和带宽，数据集可以被很快的下载下来。
+The first thing we have to do is download and extract the data that we want. We're going to be using this function called `untar_data` which will download it automatically and untar it. AWS has been kind enough to give us lots of space and bandwidth for these datasets so they'll download super quickly for you.
 
 ```python
 path = untar_data(URLs.PETS); path
@@ -190,9 +190,9 @@ path = untar_data(URLs.PETS); path
 
 ### help 
 
-怎样可以知道`untar_data`是什么？你可以输入help，这样你可以看到这个方法来源于那个模块(因为我们使用了`import *`，所以你不必知道所属的模块), 它会做什么, 以及一些你以前不知道的事情，或许你是一个有经验的开发者，但可能并不清楚究竟应该传递什么参数。你可能很熟悉这些名字: url, fname, dest, 但你可能没怎么见过`Union[pathlib.Path, str]`. 这是参数的类型，如果你熟悉类型编程语言的话，你可能会经常见到它们,但Python开发者可能对它不怎么熟悉。只有你知道了每一个传入的参数的类型，你才能知道怎样使用一个函数，所以我们在帮助里说明了类型信息。
+The first question then would be how do I know what `untar_data` does. You could just type help and you will find out what module it came from (since we did `import *` you don't necessarily know that), what it does, and something you might not have seen before even if you are an experienced programmer is what exactly you pass to it. You're probably used to seeing the names: url, fname, dest, but you might not be used to seeing `Union[pathlib.Path, str]`. These bits are types and if you're used to typed programming language, you would be used to seeing them, but Python programmers are less used to it. But if you think about it, you don't actually know how to use a function unless you know what type each thing is that you're providing it. So we make sure that we give you that type information directly here in the help. 
 
-对于这个函数, `url` 是一个字符串, `fname` 是一个 path 或者一个字符串，默认是None(`Union` 表示 "或者"). `dest` 是一个 path 或者一个字符串
+In this case, `url` is a string, `fname` is either path or a string and defaults to nothing (`Union` means "either"). `dest` is either a string or a path and defaults to nothing. 
 
 ```python
 help(untar_data)
@@ -205,11 +205,11 @@ untar_data(url:str, fname:Union[pathlib.Path, str]=None, dest:Union[pathlib.Path
     Download `url` if doesn't exist to `fname` and un-tgz to folder `dest`
 ```
 
-从代码里可以看到，我们不需要传递文件名 `fname` 和目录 `dest`参数，程序会根据url自动生成这些参数。稍后我们会学习如何获取关于这个功能的详细文档
+We'll learn more shortly about how to get more documentation about the details of this, but for now, we can see we don't have to pass in a file name `fname` or a destination `dest`, it'll figure them out for us from the URL. 
 
-对于课程里的所有数据集，我们都定义了对应的常量。在这个 [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) 类里，你可以看到程序是怎样下载数据的。
+For all the datasets we'll be using in the course, we already have constants defined for all of them. So in this [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) class, you can see where it's going to grab it from.
 
-`untar_data` 会下载数据集到一个方便使用的目录，把数据集解压，返回文件路径。 
+`untar_data` will download that to some convenient path and untar it for us and it will then return the value of path. 
 
 ```python
 path = untar_data(URLs.PETS); path
@@ -217,13 +217,13 @@ path = untar_data(URLs.PETS); path
 ```
 PosixPath('/data1/jhoward/git/course-v3/nbs/dl1/data/oxford-iiit-pet')
 ```
-在Jupyter Notebook里，你可以仅仅写一个变量 (分号只是一个python语句的结尾)，它就可以被打印出来。你也可以用`print(path)`，但我们尽可能用最简便的方式，所以只写了一个变量。这里输出的就是数据的路径。 
+In Jupyter Notebook, you can just write a variable on its own (semicolon is just an end of statement in Python) and it prints it. You can also say `print(path)` but again, we are trying to do everything fast and interactively, so just write it and here is the path where it's given us our data. 
 
-下次再执行这段代码时，因为数据以及被下载过了，它就不会被重复下载。它以及被解压了，也就不会被重复解压。所有的功能都被设计得很简便，很自动。
+Next time you run this, since you've already downloaded it, it won't download it again. Since you've already untared it, it won't untar it again. So everything is designed to be pretty automatic and easy.
 
 [[23:50](https://youtu.be/BWWm4AzsdLk?t=1430)]
 
-在Python里，有些语法不是很方便交互。比如，对一个路径对象，想查看路径下的文件，需要不少代码。所以，我们为python对象拓展了一些方法。其中一个就是为path添加了一个`ls()`方法
+There are some things in Python that are less convenient for interactive use than they should be. For example, when you do have a path object, seeing what's in it actually takes a lot more typing than I would like. So sometimes we add functionality into existing Python stuff. One of the things we do is add a `ls()` method to path.
 
 ```python
 path.ls()
@@ -232,7 +232,7 @@ path.ls()
 ['annotations', 'images']
 ```
 
-这是目录下的文件。我们刚刚下载下来的东西。 
+These are what's inside this path, so that's what we just downloaded. 
 
 ### Python 3 pathlib [[24:25](https://youtu.be/BWWm4AzsdLk?t=1465)]
 
@@ -241,15 +241,15 @@ path_anno = path/'annotations'
 path_img = path/'images'
 ```
 
-如果你不是一个经验丰富的Python开发者，你可能会不太熟悉斜杠的这种用法。这是Python 3里一个非常方便的函数。它是在[pathlib](https://docs.python.org/3/library/pathlib.html)定义的。Path对象比字符串好用得多。使用它你可以这样创建子目录。无论你用的是 Windows, Linux, 还是 Mac，它的行为都是一样的。`path_img` 数据集里图片的路径。
+If you are an experienced Python programmer, you may not be familiar with this approach of using a slash like this. This is a really convenient function that's part of Python 3. It's functionality from [pathlib](https://docs.python.org/3/library/pathlib.html). Path object is much better to use than strings. They let you use basically create sub paths like this. It doesn't matter if you're on Windows, Linux, or Mac. It is always going to work exactly the same way. `path_img` is the path to the images in that dataset.
 
 [[24:57](https://youtu.be/BWWm4AzsdLk?t=1497)]
 
-如果你想用一个新的数据集做深度学习，第一件事情大概就是看看数据集里有什么。我们可以看到数据集里有`annotations` 和 `images` 两个目录，来看下images 目录里有什么? 
+So if you are starting with a brand new dataset trying to do some deep learning on it. What do you do? Well, the first thing you would want to do is probably see what's in there. So we found that `annotations` and `images` are the directories in there, so what's in this images? 
 
 ### get_image_files [[25:15](https://youtu.be/BWWm4AzsdLk?t=1515)]
 
-get_image_files 可以取到一个包含所有图片路径的数组. 
+get_image_files will just grab an array of all of the image files based on extension in a path. 
 
 ```python
 fnames = get_image_files(path_img)
@@ -263,28 +263,30 @@ fnames[:5]
  PosixPath('/data1/jhoward/git/course-v3/nbs/dl1/data/oxford-iiit-pet/images/Bombay_151.jpg')]
 ```
 
- 把所有的文件放在一个文件夹下，这是处理计算机视觉数据集的常见方式。下一步有趣的事是获取标签。在机器学习中，标签是指我们想要预测的东西。如果我们浏览下这些文件，可以看出标签就是文件名的一部分。 文件名的格式是 `目录/标签_编号.拓展名`。我们要想办法获取到文件名中`标签`部分的列表, 这样就可以得到标签。这些就是用来构建一个深度学习模型的所有东西:
- - 图片文件
- - 标签
+ This is a pretty common way for computer vision datasets to get passed around - just one folder with a whole bunch of files in it. So the interesting bit then is how do we get the labels. In machine learning, the labels refer to the thing we are trying to predict. If we just eyeball this, we could immediately see that the labels are actually part of the file names. It's kind of like `path/label_number.extension`. We need to somehow get a list of `label` bits of each file name, and that will give us our labels. Because that's all you need to build a deep learning model:
+ - Pictures (files containing the images)
+ - Labels
 
-在fastai里，这被设计的很简单。有一个叫做`ImageDataBunch`的对象，一个ImageDataBunch 代表你创建一个模型所需要的所有数据，使用工厂方法可以很方便得创建一个包含训练集和验证集的ImageDataBunch，训练集和验证集里都包含图片和标签。 
+In fastai, this is made really easy. There is an object called `ImageDataBunch`. An ImageDataBunch represents all of the data you need to build a model and there's some factory method which try to make it really easy for you to create that data bunch - a training set, a validation set with images and labels. 
 
-在这个案例里，我们需要从文件名提取标签。我们会使用 `from_name_re`. `re` 是python里做正则表达式的模块，正则表达对提取文本是非常有用的。这是提取标签的正则表达式:
+In this case, we need to extract the labels from the names. We are going to use `from_name_re`. `re` is the module in Python that does regular expressions - things that's really useful for extracting text. 
+
+Here is the regular expression that extract the label for this dataset:
 
 ```python
 np.random.seed(2)
 pat = r'/([^/]+)_\d+.jpg$'
 ```
-对于这个工厂方法，我们可以传入这些参数
+With this factory method, we can basically say:
 
-- path_img: 存放图片的目录
-- fnames: 存放文件名的列表
-- pat: 从文件名中提取标签的正则表达式
-- ds_tfm: 变形，我们稍后再讲
-- size: 你想处理的图片的尺寸
+- path_img: a path containing images
+- fnames: a list of file names
+- pat: a regular expression (i.e. pattern) to be used to extract the label from the file name
+- ds_tfm: we'll talk about transforms later
+- size: what size images do you want to work with.
   
 
-图片需要按固定的尺寸来处理，这看起来有点怪。这是目前深度学习技术的一个缺点。为了处理地更快，GPU需要对同时处理的一组数据执行相同的指令。如果图片的形状尺寸不同，这就做不到了。所以我们需要让所有图片有相同的形状尺寸。在课程的第一部分，我们会把图片做成正方形。第二部分，我们会学习使用矩形。这两者有些奇特的区别。很多的人在很多计算机视觉模型里都是用的正方形的方法。224 * 224，是一个极其常见的尺寸，大部分模型都使用这个尺寸，如果你直接使用这个尺寸，大部分情况下很容易得到不错的结果。原因我们晚些再介绍。这是我想教给大家的一个小技巧，它通常很有效。你们尽管使用这个尺寸，在大部分情况下它都是有效的。
+This might seem weird because images have size. This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
 
 
 
@@ -295,56 +297,56 @@ data.normalize(imagenet_stats)
 
 [[29:16](https://youtu.be/BWWm4AzsdLk?t=1756)]
 
-`ImageDataBunch.from_name_re` 将会返回一个dataBunch对象。在fastai里，所有你用来建模的东西都是一个DataBunch对象。DataBunch对象基本上会包含 2个或者3个数据集 - 训练数据，验证数据，有时会有测试数据。每一个都包含图片和标签，或者文本和标签，或者表格和标签，等等。它们都被放在一个地方(比如 `data`)。
+`ImageDataBunch.from_name_re` is going to return a DataBunch object. In fastai, everything you model with is going to be a DataBunch object. Basically DataBunch object contains 2 or 3 datasets - it contains your training data, validation data, and optionally test data. For each of those, it contains your images and your labels, your texts and your labels, or your tabular data and your labels, or so forth. And that all sits there in this one place(i.e. `data`). 
 
-一个需要多说明一点的是标准化。在几乎所有机器学习任务里，你需要让数据有相同的“尺寸”，就是说有相同的平均值和标准差。所以fastai里有一个标准化函数，我们可以用这样的方式来标准化数据。
+Something we will learn more about in a little bit is normalization. But generally in nearly all machine learning tasks, you have to make all of your data about the same "size" - they are specifically about the same mean and standard deviation.  So there is a normalize function that we can use to normalize our data bunch in that way.
 
 
 
 [[30:25](https://youtu.be/BWWm4AzsdLk?t=1825)]
 
-提问：如果图片尺寸不是224，这个函数会做些什么？ 
+Question: What does the function do if the image size is not 224? 
 
-我们稍后会学习这部分内容。变形操作会对图片做一些处理，其中一个就是把图片尺寸编程224。 
+This is what we are going to learn about shortly. Basically this thing called transforms is used to do a number of the things and one of the things it does is to make something size 224. 
 
 
 ### data.show_batch
-我们来看看这些图片。 这是data bunch里的一些图片。data.show_batch可以显示data bunch里的内容。可以看出，这些图片都被恰当地缩放或者裁剪过。这种方法叫中心裁剪，它抓取出图片的中间部分，然后调整图片尺寸。我们将会学习这个方法的更多细节，它是相当重要的。 它基本上是裁剪和调整尺寸两种方法的组合。
+Let's take a look at a few pictures. Here are a few pictures of things from my data bunch. So you can see data.show_batch can be used to show me some of the contents in my data bunch. So you can see roughly what's happened is that they all seem to have being zoomed and cropped in a reasonably nice way. So basically what it'll do is something called by default center cropping which means it'll grab the middle bit and it'll also resize it. We'll talk more about the detail of this because it turns out to actually be quite important, but basically a combination of cropping and resizing is used.
 
 ```python
 data.show_batch(rows=3, figsize=(7,6))
 ```
 ![](lesson1/8.png)
 
-我们也会用它来做数据增强。对于裁剪多少和在哪里裁剪之类的问题，是有些随机性的。 
+Something else we are going to learn about is we also use this to do something called data augmentation. So there's actually some randomization in how much and where it crops and stuff like that. 
 
-基本思路是裁剪，缩放和设置边距。做数据增强时，根据不同情况有很多不同的方式，我们稍后将会学习这些内容。 
+Basic the basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
 
 
 [[31:51](https://youtu.be/BWWm4AzsdLk?t=1911)]
 
-**提问**: 标准化图片是什么意思？ 
+**Question**: What does it mean to normalize the images? 
 
-后面我们会学习更多关于标准化图片的知识。简单来讲，一个像素有红绿蓝三个通道，每个值介于0到255之间，有的通道会太亮，有的会太暗，有的变化比较大，有的没什么变化。如果我们让三个通道的均值都是0，标准差都是1，会有利于我们训练深度学习模型。 
+Normalizing the images, we're going to be learning more about later in the course, but in short, it means that the pixel values start out from naught to 255. And some channels might tend to be really bright, some might tend to be really not bright at all, some might vary a lot, and some might not very much at all. It really helps train a deep learning model if each one of those red green and blue channels has a mean of zero and a standard deviation of one. 
 
-如果数据没有标准化，难以训练出好的模型。如果你的模型不效果不好，需要检查下是否标准化了数据。
+If your data is not normalized, it can be quite difficult for your model to train well. So if you have trouble training a model, one thing to check is that you've normalized it.
 
 
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
-**提问**: GPU内存是2的指数，相比于224来说，是不是256对于利用GPU更有效？
+**Question**: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
 
-简单来说，模型的最后一层的尺寸是7*7，所以我们希望的输入是7乘以2的指数。
+The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2^5), then you end up with something that's a good size.
 
 
 [[33:27](https://youtu.be/BWWm4AzsdLk?t=2007)]
 
-我们将学习所有这些细节。但重要的是，我希望能尽快开始训练模型。 
+We will get to all these details but the key thing is I wanted to get to training a model as quickly as possible. 
 
-### 查看数据是重要的
+### It is important to look at the data
 
-一个优秀的从业者的一个重要能力就是能够查看数据。使用`data.show_batch`方法来看看数据是很重要的。 当你查看你拿到的数据时，你会发现这些情况会很常见：图片有奇怪的黑色边框，在图片中的一些物品上有文字，有些图片被旋转过。一定要查看下这些数据。
+One of the most important thing to be a really good practitioner is to be able to look at your data. So it's really important to remember to go to `data.show_batch` and take a look. It's surprising how often when you actually look at the dataset you've been given that you realize it's got weird black borders on it, some of the things have text covering up some of it, or some of it is rotated in odd ways. So make sure you take a look.
 
-另外一件我们要做的是查看标签。所有可能的标签都是一种分类，使用DataBunch，你可以打印`data.classes`
+The other thing we want to do is to look at the labels. All of the possible label names are called your classes. With DataBunch, you can print out your `data.classes`.
 
 ```python
 print(data.classes)
@@ -357,49 +359,49 @@ len(data.classes),data.c
 (37, 37)
 ```
 
-这是我们使用正则表达式找出的所有的可能的标签。之前我们讲过有37中可能的分类，检查下`len(data.classes)`，确实是 37。DataBunch也有一个叫做 `c`的属性。我们稍后再学习这些技术细节，现在你可以把它理解为类别的数量。对于回归和多标签分类问题，这不是很准确，但对于目前这样的解释够用了。 `data.c` 是一个很重要的信息，这点要记住，它基本上表示类别的数量，至少对于分类问题是这样的。 
+ That's all of the possible labels that we found by using that regular expression on the file names. We learnt earlier on at the top that there are 37 possible categories, so just checking `len(data.classes)`, it is indeed 37. DataBunch will always have a property called `c`. We will get to the technical detail later, but for now, you can kind of think of it as being the number of classes. For things like regression problems and multi-label classification, that's not exactly accurate, but it'll do for now. It is important to know that `data.c` is a really important piece of information that is something like, or at least for classification problems it is, the number of classes. 
 
- ## 训练 [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
+ ## Training [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
 
-信不信由你，我们现在已经准备好训练模型了。在fastai里我们使用 "learner" 来训练模型。
+ Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
 
- - **DataBunch**: 一个fastai里广泛使用的概念，代表你的数据。对具体的应用，有对应的子类，比如ImageDataBunch
- - **Learner**: 一个fastai里广泛使用的概念，代表学习拟合一个模型的操作。 在各种具体的应用中有很多对应的子类，用来简化使用，比如有一个convnet learner，可以用来创建一个卷积神经网络。
+ - **DataBunch**: A general fastai concept for your data, and from there, there are subclasses for particular applications like ImageDataBunch
+ - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
 ```
 
-目前，创建一个卷积神经网络的learner，只需要知道两个参数:
-`data`: 你的数据，一个data bunch.
-`arch`: 模型的结构。有很多不同的方式构建一个卷积神经网络. 
+For now, just know that to create a learner for a convolutional neural network, you just have to tell it two things:
+`data`: What's your data. Not surprisingly, it takes a data bunch.
+`arch`: What's your architecture. There are lots of different ways of constructing a convolutional neural network. 
 
-现在，你需要知道有一种叫做ResNet的模型，它几乎总是非常有效的。你只需要选择ResNet的大小，ResNet有ResNet34 和 ResNet50两种大小。当我们开始做一个任务时，我会先用这个小些的模型，它训练地更快。想成为一个好的实践者，现在只需要知道有两种架构效果很好：ResNet34 和 ResNet50。先试下小的，看看效果是否足够好。
+For now, the most important thing for you to know is that there's a particular kind of model called ResNet which works extremely well nearly all the time. For a while, at least, you really only need to be doing choosing between two things which is what size ResNet do you want. There are ResNet34 and ResNet50. When we are getting started with something, I'll pick a smaller one because it'll train faster. That's as much as you need to know to be a pretty good practitioner about architecture for now which is that there are two variants of one architecture that work pretty well: ResNet34 and ResNet50. Start with a smaller one and see if it's good enough.
 
-这是我们要创建一个卷积神经网络learner所需要知道的所有信息。 
+That is all the information we need to create a convolutional neural network learner. 
 
-另外一个传入的参数是metrics（度量），metrics是训练时逐个地打印出来的东西。传入error_rate就是让它打印出错误率。
+There is one other thing I'm going to give it though which is a list of metrics. Metrics are literally just things that gets printed out as it's training. So I'm saying I would like you to print out error rate. 
 
 [[37:25](https://youtu.be/BWWm4AzsdLk?t=2245)]
 
 ![](lesson1/c1.png)
 
-第一次，我在一个新安装的环境里运行这些代码，它下载了 ResNet34 预训练权重。也就是说，这是一个针对真实任务训练过的实战模型。这个任务是训练模型看50万张各种物品的图片，这些物品属于1000个种类，这个图片数据集叫ImageNet。所以我们可以下载这些预训练过的参数，不必从一个一无所知的模型，而是从一个已经能够识别ImageNet里1000种类别物品的模型开始。并非所有37种品种都在ImageNet里，但里面确实有几种猫和几种狗。所以这个模型知道一些猫狗的品种，并且知道很多动物和很多照片。所以我们不需要从一个空模型开始，而是基于一个已经懂得识别一些图片的模型。预训练模型会在第一次被使用时被自动下载，以后就不会再下载了，而是直接使用先前下载的那个。 
+The first time I run this on a newly installed box, it downloads the ResNet34 pre-trained weights. What that means is that this particular model has actually already been trained for a particular task. And that particular task is that it was trained on looking at about one and a half million pictures of all kinds of different things, a thousand categories of things, using an image dataset called ImageNet. So we can download those pre-trained weights so that we don't start with a model that knows nothing about anything, but we actually start with a model that knows how to recognize a thousand categories of things in ImageNet. I don't think all of these 37 categories of pet are in ImageNet but there were certainly some kinds of dog and some kinds of cat. So this pre-trained model knows quite a little bit about what pets look like, and it certainly knows quite a lot about what animals look like and what photos look like. So the idea is that we don't start with a model that knows nothing at all, but we start by downloading a model that knows something about recognizing images already. So it downloads for us automatically, the first time we use it, a pre-trained model and then from now on, it won't need to download it again - it'll just use the one we've got. 
 
-## 迁移学习 [[38:54](https://youtu.be/BWWm4AzsdLk?t=2334)]
+## Transfer learning [[38:54](https://youtu.be/BWWm4AzsdLk?t=2334)]
 
-这部分很重要。我们将学习很多有关迁移学习的内容。这是整个课程的重点。迁移学习研究的是如何使用一个已经能很好地完成一些任务的模型来完成新的任务。我们使用一个预训练的模型，然后调整它，不再使用ImageNet数据来预测一千种分类，而是使用宠物数据集来预测 37 种品种。这样的话，相对于一次常规的训练，你训练一个模型仅需百分之一的时间和数据，甚至更少。有可能会少于千分之一。记得我在展示的Nikhil的去年第一课项目的幻灯片吗，他只用了30张图片。ImageNet里没有板球和篮球的图片，但最终ImageNet还是很擅长识别世界里的各种事物，仅仅30个打篮球和板球的例子就足够构建一个几乎完美的分类器。 
-
-
-## 过拟合 [[40:05](https://youtu.be/BWWm4AzsdLk?t=2405)]
-
-等等，你怎么知道这个模型可以广泛识别出人们打板球和篮球的图片。或许它只是会识别出这30张图片，或许这只是作弊。这被称作“过拟合”。我们将在课程中讲解和多关于过拟合的内容。过拟合是指你的模型并没有学会识别图片，比如区分板球和篮球，而是仅仅能识别这几张特定图片里的板球运动员和这几张特定图片里的篮球运动员。我们必须确认我们没有过拟合。使用验证数据集可以检查有没有过拟合。验证集是你的模型没有使用过的一组图片。基于验证集的度量值(比如错误率)被自动地打印出来。当我们创建数据组时，它会自动创建一个验证集。我们将学习很多种创建和使用验证集地方法。因为我们尝试集成所有最佳实践，你几乎无法不使用验证集。因为如果你不使用验证集，你就不知道你是否过拟合。所以我们总是打印出验证集的度量。我们总是保证模型不接触到验证集。这些都是已经实现了的，这些方法都已经被集成在data bunch对象中。
+This is really important. We are going to learn a lot about this. It's kind of the focus of the whole course which is how to do this thing called "transfer learning." How to take a model that already knows how to do something pretty well and make it so that it can do your thing really well. We will take a pre-trained model, and then we fit it so that instead of predicting a thousand categories of ImageNet with ImageNet data, it predicts the 37 categories of pets using your pet data. By doing this, you can train models in 1/100 or less of the time of regular model training with 1/100 or less of the data of regular model training. Potentially, many thousands of times less. Remember I showed you the slide of Nikhil's lesson 1 project from last year? He used 30 images. There are not cricket and baseball images in ImageNet but it turns out that ImageNet is already so good at recognizing things in the world that just 30 examples of people playing baseball and cricket was enough to build a nearly perfect classifier. 
 
 
-## 拟合模型 [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
-现在我们有了一个ConvLearner，我们可以开始拟合它。你可以使用一个叫`fit`的方法。但实践中，你应该总是使用`fit_one_cycle`这个方法。简单来讲，one cycle learning 是4月份发表的 [一篇论文](https://arxiv.org/pdf/1803.09820.pdf) ，它明显比以前的方法更快更准确。再重复一遍，我不想教大家怎样用2017年的方法做深度学习。在2018年，最好的拟合模型的方法是使用one cycle。 
+## Overfitting [[40:05](https://youtu.be/BWWm4AzsdLk?t=2405)]
 
-现在我们遍历整个数据集四次，我们把数据展示给模型看四次来训练它。每次它看到一个图片，它会变得更好些。但这会花费时间，并且这意味着会过拟合。如果它看太多次同一个图片，它只会学会识别这个图片，而不是区分宠物品种。接下来的课程里我们将学习如何调整遍历次数，现在我们选择使用4次，来看看程序是怎样运行的，你可以看到，遍历4次后，错误率是6%，这花费了1分56秒。
+Wait a minute, how do you know it can actually recognize pictures of people playing cricket versus baseball in general? Maybe it just learnt to recognize those 30. Maybe it's just cheating. That's called "overfitting". We'll be talking a lot about that during this course. But overfitting is where you don't learn to recognize pictures of say cricket versus baseball, but just these particular cricketers in these particular photos and these particular baseball players in these particular photos. We have to make sure that we don't overfit. The way to do that is using something called a validation set. A validation set is a set of images that your model does not get to look at. So these metrics (e.g. error_rate) get printed out automatically using the validation set - a set of images that our model never got to see.  When we created our data bunch, it automatically created a validation set for us. We'll learn lots of ways of creating and using validation sets, but because we're trying to bake in all of the best practices, we actually make it nearly impossible for you not to use a validation set. Because if you're not using a validation set, you don't know if you're overfitting. So we always print out the metrics on a validation, we've always hold it out, we always make sure that the model doesn't touch it. That's all done for you, and all built into this data bunch object.
+
+
+## Fitting your model [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
+So now we have a ConvLearner, we can fit it. You can just use a method called `fit` but in practice, you should nearly always use a method called `fit_one_cycle`. In short, one cycle learning is [a paper](https://arxiv.org/pdf/1803.09820.pdf) that was released in April and turned out to be dramatically better both more accurate and faster than any previous approach. Again, I don't want to teach you how to do 2017 deep learning. In 2018, the best way to fit models is to use something called one cycle. 
+
+For now, just know that this number, 4, basically decides how many times do we go through the entire dataset, how many times do we show the dataset to the model so that it can learn from it. Each time it sees a picture, it's going to get a little bit better. But it's going to take time and it means it could overfit. If it sees the same picture too many times, it will just learn to recognize that picture, not pets in general. We'll learn all about how to tune this number during the next couple of lessons but starting out with 4 is a pretty good start just to see how it goes and you can actually see after four epochs or four cycles, we got an error rate of 6%. And it took 1 minute and 56 seconds. 
 
 ```python
 learn.fit_one_cycle(4)
@@ -413,27 +415,27 @@ epoch  train loss  valid loss  error_rate
 3      0.336315    0.211106    0.067199    (00:17)
 4      0.233666    0.191813    0.057219    (00:17)
 ```
-94%的情况下，我们可以在37个猫狗的品种中选择出正确的那个，我认为这个结果很不错。要衡量这个结果好到什么程度，或许我们应该回过头来看看论文。记住，我说过使用学术或者kaggle数据集的好处是我们可以把我们的方案和Kaggle或者学术界里的最好成绩做对比。宠物品种数据集最初出现在2012年，如果浏览这些文章，你在论文里找到一个实验的章节。在实验章节里，你可以找到准确率的部分。他们实现了很多不同的模型，就像你在文章里读到的一样，这些模型是专门针对宠物识别的，他们学习了宠物的头长什么样，身体长什么样，宠物的图形一般长什么样。然后把这些组合在一起。他们使用这些复杂的代码和算法得到了59%的准确率。所以在2012，这项专门针对宠物的分析得到了59%的准确率。他们是哈佛的顶尖研究者。现在，在2018，使用简单的三行代码，我们得到了94%的准确率 (也就是 6% 的错误率)。可见我们使用深度学习取得了多大的进步，以及，使用PyTorch和fastai，这是多么容易做到。
+So 94% of the time, we correctly picked the exact right one of those 37 dog and cat breeds which feels pretty good to me. But to get a sense of how good it is, maybe we should go back and look at the paper. Remember, I said the nice thing about using academic papers or Kaggle dataset is we can compare our solution to whatever the best people in Kaggle did or in the academics did. This particular dataset of pet breeds is from 2012 and if I scroll through the paper, you'll generally find in any academic paper there'll be a section called experiments about 2/3 of the way through. If you find a section on experiments, then you can find a section on accuracy and they've got lots of different models and their models. The models as you'll read about in the paper, it's really pet specific. They learn something about how pet heads look and how pet bodies look, and pet image in general look. And they combine them all together and once they use all of this complex code and math, they got an accuracy of 59%. So in 2012, this highly pet specific analysis got an accuracy of 59%. These were the top researchers from Oxford University. Today in 2018, with basically about three lines of code, we got 94% (i.e. 6% error). So that gives you a sense of how far we've come with deep learning, and particularly with PyTorch and fastai, how easy things are.
 
 
 [[46:43](https://youtu.be/BWWm4AzsdLk?t=2803)]
-我们仅仅训练了一个模型。我们还不是非常清楚这是如何做到的，但我们知道我们使用三四行代码，我们做到了远远超过2012年顶尖水平的准确率。对于识别不同品种的猫狗来说，6%的错误率听起来令人印象深刻。我们还不太了解它是怎样工作的，但我们将会学习这些。这就够了。
+We just trained a model. We don't know exactly what that involved or how it happened but we do know that with 3 or 4 lines of code, we've built something which smashed the accuracy of the state-of-the-art of 2012. 6% error certainly sounds like pretty impressive for something that can recognize different dog breeds and cat breeds, but we don't really know why it work, but we will. That's okay.
 
-### 过去的学生最后悔的事:
+### The number one regret of past students:
 
 ![](lesson1/102.png)
 
 
 
-> ### **所以请运行代码。真正地去运行代码** [[47:54](https://youtu.be/BWWm4AzsdLk?t=2874)]
+> ### **So please run the code. Really run the code.** [[47:54](https://youtu.be/BWWm4AzsdLk?t=2874)]
 
 
 
-实践的最重要的技巧是学习和理解给程序输入了什么，程序输出了什么。 
+Your most important skills to practice are learning and understanding what goes in and what comes out. 
 
 ![](lesson1/103.png)
 
-Fastai库很新，但它得到了很多关注。它让很多事情简单了很多，也让做一些新东西变得可能。真正理解fastai程序要花很不少精力。最好的方式是使用[fastai 文档](http://docs.fast.ai/).
+Fastai library is pretty new, but it's getting an extraordinary amount of traction. It's making a lot of things a lot easier, but it's also making new things possible. So really understanding the fastai software is something which is going to take you a long way. And the best way to really understand the fastai software well is by using the [fastai documentation](http://docs.fast.ai/).
 
 
 
@@ -441,7 +443,7 @@ Fastai库很新，但它得到了很多关注。它让很多事情简单了很�
 
 ![](lesson1/105.png)
 
-fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简化深度学习的主流软件是Keras。Keras是很棒的软件，在使用fastai之前，我们在之前的课程里使用Keras。它基于Tensorflow。之前它是简化深度学习软件的典范。现在，使用fastai做深度学习更容易。如果对比去年的猫狗大战的课程练习，fastai可以得到更高的准确率 (验证集上的错误率少于Keras的一半), 训练时间少于一半，代码行数是 1/6。代码行数比你认为的更重要，31行Keras代码意味着你要做大量的决定，设置很多参数，做很多设置。这些是为了获得最佳的结果你必须了解的。fastai的5行代码，尽可能多地为你做了这些设置。通常，fastai为你选择了最优的默认值。你将发现这是一个非常有用的库，不仅是在学习深度学习上，在发展深度学习上也有巨大作用。
+So how does it compare? There's only one major other piece of software like fastai that tries to make deep learning easy to use and that's Keras. Keras is a really terrific piece of software, we actually used it for the previous courses until we switch to fastai. It runs on top of Tensorflow. It was the gold standard for making deep learning easy to use before. But life is much easier with fastai. So if you look at the last year's course exercise which is getting dogs vs. cats, fastai lets you get much more accurate (less than half the error on a validation set), training time is less than half the time, lines of code is about 1/6. The lines of code are more important than you might realize because those 31 lines of Keras code involved you making a lot of decisions, setting lots of parameters, doing lots of configuration. So that's all stuff where you have to know how to set those things to get best practice results. Or else, those 5 lines of code, any time we know what to do for you, we do it for you. Anytime we can pick a good default, we pick it for you. So hopefully you will find this a really useful library, not just for learning deep learning but for taking it a very long way.
 
 
 
@@ -783,7 +785,7 @@ What you'll find is it's very likely if you try to do this, you will get an erro
 
 It's very likely that if you try to run this, you'll get an out of memory error and that's because it's just trying to do too much - too many parameter updates for the amount of RAM you have. That's easily fixed. `ImageDataBunch` constructor has a parameter at the end `bs` - a batch size. This basically says how many images do you train at one time. If you run out of memory, just make it smaller.
 
-It's fine to use a smaller bath size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
+It's fine to use a smaller batch size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
 
 ```python
 learn.fit_one_cycle(8, max_lr=slice(1e-3))
@@ -801,7 +803,7 @@ epoch  train_loss  valid_loss  error_rate
 8      0.097324    0.136638    0.042379    (00:54)
 ```
 
-Again, we fit it for a while and we get down to 4.2% error rage. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
+Again, we fit it for a while and we get down to 4.2% error rate. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
 
 ### Interpreting the results again [1:29:41](https://youtu.be/BWWm4AzsdLk?t=5381)
 
@@ -821,7 +823,7 @@ You can call the most_confused here and you can see the kinds of things that it'
 
 ![](lesson1/129.png)
 
-I found something similar, I think it was this pitbull versus staffordshire bull terrier, apparently the main difference is the particular kennel club guidelines as to how they are assessed. But some people thing that one of them might have a slightly redder nose. So this is the kind of stuff where actually even if you're not a domain expert, it helps you become one. Because I now know more about which kinds of pet breeds are hard to identify than I used to. So model interpretation works both ways. 
+I found something similar, I think it was this pitbull versus staffordshire bull terrier, apparently the main difference is the particular kennel club guidelines as to how they are assessed. But some people think that one of them might have a slightly redder nose. So this is the kind of stuff where actually even if you're not a domain expert, it helps you become one. Because I now know more about which kinds of pet breeds are hard to identify than I used to. So model interpretation works both ways. 
 
 ## Homework [[1:30:58](https://youtu.be/BWWm4AzsdLk?t=5458)]
 
