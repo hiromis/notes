@@ -4,7 +4,7 @@
 
 notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/00_notebook_tutorial.ipynb)
 
-## 1. [Lesson 1](/Lesson1.md)
+## 1. [Lesson 1](/chinese/Lesson1.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=1)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=1) / [Video Youtube](https://youtu.be/BWWm4AzsdLk) 
