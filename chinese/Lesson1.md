@@ -450,11 +450,11 @@ fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简�
 
 [[50:53](https://youtu.be/BWWm4AzsdLk?t=3053)]
 
-![](lesson1/106.png)
+![](/lesson1/106.png)
 
 
 
-How far can you take it? All of the research that we do at fastai uses the library and an example of the research we did which was recently featured in Wired describes a new breakthrough in a natural language processing which people are calling the ImageNet moment which is basically we broke a new state-of-the-art result in text classification which OpenAI then built on top of our paper with more computing, more data to do different tasks to take it even further. This is an example of something we've done in the last 6 months in conjunction with my colleague Sebastian Ruder - an example of something that's being built in the fastai library and you are going to learn how to use this brand new model in three lessons time. You're actually going to get this exact result from this exact paper yourself.
+用它能做到什么水平? 我们在fastai做的研究都是使用这个库，我们最近的一项研究 uses the library and an example of the research we did which was recently featured in Wired describes a new breakthrough in a natural language processing which people are calling the ImageNet moment which is basically we broke a new state-of-the-art result in text classification which OpenAI then built on top of our paper with more computing, more data to do different tasks to take it even further. This is an example of something we've done in the last 6 months in conjunction with my colleague Sebastian Ruder - an example of something that's being built in the fastai library and you are going to learn how to use this brand new model in three lessons time. You're actually going to get this exact result from this exact paper yourself.
 
 
 [[51:50](https://youtu.be/BWWm4AzsdLk?t=3110)]
