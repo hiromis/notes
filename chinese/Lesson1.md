@@ -37,7 +37,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ### 你可以做世界顶尖水平的深度学习 [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
-![](lesson1/1.png)
+![](/lesson1/1.png)
 
 在这里获取课程资源:
 - [http://course-v3.fast.ai/](http://course-v3.fast.ai/)
@@ -49,7 +49,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ### 为什么听Jeremy讲课 [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
 
-![](lesson1/2.png)
+![](/lesson1/2.png)
 
 
 
@@ -57,13 +57,13 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ### 使用机器学习做有用的事情 [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
 
-![](lesson1/3.png)
+![](/lesson1/3.png)
 
 
 
 [[7:26](https://youtu.be/BWWm4AzsdLk?t=446)]
 
-![](lesson1/4.png)
+![](/lesson1/4.png)
 
 如果你能坚持7周，每周花10个小时在课程上，最终你可以做到：
 
@@ -83,7 +83,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ### 关于深度学习的一些无意义或者不正确的说法 [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
 
-![](lesson1/5.png)
+![](/lesson1/5.png)
 
 - 它不是一个黑盒子，它的工作是可以解释的.
 - 大部分实际的应用不需要太多数据.
@@ -96,7 +96,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 [[10:24](https://youtu.be/BWWm4AzsdLk?t=624)]
 
-![](lesson1/6.png)
+![](/lesson1/6.png)
 
 棒球 VS. 板球 - Nikhil 提供的一个例子，学完第一课后，你将能够完成这个题目
 
@@ -104,7 +104,7 @@ Jupyter Notebook 对于数据科学工作者来说是一个有趣的工具，你
 
 ### 由上至下的学习方式 [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
 
-![](lesson1/7.png)
+![](/lesson1/7.png)
 
 我们从阅读代码开始，这不同于大部分学校课程。今天我们将学习构建有用的程序。今天的课程结束后，你并不会学会所有的理论，有很多东西你可能并不清楚它们是怎样工作的，以及它们为什么是有效的。这没有关系，在接下来的7周里，你将会学会这些。现在，着手写代码而不是关注理论知识，这是更有效的学习方式
 
@@ -314,7 +314,7 @@ data.normalize(imagenet_stats)
 ```python
 data.show_batch(rows=3, figsize=(7,6))
 ```
-![](lesson1/8.png)
+![](/lesson1/8.png)
 
 我们也会用它来做数据增强。对于裁剪多少和在哪里裁剪之类的问题，是有些随机性的。 
 
@@ -382,7 +382,7 @@ learn = create_cnn(data, models.resnet34, metrics=error_rate)
 
 [[37:25](https://youtu.be/BWWm4AzsdLk?t=2245)]
 
-![](lesson1/c1.png)
+![](/lesson1/c1.png)
 
 第一次，我在一个新安装的环境里运行这些代码，它下载了 ResNet34 预训练权重。也就是说，这是一个针对真实任务训练过的实战模型。这个任务是训练模型看50万张各种物品的图片，这些物品属于1000个种类，这个图片数据集叫ImageNet。所以我们可以下载这些预训练过的参数，不必从一个一无所知的模型，而是从一个已经能够识别ImageNet里1000种类别物品的模型开始。并非所有37种品种都在ImageNet里，但里面确实有几种猫和几种狗。所以这个模型知道一些猫狗的品种，并且知道很多动物和很多照片。所以我们不需要从一个空模型开始，而是基于一个已经懂得识别一些图片的模型。预训练模型会在第一次被使用时被自动下载，以后就不会再下载了，而是直接使用先前下载的那个。 
 
@@ -421,7 +421,7 @@ epoch  train loss  valid loss  error_rate
 
 ### 过去的学生最后悔的事:
 
-![](lesson1/102.png)
+![](/lesson1/102.png)
 
 
 
@@ -431,7 +431,7 @@ epoch  train loss  valid loss  error_rate
 
 实践的最重要的技巧是学习和理解给程序输入了什么，程序输出了什么。 
 
-![](lesson1/103.png)
+![](/lesson1/103.png)
 
 Fastai库很新，但它得到了很多关注。它让很多事情简单了很多，也让做一些新东西变得可能。真正理解fastai程序要花很不少精力。最好的方式是使用[fastai 文档](http://docs.fast.ai/).
 
@@ -439,7 +439,7 @@ Fastai库很新，但它得到了很多关注。它让很多事情简单了很�
 
 ### Keras[ [49:25](https://youtu.be/BWWm4AzsdLk?t=2965)]
 
-![](lesson1/105.png)
+![](/lesson1/105.png)
 
 fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简化深度学习的主流软件是Keras。Keras是很棒的软件，在使用fastai之前，我们在之前的课程里使用Keras。它基于Tensorflow。之前它是简化深度学习软件的典范。现在，使用fastai做深度学习更容易。如果对比去年的猫狗大战的课程练习，fastai可以得到更高的准确率 (验证集上的错误率少于Keras的一半), 训练时间少于一半，代码行数是 1/6。代码行数比你认为的更重要，31行Keras代码意味着你要做大量的决定，设置很多参数，做很多设置。这些是为了获得最佳的结果你必须了解的。fastai的5行代码，尽可能多地为你做了这些设置。通常，fastai为你选择了最优的默认值。你将发现这是一个非常有用的库，不仅是在学习深度学习上，在发展深度学习上也有巨大作用。
 
@@ -448,7 +448,7 @@ fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简�
 
 [[50:53](https://youtu.be/BWWm4AzsdLk?t=3053)]
 
-![](lesson1/106.png)
+![](/lesson1/106.png)
 
 
 
@@ -456,7 +456,7 @@ How far can you take it? All of the research that we do at fastai uses the libra
 
 
 [[51:50](https://youtu.be/BWWm4AzsdLk?t=3110)]
-![](lesson1/107.png)
+![](/lesson1/107.png)
 Another example, one of our alumni, Hamel Husain built a new system for natural language semantic code search, you can find it on Github where you can actually type in English sentences and find snippets of code that do the thing you asked for. Again, it's being built with the fastai library using the techniques you'll learn in the next seven weeks.
 
 
@@ -469,22 +469,22 @@ Even though today, we are focusing on a small number of lines of code to a parti
 
 ### Where can that take you? [[53:05](https://youtu.be/BWWm4AzsdLk?t=3185)]
 
-![](lesson1/108.png)
+![](/lesson1/108.png)
 
 This is Sarah Hooker. She did our first course a couple of years ago. She started learning to code two years before she took our course. She started a nonprofit called Delta Analytics, they helped build this amazing system where they attached old mobile phones to trees in Kanyan rain forests and used it to listen for chainsaw noises, and then they used deep learning to figure out when there was a chainsaw being used and then they had a system setup to alert rangers to go out and stop illegal deforestation in the rainforests. That was something she was doing while she was in the course as part of her class projects. 
 
-![](lesson1/109.png)
+![](/lesson1/109.png)
 She is now a Google Brain researcher, publishing some papers, and now she is going to Africa to set up a Google Brain's first deep learning research center in Africa. She worked her arse off. She really really invested in this course. Not just doing all of the assignments but also going out and reading Ian Goodfellow's book, and doing lots of other things. It really shows where somebody who has no computer science or math background at all can be now one of the world's top deep learning researchers and doing very valuable work.
 
 [[54:49](https://youtu.be/BWWm4AzsdLk?t=3289)]
 
-![](lesson1/110.png)
+![](/lesson1/110.png)
 
 
 
 Another example from our most recent course, Christine Payne. She is now at OpenAI and you can find [her post](http://christinemcleavey.com/clara-a-neural-net-music-generator/) and actually listen to her music samples of something she built to automatically create chamber music compositions. 
 
-![](lesson1/111.png)
+![](/lesson1/111.png)
 
 She is a classical pianist. Now I will say she is not your average classical pianist. She's a classical pianist who also has a master's in medical research in Stanford, and studied neuroscience, and was a high-performance computing expert at DE Shaw, Co-Valedictorian at Princeton. Anyway. Very annoying person, good at everything she does. But I think it's really cool to see how a domain expert of playing piano can go through the fastai course and come out the other end as OpenAI fellow. 
 
@@ -502,13 +502,13 @@ We're going to be talking a lot about you doing projects and making them fantast
 [[56:36](https://youtu.be/BWWm4AzsdLk?t=3396)]
 Having said that, I don't really want you to go to AI or Google Brain. What I really want you to do is to go back to your workplace or your passion project and apply these skills there. 
 
-![](lesson1/112.png)
+![](/lesson1/112.png)
 MIT released a deep learning course and they highlighted in their announcement this medical imaging example. One of our students Alex who is a radiologist said you guys just showed a model overfitting. I can tell because I am a radiologist and this is not what this would look like on a chest film. This is what it should look like and as a deep learning practitioner, this is how I know this is what happened in your model. So Alex is combining his knowledge of radiology and his knowledge of deep learning to assess MIT's model from just two images very accurately. So this is actually what I want most of you to be doing is to take your domain expertise and combine it with the deep learning practical aspects you'll learn in this course and bring them together like Alex is doing here. So a lot of radiologists have actually gone through this course now and have built journal clubs and American Council of Radiology practice groups. There's a data science institute at the ACR now and Alex is one of the people who is providing a lot of leadership in this area. And I would love you to do the same kind of thing that Alex is doing which is to really bring deep learning leadership into your industry and to your social impact project, whatever it is that you are trying to do. 
 
 
 [[58:22](https://youtu.be/BWWm4AzsdLk?t=3502)]
 
-![](lesson1/113.png)
+![](/lesson1/113.png)
 
 Another great example. This is Melissa Fabros who is a English literature PhD who studied gendered language in English literature or something and actually Rachel at the previous job taught her to code. Then she came to the fastai course. She helped Kiva, a micro lending a social impact organization, to build a system that can recognize faces. Why is that necessary? We're going to be talking a lot about this but because most AI researchers are white men, most computer vision software can only recognize white male faces effectively. In fast, I think it was IBM system was like 99.8% accurate on common white face men versus 65% accurate on dark skinned women. So it's like 30 or 40 times worse for black women versus white men. This is really important because for Kiva, black women perhaps are the most common user base for their micro lending platform. So Melissa after taking our course, again working her arse off, and being super intense in her study and her work won this $1,000,000 AI challenge for her work for Kiva. 
 
@@ -516,7 +516,7 @@ Another great example. This is Melissa Fabros who is a English literature PhD wh
 
 [[59:53](https://youtu.be/BWWm4AzsdLk?t=3593)]
 
-![](lesson1/114.png)
+![](/lesson1/114.png)
 
 Karthik did our course and realized that the thing he wanted to do wasn't at his company. It was something else which is to help blind people to understand the world around them. So he started a new startup called envision. You can download the app and point your phone to things and it will tell you what it sees. I actually talked to a blind lady about these kinds of apps the other day and she confirmed to me this is a super useful thing for visually disabled users.  
 
@@ -524,19 +524,19 @@ Karthik did our course and realized that the thing he wanted to do wasn't at his
 
 
 [[1:00:24](https://youtu.be/BWWm4AzsdLk?t=3624)]
-![](lesson1/115.png)
+![](/lesson1/115.png)
 
 The level that you can get to, with the content that you're going to get over these seven weeks and with this software can get you right to the cutting edge in areas you might find surprising. I helped a team of some of our students and some collaborators on actually breaking the world record for how quickly you can train ImageNet. We used standard AWS cloud infrastructure, cost of $40 of compute to train this model using fastai library, the technique you learn in this course. So it can really take you a long way. So don't be put off by this what might seem pretty simple at first. We are going deeper and deeper.
 
 
 
 [[1:01:17](https://youtu.be/BWWm4AzsdLk?t=3677)]
-![](lesson1/116.png)
+![](/lesson1/116.png)
 
 You can also use it for other kinds of passion project. Helena Sarin - you should definitely check out her Twitter account [@glagolista](https://twitter.com/glagolista). This art is basically a new style of art that she's developed which combines her painting and drawing with generative adversarial models to create these extraordinary results. I think this is super cool. She is not a professional artists, she is a professional software developer but she keeps on producing these beautiful results. When she started, her art had not really been shown or discussed anywhere, now there's recently been some quite high profile article describing how she is creating a new form of art. 
 
 
-![](lesson1/117.png)
+![](/lesson1/117.png)
 
 Equally important, Brad Kenstler who figured out how to make a picture of Kanye out of pictures of Patrick Stewart's head. Also something you will learn to do if you wish to. This particular type of what's called "style transfer" - it's a really interesting tweak that allowed him to do something that hadn't quite been done before. This particular picture helped him to get a job as a deep learning specialist at AWS.
 
@@ -546,13 +546,13 @@ Equally important, Brad Kenstler who figured out how to make a picture of Kanye 
 
 Another alumni actually worked at Splunk as a software engineer and he designed an algorithm which basically turned Splunk to be fantastically good at identifying fraud and we'll talk more about it shortly. 
 
-![](lesson1/118.png)
+![](/lesson1/118.png)
 
 If you've seen Silicon Valley, the HBO series, the hotdog Not Hotdog app - that's actually a real app you can download and it was built by Tim Anglade as a fastai student project. So there's a lot of cool stuff that you can do. It was Emmy nominated. We only have one Emmy nominated fastai alumni at this stage, so please help change that.
 
 
 
-![](lesson1/119.png)
+![](/lesson1/119.png)
 [[1:03:30](https://youtu.be/BWWm4AzsdLk?t=3810)]
 
 The other thing, the forum thread can turn into these really cool things. So Francisco was a really boring McKinsey consultant like me. So Francisco and I both have this shameful past that we were McKinsey consultants, but we left and we're okay now. He started this thread saying like this stuff we've just been learning about building NLP in different languages, let's try and do lots of different languages, and he started this thing called the language model zoo and out of that, there's now been an academic competition was won in Polish that led to an academic paper, Thai state of the art, German state of the art, basically as students have been coming up with new state of the art results across lots of different languages and this all is entirely done by students working together through the forum. 
@@ -566,7 +566,7 @@ Or if you've got something to add! If people are talking about crop yield analys
 **Question**: Why are we using ResNet as opposed to Inception?
 
 There are lots of architectures to choose from and it would be fair to say there isn't one best one but if you look at things like the Stanford DAWNBench benchmark of image classification, you'll see in first place, second place,  third place, and fourth place all use ResNet. ResNet is good enough, so it's fine. 
-![](lesson1/120.png)
+![](/lesson1/120.png)
 
 The main reason you might want a different architecture is if you want to do edge computing, so if you want to create a model that's going to sit on somebody's mobile phone. Having said that, even there, most of the time, I reckon the best way to get a model onto somebody's mobile phone is to run it on your server and then have your mobile phone app talk to it. It really makes life a lot easier and you get a lot more flexibility. But if you really do need to run something on a low powered device, then there are special architectures for that. So the particular question was about Inception. That's a particular another architecture which tends to be pretty memory intensive but it's okay. It's not terribly resilient. One of the things we try to show you is stuff which just tends to always work even if you don't quite tune everything perfectly. So ResNet tends to work pretty well across a wide range of different kind of details around choices that you might make. So I think it's pretty good.
 
@@ -601,19 +601,19 @@ One of the things, perhaps the most useful things to do is called plot_top_losse
 interp.plot_top_losses(9, figsize=(15,11))
 
 ```
-![](lesson1/9.png)
+![](/lesson1/9.png)
 
 It prints out four things. What do they mean? Perhaps we should look at the document.
 
 We have already seen `help`, and `help` just prints out a quick little summary. But if you want to really see how to do something use `doc`.
 
-![](lesson1/121.png)
+![](/lesson1/121.png)
 
 
 
 `doc` tells you the same information as `help` but it has this very important thing which is `Show in docs`. When you click on it, it pops up the documentation for that method or class or function or whatever:
 
-![](lesson1/122.png)
+![](/lesson1/122.png)
 
 It starts out by showing us the same information about what are the parameters it takes a long with the doc string. But then tells you more information:
 
@@ -621,7 +621,7 @@ It starts out by showing us the same information about what are the parameters i
 
 The documentation always has working code. This is your friend when you're trying to figure out how to use these things. The other thing I'll mention is if you're somewhat experienced Python programmer, you'll find the source code of fastai really easy to read. We are trying to write everything in just a small number (much less than half a screen) of code. If you click on `[source]` you can jump straight to the source code.
 
-![](lesson1/123.png)
+![](/lesson1/123.png)
 
 Here is plot_top_loss, and this is also a great way to find out how to use the fastai library. Because nearly every line of code here,  is calling stuff in the fastai library. So don't be afraid to look at the source code.
 
@@ -634,7 +634,7 @@ So that's how we can look at top losses and these are perhaps the most important
 ### Confusion matrix [1:13:21](https://youtu.be/BWWm4AzsdLk?t=4401)
 
 Another useful tool, kind of, is to use something called a confusion matrix which basically shows you for every actual type of dog or cat, how many times was it predicted to be that dog or cat. But unfortunately, in this case, because it's so accurate, this diagonal basically says how it's pretty much right all the time. 
-![](lesson1/10.png)
+![](/lesson1/10.png)
 
 And you can see there is slightly darker ones like a five here, it's really hard to read exactly what their combination is. So what I suggest you use is instead of, if you've got lots of classes, don't use confusion matrix, but this is my favorite named function in fastai and I'm very proud of this - you can call "most confused".
 
@@ -683,7 +683,7 @@ Uh-oh. The error got much worse. Why? In order to understand why, we are actuall
 
 
 [[1:16:28](https://youtu.be/BWWm4AzsdLk?t=4588)]
-![](lesson1/100.png)
+![](/lesson1/100.png)
 
 These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf) by Matt Zeiler who nowadays is a CEO of Clarify which is a very successful computer vision startup and his supervisor for his PhD Rob Fergus. They wrote a paper showing how you can visualize the layers of a convolutional neural network. A convolutional neural network, which we will learn mathematically about what the layers are shortly, but the basic idea is that your red, green, and blue pixel values that are numbers from nought to 255 go into the simple computation (i.e. the first layer) and something comes out of that, and then the result of that goes into a second layer, and the result of that goes into the third layer and so forth. There can be up to a thousand layers of neural network. ResNet34 has 34 layers, and ResNet50 has 50 layers, but let's look at layer one. There's this very simple computation which is a convolution if you know what they are. What comes out of this first layer? Well, we can actually visualize these specific coefficients, the specific parameters by drawing them as a picture. There's actually a few dozen of them in the first layer, so we don't draw all of them. Let's just look at 9 at random. 
 
@@ -691,21 +691,21 @@ These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/z
 
 [[1:17:45](https://youtu.be/BWWm4AzsdLk?t=4665)]
 
-![](lesson1/124.png)
+![](/lesson1/124.png)
 
 Here are nine examples of the actual coefficients from the first layer. So these operate on groups of pixels that are next to each other. So this first one basically finds groups of pixels that have a little diagonal line, the second one finds diagonal line in the other direction, the third one finds gradients that go from yellow to blue, and so forth. They are very simple little filters. That's layer one of ImageNet pre-trained convolutional neural net. 
 
-![](lesson1/125.png)
+![](/lesson1/125.png)
 
 Layer 2 takes the results of those filters and does a second layer of computation. The bottom right are nine examples of a way of visualizing one of the second layer features. AS you can see, it basically learned to create something that looks for top left corners. There are ones that learned to find right-hand curves, and little circles, etc. In layer one, we have things that can find just one line, and in layer 2, we can find things that have two lines joined up or one line repeated. If you then look over to the right, these nine show you nine examples of actual bits of the actual photos that activated this filter a lot. So in other words, the filter on the bottom right was good at finding these window corners etc. 
 
 So this is the kind of stuff you've got to get a really good intuitive understanding for. The start of my neural net is going to find very simple gradients and lines, the second layer can find very simple shapes, the third layer can find  combination of those. 
 
-![](lesson1/126.png)
+![](/lesson1/126.png)
 
 Now we can find repeating pattern of two dimensional objects or we can find things that joins together, or bits of text (although sometimes windows) - so it seems to find repeated horizontal patterns. There are also ones that seem to find edges of fluffy or flowery things or geometric patterns. So layer 3 was able to take all the stuff from layer 2 and combine them together.
 
-![](lesson1/127.png)
+![](/lesson1/127.png)
 
 Layer 4 can take all the stuff from layer 3 and combine them together. By layer 4, we got something that can find dog faces or bird legs. 
 
@@ -736,7 +736,7 @@ Let's run learning rate finder. We are learning about what that is next week, bu
 learn.lr_find()
 learn.recorder.plot()
 ```
-![](lesson1/11.png)
+![](/lesson1/11.png)
 
 This will plot the result of our LR finder and what this basically shows you is this key parameter called a learning rate. The learning rate basically says how quickly am I updating the parameters in my model. The x-axis one here shows me what happens as I increase the learning rate. The y axis show what the loss is. So you can see, once the learning rate gets passed 10^-4, my loss gets worse. It actually so happens, in fact I can check this if I press <kbd>shift</kbd>+<kbd>tab</kbd> here, my learning defaults to 0.003. So you can see why our loss got worse. Because we are trying to fine-tune things now, we can't use such a high learning rate. So based on the learning rate finder, I tried to pick something well before it started getting worse. So I decided to pick `1e-6`. But there's no point training all the layers at that rate, because we know that the later layers worked just fine before when we were training much more quickly. So what we can actually do is we can pass a range of learning rates to `learn.fit_one_cycle`. And we do it like this:
 
@@ -758,7 +758,7 @@ You use this keyword in Python called `slice` and that can take a start value an
 
 A good rule of thumb is after you unfreeze (i.e. train the whole thing), pass a max learning rate parameter, pass it a slice, make the second part of that slice about 10 times smaller than your first stage. Our first stage defaulted to about 1e-3 so it's about 1e-4. And the first part of the slice should be a value from your learning rate finder which is well before things started getting worse. So you can see things are starting to get worse maybe about here:
 
-![](lesson1/128.png)
+![](/lesson1/128.png)
 
 So I picked something that's at least 10 times smaller than that.
 
@@ -819,7 +819,7 @@ interp.most_confused(min_val=2)
 
 You can call the most_confused here and you can see the kinds of things that it's getting wrong. Depending on when you run it, you're going to get slightly different numbers, but you'll get roughly the same kind of things. So quite often, I find the Ragdoll and Birman are things that it gets confused. I actually have never heard of either of those things, so I actually looked them up and found a page on the cat site called "Is this a Birman or Ragdoll kitten?" and there was a long thread of cat experts arguing intensely about which it is. So I feel fine that my computer had problems.   
 
-![](lesson1/129.png)
+![](/lesson1/129.png)
 
 I found something similar, I think it was this pitbull versus staffordshire bull terrier, apparently the main difference is the particular kennel club guidelines as to how they are assessed. But some people thing that one of them might have a slightly redder nose. So this is the kind of stuff where actually even if you're not a domain expert, it helps you become one. Because I now know more about which kinds of pet breeds are hard to identify than I used to. So model interpretation works both ways. 
 
@@ -861,7 +861,7 @@ This will create an ImageDataBunch for you and as you can see it created the lab
 ```python
 data.show_batch(rows=3, figsize=(5,5))
 ```
-![](lesson1/12.png)
+![](/lesson1/12.png)
 
 
 ### Scenario 2: CSV file [[1:33:17](https://youtu.be/BWWm4AzsdLk?t=5597)]
@@ -873,7 +873,7 @@ df = pd.read_csv(path/'labels.csv')
 df.head()
 ```
 
-![](lesson1/130.png)
+![](/lesson1/130.png)
 
 For each file name, what's its label. In this case, labels are not three or seven, they are 0 or 1 which basically is it a 7 or not. So that's another possibility. If this is how your labels are, you can use `from_csv`:
 
@@ -891,7 +891,7 @@ data.classes
 [0, 1]
 ```
 
-![](lesson1/13.png)
+![](/lesson1/13.png)
 
 
 
@@ -959,7 +959,7 @@ doc(ImageDataBunch.from_name_re)
 
 
 
-![](lesson1/131.png)
+![](/lesson1/131.png)
 
 
 
@@ -990,7 +990,7 @@ Before I wrap up, I'll just show you an example of the kind of interesting stuff
 
 Remember earlier I mentioned that one of our alumni who works at Splunk which is a NASDAQ listed big successful company created this new anti-fraud software. This is actually how he created it as part of a fastai part 1 class project:
 
-![](lesson1/132.jpg)
+![](/lesson1/132.jpg)
 
 
 He took the telemetry of users who had Splunk analytics installed and watched their mouse movements and he created pictures of the mouse movements. He converted speed into color and right and left clicks into splotches. He then took the exact code that we saw with an earlier version of the software and trained a CNN in exactly the same way we saw and used that to train his fraud model. So he took something which is not obviously a picture and he turned it into a picture and got these fantastically good results for a piece of fraud analysis software. 
