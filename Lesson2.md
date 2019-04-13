@@ -611,7 +611,7 @@ Too many epochs create something called "overfitting". If you train for too long
 
 So the only thing that tells you that you're overfitting is that the error rate improves for a while and then starts getting worse again. You will see a lot of people, even people that claim to understand machine learning, tell you that if your training loss is lower than your validation loss, then you are overfitting. As you will learn today in more detail and during the rest of course, that is **absolutely not true**. 
 
-> Any morel that is trained correctly will always have train loss lower than validation loss. 
+> Any model that is trained correctly will always have a lower training loss than validation loss. 
 
 That is not a sign of overfitting. That is not a sign you've done something wrong. That is a sign you have done something right. The sign that you're overfitting is that your error starts getting worse, because that's what you care about. You want your model to have a low error. So as long as you're training and your model error is improving, you're not overfitting. How could you be?
 
@@ -884,7 +884,7 @@ We are going to jump into [lesson2-sgd.ipynb](https://github.com/fastai/course-v
 
  ![](lesson2/n1.png)
 
-So x-axis might represent temperature, y-axis might represent number of ice creams we sell, or something like that. But we're just going to create some synthetic data that we know is following a line. As we build this, we're actually going to lean a little bit about PyTorch as well. 
+So x-axis might represent temperature, y-axis might represent number of ice creams we sell, or something like that. But we're just going to create some synthetic data that we know is following a line. As we build this, we're actually going to learn a little bit about PyTorch as well. 
 
 ```python
 %matplotlib inline
@@ -933,7 +933,7 @@ y = x@a + torch.rand(n)
 
 [[1:17:57](https://youtu.be/Egp4Zajhzog?t=4677)]
 
-So we basically are going to generate some data by creating a line and then we're going to add some random numbers to it. But let's go back and see how we created `x` and `a`. I mentioned that we've basically got these two coefficients 3 and 2. And you'll see that we've wrapped it in this function called `tensor`. You might have heard this word "tensor" before. It's one of these words that sounds scary and apparently if you're a physicist, it actually is scary. But in the world of deep learning, it's actually not scary at all. "tensor" means array, but specifically it's an array of a regular shape. So it's not an array where row 1 has two things, row 3 has three things, and row 4 has one thing, what you call a "jagged array". That's not a tensor.  A tensor is any array which has a rectangular or cube or whatever ﹣ a shape where every row is the same length and every column is the same length. The following are all tensors:
+So we basically are going to generate some data by creating a line and then we're going to add some random numbers to it. But let's go back and see how we created `x` and `a`. I mentioned that we've basically got these two coefficients 3 and 2. And you'll see that we've wrapped it in this function called `tensor`. You might have heard this word "tensor" before. It's one of these words that sounds scary and apparently if you're a physicist, it actually is scary. But in the world of deep learning, it's actually not scary at all. "Tensor" means array, but specifically it's an array of a regular shape. So it's not an array where row 1 has two things, row 3 has three things, and row 4 has one thing, what you call a "jagged array". That's not a tensor.  A tensor is any array which has a rectangular or cube or whatever ﹣ a shape where every row is the same length and every column is the same length. The following are all tensors:
 
 - 4 by 3 matrix
 - A vector of length 4
@@ -997,7 +997,7 @@ Now what we're going to do is, we are going to pretend we were given this data a
 
 >If we can find a way to find those two parameters to fit that line to those 100 points, we can also fit these arbitrary functions that convert from pixel values to probabilities.
 
-It will turn out that this techniques that we're going to learn to find these two numbers works equally well for the 50 million numbers in ResNet34. So we're actually going to use an almost identical approach. This is the bit that I found in previous classes people have the most trouble digesting. I often find, even after week 4 or week 5, people will come up to me and say:
+It will turn out that these techniques that we're going to learn to find these two numbers works equally well for the 50 million numbers in ResNet34. So we're actually going to use an almost identical approach. This is the bit that I found in previous classes people have the most trouble digesting. I often find, even after week 4 or week 5, people will come up to me and say:
 
 Student: I don't get it. How do we actually train these models?
 
@@ -1114,7 +1114,7 @@ tensor([-1.,  1.], requires_grad=True)
 
 [[1:39:12]](https://youtu.be/Egp4Zajhzog?t=5952)
 
-Instead, we're doing to call `.grad`. On our computer, that will calculate the gradient for us.  
+Instead, we're doing to call `.backward()`. On our computer, that will calculate the gradient for us.  
 
 ```python
 def update():
@@ -1264,7 +1264,7 @@ There's quite a bit of vocab we've just covered, so let's remind ourselves.
 
 - **Mini-batch**: A random bunch of points that you use to update your weights.
 
-- **SGD**: Gradient descent using mini-batches.
+- **SGD**: Stochastic gradient descent using mini-batches.
 
 - **Model / Architecture**: They kind of mean the same thing. In this case, our architecture is <img src="http://latex.codecogs.com/gif.latex?\vec{y}&space;=&space;X\vec{a}" title="\vec{y} = X\vec{a}" />﹣ the architecture is the mathematical function that you're fitting the parameters to. And we're going to learn later today or next week what the mathematical function of things like ResNet34 actually is. But it's basically pretty much what you've just seen. It's a bunch of matrix products. 
 
@@ -1303,6 +1303,6 @@ There are other ways to make sure that we don't overfit. In general, this is cal
 
 What happens with the validation set is that we do our mini-batch SGD training loop with one set of data with one set of teddy bears, grizzlies, black bears. Then when we're done, we check the loss function and the accuracy to see how good is it on a bunch of images which were not included in the training. So if we do that, then if we have something which is too wiggly, it will tell us. "Oh, your loss function and your error is really bad because on the bears that it hasn't been trained with, the wiggly bits are in the wrong spot." Or else if it was underfitting, it would also tell us that your validation set is really bad. 
 
-Even for people that don't go through this course and don't learn about the details of deep learning, if you've got managers or colleagues at work who are wanting to learn about AI, the only thing that you really need to be teaching them is about the idea of a validation set. Because that's the thing they can then use to figure out if somebody's telling them snake oil or not. They hold back some data and they get told "oh, here's a model that we're going to roll out" and then you say "okay, fine. I'm just going to check it on this held out data to see whether it generalizes." There's a lot of details to get right when you design your validation set. We will talk about them briefly next week, but a more full version would be in Rachel's piece on the fast.ai blog called [How (and why) to create a good validation set](https://www.fast.ai/2017/11/13/validation-sets/). And this is also one of the things we go into in a lot of detail in the intro to machine learning course. So we're going to try and give you enough to get by for this course, but it is certainly something that's worth deeper study as well.
+Even for people that don't go through this course and don't learn about the details of deep learning, if you've got managers or colleagues at work who are wanting to learn about AI, the only thing that you really need to be teaching them is about the idea of a validation set. Because that's the thing they can then use to figure out if somebody's telling them snake oil or not. They hold back some data and they get told "oh, here's a model that we're going to roll out" and then you say "okay, fine. I'm just going to check it on this held out data to see whether it generalizes." There's a lot of details to get right when you design your validation set. We will talk about them briefly next week, but a more full version would be in Rachel's piece on the fast.ai blog called [How (and why) to create a good validation set](https://www.fast.ai/2017/11/13/validation-sets/). And this is also one of the things we go into a lot of detail in the intro to machine learning course. So we're going to try and give you enough to get by for this course, but it is certainly something that's worth deeper study as well.
 
 Thanks everybody! I hope you have a great time building your web applications. See you next week.

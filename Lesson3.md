@@ -572,7 +572,7 @@ def acc_02(inp, targ): return accuracy_thresh(inp, targ, thresh=0.2)
 
 We could do it that way. But it's so common that computer science has a term for that called a "partial" / "partial function application" (i.e. create a new function that's just like that other function but we are always going to call it with a particular parameter).
 
-Python3 has something called `partial` that takes some function and some list of keywords and values, and creates a new function that is exactly the same as this function (`accurasy_thresh`) but is always going to call it with that keyword argument (`thresh=0.2`).
+Python3 has something called `partial` that takes some function and some list of keywords and values, and creates a new function that is exactly the same as this function (`accuracy_thresh`) but is always going to call it with that keyword argument (`thresh=0.2`).
 
 ```python
 acc_02 = partial(accuracy_thresh, thresh=0.2)
