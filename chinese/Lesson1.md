@@ -463,18 +463,18 @@ fastai和其他软件比起来怎么样?唯一的和fastai类似的致力于简�
 
 [[52:27](https://youtu.be/BWWm4AzsdLk?t=3147)]
 
-The best place to learn about these things and get involved in these things is on the forums where as well as categories for each part of the course and there is also a general category for deep learning where people talk about research papers applications. 
+学习这些内容和相关内容的最好的地方是我们的论坛，课程每个部分在里面都有对应的板块，也有讨论研究论文应用的深度学习通用板块。 
 
-Even though today, we are focusing on a small number of lines of code to a particular thing which is image classification and we are not learning much math or theory, over these seven weeks and then part two, we are going to go deeper and deeper. 
+尽管今天我们只讨论了用于图像分类的一个任务的几行代码，并没有用到太多数学和理论，但是在接下来的七周和第二部分课程里，我们会越来越深入。 
 
-### Where can that take you? [[53:05](https://youtu.be/BWWm4AzsdLk?t=3185)]
+### 这将给你怎样的未来? [[53:05](https://youtu.be/BWWm4AzsdLk?t=3185)]
 
 ![](/lesson1/108.png)
 
-This is Sarah Hooker. She did our first course a couple of years ago. She started learning to code two years before she took our course. She started a nonprofit called Delta Analytics, they helped build this amazing system where they attached old mobile phones to trees in Kanyan rain forests and used it to listen for chainsaw noises, and then they used deep learning to figure out when there was a chainsaw being used and then they had a system setup to alert rangers to go out and stop illegal deforestation in the rainforests. That was something she was doing while she was in the course as part of her class projects. 
+这是Sarah Hooker。她几年前参加了我们的第一次课程。参加课程前她有两年的编程经验。她创建了一个叫做Delta Analytics的非盈利组织，这个组织帮助建立了这样一个令人惊奇的系统，他们在Kanyan热带雨林的树上安装里旧手机，用来监听电锯声，他们使用深度学习来识别是不是有人在使用电锯，他们建立了一个向护林员告警，阻止非法砍伐热带雨林树木的系统。这是她在参加我们的课程做课题时做的一些事情。 
 
 ![](/lesson1/109.png)
-She is now a Google Brain researcher, publishing some papers, and now she is going to Africa to set up a Google Brain's first deep learning research center in Africa. She worked her arse off. She really really invested in this course. Not just doing all of the assignments but also going out and reading Ian Goodfellow's book, and doing lots of other things. It really shows where somebody who has no computer science or math background at all can be now one of the world's top deep learning researchers and doing very valuable work.
+她现在是谷歌大脑的研究员，发表了一些论文，现在她将去非洲建立谷歌大脑的第一个非洲深度学习研究中心。她在这个课程上投入了很多，不仅完成所有的作业，并且读Ian Goodfellow的书，做了很多其他事情。从她可以看到，一个没有计算机科学和数学背景的人也可以成为世界顶尖机器学习研究者，做非常有价值的工作。
 
 [[54:49](https://youtu.be/BWWm4AzsdLk?t=3289)]
 
@@ -482,35 +482,35 @@ She is now a Google Brain researcher, publishing some papers, and now she is goi
 
 
 
-Another example from our most recent course, Christine Payne. She is now at OpenAI and you can find [her post](http://christinemcleavey.com/clara-a-neural-net-music-generator/) and actually listen to her music samples of something she built to automatically create chamber music compositions. 
+另外一个例子是参加我们最近课程的 Christine Payne。她现在在OpenAI，你可以找到[她发表的文章](http://christinemcleavey.com/clara-a-neural-net-music-generator/) ，听到她的自动创作室内音乐程序的音乐作品。 
 
 ![](/lesson1/111.png)
 
-She is a classical pianist. Now I will say she is not your average classical pianist. She's a classical pianist who also has a master's in medical research in Stanford, and studied neuroscience, and was a high-performance computing expert at DE Shaw, Co-Valedictorian at Princeton. Anyway. Very annoying person, good at everything she does. But I think it's really cool to see how a domain expert of playing piano can go through the fastai course and come out the other end as OpenAI fellow. 
+她是一个古典钢琴演奏家。她并非一个普通的古典钢琴演奏家，她有斯坦福医学硕士学位，学过神经科学，是DE Show的高性能计算专家，普林斯顿的毕业演说者。一个令人嫉妒的，做什么都很擅长的人。看到一个钢琴专家通过学习fastai课程，成为了一个OpenAI fellow 是一件很酷的事。 
 
-Interestingly, one of our other alumni of the course recently interviewed her for a blog post series he is doing on top AI researchers and she said one of the most important pieces of advice she got was from me and she said the advice was:
-
-
-
-> #### Pick one project. Do it really well. Make it fantastic. [56:20](https://youtu.be/BWWm4AzsdLk?t=3380)
+有趣的是，我们的另外一个学员最近采访了她，他正在做有关顶级AI研究者的博客专题，在采访中Christine说她得到的一个最重要的建议中的一个是来自我的，这个建议是：
 
 
 
-We're going to be talking a lot about you doing projects and making them fantastic during this course.
+> #### 找到一个项目，把它做好，做得非常棒 [56:20](https://youtu.be/BWWm4AzsdLk?t=3380)
+
+
+
+在这个课程中，我们将讨论很多关于你做一个项目，把它做得非常棒的内容。
 
 
 [[56:36](https://youtu.be/BWWm4AzsdLk?t=3396)]
-Having said that, I don't really want you to go to AI or Google Brain. What I really want you to do is to go back to your workplace or your passion project and apply these skills there. 
+讲这些并不是想让你们去从事AI或者进入谷歌大脑项目。我希望你们回到你们的领域或者你投入的项目里，在那里应用这些技能。
 
 ![](/lesson1/112.png)
-MIT released a deep learning course and they highlighted in their announcement this medical imaging example. One of our students Alex who is a radiologist said you guys just showed a model overfitting. I can tell because I am a radiologist and this is not what this would look like on a chest film. This is what it should look like and as a deep learning practitioner, this is how I know this is what happened in your model. So Alex is combining his knowledge of radiology and his knowledge of deep learning to assess MIT's model from just two images very accurately. So this is actually what I want most of you to be doing is to take your domain expertise and combine it with the deep learning practical aspects you'll learn in this course and bring them together like Alex is doing here. So a lot of radiologists have actually gone through this course now and have built journal clubs and American Council of Radiology practice groups. There's a data science institute at the ACR now and Alex is one of the people who is providing a lot of leadership in this area. And I would love you to do the same kind of thing that Alex is doing which is to really bring deep learning leadership into your industry and to your social impact project, whatever it is that you are trying to do. 
+MIT发布了一份深度学习课程，在他们的公告里着重介绍了医学图像的例子。我们的一个学员Alex是一个放射科医生，他说这是一个过拟合的模型。我有资格这样说，因为我也是一个放射学者，这不是一个胸透该有的样子。这是深度学习的学习者应该做的事，这是为什么我知道你的模型运行得如何的原因。Alex结合他在放射学和深度学习的知识，仅凭两张图片就能精确地评估MIT地模型。这是我希望你们中的大多数人做的事情，像Alex那样，把你们的专业领域知识和你们将学到深度学习实践技能结合在一起。很多放射科医生已经学习了这个课程，成立了审议小组和美国放射学会（American Council of Radiology）实践小组。现在在美国放射学会有了数据科学学会，Alex是其中一个做了很多组织工作的人。我希望你们能做Alex一样的事情，引领深度学习在你们行业的应用，应用到那些有社会影响的项目里，无论是什么项目。
 
 
 [[58:22](https://youtu.be/BWWm4AzsdLk?t=3502)]
 
 ![](/lesson1/113.png)
 
-Another great example. This is Melissa Fabros who is a English literature PhD who studied gendered language in English literature or something and actually Rachel at the previous job taught her to code. Then she came to the fastai course. She helped Kiva, a micro lending a social impact organization, to build a system that can recognize faces. Why is that necessary? We're going to be talking a lot about this but because most AI researchers are white men, most computer vision software can only recognize white male faces effectively. In fast, I think it was IBM system was like 99.8% accurate on common white face men versus 65% accurate on dark skinned women. So it's like 30 or 40 times worse for black women versus white men. This is really important because for Kiva, black women perhaps are the most common user base for their micro lending platform. So Melissa after taking our course, again working her arse off, and being super intense in her study and her work won this $1,000,000 AI challenge for her work for Kiva. 
+另一个非常好的例子。这是Melissa Fabros，她曾是一个研究性别化语言和相关课题的英文文学的博士。Rachel在她以前的工作中教过Melissa编程。后来她参加了fastai课程。她帮助Kiva，一个有影响力的小额贷款机构，构建一个人脸识别系统。为什么这很必要？我们花时间介绍这个，是因为大部分AI研究者是男性白人，大部分计算机视觉程序仅能有效识别男性白人。印象中，IBM系统对男性白人的识别准确率是99.8%，对黑皮肤女性的识别准确率是65%。错误率相差三四十倍。这对Kiva来说很重要，对这个贷款平台来说，黑人女性可能是他们最主要的客户。在Melissa学完我们的课程后，再次改变行业，投入了巨大热情在她的研究中，并且因为她为Kiva做的工作在AI竞赛中赢得了一百万美元奖金。
 
 
 
@@ -518,7 +518,7 @@ Another great example. This is Melissa Fabros who is a English literature PhD wh
 
 ![](/lesson1/114.png)
 
-Karthik did our course and realized that the thing he wanted to do wasn't at his company. It was something else which is to help blind people to understand the world around them. So he started a new startup called envision. You can download the app and point your phone to things and it will tell you what it sees. I actually talked to a blind lady about these kinds of apps the other day and she confirmed to me this is a super useful thing for visually disabled users.  
+参加了我们的课程后，Karthik意识到在他当时公司里的工作不是他想要的。他希望能帮助盲人了解他们周围的世界。他成立了一家叫做 envision的公司。你可以下载这个app，把你的手机对准一些东西，这个app会告诉你它看到了什么。我把这种app告诉了一位盲人女士，她表示这对于失明的人是一个非常有用的工具。
 
 
 
@@ -526,54 +526,54 @@ Karthik did our course and realized that the thing he wanted to do wasn't at his
 [[1:00:24](https://youtu.be/BWWm4AzsdLk?t=3624)]
 ![](/lesson1/115.png)
 
-The level that you can get to, with the content that you're going to get over these seven weeks and with this software can get you right to the cutting edge in areas you might find surprising. I helped a team of some of our students and some collaborators on actually breaking the world record for how quickly you can train ImageNet. We used standard AWS cloud infrastructure, cost of $40 of compute to train this model using fastai library, the technique you learn in this course. So it can really take you a long way. So don't be put off by this what might seem pretty simple at first. We are going deeper and deeper.
+七周里你学习的内容和这个fastai软件将使你能够达到这个领域的领先水平，这可能会令人惊奇。我帮助了我们一些学员同事组成的团队在训练ImageNet的速度上打破了世界记录。我们使用的是标准的AWS主机，花费了40美元，我们使用了fastai库，在这个课程里我们将学习这个技术。这个课程真的可以为你提供很大帮助。不要因为最开始的内容很简单就放弃，我们会逐步深入。
 
 
 
 [[1:01:17](https://youtu.be/BWWm4AzsdLk?t=3677)]
 ![](/lesson1/116.png)
 
-You can also use it for other kinds of passion project. Helena Sarin - you should definitely check out her Twitter account [@glagolista](https://twitter.com/glagolista). This art is basically a new style of art that she's developed which combines her painting and drawing with generative adversarial models to create these extraordinary results. I think this is super cool. She is not a professional artists, she is a professional software developer but she keeps on producing these beautiful results. When she started, her art had not really been shown or discussed anywhere, now there's recently been some quite high profile article describing how she is creating a new form of art. 
+你也可以用它做一些其他感兴趣的事情。Helena Sarin - 你可以查看她的Twitter[@glagolista](https://twitter.com/glagolista)。这些作品是她用生成对抗模型把她的画组合在一起得到的令人惊奇的结果，这是一种新的艺术。我觉得这很酷。她不是专业的艺术家，她是一个专业的软件开发者，但她一直在制作这样漂亮的画。开始时，没有多少人传播讨论她的作品，现在一些高规格的文章认为她创造了一种新的艺术。
 
 
 ![](/lesson1/117.png)
 
-Equally important, Brad Kenstler who figured out how to make a picture of Kanye out of pictures of Patrick Stewart's head. Also something you will learn to do if you wish to. This particular type of what's called "style transfer" - it's a really interesting tweak that allowed him to do something that hadn't quite been done before. This particular picture helped him to get a job as a deep learning specialist at AWS.
+同样的， Brad Kenstler 做到了使用Patrick Stewart的头来画出一幅Kanye的画。这个技术你将会在课程里学到，它叫做“风格迁移”。他做了些微调，就画出了以前没有人尝试过的东西。这些作品帮助他得到了一份AWS深度学习专家的工作。
 
 
 
 [[1:02:41](https://youtu.be/BWWm4AzsdLk?t=3761)]
 
-Another alumni actually worked at Splunk as a software engineer and he designed an algorithm which basically turned Splunk to be fantastically good at identifying fraud and we'll talk more about it shortly. 
+另外一位在Splunk担任软件工程师的学员，设计了一个算法，使得Splunk能有效地识别欺诈，我们稍后将详细介绍这个算法。
 
 ![](/lesson1/118.png)
 
-If you've seen Silicon Valley, the HBO series, the hotdog Not Hotdog app - that's actually a real app you can download and it was built by Tim Anglade as a fastai student project. So there's a lot of cool stuff that you can do. It was Emmy nominated. We only have one Emmy nominated fastai alumni at this stage, so please help change that.
+如果你看过HBO的剧集《硅谷》, 里面的“是不是热狗” app 是一个真实存在的app，你可以下载到它。它是Tim Anglade的课程项目。有很多你可以实现的很酷的事情。它获得了艾美奖提名。目前现在只有一个学员获得了艾美奖提名，请让这个数量变得更多。
 
 
 
 ![](/lesson1/119.png)
 [[1:03:30](https://youtu.be/BWWm4AzsdLk?t=3810)]
 
-The other thing, the forum thread can turn into these really cool things. So Francisco was a really boring McKinsey consultant like me. So Francisco and I both have this shameful past that we were McKinsey consultants, but we left and we're okay now. He started this thread saying like this stuff we've just been learning about building NLP in different languages, let's try and do lots of different languages, and he started this thing called the language model zoo and out of that, there's now been an academic competition was won in Polish that led to an academic paper, Thai state of the art, German state of the art, basically as students have been coming up with new state of the art results across lots of different languages and this all is entirely done by students working together through the forum. 
+另外，论坛的帖子可以变成这些很酷的东西。So Francisco 曾经和我一样是一个无聊的麦肯锡咨询顾问。我们倆都有这样可耻的经历，但我们现在还不错的。他发布了这个帖子，说我们正在学习构建不同语言的自然语言处理程序，让我们尝试大量不同语言吧。他开始做这件事情，把它叫做语言模型动物园。后来这赢得了波兰的一项学术竞赛，并发表了一篇学术论文。在泰语，德语都取得了领先水平。学生们不断刷新多种不同语言的记录，这都是学生们一起通过论坛完成的。
 
-So please get on the forum. But don't be intimidated because everybody you see on the forum, the vast majority of posting post all the darn time. They've been doing this a lot and they do it a lot of the time. So at first, it can feel intimidating because it can feel like you're the only new person there. But you're not. You're all new people, so when you just get out there and say like "okay all you people getting these state of the art results in German language modeling, I can't start my server, I try to click the notebook and I get an error, what do I do?" People will help you. Just make sure you provide all the information ([how to ask for help](https://forums.fast.ai/t/how-to-ask-for-help/10421)). 
+请去使用论坛。不要因为觉得你在论坛上看到的很多人都学习了很长时间而羞于发言。你可能因为感觉你是唯一的新手而感到害羞，实际上并不是，大家都是新手。你可以大胆地说“好的，你们都在德文语言模型上得到了优秀的结果。我启动不了服务器，我点击notebook但出现了报错，我应该怎样做？”。请在提问里提供足够的信息，人们会帮助你的。 ([如何请求帮助](https://forums.fast.ai/t/how-to-ask-for-help/10421)). 
 
-Or if you've got something to add! If people are talking about crop yield analysis and you're a farmer and you think oh I've got something to add, please mention it even if you are not sure it's exactly relevant. It's fine. Just get involved. Because remember, everybody else in the forum started out also intimidated. We all start out not knowing things. So just get out there and try it!
+如果你有话想说，不要害怕发言。如果大家在讨论农作物产量分析，你恰好是一个农场主，你认为你可以发表一些意见，请大胆说出来，即使你不太确定这是不是大家关心的问题，这没有关系，尽管参与进来。记住，论坛里其它新人也都害怕发言，我们开始时都什么都不知道。尽管试着使用论坛。
 
 
 [[1:05:59](https://youtu.be/BWWm4AzsdLk?t=3959)]
-**Question**: Why are we using ResNet as opposed to Inception?
+**Question**: 为什么使用ResNet而不是Inception?
 
-There are lots of architectures to choose from and it would be fair to say there isn't one best one but if you look at things like the Stanford DAWNBench benchmark of image classification, you'll see in first place, second place,  third place, and fourth place all use ResNet. ResNet is good enough, so it's fine. 
+有很多可供选择的模型，公平来说，没有一个最好的。但是如果你看看Stanford DAWNBench这样的图片分类基准，你会发现前四名都是ResNet。ResNet足够好，所以我们使用了它。 
 ![](/lesson1/120.png)
 
-The main reason you might want a different architecture is if you want to do edge computing, so if you want to create a model that's going to sit on somebody's mobile phone. Having said that, even there, most of the time, I reckon the best way to get a model onto somebody's mobile phone is to run it on your server and then have your mobile phone app talk to it. It really makes life a lot easier and you get a lot more flexibility. But if you really do need to run something on a low powered device, then there are special architectures for that. So the particular question was about Inception. That's a particular another architecture which tends to be pretty memory intensive but it's okay. It's not terribly resilient. One of the things we try to show you is stuff which just tends to always work even if you don't quite tune everything perfectly. So ResNet tends to work pretty well across a wide range of different kind of details around choices that you might make. So I think it's pretty good.
+你需要另外一种架构的最可能的场景是边缘计算，比如说你需要在手机上运行一个模型。我认为大多数时候，最好的方法是在服务器运行模型，让手机应用和服务器通信获取结果。这更简单，更灵活。如果你真的需要在低性能的设备上运行模型，有一些特别的架构是用来做这个的。这个问题问的是Inception。这是另外一种架构，对内存要求更高。普适性不好。我们希望能介绍一种即使不做太多调试也能良好工作的模型。ResNet在很多情况下都能取得不错的结果。我认为选择它更好。
 
 
 [[1:07:58](https://youtu.be/BWWm4AzsdLk?t=4078)]
 
-We've got this trained model and what's actually happened as we'll learn is it's basically creating a set of weights. If you've ever done anything like a linear regression or logistic regression, you'll be familiar with coefficients. We basically found some coefficients and parameters that work pretty well and it took us a minute and 56 seconds. So if we want to start doing some more playing around and come back later, we probably should save those weights. You can just go `learn.save` and give it a name. It's going to put it in a model subdirectory in the same place the data came from, so if you save different models or different data bunches from different datasets, they'll all be kept separate. So don't worry about it.
+我们得到了这个训练完的模型，事实上，它就是创建了一批权重。如果你做过类似线性回归和逻辑回归之类的事情，你会对系数比较熟悉。我们就是找到了一些有效的系数和参数。这花了1分56秒。如果你想尝试一些其他的事情，过一会再回头继续使用这个模型，我们最好保存下这些权重。你可以直接使用 `learn.save` ，传入一个名称。它将会把权重放在数据所在目录的模型子目录里，如果你保存了不同的模型或者不同的数据集下的数据束，它们会被分开存放，不用担心会被覆盖。
 
 ```python
 learn.save('stage-1')
@@ -581,20 +581,20 @@ learn.save('stage-1')
 
 
 
-## Results [[1:08:54](https://youtu.be/BWWm4AzsdLk?t=4134)]
+## 结果 [[1:08:54](https://youtu.be/BWWm4AzsdLk?t=4134)]
 
-To see what comes out, we could use this class for class interpretation. We are going to use this factory method from learner, so we pass in a learn object. Remember a learn object knows two things: 
-1. What's your data
-2. What is your model. Now it's not just an architecture, it's actually a trained model 
+想看看结果如何，我们可以使用这个分类任务解释类。我们使用from_learner这个工厂方法，我们传入一个learn对象。一个learn对象包含了两部分信息： 
+1. 数据是什么
+2. 模型是什么。现在它不仅是一个结构，它已经是一个训练完成的模型
 
-That's all the information we need to interpret that model. 
+这是用来解释这个模型所需要的所有信息。
 
 
 ```python
 interp = ClassificationInterpretation.from_learner(learn)
 ```
 
-One of the things, perhaps the most useful things to do is called plot_top_losses. We are going to be learning a lot about this idea of loss functions shortly but in short, a loss function is something that tells you how good was your prediction. Specifically that means if you predicted one class of cat with great confidence, but actually you were wrong, then that's going to have a high loss because you were very confident about the wrong answer. So that's what it basically means to have high loss. By plotting the top losses, we are going to find out what were the things that we were the most wrong on, or the most confident about what we got wrong. 
+我们调用一下plot_top_losses，这大概是一个最有用的方法。我们稍后将学习很多关于损失函数这个概念的内容，简单来讲，损失函数是用来评价你的预测的效果。比如说，你为一个猫的图片预测了一个类别，并且非常确信，但事实上你又预测错了，这时就会有一个比较高的损失，因为你对错误答案很确信。这就是损失值比较高的含义。通过画出最高的损失值，我们就可以看到我们最严重的错误是什么，或者对哪个错误答案最确信。
 
 
 ```python
@@ -603,42 +603,43 @@ interp.plot_top_losses(9, figsize=(15,11))
 ```
 ![](/lesson1/9.png)
 
-It prints out four things. What do they mean? Perhaps we should look at the document.
+它打印出了四项内容。它们代表什么。或许我们需要看下文档。
 
-We have already seen `help`, and `help` just prints out a quick little summary. But if you want to really see how to do something use `doc`.
+我们已经介绍过 `help` 方法, `help` 仅仅是打印出一个简短的概述。如果你想了解怎样完成一个任务，你需要使用 `doc`方法。
 
 ![](/lesson1/121.png)
 
 
 
-`doc` tells you the same information as `help` but it has this very important thing which is `Show in docs`. When you click on it, it pops up the documentation for that method or class or function or whatever:
+`doc` 提供了和 `help` 一样的信息，但是它包含了一项很重要的内容，那就是`Show in docs`。如果你点击它，它会弹出这些方法/类的文档。:
 
 ![](/lesson1/122.png)
 
-It starts out by showing us the same information about what are the parameters it takes a long with the doc string. But then tells you more information:
+开始显示的信息和使用doc方法看到的是一样的，都是这个方法需要的参数。后面提供了更多的信息:
 
-> The title of each image shows: prediction, actual, loss, probability of actual class.
+> 每个图片的标题显示了：预测值，实际值，损失度，实际值的概率
 
-The documentation always has working code. This is your friend when you're trying to figure out how to use these things. The other thing I'll mention is if you're somewhat experienced Python programmer, you'll find the source code of fastai really easy to read. We are trying to write everything in just a small number (much less than half a screen) of code. If you click on `[source]` you can jump straight to the source code.
+文档里包含可执行的代码。当你想搞明白怎样使用这个时，这是很有用的。另外一个我想说的是，如果你是一个有经验的Python开发者，你会发现我们的代码可读性很好，我们尽量使代码比较短，一般少于半屏。如果你点击 `[source]`，你可以直接调转到源代码。
 
 ![](/lesson1/123.png)
 
-Here is plot_top_loss, and this is also a great way to find out how to use the fastai library. Because nearly every line of code here,  is calling stuff in the fastai library. So don't be afraid to look at the source code.
+这就是plot_top_loss方法的代码，这也是学习如何使用fastai库的好方法。因为几乎每一行代码，都调用了fastai库里的东西。不要不敢读源代码。
 
 
 [[1:12:48](https://youtu.be/BWWm4AzsdLk?t=4368)]
 
-So that's how we can look at top losses and these are perhaps the most important image classification interpretation tools that we have because it lets us see what we are getting wrong. In this case, if you are a dog and cat expert, you'll realize that the things that's getting wrong are breeds that are actually very difficult to tell apart and you'd be able to look at these and say "oh I can see why they've got this one wrong". So this is a really useful tool.
+这是我们查看最大损失值数据的方法，这大概是最重要的图片分类解释工具，它可以让我们看到我们做错了什么。在这个例子里，如果你是一个宠物专家，你可能会发现出错的是一些非常难分辨的品种，这时你可以说“哦，我知道为什么它们会被认错”。所以这是一个很有用的工具。
 
 
-### Confusion matrix [1:13:21](https://youtu.be/BWWm4AzsdLk?t=4401)
+### 混淆矩阵 [1:13:21](https://youtu.be/BWWm4AzsdLk?t=4401)
 
-Another useful tool, kind of, is to use something called a confusion matrix which basically shows you for every actual type of dog or cat, how many times was it predicted to be that dog or cat. But unfortunately, in this case, because it's so accurate, this diagonal basically says how it's pretty much right all the time. 
+另外一个有用的工具是混淆矩阵，它显示了每个品种被预测成各个品种的次数。遗憾的是，在这个例子中，因为模型预测得很准确，对角线显示了结果很好。
+
 ![](/lesson1/10.png)
 
-And you can see there is slightly darker ones like a five here, it's really hard to read exactly what their combination is. So what I suggest you use is instead of, if you've got lots of classes, don't use confusion matrix, but this is my favorite named function in fastai and I'm very proud of this - you can call "most confused".
+你可以看到里面颜色比较深的几个，想看清它们是哪两个类别的组合确实不太容易。所以我建议在类别比较多时，不要使用混淆矩阵。你可以调用“most_confused”。这是我觉得fastai里命名最好的一个方法，我对此很自豪。
 
-### Most confused [[1:13:52](https://youtu.be/BWWm4AzsdLk?t=4432)]
+### Most_confused [[1:13:52](https://youtu.be/BWWm4AzsdLk?t=4432)]
 
 ```python
 interp.most_confused(min_val=2)
@@ -653,20 +654,20 @@ interp.most_confused(min_val=2)
  ('miniature_pinscher', 'chihuahua', 3),
  ('Siamese', 'Birman', 3)]
 ```
-`most_confused` will simply grab out of the confusion matrix the particular combinations of predicted and actual that got wrong the most often. So this case, `('american_pit_bull_terrier', 'staffordshire_bull_terrier', 7)`:
-- Actual `'american_pit_bull_terrier'` 
-- Prediction `'staffordshire_bull_terrier'`
-- This particular combination happened 7 times.
+`most_confused` 会抓出混淆矩阵里被预测错次数最多的类别组合。这个例子里 `('american_pit_bull_terrier', 'staffordshire_bull_terrier', 7)`表示:
+- 真实品种 `'american_pit_bull_terrier'` 
+- 预测值 `'staffordshire_bull_terrier'`
+- 这个组合出现了7次
 
-So this is a very useful thing because you can look and say "with my domain expertise, does it make sense?"
+这是一个很有用的方法，你试试使用领域知识是否有效。
 
 
 
-### Unfreezing, fine-tuning, and learning rates [[1:14:38](https://youtu.be/BWWm4AzsdLk?t=4478)]
+### 解冻，微调，学习率 [[1:14:38](https://youtu.be/BWWm4AzsdLk?t=4478)]
 
-Let's make our model better. How? We can make it better by using fine-tuning. So far we fitted 4 epochs and it ran pretty quickly. The reason it ran pretty quickly is that there was a little trick we used. These convolutional networks, they have many layers. We'll learn a lot about exactly what layers are, but for now, just know it goes through a lot of computations. What we did was we added a few extra layers to the end and we only trained those. We basically left most of the model exactly as it was, so that's really fast. If we are trying to build a model at something that's similar to the original pre-trained model (in this case, similar to the ImageNet data), that works pretty well.
+让我们来优化下我们的模型。怎样才能做到呢?我们可以使用微调。我们执行了四个迭代，它执行地很快。它执行地快是因为我们使用了一个技巧。卷积网络包含很多层。我们晚些将详细介绍什么是层，现在只需要知道它代表进行了大量计算。我们在那些我们已经训练好的模型后面加入了一些额外的层。我们保持原有的模型不变，这样就能训练得很快。如果你想构建的模型和已有的模型相似，这个微调的方法很好用。在这个例子里，数据和ImageNet是相似的。
 
-But what we really want to do is to go back and train the whole model. This is why we pretty much always use this two stage process. By default, when we call `fit` or `fit_one_cycle` on a ConvLearner, it'll just fine-tune these few extra layers added to the end and it will run very fast. It will basically never overfit but to really get it good, you have to call `unfreeze`. `unfreeze` is the thing that says please train the whole model. Then I can call fit_one_cycle again. 
+但我们真正想做的是回过头来训练整个模型。这是为什么我们经常使用这个两阶段过程。首先，我们调用ConvLearner的 `fit` 或者 `fit_one_cycle` 方法，它只会微调我们加在末尾的一些层，这一步训练地很快，也不会过拟合。为了得到更好地模型，你需要调用 `unfreeze`。 `unfreeze` 让它训练整个模型，然后我们再调用一遍fit_one_cycle。 
 
 ```python
 learn.unfreeze()
@@ -679,13 +680,13 @@ epoch  train_loss  valid_loss  error_rate
 1      1.045145    0.505527    0.159681    (00:20)
 ```
 
-Uh-oh. The error got much worse. Why? In order to understand why, we are actually going to have to learn more about exactly what's going on behind the scenes. So let's start out by trying to get an intuitive understanding of what's going on behind the scenes. We are going to do it by looking at pictures.
+噢。错误率变差了。为什么呢。为了理解为什么，我们学习更多底层地原理。我们先从获得一个直觉上的理解开始，看下这个图片。
 
 
 [[1:16:28](https://youtu.be/BWWm4AzsdLk?t=4588)]
 ![](/lesson1/100.png)
 
-These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf) by Matt Zeiler who nowadays is a CEO of Clarify which is a very successful computer vision startup and his supervisor for his PhD Rob Fergus. They wrote a paper showing how you can visualize the layers of a convolutional neural network. A convolutional neural network, which we will learn mathematically about what the layers are shortly, but the basic idea is that your red, green, and blue pixel values that are numbers from nought to 255 go into the simple computation (i.e. the first layer) and something comes out of that, and then the result of that goes into a second layer, and the result of that goes into the third layer and so forth. There can be up to a thousand layers of neural network. ResNet34 has 34 layers, and ResNet50 has 50 layers, but let's look at layer one. There's this very simple computation which is a convolution if you know what they are. What comes out of this first layer? Well, we can actually visualize these specific coefficients, the specific parameters by drawing them as a picture. There's actually a few dozen of them in the first layer, so we don't draw all of them. Let's just look at 9 at random. 
+这些图片来自于Matt Zeiler和他的博士论文导师Rob Fergus的[一篇了不起的论文](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf)，Matt Zeiler现在是Clarify的CEO，Clarify 是一家很成功的计算机视觉创业公司。他们写了一篇论文来展示如何可视化卷积神经网络的层。稍后我们将在数学层面上介绍什么是卷积神经网络的层，现在我们可以这样理解，表示像素颜色的红绿蓝的值是0到255的数字，对它们做一些计算（第一层），输出了一些结果，把这些结果输入到第二层，再把第二层的结果输入到第三层，然后第四层。可以多达上千层。ResNet34有34层layers，ResNet50有50层，我们看下第一层。如果你了解卷积的话，可以知道它是一个非常简单的运算。第一层会输出什么，我们可以把这些系数和参数画出来，在第一层里有很多，我们没有画出全部，我们随机选择9个。
 
 
 
@@ -693,43 +694,43 @@ These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/z
 
 ![](/lesson1/124.png)
 
-Here are nine examples of the actual coefficients from the first layer. So these operate on groups of pixels that are next to each other. So this first one basically finds groups of pixels that have a little diagonal line, the second one finds diagonal line in the other direction, the third one finds gradients that go from yellow to blue, and so forth. They are very simple little filters. That's layer one of ImageNet pre-trained convolutional neural net. 
+这是第一层的真实系数的9个例子。它们邻近的几个像素做为一组来运作。第一个认出了有个对角线的一组像素，第二个认出了一个反方向的对角线，第三个认出了黄色和蓝色组成的一个斜坡，第四个也是。这是些很小很简单的过滤器。这是ImageNet预训练卷积神经网络的第一层。
 
 ![](/lesson1/125.png)
 
-Layer 2 takes the results of those filters and does a second layer of computation. The bottom right are nine examples of a way of visualizing one of the second layer features. AS you can see, it basically learned to create something that looks for top left corners. There are ones that learned to find right-hand curves, and little circles, etc. In layer one, we have things that can find just one line, and in layer 2, we can find things that have two lines joined up or one line repeated. If you then look over to the right, these nine show you nine examples of actual bits of the actual photos that activated this filter a lot. So in other words, the filter on the bottom right was good at finding these window corners etc. 
+第二层使用这些过滤器的结果来做运算。右下角是一个能看出第二层功能的例子。就像你能看到的那样，它学会创建了一些类似位于左上方的角的东西。有些学会了找出右手的曲线或者小圆圈等等。在第一层里，它们只能认出到一条线。在第二层里，它们可以认出由两条线构成的图形或者重复的几条线。看下右边，这九个是可以激活这些过滤器的真实照片。换句话说，右下角的过滤器能够找出类似窗户角之类的东西了。
 
-So this is the kind of stuff you've got to get a really good intuitive understanding for. The start of my neural net is going to find very simple gradients and lines, the second layer can find very simple shapes, the third layer can find  combination of those. 
+这能让你有很直观的理解。第一层发现了一些非常简单的斜坡和线，第二层找到了很简单的形状，第三层可以找到它们的组合。
 
 ![](/lesson1/126.png)
 
-Now we can find repeating pattern of two dimensional objects or we can find things that joins together, or bits of text (although sometimes windows) - so it seems to find repeated horizontal patterns. There are also ones that seem to find edges of fluffy or flowery things or geometric patterns. So layer 3 was able to take all the stuff from layer 2 and combine them together.
+现在我们可以找到重复的二维图形，可以找到连接在一起的物品，或者文字/窗户，所以它看起来能找到重复的水平的图形。还有些能找到毛绒的或者花朵一样的东西的形状或者地理图形。所以第三层能识别所有第二层识别的东西和第二层里东西的组合。
 
 ![](/lesson1/127.png)
 
-Layer 4 can take all the stuff from layer 3 and combine them together. By layer 4, we got something that can find dog faces or bird legs. 
+第四层能识别所有第三层识别的东西和它们的组合。在第四层里，它们可以认出狗脸或者鸟腿。
 
-By layer 5, we've got something that can find the eyeballs of bird and lizards, or faces of particular breeds of dogs and so forth. So you can see how by the time you get to layer 34, you can find specific dog breeds and cat breeds. This is kind of how it works.
+第5层，它们可以认出鸟眼和蜥蜴，或者一些品种的狗的脸。这样你可以看到一步步的到第34层，你可以认出特定的猫狗的品种。这就是它的工作方式。
 
-So when we first trained (i.e. fine-tuned) the pre-trained model, we kept all of these layers that you've seen so far and we just trained a few more layers on top of all of those sophisticated features that are already being created. So now we are going back and saying "let's change all of these". We will start with where they are, but let's see if we can make them better. 
+当我们第一次训练完成一个预训练模型后，我们保存了你看到的所有的层，我们仅需要在已有的强大功能的基础上再训练额外的几层就可以。现在我们回来了，可以说“来换个方式”。我们将以现有的做基础，但我们要看看能不能做得更好。
 
-Now, it seems very unlikely that we can make layer 1 features better. It's very unlikely that the definition of a diagonal line is going to be different when we look at dog and cat breeds versus the ImageNet data that this was originally trained on. So we don't really want to change the layer 1 very much if at all. Or else, the last layers, like types of dog face seems very likely that we do want to change that. So you want this intuition, this understanding that the different layers of a neural network represents different level of semantic complexity. 
+想让第一层的能力更好看起来不太容易。区分猫狗品种时和识别ImageNet数据时对对角线的定义没有什么不同。我们不怎么需要改变第一层。最后的几层是识别狗脸的，我们最需要改变的。你有了这样的直觉，神经网络的层代表了不同的语义复杂度层级。
 
 
 [[1:22:06](https://youtu.be/BWWm4AzsdLk?t=4926)]
 
-This is why our attempt to fine-tune this model didn't work because by default, it trains all the layers at the same speed which is to say it will update those things representing diagonal lines and gradients just as much as it tries to update the things that represent the exact specifics of what an eyeball looks like, so we have to change that. 
+这就是我们对这个模型的微调没有作用的原因，默认情况下，它以相同的速度训练所有层，就是说它用相同的方式更新代表对角线和斜坡的参数和代表眼睛眼睛样子的参数。我们要改变这个情况。
 
-To change it, we first of all need to go back to where we were before. We just broke this model, much worse than it started out. So if we just go:
+要改变它，我们首先回到之前的样子，我们打破这个模型，让它比它开始时更差。运行这个代码
 
 ```python
 learn.load('stage-1')
 ```
-This brings back the model that we saved earlier. So let's load that back up and now our models back to where it was before we killed it.
+这让模型变成我们之前保存的那个。我们加载回它，现在我们使用的模型是被我们破坏之前的那个了。
 
-### Learning rate finder [[1:22:58](https://youtu.be/BWWm4AzsdLk?t=4978)]
+### 学习率探测器 [[1:22:58](https://youtu.be/BWWm4AzsdLk?t=4978)]
 
-Let's run learning rate finder. We are learning about what that is next week, but for now, just know this is the thing that figures out what is the fastest I can train this neural network at without making it zip off the rails and get blown apart. 
+我们运行下学习率探测器。我们会在下周深入学习它，现在只需要知道它能帮助我们用最快的方式训练模型。
 
 
 ```python
@@ -738,7 +739,7 @@ learn.recorder.plot()
 ```
 ![](/lesson1/11.png)
 
-This will plot the result of our LR finder and what this basically shows you is this key parameter called a learning rate. The learning rate basically says how quickly am I updating the parameters in my model. The x-axis one here shows me what happens as I increase the learning rate. The y axis show what the loss is. So you can see, once the learning rate gets passed 10^-4, my loss gets worse. It actually so happens, in fact I can check this if I press <kbd>shift</kbd>+<kbd>tab</kbd> here, my learning defaults to 0.003. So you can see why our loss got worse. Because we are trying to fine-tune things now, we can't use such a high learning rate. So based on the learning rate finder, I tried to pick something well before it started getting worse. So I decided to pick `1e-6`. But there's no point training all the layers at that rate, because we know that the later layers worked just fine before when we were training much more quickly. So what we can actually do is we can pass a range of learning rates to `learn.fit_one_cycle`. And we do it like this:
+这会画出学习率探测器的结果，这里展示的是最重要的参数——学习率。学习率代表更新模型参数的速度。x轴代表学习率，学习率逐渐增加。y轴代表损失度。你可以看到，学习率超过10^-4后，损失度变差了。这和实际发生的一样。我们可以验证它，按下 <kbd>shift</kbd>+<kbd>tab</kbd> ，学习率默认是0.003，你可以看到损失度变差了。我们想做些微调，不能使用这么高的学习率。按照学习率探测器的结果，我试着选择`1e-6`。但是不能用这个来训练所有的层，后面的几层在我们加快速度前也运行的很好。所以我们传入一个学习率的区间到 `learn.fit_one_cycle`。我们这样做：
 
 ```python
 learn.unfreeze()
@@ -751,22 +752,22 @@ epoch  train_loss  valid_loss  error_rate
 2      0.197376    0.170252    0.053227    (00:20)
 ```
 
-You use this keyword in Python called `slice` and that can take a start value and a stop value and basically what this says is train the very first layers at a learning rate of 1e-6, and the very last layers at a rate of 1e-4, and distribute all the other layers across that (i.e. between those two values equally). 
+使用Python里的 `slice`关键字，它接收一个起始值和结束值。这样会按照1e-6的学习率训练第一层，按照1e-4的学习率训练最好一层，按照层数等分，每层使用对应的学习率。
 
 
-### How to pick learning rates after unfreezing [[1:25:23](https://youtu.be/BWWm4AzsdLk?t=5123)]
+### 解冻后如何选择学习率 [[1:25:23](https://youtu.be/BWWm4AzsdLk?t=5123)]
 
-A good rule of thumb is after you unfreeze (i.e. train the whole thing), pass a max learning rate parameter, pass it a slice, make the second part of that slice about 10 times smaller than your first stage. Our first stage defaulted to about 1e-3 so it's about 1e-4. And the first part of the slice should be a value from your learning rate finder which is well before things started getting worse. So you can see things are starting to get worse maybe about here:
+一个简单的方法是在解冻后（也就是训练所有层），传入的slice的最大值是第一步的十分之一。第一步用的是1e-3，所以现在使用 1e-4。slice的最小值是学习率探测器得到的结果变差之前的学习率。你可以看到学习率是在这个位置开始变差的：
 
 ![](/lesson1/128.png)
 
-So I picked something that's at least 10 times smaller than that.
+我选择至少比它小10倍的值。
 
-If I do that, then the error rate gets a bit better. So I would perhaps say for most people most of the time, these two stages are enough to get pretty much a world-class model. You won't win a Kaggle competition, particularly because now a lot of fastai alumni are competing on Kaggle and this is the first thing that they do. But in practice, you'll get something that's about as good in practice as the vast majority of practitioners can do. 
+这样一来，错误率变好了些。我基本可以说对大部分情况，这两步足够得到一个世界级的模型。你并不会赢得Kaggle竞赛，某种程度上是因为现在很多fastai的学员在参加Kaggle比赛，这是他们做的第一件事。但是在真实的工作任务中，你会得到比大多数人更优的结果。
 
 ## ResNet50 [[1:26:55](https://youtu.be/BWWm4AzsdLk?t=5215)]
 
-We can improve it by using more layers and we will do this next week but by basically doing a ResNet50 instead of ResNet34. And you can try running this during the week if you want to. You'll see it's exactly the same as before, but I'm using ResNet50. 
+我们可以通过使用更多层来提升模型。我们下周会学习这个。其实就是使用ResNet50来替代ResNet34.你也可以这周就运行这部分代码。你可以看到结果和之前的结果一样，并没有什么进步。
 
 ```python
 
@@ -779,11 +780,11 @@ data.normalize(imagenet_stats)
 learn = ConvLearner(data, models.resnet50, metrics=error_rate)
 ```
 
-What you'll find is it's very likely if you try to do this, you will get an error and the error will be your GPU has ran out of memory. The reason for that is that ResNet50 is bigger than ResNet34, and therefore, it has more parameters and use more of your graphics card memory, just totally separate to your normal computer RAM, this is GPU RAM. If you're using the default Salamander,  AWS, then you'll be having a 16G of GPU memory. The card I use most of the time has 11G GPU memory, the cheaper ones have 8G. That's kind of the main range you tend to get. If yours have less than 8G of GPU memory, it's going to be frustrating for you. 
+如果你尝试执行这个，你有可能会得到一个GPU内存溢出的报错。因为ResNet50比ResNet34更大，它包含更多参数，需要占用更多内存。不同于通常的电脑内存，它使用的是GPU内存。如果你使用默认的Salamander，AWS，你有16G的GPU内存。通常我用的显卡有11G内存，便宜些的显卡有8G。这是你可能会用到的显卡的内存情况。如果你的内存小于8G，会遇到令人沮丧的问题。
 
-It's very likely that if you try to run this, you'll get an out of memory error and that's because it's just trying to do too much - too many parameter updates for the amount of RAM you have. That's easily fixed. `ImageDataBunch` constructor has a parameter at the end `bs` - a batch size. This basically says how many images do you train at one time. If you run out of memory, just make it smaller.
+如果你运行这个代码，非常有可能遇到内存溢出问题，因为程序试图做很多事——更新很多参数，数量超出了你的GPU内存的能力。这很容易解决。 `ImageDataBunch` 构造函数的最后一个参数是 `bs` ，代表batch size。就是一次训练多少图片。如果你遇到内存溢出，就把它设小些。
 
-It's fine to use a smaller bath size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
+使用较小的batch size会让训练花的时间更久些，仅此而已。这是你这周需要尝试的一个事情。
 
 ```python
 learn.fit_one_cycle(8, max_lr=slice(1e-3))
@@ -801,9 +802,9 @@ epoch  train_loss  valid_loss  error_rate
 8      0.097324    0.136638    0.042379    (00:54)
 ```
 
-Again, we fit it for a while and we get down to 4.2% error rage. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
+多训练几轮，错误率降到了4.2%，这令人惊奇。我们在第一次课程里，对于猫狗大战的问题，我们得到了大概3%的错误率，这个问题是有50%的机会猜对的，猫和狗完全不同，很容易区分。所以在区分品种这样的各个图片仅有细微差别的问题上能取得4.2%的错误率是一个非常令人惊奇的成绩。 
 
-### Interpreting the results again [1:29:41](https://youtu.be/BWWm4AzsdLk?t=5381)
+### 再次解释结果 [1:29:41](https://youtu.be/BWWm4AzsdLk?t=5381)
 
 ```python
 interp = ClassificationInterpretation.from_learner(learn)
@@ -817,15 +818,16 @@ interp.most_confused(min_val=2)
  ('staffordshire_bull_terrier', 'american_pit_bull_terrier', 3)]
 ```
 
-You can call the most_confused here and you can see the kinds of things that it's getting wrong. Depending on when you run it, you're going to get slightly different numbers, but you'll get roughly the same kind of things. So quite often, I find the Ragdoll and Birman are things that it gets confused. I actually have never heard of either of those things, so I actually looked them up and found a page on the cat site called "Is this a Birman or Ragdoll kitten?" and there was a long thread of cat experts arguing intensely about which it is. So I feel fine that my computer had problems.   
+你可以调用most_confused方法，看下分类错的品种。你得到的结果里的每个品种的数量可能不同，但是这些品种应该是一致的。我经常看到Ragdoll和Birman经常被搞混。我以前也没有听说过这两种猫。所以我查了一下，结果在theCatSite.com上找到了一个题目是“这是一只Birman还是Ragdoll？”的帖子，里面有很多动物专家关于这到底是什么品种的激烈争论。
+  
 
 ![](/lesson1/129.png)
 
-I found something similar, I think it was this pitbull versus staffordshire bull terrier, apparently the main difference is the particular kennel club guidelines as to how they are assessed. But some people thing that one of them might have a slightly redder nose. So this is the kind of stuff where actually even if you're not a domain expert, it helps you become one. Because I now know more about which kinds of pet breeds are hard to identify than I used to. So model interpretation works both ways. 
+pitbull和staffordshire bull terrier这两种狗也很相似，大概他们之间的区别是英国犬协会指导手册里的定义不同。人能区分出的一个区别大概是它们中的一个可能有个红鼻子。这些是领域专家才知道的事情，处理这些问题会帮助你成为一个领域专家。现在我比以前更加了解哪些品种更难区分。解释模型要从这两方面进行。
 
-## Homework [[1:30:58](https://youtu.be/BWWm4AzsdLk?t=5458)]
+## 作业 [[1:30:58](https://youtu.be/BWWm4AzsdLk?t=5458)]
 
-So what I want you to do this week is to run this notebook, make sure you can get through it, but then I really want you to do is to get your own image dataset and actually Francisco is putting together a guide that will show you how to download data from Google Images so you can create your own dataset to play with. But before I go, I want to show you how to create labels in lots of different ways because your dataset where you get it from won't necessarily be that kind of regex based approach. It could be in lots of different formats. So to show you how to do this, I'm going to use the MNIST sample. MNIST is a picture of hand drawn numbers - just because I want to show you different ways of creating these datasets. 
+这周我希望你做的是运行这个notebook，把它运行一遍。另外我希望你能创建你自己的图像数据集，Francisco已经整理了一份使用Google Images下载数据的指南，你可以创建自己的数据集来运行下。最后，我想演示下怎样用几种不同的方式创建标签，因为你获取数据集的地方可能没有提供基于正则的命名方式，可能会有五花八门的格式。所以讲一下如何处理。我使用MNIST做例子。MNIST是一个手写数字数据集。我希望演示下创建数据集的不同方式。
 
 ```python
 path = untar_data(URLs.MNIST_SAMPLE); path
@@ -838,9 +840,9 @@ path.ls()
 ['train', 'valid', 'labels.csv', 'models']
 ```
 
-You see there are a training set and the validation set already. So basically the people that put together this dataset have already decided what they want you to use as a validation set. 
+这里已经有了一个训练集和验证集。创建数据集的人已经决定好了你应该用什么做验证集。
 
-### Scenario 1: Labels are folder names
+### 场景1: 标签是文件夹名
 
 ```python
 (path/'train').ls()
@@ -849,14 +851,14 @@ You see there are a training set and the validation set already. So basically th
 ['3', '7']
 ```
 
-There are a folder called 3 and a folder called 7. Now this is really common way to give people labels. Basically it says everything that's a three, I put in a folder called three. Everything that's a seven, I'll put in a folder called seven. This is often called an "ImageNet style dataset" because this is how ImageNet is distributed. So if you have something in this format where the labels are just whatever the folders are called, you can say `from_folder`.
+这里有一个叫做“3”和“7”的文件夹。这是一种常用的提供标签的方式。所有3的图片都被放在这个叫做“3”的文件夹里。所有7的图片都被放在这个叫做“7”的文件夹里。这被叫做“ImageNet风格数据集”，ImageNet的数据就是这样存放的。如果你的数据是这种标签就是文件名的话，你可以使用 `from_folder`方法。
 
 ```python
 tfms = get_transforms(do_flip=False)
 data = ImageDataBunch.from_folder(path, ds_tfms=tfms, size=26)
 ```
 
-This will create an ImageDataBunch for you and as you can see it created the labels:
+这会为你创建一个ImageDataBunch，你可以看到它为图片创建了标签：
 
 ```python
 data.show_batch(rows=3, figsize=(5,5))
@@ -864,9 +866,9 @@ data.show_batch(rows=3, figsize=(5,5))
 ![](/lesson1/12.png)
 
 
-### Scenario 2: CSV file [[1:33:17](https://youtu.be/BWWm4AzsdLk?t=5597)]
+### 场景2: CSV 文件 [[1:33:17](https://youtu.be/BWWm4AzsdLk?t=5597)]
 
-Another possibility, and for this MNIST sample, I've got both, it might come with a CSV file that would look something like this.
+另外一种可能的情况是，标签存放在一个CSV文件里。在这个MNIST例子里也有，文件内容是这样的。
 
 ```python
 df = pd.read_csv(path/'labels.csv')
@@ -875,13 +877,13 @@ df.head()
 
 ![](/lesson1/130.png)
 
-For each file name, what's its label. In this case, labels are not three or seven, they are 0 or 1 which basically is it a 7 or not. So that's another possibility. If this is how your labels are, you can use `from_csv`:
+每个文件名有一个对应的标签。这里标签内容不是3或者7，而是0或1，它们代表文件是不是7。这是另外一种可能的情况。这时你可以使用 `from_csv`:
 
 ```python
 data = ImageDataBunch.from_csv(path, ds_tfms=tfms, size=28)
 ```
 
-And if it is called `labels.csv`, you don't even have to pass in a file name. If it's called something else, then you can pass in the `csv_labels` 
+如果文件名是 `labels.csv`，你可以不用传入文件名。 
 
 ```python
 data.show_batch(rows=3, figsize=(5,5))
@@ -895,7 +897,7 @@ data.classes
 
 
 
-### Scenario 3: Using regular expression
+### 场景3: 使用正则表达式
 
 ```python
 fn_paths = [path/name for name in df['name']]; fn_paths[:2]
@@ -906,7 +908,7 @@ fn_paths = [path/name for name in df['name']]; fn_paths[:2]
  PosixPath('/home/jhoward/.fastai/data/mnist_sample/train/3/21102.png')]
 ```
 
-This is the same thing, these are the folders. But I could actually grab the label by using a regular expression. We've already seen this approach:
+标签名还是文件夹名。但是我可以使用正则表达式来提取标签。这种方式我们已经见过了：
 
 
 ```python
@@ -921,9 +923,9 @@ data.classes
 
 
 
-### Scenario 4: Something more complex [[1:34:21](https://youtu.be/BWWm4AzsdLk?t=5661)]
+### 场景4: 更复杂的情况 [[1:34:21](https://youtu.be/BWWm4AzsdLk?t=5661)]
 
-You can create an arbitrary function that extracts a label from the file name or path. In that case, you would say `from_name_func`:
+你可以创建一个可以从文件名或者路径提取标签的函数。这时，你要调用`from_name_func`:
 
 ```python
 data = ImageDataBunch.from_name_func(path, fn_paths, ds_tfms=tfms, size=24,
@@ -933,9 +935,9 @@ data.classes
 
 
 
-### Scenario 5: You need something even more flexible
+### 场景5：你需要更灵活的方法
 
-If you need something even more flexible than that, you're going to write some code to create an array of labels. So in that case, you can just use `from_lists` and pass in the array.
+如果你需要更灵活的方法，你可以创建一个标签数组，然后使用`from_lists`，把这个数组传入。
 
 ```python
 labels = [('3' if '/3/' in str(x) else '7') for x in fn_paths]
@@ -947,15 +949,15 @@ data = ImageDataBunch.from_lists(path, fn_paths, labels=labels, ds_tfms=tfms, si
 data.classes
 ```
 
-So you can see there's lots of different ways of creating labels. So during the week, try this out.
+这里有很多不同的创建标签的方法。这一周里，试试使用它们。
 
-Now you might be wondering how would you know to do all these things? Where am I going to find this kind of information? So I'll show you something incredibly cool. You know how to get documentation:
+你可能想知道怎样使用它们。哪里有这样的信息。我给你们看个很酷的东西。你们知道怎样获取文档：
 
 ```python
 doc(ImageDataBunch.from_name_re)
 ```
 
-[[Show in docs](https://docs.fast.ai/vision.data.html#ImageDataBunch.from_name_re)]
+[[在文档中显示](https://docs.fast.ai/vision.data.html#ImageDataBunch.from_name_re)]
 
 
 
@@ -963,38 +965,38 @@ doc(ImageDataBunch.from_name_re)
 
 
 
-Every single line of code I just showed you, I took it this morning and I copied and pasted it from the documentation. So you can see here the exact code that I just used. So the documentation for fastai doesn't just tell you what to do, but step to step how to do it. And here is perhaps the coolest bit. If you go to [fastai/fastai_docs](https://github.com/fastai/fastai_docs) and click on [docs/src](https://github.com/fastai/fastai_docs/tree/master/docs_src).
+我演示的代码都是今天上午从文档里拷过来的。你可以看到这就是我刚刚使用的代码。fastai的文档不仅告诉你做什么，还会告诉你如何一步步去做。这可能是最酷的事了，如果你访问 [fastai/fastai_docs](https://github.com/fastai/fastai_docs) ，点击[docs/src](https://github.com/fastai/fastai_docs/tree/master/docs_src).
 
-All of our documentation is actually just Jupyter Notebooks. You can git clone this repo and if you run it, you can actually run every single line of the documentation yourself.
+我们所有的文档都是Jupyter Notebooks格式。你可以用git克隆这个仓库，你可以运行文档里的每行代码。
 
-This is the kind of the ultimate example to me of experimenting. Anything that you read about in the documentation, nearly everything in the documentation has actual working examples in it with actual datasets that are already sitting in there in the repo for you. So you can actually try every single function in your browser, try seeing what goes in and try seeing what comes out. 
+这对我来说是一个实验的极好的例子。你在文档里的读到的所有内容都有可以运行的使用实际数据集的例子，数据集已经包含在仓库里。你可以在浏览器里尝试使用每个函数，看看它们的输入输出是什么。
 
 
 [[1:37:27](https://youtu.be/BWWm4AzsdLk?t=5847)]
 
-**Question**: Will the library use multi GPUs in parallel by default? 
+**提问**：这个库会默认使用多GPU并行计算吗？ 
 
-The library will use multiple CPUs by default but just one GPU by default. We probably won't be looking at multi GPU until part 2. It's easy to do and you'll find it on the forum, but most people won't be needing to use that now.
+这个库会默认使用多GPU，但通常只有一个GPU。我们在第二部分才介绍多GPU。这很简单，你可以在论坛上找到这方面的内容。现在，大多数人用不上这个。
 
-**Question**: Can the library use 3D data such as MRI or CAT scan?
+**Question**: 这个库可以使用类似核磁共振/层析成像扫描的3D数据吗？
 
-Yes, it can. ANd there is actually a forum thread about that already. Although that's not as developed as 2D yet but maybe by the time the MOOC is out, it will be.
+可以。已经有一个讨论这个问题的帖子。在MOOC发布时，它会支持3D。
 
 
 
-### Splunk Anti-Fraud Software [[1:38:10](https://youtu.be/BWWm4AzsdLk?t=5890)]
+### Splunk反欺诈软件 [[1:38:10](https://youtu.be/BWWm4AzsdLk?t=5890)]
 
 [blog](https://www.splunk.com/blog/2017/04/18/deep-learning-with-splunk-and-tensorflow-for-security-catching-the-fraudster-in-neural-networks-with-behavioral-biometrics.html)
 
-Before I wrap up, I'll just show you an example of the kind of interesting stuff that you can do by doing this kind of exercise. 
+最后，我给你们看一个有趣的东西，你们可以做类似的练习。 
 
-Remember earlier I mentioned that one of our alumni who works at Splunk which is a NASDAQ listed big successful company created this new anti-fraud software. This is actually how he created it as part of a fastai part 1 class project:
+我之前提到过一个在Splunk工作的学员做了一个新的反欺诈程序，Splunk是一个纳斯达克上市的成功公司。这是他在fastai第一部分课程的课题：
 
 ![](/lesson1/132.jpg)
 
 
-He took the telemetry of users who had Splunk analytics installed and watched their mouse movements and he created pictures of the mouse movements. He converted speed into color and right and left clicks into splotches. He then took the exact code that we saw with an earlier version of the software and trained a CNN in exactly the same way we saw and used that to train his fraud model. So he took something which is not obviously a picture and he turned it into a picture and got these fantastically good results for a piece of fraud analysis software. 
+他取出安装了Splunk analytics的用户的远程数据，观察鼠标的移动，把鼠标移动做成图像。他把速度转成颜色，鼠标点击转成圆点。他使用我们刚刚看到的代码，用我们刚刚学习的方式创建了一个CNN来训练他的欺诈检测模型。他把一些本来不是图形的东西转换成图形，得到了一个欺诈分析领域非常好的结果。
 
-So it pays to think creatively. So if you are wanting to study sounds, a lot of people that study sounds do it by actually creating a spectrogram image and then sticking that into a ConvNet. So there's a lot of cool stuff you can do with this. 
+这就是创造性思维的价值。如果你想研究声音，实际上很多研究声音的人创建一份声谱图，把它输入到一个卷积网络中。所以使用这个网络你可以做很多很酷的事情。
 
-So during the week, get your GPU going, try and use your first notebook, make sure that you can use lesson 1 and work through it. Then see if you can repeat the process on your own dataset. Get on the forum and tell us any little success you had. Any constraints you hit, try it for an hour or two but if you get stuck, please ask. If you are able to successfully build a model with a new dataset, let us know! I will see you next week.
+这周，配置好你的GPU，尝试运行第一个notebook，确保你能运行第一课的notebook，把里面的内容运行一遍。然后看看你能不能在你自己的数据集上做一遍。在论坛上告诉大家你的成功的结果，哪怕很小的成功。对于你遇到的困难，如果尝试一两个小时后还是解决不了，就求助我们。下周见。
