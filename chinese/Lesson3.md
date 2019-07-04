@@ -4,7 +4,7 @@
 
 更正一个引用。这个图最初来自Coursera上吴恩达的极好的机器学习课程。抱歉引用搞错了。
 
-![](lesson3/2.png)
+![](/lesson3/2.png)
 
 Coursera上[吴恩达的极好的机器学习课程](https://www.coursera.org/learn/machine-learning)和很棒的。某些方面，它有点过时，但是很多概念是永远不会改变的。它是自下而上来讲解的。把它和我们的自上而下的方式结合起来是很好的，在某些地方是互补的。
 
@@ -12,7 +12,7 @@ Coursera上[吴恩达的极好的机器学习课程](https://www.coursera.org/le
 
 上周我们讲过部署你的web应用。https://course-v3.fast.ai/有一个生产章节，现在我们有了一个平台，晚些会加入展示如何做到简单部署web应用的内容，这会让学习变得简单很多。举个例子，看看多简单，这是Navjot写的[怎样在Zeit部署的指南](https://course-v3.fast.ai/deployment_zeit.html)。
 
-![](lesson3/3.png)
+![](/lesson3/3.png)
 
 就像你看到的，只有一页。几乎没有什么东西，并且都是免费的。它不能同时享用1万个并发请求。但是它可以让你顺利起步，我觉得它工作得很好。很快。部署一个模型，不再是一件很麻烦复杂的事。它的好处是，你可以用它做一个最小可用产品。如果你真的发现，他会接收到1000个并发，这事你就不能再继续用它了，你需要更新一下，你的实例类型或者增加一些传统的大型工程方法。如果你使用这个起步工具箱，它会创建我的泰迪熊识别器。这是要告诉大家这个模版非常简单。你可以使用你自己的钥匙文件，你自己的定制逻辑和其他的东西 。。它被设计得尽量简单，这样你可以看到，它是怎样运行的。后端是一个简单的REST风格接口，他返回JSON ，前端是一个超级简单的Javascript。他是一个很好的，用来了解如何构建一个和PyTorch交互的web应用的方式。
 
@@ -22,7 +22,7 @@ Coursera上[吴恩达的极好的机器学习课程](https://www.coursera.org/le
 
 Edward Ross 构建了这个程序《这是一个什么澳大利亚汽车？》
 
-![](lesson3/4.png)
+![](/lesson3/4.png)
 
 他在论坛上说，构建这个APP是一个很棒的体验来理解模型是怎样变得越来越好的，这很有趣。 他说他正在尝试，在手机上运行它。很多人会想，如果我需要在手机上运行，应该创建一些mobile TensorFlow, ONNX之类的东西 。你不需要这样做。你可以在云端运行所有的东西，然后用web APP，或者一些简单的轻量的前端，通过rest和后端通信。大多数时候你不需要在手机上运行模型，这是一个很好的例子。 
 
@@ -48,7 +48,7 @@ Edward Ross 构建了这个程序《这是一个什么澳大利亚汽车？》
 
 首先我们要看的是一个卫星图的数据集。卫星图是深度学习的沃土。很多人都在用深度学习处理卫星图。我们要看的卫星图是这样的：
 
-![](lesson3/planet.png)
+![](/lesson3/planet.png)
 
 对每个卫星都有一些不同的标签。通常会有一个标签表示天气，比如多云，局部多云。其他的标签会告诉你所有能被看到的有趣的特征。primary 代表雨林，agriculture 代表有一些农田, road表示道路，等等。我敢肯定你一定看到了，这和我们之前看到的所有分类器有些不同，它有不止一个标签，它可能会有多个标签。多标签分类，可以用类似的方式来实现。首先我们需要下载数据。
 
@@ -182,7 +182,7 @@ data = (src.datasets()
 
 首先要了解的是Dataset类。Dataset类是PyTorch的一部分，这是Dataset的源代码。
 
-![](lesson3/16.png)
+![](/lesson3/16.png)
 
 可以看到，它实际上没有做任何事情。PyTorch里的Dataset定义了两个东西： `__getitem__` 和 `__len__`。在Python里这种“下划线+下划线+某个方法+下划线+下划线”的方法被叫做"dunder"某个方法。这两个方法会"dunder get items"和"dunder len"。它们是有特殊行为的魔法方法。这个方法代表如果你有一个叫做`O`的对象，它可以用方括号索引（比如`O[3]`）。它会调用`__getitem__`，把3作为索引。
 
@@ -197,7 +197,7 @@ Fastai有很多Dataset子类来处理各种不同的东西。目前为止你已�
 
 要训练模型，dataset还不够。如果你回想上周讲的梯度下降，我们需要做的第一件事是，一次性取到一些图片/数据，这样GPU可以并行处理。记得“mini-batch”吗？mini-batch是我们一批传给模型的一组数据，它们可以并行训练。要创建一个mini-batch，我们使用另外一个叫做DataLoader的PyTorch类。
 
-![](lesson3/17.png)
+![](/lesson3/17.png)
 
 DataLoader对象在构造函数里接受一个dataset。它现在说"Oh，用这个，我可以取到第三个数据，第五个数据，第九个数据“。它会：
 
@@ -214,13 +214,13 @@ DataLoader对象在构造函数里接受一个dataset。它现在说"Oh，用这
 
 要训练模型这还不够，因为我们没办法验证模型。如果我们只有训练集，我们没办法知道我们模型怎么样，我们需要分离出一个验证集，来看看模型的效果。
 
-![](lesson3/18.png)
+![](/lesson3/18.png)
 
 我们用一个叫DataBunch的fastai类来做这个。DataBunch把训练数据的data loader (`train_dl`)和验证数据的data loader (`valid_dl`)绑定在一起。在fastai文档，当你看到这些mono spaced字体的文字时，这代表它们是可以进一步查看的。在这里， `train_dl`是DataBunch的第一个参数。除非你了解这个参数，你没办法仅通过名字知道这个参数是做什么的。你需要查看`:`后面的内容，来知道它是一个DataLoader。当你创建一个DataBunch时，你传入一个训练集DataLoader和一个验证集DataLoader。现在它可以被用来传入一个learner来做训练了。
 
 这是基本的内容。回到这里，这是创建dataset的代码:
 
-![](lesson3/19.png)
+![](/lesson3/19.png)
 
 对这个dataset，这个indexer返回了两个东西：图片和标签（假设它是一个图片dataset）
 
@@ -303,7 +303,7 @@ Here it is. `data.train_ds`是dataset (不是data loader)，所以我可以用�
 data.show_batch(rows=3, figsize=(5,5))
 ```
 
-![](lesson3/mnist.png)
+![](/lesson3/mnist.png)
 
 我们可以画出batch，来看看里面图片。然后开始训练。
 
@@ -359,7 +359,7 @@ data = (ImageFileList.from_folder(planet)
 data.show_batch(rows=3, figsize=(10,8))
 ```
 
-![](lesson3/20.png)
+![](/lesson3/20.png)
 
 完成了。Data bunche可以把它的内容画出来
 
@@ -401,7 +401,7 @@ data = (ImageFileList.from_folder(path_img)                #Where are the input 
 data.show_batch(rows=2, figsize=(5,5))
 ```
 
-![](lesson3/21.png)
+![](/lesson3/21.png)
 
 在这个CAMVID数据集里会看到什么？ CAMVID 看起来是这样的。它包含这些图片，图片的每个像素都被做了颜色标注。这个例子里：
 
@@ -418,7 +418,7 @@ data.show_batch(rows=2, figsize=(5,5))
 
 另外一个例子。如果要创建这样的东西要怎样做：
 
-![](lesson3/22.png)
+![](/lesson3/22.png)
 
 这是一个目标检测数据集。同样的，我们用的是裁剪过的缩小版COCO数据集。COCO是最著名的学术目标检测数据集。
 
@@ -455,7 +455,7 @@ data = (ImageFileList.from_folder(coco)
 
 所有你想在fastai里使用的东西，你都可以在文档里找到它。这里还有搜索功能：
 
-![](lesson3/23.png)
+![](/lesson3/23.png)
 
 
 
@@ -534,7 +534,7 @@ epoch  train_loss  valid_loss  accuracy_thresh  fbeta
 
 Kaggle会用一个叫F score的指标来评价模型。我不会花时间解释F score，它不怎么有趣。它基本是这样的，你的分类器会得到一些假正例（false positives，预测正，这是错的）和假负里例（false negatives，预测负，这是错的）。怎样为这两个指标分配权重来得到一个整体的指标？有很多不同的方式把它们组合成一个值，F score是一个好方法。有多种F score：F1, F2等等。Kaggle在竞赛规则里说，要用F2做度量指标。
 
-![](lesson3/24.png)
+![](/lesson3/24.png)
 
 我们有一个叫`fbeta`的度量指标。也就是说它是以beta值（1，2或其他）做参数的F值。我们可以看下它的签名，它有一个阈值（threshold）和一个beta值，beta值默认是2，Kaggle会使用F 2，所以我们不用修改它。但是我们要修改阈值。
 
@@ -548,17 +548,17 @@ Kaggle会用一个叫F score的指标来评价模型。我不会花时间解释F
 
 对卫星图识别来说，我们不能这样做，它有不止一个标签，而是有很多个。data bunch有一个特别的属性 `c` ，`c` 是我们希望的模型的输出数量。对所有分类器，我们想看到所有可能类别的概率。换句话说， `data.c`通常和 `data.classes`的长度是相等的。
 
-![](lesson3/25.png)
+![](/lesson3/25.png)
 
 有17个可能结果。我们会得到每个可能结果的概率。但是我们不会只从中选择一个，而是会从这17个中选择 *n* 个。我们要做的是把每一个概率和阈值比较。如果概率高于阈值，我们就认为存在这个特征。所以我们要选择这个阈值。
 
-![](lesson3/26.png)
+![](/lesson3/26.png)
 
 我发现对于这个数据集来说，把0.2作为阈值，模型表现不错。对这类问题，我们可以简单通过实验来找到一个好的阈值。我打算打印出把0.2作为阈值时的准确率。
 
 但是普通的准确率函数不能直接使用。它不能用`argmax`。我们需要用另一个准确率函数`accuracy_thresh`。它会把每个概率和阈值对比，返回所有高于阈值的结果，用这个计算准确率。
 
-![](lesson3/27.png)
+![](/lesson3/27.png)
 
 
 
@@ -600,7 +600,7 @@ learn.recorder.plot()
 
 
 
-![](lesson3/n1.png)
+![](/lesson3/n1.png)
 
 找到最陡的坡——是在1e-2附近，把它作为我们的学习率。
 
@@ -647,7 +647,7 @@ learn.lr_find()
 learn.recorder.plot()
 ```
 
-![](lesson3/n2.png)
+![](/lesson3/n2.png)
 
 然后再训练一次。这个例子里，我使用原来的数据。但是你可以使用分错的数据创建一个新的data bunch，用它来训练fit。分错的数据是需要特别关注的。所以你可能需要用稍微高些的学习率，或者多训练几轮。你只需要用出错图片和修正的分类来训练。这能有效改进模型。
 
@@ -698,7 +698,7 @@ data = (ImageItemList.from_folder(path) #Where to find the data? -> in path and 
 
 当然，如果你要做全新类型的应用，你可以查看源代码。基本所有的这类函数都只有几行代码。可能我们需要看一个例子。来试下。
 
-![](lesson3/28.png)
+![](/lesson3/28.png)
 
 你可以查看文档看看它具体做了什么。就像你看到的那样，大部分fastai函数都只有几行代码。可以直接看到全部内容，了解怎样使用它们。多尝试使用，你就会熟悉怎样把它们组织在一起。这周，如果你有东西不明白，请让我们知道，我们会想办法帮助你。
 
@@ -712,7 +712,7 @@ data = (ImageItemList.from_folder(path) #Where to find the data? -> in path and 
 
 这里需要注意的一件事情是，在我们解冻前，你可能会每次都得到这种形状。
 
-![](lesson3/n1.png)
+![](/lesson3/n1.png)
 
 如果你在解冻前使用学习率查找器的话。这很简单——找最陡的斜坡， **不是最底部**。记住，我们要寻找快速下滑的位置。所以，如果你从底部开始，损失度会上升。
 
@@ -735,7 +735,7 @@ data = (ImageItemList.from_folder(path) #Where to find the data? -> in path and 
 
 这是要用的技巧[[51:01](https://youtu.be/PW2HKkzdkKY?t=3061)]。当我创建dataset时，我传入了`size=128`，事实上，Kaggle给我们的尺寸是256。我使用128的一个原因是想要快速实验。使用小图片来实验会更快更简单。第二个原因是，现在我们有了一个能很好地识别128 *128卫星图里内容的模型。要想创建一个能识别256*256卫星图的模型应该怎样做？为什么不用迁移学习？为什么不在能识别128*128图片的模型上做微调？不再从头开始。这很有趣，因为如果我们训练太多，会有过拟合的风险。我把图片长宽翻倍，面积变成4倍，这样创建一个新的dataset 。对CNN来说这是完全不同的数据。继续用原来的程序，只是换成新的256*256的data bunch。这就是为什么在创建dataset前停下来：
 
-![](lesson3/29.png)
+![](/lesson3/29.png)
 
 因为我要用这个数据源 (`src`) ，要使用256的图片创建一个新的data bunch。看看怎样做。
 
@@ -769,7 +769,7 @@ learn.recorder.plot()
 ```
 
 
-![](lesson3/n3.png)
+![](/lesson3/n3.png)
 
 因为已经有了一个很好的模型(它对128*128图片来说表现的很好，所以它对256*256图片来说效果应该也不错)，没有再遇到之前的特别倾斜的形状了。但是我还是会看到一段很高的线。所以我会找到它上升的前的位置。然后除以10。得到`1e-2/2`——这是它上升前的位置。
 
@@ -825,7 +825,7 @@ epoch  train_loss  valid_loss  accuracy_thresh  fbeta
 learn.recorder.plot_losses()
 ```
 
-![](lesson3/n4.png)
+![](/lesson3/n4.png)
 
 ```python
 learn.save('stage-2-256-rn50')
@@ -841,7 +841,7 @@ learn.save('stage-2-256-rn50')
 
 下一个要看的数据集是CamVid。它是用来做图像分割的。开始时我们有左边这样一张图片：
 
-![](lesson3/c1.png) ![](lesson3/c2.png)
+![](/lesson3/c1.png) ![](/lesson3/c2.png)
 
 我们要要创建一张右边这样的用颜色标注过的图片，里面自行车是一种颜色，道路标线是一种颜色，树是一种颜色，建筑是一种颜色，天空是一种颜色，等等。
 
@@ -855,7 +855,7 @@ learn.save('stage-2-256-rn50')
 
 这里有一个很好的叫做CamVid的数据集。里面有很多标注好的图片。记住，所有的图片我们都提供了内置的URL。你可以在这里看到细节https://course.fast.ai/datasets 。他们基本上都是学术数据集，有很多好心人帮我们处理了麻烦，让我们可以直接使用它。如果你在任何项目里使用这些数据集时，你能够添加数据引用，并且注明感谢作者，是就太好了。因为他们提供这些数据，想要的只是给得到这样的荣誉。这就是CamVid数据集和他的引用（在我们的数据集页面，它会链接到发表这个数据集的学术论文）。
 
-![](lesson3/30.png)
+![](/lesson3/30.png)
 
 
 
@@ -865,13 +865,13 @@ learn.save('stage-2-256-rn50')
 
 答案是没有这样的方法，为什么说没有？是因为这更取决于经验。就像你能看到的，我说过，如何解读学习率图像，取决于现在是第几阶段，和它的形状是什么样的。我猜仅仅是训练头部的几层时（在你解冻前），它的图像是这样的：
 
-![](lesson3/n1.png)
+![](/lesson3/n1.png)
 
 你确实可以创建一些方法，找出最陡的向下的斜坡来找出学习率。这基本上，在任何时候都是可行的。
 
 但是对于这种，就需要很多的实验：
 
-![](lesson3/n2.png)
+![](/lesson3/n2.png)
 
 但好消息是你可以做些实验。显然，如果线是向上的，我们不想要它。几乎可以确定，你不希望正好在最底部的点这里，因为你需要它继续向下。你可以从这个位置的1/10的地方开始尝试，然后再缩小1/10。多试几次，找出最好的那个。
 
@@ -949,7 +949,7 @@ img = open_image(img_f)
 img.show(figsize=(5,5))
 ```
 
-![](lesson3/c1.png)
+![](/lesson3/c1.png)
 
 ```python
 get_y_fn = lambda x: path_lbl/f'{x.stem}_P{x.suffix}'
@@ -964,7 +964,7 @@ mask = open_mask(get_y_fn(img_f))
 mask.show(figsize=(5,5), alpha=1)
 ```
 
-![](lesson3/c2.png)
+![](/lesson3/c2.png)
 
 我创建了这个把图片文件名转成对应的标签文件名的简单函数。把它打开，确认它可以用。通常，我们用 `open_image` 来打开文件，然后你可以用`.show`来查看它。但是，就像我们讲过的，这不是普通的图片文件，它包含数字。所以你要用 `open_masks` 而不是 `open_image`，因为我们要返回整数而不是浮点数。fastai知道怎样处理遮罩，所以你执行 `mask.show` 时，它会自动添加颜色标注。这就是为什么我们使用 `open_masks`。
 
@@ -1036,7 +1036,7 @@ data = (src.transform(get_transforms(), size=size, tfm_y=True)
 data.show_batch(2, figsize=(10,7))
 ```
 
-![](lesson3/c3.png)
+![](/lesson3/c3.png)
 
 这很好。因为fastai知道你给了它一个分割问题，你在调用show batch时，它把两部分结合起来，把图片标上颜色。很不错吧？这是真实的完整的数据。
 
@@ -1078,7 +1078,7 @@ learn.recorder.plot()
 
 
 
-![](lesson3/c4.png)
+![](/lesson3/c4.png)
 
 ```
 lr=1e-2
@@ -1120,7 +1120,7 @@ lr_find(learn)
 learn.recorder.plot()
 ```
 
-![](lesson3/c5.png)
+![](/lesson3/c5.png)
 
 ```python
 lrs = slice(1e-5,lr/5)
@@ -1163,7 +1163,7 @@ epoch  train_loss  valid_loss  acc_camvid
 
 是的，就是这样。如果你想象每个像素都是一个要分类的对象，就是这样计算准确率。事实上，你可以直接传入`accuracy`作为度量，但我们在这里用了一个新的叫做 `acc_camvid`的度量指标，因为它们在标注图片时，会把有的像素标记成`Void`。我不太清楚为什么，但确实有些像素是`Void`。在CamVid论文里，他们说在报告准确率时，应该去除void像素。所以我们创建了accuracy CamVid方法。每个度量都接收神经网络的实际输出（度量的输入）和目标值（我们尝试预测的标签） 。
 
-![](lesson3/31.png)
+![](/lesson3/31.png)
 
 我们创建了一个mask（我们寻找不是void的位置），然后取到输入，像往常一样做`argmax`，仅取出不是void的值。对目标值做相同的事，然后取平均值，所以这是一个标准的准确率。 
 
@@ -1188,7 +1188,7 @@ epoch  train_loss  valid_loss  acc_camvid
 
 对于分割问题，我们没有用一个卷积网络，我们可以用它，但是用叫 U-Net 的网络架构效果会更好。
 
-![](lesson3/u-net.png)
+![](/lesson3/u-net.png)
 
 这是U-Net的样子。它来自这个讲U-Net的[大学网站](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/)。我们会在课程的第一部分和第二部分都会学习它。左边像是一个普通的卷积网络。它有时从一个大图片开始，然后逐步缩小，直到仅有一个预测值。U-Net做的是再把它逐步变大，把向下时每一步的值拷贝到对面，这样就出现了一个U型。
 
@@ -1208,13 +1208,13 @@ epoch  train_loss  valid_loss  acc_camvid
 learn.recorder.plot_losses()
 ```
 
-![](lesson3/c6.png)
+![](/lesson3/c6.png)
 
 ```python
 learn.recorder.plot_lr()
 ```
 
-![](lesson3/c7.png)
+![](/lesson3/c7.png)
 
 这里画出了你的训练集损失度和验证集损失度。通常，它们会先上升一下，然后再下降。为什么？这是因为学习率先上升后下降。这又是为什么？因为我们用了`fit_one_cycle`。这就是fit one cycle方法做的事，它让学习率先缓慢上升，再下降。
 
@@ -1226,25 +1226,25 @@ learn.recorder.plot_lr()
 我们可以看看这些参数是怎样随着时间变化的。我们知道这是正确的答案（用红色X标记）。学习率设成0.1时，它是这样的，花了一些时间到了正确的位置。你可以看到损失度在降低。
 
 
-![](lesson3/jose1.gif)
+![](/lesson3/jose1.gif)
 
 
 
 学习率是0.7时，你可以看到模型很快跳到了正确位置。可以看到参数直接跳到了正确位置。
 
-![](lesson3/jose2.gif)
+![](/lesson3/jose2.gif)
 
 
 
 如果用一个太高的学习率会怎样？你可以看到它用了非常长时间来找到正确位置。
 
-![](lesson3/jose4.gif)
+![](/lesson3/jose4.gif)
 
 
 
 如果学习率非常高，它会发散。
 
-![](lesson3/jose5.gif)
+![](/lesson3/jose5.gif)
 
 
 
@@ -1256,7 +1256,7 @@ learn.recorder.plot_lr()
 
 
 
-![](lesson3/whiteboard.gif)
+![](/lesson3/whiteboard.gif)
 
 
 
@@ -1264,7 +1264,7 @@ learn.recorder.plot_lr()
 
 损失度曲线会有平坦的部分和曲折的部分。如果你在曲折部分的底部停下来，这个模型不会泛化得很好，因为你找到了一个在这一个地方比较好但在其他地方不够好的方案。如果你在平坦的部分找到了解，它可能会泛化的比较好，因为它不仅在一个点表现好，也会在附近表现比较好。
 
-![](lesson3/whiteboard2.gif)
+![](/lesson3/whiteboard2.gif)
 
 
 
@@ -1276,13 +1276,13 @@ learn.recorder.plot_lr()
 
 如果你调用`plot_losses`，发现损失度先是变差了一点，然后变好了很多，这说明你找到了一个很好的学习率最大值。
 
-![](lesson3/c6.png)
+![](/lesson3/c6.png)
 
 当你调用fit one cycle时，你传入的其实不是一个学习率，而是一个学习率的最大值。如果它总是变低，尤其是在你解冻之后，这表明你大概要把学习率调大一些，因为你希望看到这种形状。它会训练地更快，泛化能力更好。你大概会在验证集上看到这个（橙色的是验证集）。知道理论和能够应用它之间的距离，是看大量这些图片。所以在你训练完后，获得比较好的结果时，输入 `learn.recorder.`，点击tab键，看看这里有什么，来培养对这些图片长什么样的感觉。然后把试下把学习率调高，试下把学习率调低，用更多的迭代，用更少的迭代，感受下这时它们的图形是什么样的。
 
 #### 放大 [[1:26:16](https://youtu.be/PW2HKkzdkKY?t=5176)]
 
-![](lesson3/33.png)
+![](/lesson3/33.png)
 
 这个例子里，我们在变形里用了这个尺寸`原始图片尺寸/2`。两个斜杠在Python里表示整除，显然，尺寸里不会出现半个像素。我把batch size设成8。现在我发现它在我的CPU可以运行，但它在你的GPU上不一定适用。如果在你的GPU上运行不了，你可以把batch size减到4。
 
@@ -1316,7 +1316,7 @@ lr_find(learn)
 learn.recorder.plot()
 ```
 
-![](lesson3/c8.png)
+![](/lesson3/c8.png)
 
 ```python
 lr=1e-3
@@ -1388,7 +1388,7 @@ learn.load('stage-2-big')
 learn.show_results()
 ```
 
-![](lesson3/c9.png)
+![](/lesson3/c9.png)
 
 你可以执行 `learn.show_results()` 看看预测结果，和真实值对比，看起来相当不错。
 
@@ -1404,7 +1404,7 @@ learn.show_results()
 
 如果你经常遇到内存溢出问题，有一个技巧来处理。你可以使用混合精度训练。混合精度训练是指，你可以使用半个精度浮点数来做模型计算，而不是使用单精度浮点数，就是使用16位，而不是32位。这个方法是最近两年才提出的。一些硬件可以用它执行得很快。我觉得fastai库第一个，也可能仍然是唯一一个让这个方法很方便使用的库。
 
-![](lesson3/34.png)
+![](/lesson3/34.png)
 
 如果你把 `to_fp16()` 加在对任何learner 的调用后面，你可以得到一个用16位精度来训练的模型。因为这是一个新技术，你需要使用最新的CUDA驱动和其他东西才能使用它。今天上午我在一些平台上执行它时，它会让kernel无法工作。所以你需要用最新的驱动。如果你用最新的GPU，比如说2080Ti，它不仅可以运行，还可以比以前快上一倍。它会使用更少的GPU内存。即使你没有2080Ti，你可能会发现，原来在你的GPU上用不了的代码，在使用这个方法后，可以运行了。
 
@@ -1418,7 +1418,7 @@ learn.show_results()
 
 再讲两个内容。第一个要演示的是一个叫做[BIWI头部姿势数据集](https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html#db)的有趣的数据集。Gabriele Fanelli很友好，授权我们在课程里使用这个数据集。他的团队创建了这个很酷的数据集。
 
-![](lesson3/b1.png)
+![](/lesson3/b1.png)
 
 这是数据集里的内容。里面有几项内容。我们只做简化的版本，他们在脸部中心标记一个点。所以我们要尝试创建一个在脸上找到这个点的模型。
 
@@ -1464,7 +1464,7 @@ img = open_image(path/fname)
 img.show()
 ```
 
-![](lesson3/b0.png)
+![](/lesson3/b0.png)
 
 
 ```python
@@ -1503,7 +1503,7 @@ ctr = get_ctr(fname)
 img.show(y=get_ip(img, ctr), figsize=(6, 6))
 ```
 
-![](lesson3/b1.png)
+![](/lesson3/b1.png)
 
 有趣的是，我们做的不是一个图片，不是一个对图片的分割，而是一个图上的一个点。我们会在后面学习关于这个的更多内容，图片点使用了坐标的概念。它们不是像素值，而是XY坐标 (只有两个数字)。
 
@@ -1536,7 +1536,7 @@ data = (ImageItemList.from_folder(path)
 data.show_batch(3, figsize=(9,6)
 ```
 
-![](lesson3/b2.png)
+![](/lesson3/b2.png)
 
 我注意到它们的红点不是总是在脸部的中间。我不知道它们画点的算法是什么。有时好像是选择鼻子，有时并不是。无论如何，都是在脸部中心或者鼻子附近的区域里。
 
@@ -1555,7 +1555,7 @@ learn.loss_func = MSELossFlat()
 learn.lr_find()
 learn.recorder.plot()
 ```
-![](lesson3/b3.png)
+![](/lesson3/b3.png)
 
 ```
 lr = 2e-2
@@ -1583,7 +1583,7 @@ epoch  train_loss  valid_loss
 learn.show_results()
 ```
 
-![](lesson3/b4.png)
+![](/lesson3/b4.png)
 
 这几乎是完美的结果。这就是做图片回归模型的方法。在你需要预测连续值时，你就可以用这样的方法。
 
@@ -1653,7 +1653,7 @@ data_lm = TextDataBunch.from_csv(path, 'texts.csv')
 
 1. **分词Tokenization**: 它处理这些单词，把它们转成标准的分词。基本上每个分词代表一个单词。
 
-   ![](lesson3/35.png)
+   ![](/lesson3/35.png)
 
    它做了一些这样的事情，看到没有，"didn't" 被转成里两个独立的单词(`did` 和 `n't`)。并且所有的内容都被转成小些了。看到"you're"被转成两个独立的单词(`you` 和 `'re`)了吗? 分词是要让每个"token（分词）" (每个词两边都有空白) 代表一个独立的语义。它遇到特别少见的单词时（比如说名字），把它们用一个专门的分词替代unknown (`xxunk`)。在fastai里所有以 `xx` 开头的都是特殊分词。这就是分词，所以我们最后可以得到一个被分词过的单词的列表。你也能看到标点周围也被加了空格，来保证它们是单独的分词。
 
@@ -1724,7 +1724,7 @@ Jeremy 说过：
 
 这些模型实质上是什么呢？我们实质上在做什么？这是有趣的事情——我们确实做了矩阵乘法运算（或者像卷积这样的变种），但每做一次矩阵乘法，我们做一次非线性计算或者叫**激活函数**。激活函数是输入矩阵乘法的结果，在上面做些处理。这是一些我们用到的激活函数 ([by Sagar Sharma](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)):
 
-![](lesson3/sagar.png)
+![](/lesson3/sagar.png)
 
 
 
