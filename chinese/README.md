@@ -12,7 +12,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 - [General Forum](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
 - [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
 
-## 2. [Lesson 2](/Lesson2.md)
+## 2. [Lesson 2](/chinese/Lesson2.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=2)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=2) / [Video Youtube](https://youtu.be/Egp4Zajhzog)
@@ -21,7 +21,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 - [lesson2-download.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb)
 - [lesson2-sgd.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-sgd.ipynb)
 
-## 3. [Lesson 3](/Lesson3.md)
+## 3. [Lesson 3](/chinese/Lesson3.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=3)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=3) / [Video Youtube](https://youtu.be/PW2HKkzdkKY)
@@ -31,7 +31,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 - [lesson3-imbd.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson3-imdb.ipynb)
 - [lesson3-head-pose.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson3-head-pose.ipynb)
 
-## 4. [Lesson 4](/Lesson4.md)
+## 4. [Lesson 4](/chinese/Lesson4.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=4)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=4) / [Video Youtube](https://youtu.be/C9UdVPE3ynA)
@@ -39,14 +39,14 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 - [lesson4-collab.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson4-collab.ipynb)
 - [lesson4-tabular.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson4-tabular.ipynb)
 
-## 5. [Lesson 5](/Lesson5.md)
+## 5. [Lesson 5](/chinese/Lesson5.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=5)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=5) / [Video Youtube](https://youtu.be/uQtTwhpv7Ew)
 - [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863)
 - [lesson5-sgd-mnist.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson5-sgd-mnist.ipynb)
 
-## 6. [Lesson 6](/Lesson6.md)
+## 6. [Lesson 6](/chinese/Lesson6.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=6)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=6) / [Video Youtube](https://youtu.be/U7c-nYXrKD4)
@@ -55,7 +55,7 @@ notebook教程 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/
 - [rossman_data_clean.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/rossman_data_clean.ipynb)
 - [lesson6-pets-more.ipynb](https://www.github/fastai/course-v3/blob/master/nbs/dl1/lesson6-pets-more.ipynb)
 
-## 7. [Lesson 7](/Lesson7.md)
+## 7. [Lesson 7](/chinese/Lesson7.md)
 
 - [Webpage](https://course.fast.ai/videos/?lesson=7)
 - [Video Bilibili](https://www.bilibili.com/video/av41718196/?p=7) / [Video Youtube](https://youtu.be/nWpdkZE2_cc)
