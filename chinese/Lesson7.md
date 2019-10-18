@@ -473,7 +473,7 @@ Total time: 00:53
 
 #### 可视化神经网络的损失空间[Visualizing the Loss Landscape of Neural Nets](https://arxiv.org/abs/1712.09913) [[21:16](https://youtu.be/nWpdkZE2_cc?t=1276)]
 
-Rachel, I, David, 和 Sylvain刚刚从NeurIPS回来，在那里，我们看到了一个新的展示，它们提出怎样可视化神经网络的损失曲面，这很酷。这是一个了不起的论文，现在在看这个课的人，会理解这篇论文里最重要的概念。你可以现在阅读它。你不用全部理解它，但我确定你可以发现它很有意义。
+Rachel、David、Sylvain和我刚刚参加NeurIPS会议回来，在那里，我们看到了一个新的展示，它们提出怎样可视化神经网络的损失曲面，这很酷。这是一个了不起的论文，现在在看这个课的人，会理解这篇论文里最重要的概念。你可以现在阅读它。你不用全部理解它，但我确定你可以发现它很有意义。
 
 ![](/lesson7/9.png)
 
