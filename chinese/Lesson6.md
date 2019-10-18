@@ -1,6 +1,6 @@
 # Lesson 6
 
-[Video](https://youtu.be/U7c-nYXrKD4) / [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
+[Video(YouTube)](https://youtu.be/U7c-nYXrKD4) / [Video(bilibili)](https://www.bilibili.com/video/av54066675) / [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
 
 欢迎来到第六课，我们将深入学习计算机视觉，卷积神经网络，什么是卷积，我们还会学习最后的正则化技巧，上周已经学了权重衰减和L2 正则化。
 
@@ -566,7 +566,7 @@ len(data.train_ds.cont_names)
 
 [[43:06](https://youtu.be/U7c-nYXrKD4?t=2586)]
 
-在做这个之前，我想讲一个关于dropout的有趣的事情，我讲过，它是一个硕士论文。它不单是一个硕士论文，它是过去十年最有影响力的论文之一。
+在做这个之前，我想讲一个关于dropout的有趣的事情，我讲过，它是一个硕士论文。但它不是一个普通的硕士论文，它是过去十年最有影响力的论文之一。
 
 ![](/lesson6/13.png)
 
