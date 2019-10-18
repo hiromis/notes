@@ -413,7 +413,7 @@ learn = tabular_learner(data, layers=[1000,500], ps=[0.001,0.01], emb_drop=0.04,
 我们来学习下什么是dropout。dropout是一种正则化。这是Nitish Srivastava的[dropout论文](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)，它是Srivastava在Geoffrey Hinton指导下做的硕士论文。
 
 ![](/lesson6/6.png)
-https://www.bilibili.com/video/av46252318?from=search&seid=4333210500298133410
+
 这张来自原始论文的图片很好地说明了它做了什么。第一张图是一个标准的全连接网络，每条线代表激活值和一个权重的乘法运算。当有乘法箭头进入，就代表一次相加。所以这个激活值（红圈里的），是所有这些输入和这些激活值乘积的和。这是一个普通的全连接神经网络的样子。
 
 对于dropout，我们把这些去掉。我们随机地**去掉一些比重的激活值**，不是权重，不是参数。记住，**神经网络里只有两种数字：参数**（也叫权重），和**激活值**。我们要去掉一些激活值。
@@ -479,7 +479,7 @@ embedding dropout只是一个dropout。它只是dropout模块的一个实例。�
 
 ![](/lesson6/10.png)
 
-我把它们都放在一个电子表格里（当然，是Microsoft Excel），把它们放进一个透视表（pivot table）来把它们加起来，找出不同的选择，效果更好和效果更差的超参数，架构。然后我建了这样一些图:
+我把它们都放在一个电子表格里（当然，是Microsoft Excel），把它们放进一个透视表（pivot table）来把它们加起来，找出不同的选择，效果更好和效果更差的超参数、架构。然后我建了这样一些图:
 
 ![](/lesson6/11.png)
 
