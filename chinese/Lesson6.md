@@ -562,7 +562,7 @@ len(data.train_ds.cont_names)
 - 它是一个正则化（regularization）
 - 它是一个训练辅助方法（training helper） 
 
-它叫bathc normalization（批次标准化），它来自[这篇论文](https://arxiv.org/abs/1502.03167)。
+它叫batch normalization（批次标准化），它来自[这篇论文](https://arxiv.org/abs/1502.03167)。
 
 [[43:06](https://youtu.be/U7c-nYXrKD4?t=2586)]
 
