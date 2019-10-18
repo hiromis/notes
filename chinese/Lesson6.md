@@ -576,7 +576,7 @@ len(data.train_ds.cont_names)
 
 ### Batch Normalization [[44:28](https://youtu.be/U7c-nYXrKD4?t=2668)]
 
-相反Batch normalization被立即认为是有巨大影响的。我清楚地记得在2015，当它刚出现时，每个人都在谈论它。这是因为这太明显了，它们展示了这个图片：
+相反，Batch normalization被立即认为是有巨大影响的。我清楚地记得在2015，当它刚出现时，每个人都在谈论它。这是因为这太明显了，它们展示了这个图片：
 
 ![](/lesson6/14.png)
 
