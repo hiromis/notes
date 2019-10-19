@@ -1,6 +1,6 @@
 # 欢迎来到第四课
 
-[Video](https://youtu.be/C9UdVPE3ynA) / [Lesson Forum](https://forums.fast.ai/t/lesson-4-official-resources-and-updates/30317)
+[Video(YouTube)](https://youtu.be/C9UdVPE3ynA) /  [Video(bilibili)](https://www.bilibili.com/video/av49946953) / [Lesson Forum](https://forums.fast.ai/t/lesson-4-official-resources-and-updates/30317)
 
 欢迎来到第四课！我们继续学习这些关键的应用来完成学习旅程。我们已经看了一系列的视觉应用。我们学了分类，定位，图片回归。我们们简要介绍了NLP。今天我们要深入学习NLP迁移学习。然后我们会学习表格数据和协同过滤，这些都是非常有用的应用。
 

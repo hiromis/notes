@@ -1,6 +1,6 @@
 # Lesson 2
 
-[Video](https://youtu.be/Egp4Zajhzog) / [Lesson Forum]((https://forums.fast.ai/t/lesson-2-official-resources-and-updates/28630)) / [General Forum]((https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/))
+[Video(YouTube)](https://youtu.be/Egp4Zajhzog) / [Video(bilibili)](https://www.bilibili.com/video/av47684251) / [Lesson Forum]((https://forums.fast.ai/t/lesson-2-official-resources-and-updates/28630)) / [General Forum]((https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/))
 
 ## 深入计算机视觉
 

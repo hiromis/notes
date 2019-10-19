@@ -1,6 +1,6 @@
 # Lesson 3
 
-[Video](https://youtu.be/PW2HKkzdkKY) / [Lesson Forum](https://forums.fast.ai/t/lesson-3-official-resources-and-updates/29732)
+[Video(YouTube)](https://youtu.be/PW2HKkzdkKY) /  [Video(bilibili)](https://www.bilibili.com/video/av49809621) / [Lesson Forum](https://forums.fast.ai/t/lesson-3-official-resources-and-updates/29732)
 
 更正一个引用。这个图最初来自Coursera上吴恩达的极好的机器学习课程。抱歉引用搞错了。
 

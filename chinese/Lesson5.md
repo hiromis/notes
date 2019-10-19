@@ -1,6 +1,6 @@
 # Lesson 5
 
-[Video](https://youtu.be/uQtTwhpv7Ew) / [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863) 
+[Video(YouTube)](https://youtu.be/uQtTwhpv7Ew) / [Video(bilibili)](https://www.bilibili.com/video/av49947726) /  [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863) 
 
 欢迎来到第5课。我们已经完成了前半部分课程，上节课已经开始了下半部分，现在继续。
 
