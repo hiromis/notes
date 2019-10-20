@@ -781,7 +781,7 @@ learn.fit_one_cycle(4, slice(xxx, 3e-4))
 
 <img src="http://latex.codecogs.com/gif.latex?y&space;=&space;a_1x&space;&plus;&space;a_2" title="y = a_1x + a_2" />
 
-我们只是把<img src="http://latex.codecogs.com/gif.latex?\inline&amp;space;b" title="b" /> 换成 <img src="http://latex.codecogs.com/gif.latex?a_2" title="a_2" /> ，换了一个名字。对同一个东西有不同的说法。另外一种说法是我可以用<img src="http://latex.codecogs.com/gif.latex?a_2" title="a_2" /> 乘以1.  
+我们只是把<img src="http://latex.codecogs.com/gif.latex?b" title="b" /> 换成 <img src="http://latex.codecogs.com/gif.latex?a_2" title="a_2" /> ，换了一个名字。对同一个东西有不同的说法。换一种写法，我可以写成<img src="http://latex.codecogs.com/gif.latex?a_2" title="a_2" /> 乘以1.  
 
 <img src="http://latex.codecogs.com/gif.latex?y&space;=&space;a_1x&space;&plus;&space;a_2\cdot&space;1" title="y = a_1x + a_2\cdot 1" />
 
