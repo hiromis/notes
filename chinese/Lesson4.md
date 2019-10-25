@@ -25,7 +25,7 @@
 
 这很有趣。事实上这周有一个很好的例子，[@howkhang](https://forums.fast.ai/u/howkhang) 是我们的一个学员，他是一个律师，他在[论坛](https://forums.fast.ai/t/share-your-work-here/27676/468)里用NLP方法分类法律文本取得了很好的结果。我觉得这是一个很棒的例子。这是他们在这周的一个学术会议介绍这个方法的文章：
 
-![](/lesson4/poster.pdf)
+![Legal Text Classifier with Universal Language Model Fine-tuning](/lesson4/poster.pdf)
 
 
 
