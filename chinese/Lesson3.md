@@ -8,13 +8,13 @@
 
 Coursera上[吴恩达的机器学习课程](https://www.coursera.org/learn/machine-learning)是很棒的。某些方面，它有点过时，但是很多概念是永远不会改变的。它是自下而上来讲解的。把它和我们的自上而下的方式结合起来是很好的，它们在某些地方是互补的。
 
-如果你对机器学习基础感兴趣，你应该学习我们的[机器学习课程](https://course.fast.ai/ml)。它大概比这个深度学习课程长一倍，它会带你更渐进地了解一些基础概念，比如验证集、模型解释、PyTorch工作原理等等。这些课程是一起的，如果你想深入学习，就学习两门课。我认识很多这样的人，他们最后说：作为一个整体来学两门课比单独学一个学到的更多。或者你可以把两门课都尝试，看哪个更适合你。
+如果你对机器学习基础感兴趣，你应该学习我们的[机器学习课程](https://course.fast.ai/ml)。它大概比这个深度学习课程长一倍，它会带你更渐进地了解一些基础概念，比如验证集、模型解释、PyTorch工作原理等等。这些课程是一起的，如果你想深入学习，就学习两门课。我认识很多这样的人，他们最后说：作为一个整体来学两门课比单独学一个学到的更多。或者你可以把两门课都尝试下，看哪个更适合你。
 
 上周我们讲过部署你的web应用。https://course-v3.fast.ai/ 有一个“production”章节，里面有展示怎样简单地部署web应用的内容。举个例子，看看多简单，这是Navjot写的[怎样在Zeit部署的指南](https://course-v3.fast.ai/deployment_zeit.html)。
 
 ![](/lesson3/3.png)
 
-就像你看到的，只有一页。几乎没有什么东西，并且都是免费的。它不能同时享用1万个并发请求。但是它可以让你顺利起步，我觉得它工作得很好、很快。部署一个模型，不再是一件很麻烦复杂的事。它的好处是，你可以用它做一个最小可用产品。如果你真的发现，它会接收到1000个并发，这时你就不能再继续用它了，你需要升级一下你的主机类型或者增加一些传统的大型工程方法。你可以使用这个起步工具箱，创建泰迪熊识别器，这个模版非常简单。你可以使用你自己的样式文件、你自己的定制逻辑和它的东西。它被设计得非常简单，这样你可以看到它是怎样运行的。后端是一个简单的REST风格接口，它返回JSON，前端是一个超级简单的Javascript。这能很好地了解怎样构建一个和PyTorch交互的web应用。
+就像你看到的，只有一页。几乎没有什么东西，并且都是免费的。它不能同时响应1万个并发请求。但是它可以让你顺利起步，我觉得它工作得很好、很快。部署一个模型，不再是一件很麻烦复杂的事。它的好处是，你可以用它做一个最小可用产品。如果你真的发现，它会接收到1000个并发，这时你就不能再继续用它了，你需要升级一下你的主机类型或者增加一些传统的大型工程方法。你可以使用这个起步工具箱创建泰迪熊识别器，这个模版非常简单。你可以使用你自己的样式文件、你自己的定制逻辑和它的东西。它被设计得非常简单，这样你可以看到它是怎样运行的。后端是一个简单的REST风格接口，它返回JSON，前端是一个超级简单的JavaScript。这能很好地了解怎样构建一个和PyTorch交互的web应用。
 
 
 
@@ -38,7 +38,7 @@ Edward Ross 构建了这个程序“这是一辆什么汽车？”
 </tr><table>
 
 
-很高兴看到大家创建的web app和分类器。今天要学一些不同类型的模型。我们先快速浏览一下，然后回过头来看看，它们是怎样工作的、他们的共同点是什么。你可以用这些来创建web app，也要想想怎样在上面做些修改来用到不同应用上。我觉得这是让你理解这些内容的一个很好的方法。
+很高兴看到大家创建的web app和分类器。今天要学一些不同类型的模型。我们先快速浏览一下，然后回过头来看看，它们是怎样工作的、它们的共同点是什么。你可以用这些来创建web app，也要想想怎样在上面做些修改来用到不同应用上。我觉得这是让你理解这些内容的一个很好的方法。
 
 
 
@@ -64,13 +64,13 @@ Edward Ross 构建了这个程序“这是一辆什么汽车？”
 #! pip install kaggle --upgrade
 ```
 
-在我们提供的notebook里，对于只做一次的事情，会把这部分代码注释掉。你可以在使用时，取消掉这个注释。你选中一些行，然后点击<kbd>ctrl</kbd>+<kbd>/</kbd>就会取消掉所有的注释。如果你再次选中他们，再点击<kbd>ctrl</kbd>+<kbd>/</kbd>，会重新添加上注释。这一行会为你安装`kaggle`。你可能需要使用`sudo`或者`/something/pip`，这取决于你的系统。你可能需要使用`source activate`，你可以在课程的网站上查看一下做`conda install`时要用的setup部分或者returning to work部分，当你使用`pip install`时，你也需要做相同的基本步骤。
+在我们提供的notebook里，对于只做一次的事情，会把这部分代码注释掉。你可以在使用时，取消掉这个注释。你选中一些行，然后点击<kbd>ctrl</kbd>+<kbd>/</kbd>就会取消掉所有的注释。如果你再次选中它们，再点击<kbd>ctrl</kbd>+<kbd>/</kbd>，会重新添加上注释。这一行会为你安装`kaggle`。你可能需要使用`sudo`或者`/something/pip`，这取决于你的系统。你可能需要使用`source activate`，你可以在课程的网站上查看一下做`conda install`时要用的setup部分或者returning to work部分，当你使用`pip install`时，你也需要做相同的基本步骤。
 
 当你安装完这个模块后。你就可以下载数据了。基本上就是使用 `kaggle competitions download -c competition_name -f file_name`。唯一需要说明的步骤是你需要通过权限检查。这里有一些关于怎样下载你的API授权信息的内容。按照这个步骤做就可以。
 
-> 然后你需要上传你的Kaggle认证文件到你的实例。登录kaggle，点击右上角的你的头像图片，然后点击 “My account”。下滑滚动条，找到叫做 “Create New API Token”的按钮，点击它，这会下载一个叫做“kaggle.json”的文件。
+> 然后你需要上传你的Kaggle认证文件到你的实例。登录kaggle，点击右上角的你的头像图片，然后点击“My account”。下滑滚动条，找到叫做“Create New API Token”的按钮，点击它，这会下载一个叫做“kaggle.json”的文件。
 
-> 通过点击Jupyter页面的 "Upload" 按钮， 把这个文件上传到notebook运行的目录。然后取消掉后面两行的注释，执行它们（或者在命令行里运行它们）。
+> 通过点击Jupyter页面的“Upload”按钮， 把这个文件上传到notebook运行的目录。然后取消掉后面两行的注释，执行它们（或者在命令行里运行它们）。
 
 ```bash
 #! mkdir -p ~/.kaggle/
@@ -79,7 +79,7 @@ Edward Ross 构建了这个程序“这是一辆什么汽车？”
 
 
 
-> 设置从[planet competition](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space)下载数据。**首先要到竞赛主页接收竞赛规则**，运行下面的两个单元格（取消掉shell命令的注释来下载解压数据）。如果你收到`403 forbidden` 错误，代表你没有接受竞赛规则（你需要在竞赛页面，点击*Rules*选项卡，滚动到底部，找到*Accept* 按钮）。
+> 设置从[planet competition](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space)下载数据。**首先要到竞赛主页接受竞赛规则**，运行下面的两个单元格（取消掉shell命令的注释来下载解压数据）。如果你收到`403 forbidden` 错误，代表你没有接受竞赛规则（你需要在竞赛页面，点击*Rules*选项卡，滚动到底部，找到*Accept* 按钮）。
 
 ```python
 path = Config.data_path()/'planet'
@@ -144,9 +144,9 @@ df.head()
 - 它们的结构是怎样的
 - 标签是怎样标记的
 - 怎样分离出验证集
-- 怎样转换它
+- 怎样变形它
 
-所以我们做了这个独特的API[data block API](https://docs.fast.ai/data_block.html)。这个data block API让每一个选择相互独立。对创建、设置数据的每个选择都提供了独立的方法，这些方法有各自的参数。 
+所以我们做了这个独特的API [data block API](https://docs.fast.ai/data_block.html)。这个data block API让每一个选择相互独立。对创建、设置数据的每个选择都提供了独立的方法，这些方法都有各自的参数。 
 
 ```python
 tfms = get_transforms(flip_vert=True, max_lighting=0.1, max_zoom=1.05, max_warp=0.)
@@ -165,16 +165,16 @@ data = (src.datasets()
         .databunch().normalize(imagenet_stats))
 ```
 
-比如，要抓取卫星数据，我们会这样写：
+比如，要取卫星数据，我们会这样写：
 
-- 我们取一个文件夹里的图片文件列表
+- 我们从文件夹取ImageFileList
 - 它们的标签放在一个CSV文件里，文件叫做（`train_v2.csv`） 
   - 标签有这个分隔符（` `），我展示过它们中间有个空格。通过传入分隔符，让它创建多标签。
   - 图片在这个文件夹里（`train-jpg`）
   - 它们有这个后缀（`.jpg`）
 - 它们会随机分出20%的数据作为验证集
-- 我们会用这个（`.datasets()`）创建dataset，然后用这个对象（`tfms`）做变形
-- 然后我们会用这个（`.databunch()`）创建一个data bunch，我们会用这个统计方法(`imagenet_stats`)做标准化 
+- 我们会用这个（`.datasets()`）创建dataset，然后用这个对象（`tfms`）做变形（transform）
+- 然后我们会用这个（`.databunch()`）创建一个data bunch，我们会用这个统计分布方法(`imagenet_stats`)做标准化 
 
 这是所有的步骤。为了让你们知道这些是什么，我先回过头来解释所有在这个过程里出现的、你需要了解的这些PyTorch类和fastai类。你会经常在fastai文档和PyTorch文档里看到它们。
 
@@ -184,9 +184,9 @@ data = (src.datasets()
 
 ![](/lesson3/16.png)
 
-可以看到，它实际上没有做任何事情。PyTorch里的Dataset定义了两个东西： `__getitem__` 和 `__len__`。在Python里这种“下划线+下划线+某个方法+下划线+下划线”的方法被叫做"dunder"某个方法。这两个方法叫"dunder get items"和"dunder len"。它们是有特殊行为的魔法方法。这个方法代表如果你有一个叫做`O`的对象，它可以用方括号索引（比如`O[3]`）。它会调用`__getitem__`，把3作为索引。
+可以看到，它实际上没有做任何事情。PyTorch里的Dataset定义了两个东西： `__getitem__` 和 `__len__`。在Python里这种“下划线+下划线+某个方法+下划线+下划线”的方法被叫做“dunder”某个方法。这两个方法叫“dunder get items”和“dunder len”。它们是有特殊行为的魔法方法。这个方法代表如果你有一个叫做`O`的对象，它可以用方括号索引（比如`O[3]`）。它会调用`__getitem__`，把3作为索引。
 
-这个叫做`__len__`的方法代表你可以执行`len(o)`，它会调用这个方法。在这个例子里，它们都没有实现。也就是说，尽管PyTorch说"为了把你的数据告诉PyTorch，你需要创建一个dataset"，但它并不会帮助你做任何事来创建dataset。它只是定义了dataset需要做什么。换句话说，对你的数据，你可以说：
+这个叫做`__len__`的方法代表你可以执行`len(o)`，它会调用这个方法。在这个例子里，它们都没有实现。也就是说，尽管PyTorch说"为了把你的数据告诉PyTorch，你需要创建一个dataset"，但它并不会帮助你做任何事来创建dataset。它只是定义了dataset需要做什么。换句话说，你可以说：
 
 - 我的dataset的第3个数据是什么 （这是`__getitem__`做的）
 - 我的dataset有多大 （这是 `__len__` 做的）
@@ -199,26 +199,26 @@ Fastai有很多Dataset子类来处理各种不同的东西。目前为止你已�
 
 ![](/lesson3/17.png)
 
-DataLoader对象在构造函数里接收一个dataset。它现在说“噢，用这个，我可以取到第三个数据，第五个数据，第九个数据”。它会：
+DataLoader对象在构造函数里接收一个dataset。它现在说“噢，用这个，我可以取到第三个数据、第五个数据、第九个数据”。它会：
 
 - 随机抓取数据
 - 按照你要求的大小创建一个batch
 - 把它输入进GPU
 - 把它发送到你的模型里
 
-所以DataLoader是一个可以抓取独立数据，把他们组成一个mini-batch，输入GPU用来建模的东西。所以它被叫做DataLoader。它由一个Dataset生成。
+所以DataLoader是一个可以抓取独立数据，把它们组成一个mini-batch，输入GPU来建模的东西。所以它被叫做DataLoader。它由一个Dataset生成。
 
 你可以看到，这些就是你需要做的选择：创建怎样的dataset、它的数据是什么、它来自哪里。然后我们创建DataLoader时要选择：我要用多大的批次尺寸（batch size）。 
 
-##### DataBunch (fastai) [21:59](https://youtu.be/PW2HKkzdkKY?t=1319)
+##### DataBunch （fastai） [21:59](https://youtu.be/PW2HKkzdkKY?t=1319)
 
-要训练模型这还不够，因为我们没办法验证模型。如果我们只有训练集，我们没办法知道我们模型怎么样，我们需要分离出一个验证集，来检查模型的效果。
+要训练模型只有这些还不够，因为我们没办法验证模型。如果我们只有训练集，我们没办法知道我们模型怎么样，我们需要分离出一个验证集，来检查模型的效果。
 
 ![](/lesson3/18.png)
 
-我们用一个叫DataBunch的fastai类来做这个。DataBunch把训练数据的data loader（`train_dl`）和验证数据的data loader（`valid_dl`）绑定在一起。在fastai文档，当你看到这些mono spaced字体的文字时，这代表它们是可以进一步查看的。在这里，`train_dl`是DataBunch的第一个参数。除非你了解这个参数，你没办法仅通过名字知道这个参数是做什么的。你需要查看`:`后面的内容，来知道它是一个DataLoader。当你创建一个DataBunch时，你传入一个训练集DataLoader和一个验证集DataLoader。现在可以把它传入一个learner来做训练了。
+我们用一个叫DataBunch的fastai类来做这个。DataBunch把训练数据的data loader（`train_dl`）和验证数据的data loader（`valid_dl`）绑定在一起。在fastai文档，当你看到这些mono spaced字体的文字时，这代表它们是可以进一步查看的。在这里，`train_dl`是DataBunch的第一个参数。除非你了解这个参数，你没办法仅通过名字知道这个参数是做什么的。你需要查看冒号后面的内容，来知道它是一个DataLoader。当你创建一个DataBunch时，你传入一个训练集DataLoader和一个验证集DataLoader。现在可以把它传入一个learner来做训练了。
 
-这是基本的内容。回到这里，这是创建dataset的代码:
+这是基本的部分。回到这里，这是创建dataset的代码:
 
 ![](/lesson3/19.png)
 
@@ -243,7 +243,7 @@ DataLoader对象在构造函数里接收一个dataset。它现在说“噢，用
 
 #### MNIST
 
-这是使用data block API的一些例子。如果你在做MNIST (手写数字分类数据集)，你可以这样：
+这是使用data block API的一些例子。如果你在做MNIST（手写数字分类数据集），你可以这样：
 
 ```python
 path = untar_data(URLs.MNIST_TINY)
@@ -283,7 +283,7 @@ data = (ImageFileList.from_folder(path)  #Where to find the data? -> in path and
   - 它来自于一些文件夹里的一个图片列表
   - 所在的文件夹的名字是它们的标签
   - 我们按照它们它们所在的文件夹（`train` 和 `valid`）把它们分成训练集和验证集
-  - 你可以选择加入一个测试集。课程的晚些时候我们会讨论测试集
+  - 你可以选择加入一个测试集。晚些时候我们会讲测试集
   - 我们把这些转成 PyTorch dataset
   - 我们用这个变形对象（`tfms`）做变形，我们把它变成这个尺寸（`224`）
   - 然后把它转成data bunch
@@ -298,7 +298,7 @@ data.train_ds[0]
 (Image (3, 224, 224), 0)
 ```
 
-`data.train_ds`是dataset (不是data loader)，所以我可以用数字来索引。这是训练集里第0个数据：一个图片和一个标签。
+`data.train_ds`是dataset（不是data loader），所以我可以用数字来索引。这是训练集里第0个数据：一个图片和一个标签。
 ```python
 data.show_batch(rows=3, figsize=(5,5))
 ```
@@ -406,7 +406,7 @@ data.show_batch(rows=2, figsize=(5,5))
 在这个CAMVID数据集里有什么？CAMVID看起来是这样的。它包含这些图片，图片的每个像素都被做了颜色标注。这个例子里：
 
 - 我们有一个文件list，从文件夹里取到的
-- 我们用一个函数来标记它们，这个函数(`get_y_fn`)告诉我们不同位置颜色标注的内容
+- 我们用一个函数来标记它们，这个函数（`get_y_fn`）用来告诉我们不同位置颜色标注的内容
 - 随机分割它
 - 创建dataset，我们可以输入记录类别的list，它们存储了1和2这样的标签值代表了什么含义，这可以从文件（codes.txt）里读取
 - 做一些变形
@@ -451,7 +451,7 @@ data = (ImageFileList.from_folder(coco)
 - 创建目标检测数据集
 - 创建 data bunch。这个例子里你需要使用较小的batch size，否则你会内存溢出。你需要使用一个collation函数
 
-完成后，我们可以画出它来，这就是我们的目标检测数据集。这是一个很方便的notebook，哪里可以找到它？这个notebook就是这个文档。记得我说过我们所有的文档都是notebook生成的吗？你可以在[fastai仓库docs_src目录](https://github.com/fastai/fastai/tree/master/docs_src)找到它们。我们可以使用不同输入来做实验。你可以找到 [data block API 使用实例（notebook）](https://github.com/fastai/fastai/blob/master/docs_src/data_block.ipynb)，如果你访问文档，它在这里：[data block API 使用实例（doc）](https://docs.fast.ai/data_block.html#Examples-of-use)。
+完成后，我们可以画出它来，这就是我们的目标检测数据集。这是一个很方便的notebook，哪里可以找到它？这个notebook就是这个文档。记得我说过我们所有的文档都是notebook生成的吗？你可以在[fastai仓库docs_src目录](https://github.com/fastai/fastai/tree/master/docs_src)找到它们。我们可以使用不同输入来做实验。在repo里你可以找到[data block API 使用实例（notebook）](https://github.com/fastai/fastai/blob/master/docs_src/data_block.ipynb)，如果你访问文档，它在这里：[data block API 使用实例（doc）](https://docs.fast.ai/data_block.html#Examples-of-use)。
 
 所有你想在fastai里使用的东西，你都可以在文档里找到它。这里还有搜索功能：
 
@@ -459,7 +459,7 @@ data = (ImageFileList.from_folder(coco)
 
 
 
-如果你想尝试一下的文档里的内容，直接搜索名字（比如 `data_block.html`），你就可以打开fastai仓库里一个相同名字的notebook(比如 `data_block.ipynb`)，来做实验了。
+如果你想尝试一下的文档里的内容，直接搜索名字（比如 `data_block.html`），你就可以打开fastai仓库里一个相同名字的notebook(比如 `data_block.ipynb`)来做实验了。
 
 ### 创建卫星图data bunch [29:35](https://youtu.be/PW2HKkzdkKY?t=1775)
 
@@ -536,7 +536,7 @@ Kaggle会用一个叫F score的指标来评价模型。我不会花时间解释F
 
 ![](/lesson3/24.png)
 
-我们有一个叫`fbeta`的度量指标。也就是说它是以beta值（1，2或其他）做参数的F值。我们可以看下它的签名，它有一个阈值（threshold）和一个beta值，beta值默认是2，Kaggle会使用F2，所以我们不用修改它。但是我们要修改阈值。
+我们有一个叫`fbeta`的度量指标。也就是说它是以beta值（1、2或其他）做参数的F值。我们可以看下它的签名，它有一个阈值（threshold）和一个beta值，beta值默认是2，Kaggle会使用F2，所以我们不用修改它。但是我们要修改阈值。
 
 它代表什么？你记得我们看过准确度的代码吗？我们看到它用了`argmax`。我们输入图片，它经过我们的模型，输出十个数字。如果我们在做MNIST数字识别，这十个数字是十个可能结果的概率。然后我们会检查所有的输出，找出最大的。在Numpy, PyTorch,math这些库里，找出最大值返回对应索引的函数都叫`argmax`。
 
@@ -570,7 +570,7 @@ Kaggle会用一个叫F score的指标来评价模型。我不会花时间解释F
 def acc_02(inp, targ): return accuracy_thresh(inp, targ, thresh=0.2)
 ```
 
-我们可以这样做。但这是一个常见的问题，计算机科学里有一个描述这个的术语，叫"partial" / "partial function application" (创建一个和另一个函数类似的新函数，但是只用一个特定的参数调用它)。
+我们可以这样做。但这是一个常见的问题，计算机科学里有一个描述这个的术语，叫“partial” / “partial function application”（创建一个和另一个函数类似的新函数，但是只用一个特定的参数调用它）。
 
 Python3 支持 `partial`，它接收一些函数和一些参数名和值的列表，创建一个新的和 (`accuracy_thresh`)一样的函数，但它会一直使用这个参数调用(`thresh=0.2`)。
 
@@ -628,7 +628,7 @@ epoch  train_loss  valid_loss  accuracy_thresh  fbeta
 
 **提问**: 部署好的app如果做了错误的预测，有没有好的方法来记录错误，针对性地改进模型？[[42:01](https://youtu.be/PW2HKkzdkKY?t=2522)]
 
-很好的问题。首先是有没有办法记录。当然有。这取决于你自己。可能你们中的一些人这周就可以尝试一下。预测错时，你需要让用户告诉你。比如你的模型认为这个汽车是Holden，但实际上他是Falcon。所以首先，你需要收集这些反馈，唯一的方法是让用户告诉你有没有出错。然后你需要记录在日志里，一个记录预测值和用户说的实际值的文件。一天或者一周结束时，你可以用定时任务处理或者手工处理一下。怎样处理？做一些微调。怎样微调？像这样。
+很好的问题。首先是有没有办法记录。当然有。这取决于你自己。可能你们中的一些人这周就可以尝试一下。预测错时，你需要让用户告诉你。比如你的模型认为这个汽车是Holden，但实际上他是Falcon。所以首先，你需要收集这些反馈，唯一的方法是让用户告诉你有没有出错。然后你需要记录在日志里，一个记录预测值和用户说的实际值的文件。一天或者一周结束时，你可以用定时任务处理或者手工处理一下。怎样处理？做一些微调。怎样微调？像这样：
 
 假如这是你保存的模型：
 
@@ -649,9 +649,9 @@ learn.recorder.plot()
 
 ![](/lesson3/n2.png)
 
-然后再训练一次。这里，我使用的是原来的数据。但是你可以使用分错的数据创建一个新的data bunch，用它来执行fit。分错的数据是需要特别关注的。所以你可能需要用稍微高些的学习率，或者多训练几轮。你只需要用出错图片和修正的分类来训练。这能有效改进模型。
+然后再训练一次。这里，我使用的是原来的数据。但是你可以使用判断错误的数据创建一个新的data bunch，用它来执行fit。判断错误的数据是需要特别关注的。所以你可能需要用稍微高些的学习率，或者多训练几轮。你只需要用出错图片和修正的分类来训练。这能有效改进模型。
 
-有很多其他改进技巧，但这是基本的思路。
+有很多其它改进技巧，但这是基本的思路。
 
 ```python
 learn.fit_one_cycle(5, slice(1e-5, lr/5))
@@ -673,7 +673,7 @@ learn.save('stage-2-rn50')
 
 
 
-**提问**: 能不能多讲讲data block的理念？我不明白它是用来做什么的。需要按固定的顺序使用吗？有没有其他使用这种方法的库能让我看下？ [[44:01](https://youtu.be/PW2HKkzdkKY?t=2641)]
+**提问**：能不能多讲讲data block的理念？我不明白它是用来做什么的。需要按固定的顺序使用吗？有没有其他使用这种方法的库能让我看下？ [[44:01](https://youtu.be/PW2HKkzdkKY?t=2641)]
 
 需要按照固定顺序使用它们。你可以在[使用示例](https://docs.fast.ai/data_block.html#Examples-of-use)里看到顺序。
 
@@ -694,7 +694,7 @@ data = (ImageItemList.from_folder(path) #Where to find the data? -> in path and 
 - 怎样做变形，这是可选的？
 - 怎样创建一个data bunch？
 
-这就是使用的步骤。我们发明了这个API。我不清楚没有有其他人也发明了这个。这种把一串方法用点连接成流水线的方法是很常见的。在Python里没有那么多，在JavaScript里会看到很多。这种方法里每一步产生了不同的东西。你可以在ETL（提取extraction、变形transformation、加载loading）软件里看到这种用法，这里几个步骤组成了流水线。设计它的灵感来自几个地方。但是你只需要按照示例去使用，在文档里看看需要哪个具体的方法。在里，我们用的是`ImageItemList`。你在datablock文档里找不到`ImageItemList`的内容，它是视觉（visoin）应用部分的内容。对于其它方面的应用，你需要用到text、vision等其它应用里对应的对象。在对应的应用文档里，你可以找到相关的datablock API内容。
+这就是使用的步骤。我们发明了这个API。我不清楚没有有其他人也发明了这个。这种把一串方法用点连接成流水线的方法是很常见的。在Python里没有那么多，在JavaScript里会看到很多。这种方法里每一步产生了不同的东西。你可以在ETL（提取extraction、变形transformation、加载loading）软件里看到这种用法，这里几个步骤组成了流水线。设计它的灵感来自几个地方。但是你只需要按照示例去使用，在文档里看看需要用哪个具体的方法。在里，我们用的是`ImageItemList`。你在datablock文档里找不到`ImageItemList`的内容，它是视觉（visoin）应用部分的内容。对于其它方面的应用，你需要用到text、vision等其它应用里对应的对象。在对应的应用文档里，你可以找到相关的datablock API内容。
 
 当然，如果你要做全新类型的应用，你可以查看源代码。对所有这些步骤，自己写一个方法。基本所有的这类函数都只有几行代码。可能我们需要看一个例子。
 
@@ -731,7 +731,7 @@ data = (ImageItemList.from_folder(path) #Where to find the data? -> in path and 
 
 ### 改进模型 [50:30](https://youtu.be/PW2HKkzdkKY?t=3030)
 
-怎样让结果更好些？我们希望进入前10%，基本要达到0.929，我们的结果还达不到(0.9288)。
+怎样让结果更好些？如果我们希望进入前10%，基本要达到0.929，现在我们的结果还达不到（0.9288）。
 
 这是要用的技巧[[51:01](https://youtu.be/PW2HKkzdkKY?t=3061)]。当我创建dataset时，我传入了`size=128`，事实上，Kaggle给我们的尺寸是256。我使用128的一个原因是想要快速实验。使用小图片来实验会更快更简单。第二个原因是，现在我们有了一个能很好地识别128 x 128卫星图里内容的模型。要想创建一个能识别256 x 256卫星图的模型应该怎样做？为什么不用迁移学习？为什么不在能识别128 x 128图片的模型上做微调？不再从头开始。这很有意义，因为如果我们训练太多次，会有过拟合的风险。我把图片长宽翻倍，面积变成4倍，这样创建一个新的dataset 。对CNN来说这是完全不同的数据。继续用原来的程序，只是换成新的256 x 256的data bunch。这就是之前为什么要在创建dataset前停下来：
 
@@ -745,7 +745,7 @@ data = (src.transform(tfms, size=256)
         .databunch().normalize(imagenet_stats))
 ```
 
-就是这样。使用源数据，使用原来的变形对象，但是把size设成256，这样模型效果会更好，因为图片分辨率更大。我要在预训练模型基础上训练（这还是原来的learner）。
+就是这样。使用原来的数据（src），使用原来的变形对象，但是把size设成256，这样模型效果会更好，因为图片分辨率更大。我要在预训练模型基础上训练（这还是原来的learner）。
 
 我要使用新的data bunch替换掉learner里的数据。
 
@@ -771,7 +771,7 @@ learn.recorder.plot()
 
 ![](/lesson3/n3.png)
 
-因为已经有了一个很好的模型（它对128 x 128图片来说表现的很好，所以它对256 x 256图片来说效果应该也不错），没有再遇到之前的特别倾斜的形状了。但是我还是会看到一段很高的线。所以我会找到它上升的前的位置。然后除以10。得到`1e-2/2`——这是它上升前的位置。
+因为已经有了一个很好的模型（它对128 x 128图片来说表现的很好，所以它对256 x 256图片来说效果应该也不错），没有再遇到之前的特别倾斜的形状了。但是我还是会看到一段很高的线。所以我会找到它上升之前的位置。然后除以10。我用`1e-2/2`，这看起来是在上升前比较远的一个位置。
 
 ```python
 lr=1e-2/2
