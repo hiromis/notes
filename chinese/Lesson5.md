@@ -114,7 +114,7 @@
 
 #### 嵌入（Embedding） [[22:51](https://youtu.be/uQtTwhpv7Ew?t=1371)]
 
-下面我讲下嵌入矩阵（embedding matrices）这个概念。要理解它，我们先看下[另外一个worksheet](https://github.com/fastai/course-v3/blob/master/files/xl/collab_filter.xlsx) ("movielens_1hot" tab).
+下面我讲下嵌入矩阵（embedding matrices）这个概念。要理解它，我们先看下[另外一个worksheet](https://github.com/fastai/course-v3/blob/master/files/xl/collab_filter.xlsx) （“movielens_1hot” tab）。
 
 ![](/lesson5/8.png)
 
@@ -747,7 +747,7 @@ X和W是怎样来的？我们的预测值是模型（我们叫它<img src="https
 
 我们今天会学习更多其他的类型的损失函数。最后创建一个`a.grad`。
 
-我们还要再做些事情。我们要添加权重衰减。这里它是0.1乘以权重的平方和。
+我们还要再做些事情。我们要加上权重衰减。这里它是0.1乘以权重的平方和。
 
 <img src="https://latex.codecogs.com/gif.latex?L(x,w)=mse(m(x,w),y)&plus;wd\cdot&space;\sum&space;w^{2}" title="L(x,w)=mse(m(x,w),y)+wd\cdot \sum w^{2}" />
 
@@ -962,7 +962,7 @@ plt.plot(losses);
 ![](/lesson5/29.png)
 
 
-这个<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />只对训练神经网络有意义，因为它出现在这个<img src="https://latex.codecogs.com/gif.latex?dL" title="dL" />这里。我们取它的梯度。这是真正更新权重的东西。对<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />来说，真正有意义的东西是它的梯度。这里我们不用太多的数学，我想我们可以处理它。如果你记得你的高中数学，这整个东西的梯度等于每部分的梯度的和。我们只求<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />的梯度，因为<img src="https://latex.codecogs.com/gif.latex?mse(m(x,w),y)" title="L(x,w)=mse(m(x,w),y)" />的梯度是和之前一样的。那么 <img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />的梯度是什么呢？
+这个<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />只对训练神经网络有意义，因为它出现在这个<img src="https://latex.codecogs.com/gif.latex?dL" title="dL" />这里。我们取它的梯度。这是真正更新权重的东西。对<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />来说，真正有意义的东西是它的梯度。这里我们不用太多的数学，我想我们可以处理它。如果你记得你的高中数学，这整个东西的梯度等于每部分的梯度的和。我们只求<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />的梯度，因为<img src="https://latex.codecogs.com/gif.latex?mse(m(x,w),y)" title="L(x,w)=mse(m(x,w),y)" />的梯度和之前的是一样的。那么 <img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;\sum&space;w^{2}" title="wd\cdot \sum w^{2}" />的梯度是什么呢？
 
 让我们去掉求和，假装这里只有一个参数。这不会改变它的性质。那么<img src="https://latex.codecogs.com/gif.latex?wd\cdot&space;w^{2}" title="wd\cdot w^{2}" />对于<img src="https://latex.codecogs.com/gif.latex?w" title="w" />的梯度是什么呢？
 
@@ -1281,7 +1281,7 @@ Cross-entropy（交叉熵）损失函数只是另一个损失函数。你们已�
 
 ![](/lesson5/55.png)
 
-这是因为如果你调用交叉熵损失(`nn.CrossEntropyLoss`)，它会在损失函数里做softmax。所以它不仅是交叉熵损失，它实际上是先做softmax，再做交叉熵损失。
+这是因为如果你调用交叉熵损失（`nn.CrossEntropyLoss`），它会在损失函数里做softmax。所以它不仅是交叉熵损失，它实际上是先做softmax，再做交叉熵损失。
 
 你可能已经注意到这个了。但有时你的模型的预测值看起来会是这样：
 
