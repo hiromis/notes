@@ -263,7 +263,7 @@ data_lm = (TextList.from_folder(path)
             .label_for_lm()           
            #We want to do a language model so we label accordingly
             .databunch(bs=bs))
-data_lm.save('tmp_lm')
+data_lm.save('tmp_lm.pkl')
 ```
 
 We can say:
@@ -284,7 +284,7 @@ So if you're doing NLP stuff on Kaggle, for example, or you've just got a smalle
 Since it takes some few minutes, we save it. Later on you can just load it. No need to run it again.
 
 ```python
-data_lm = TextLMDataBunch.load(path, 'tmp_lm', bs=bs)
+data_lm = load_data(path, 'tmp_lm.pkl')
 ```
 
 ```python
