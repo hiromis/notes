@@ -601,7 +601,7 @@ batch  norm做的是你看到的这个图片上的东西。这是步数（steps�
 3. 然后做标准化（normalize），激活值减去平均指除以标准差，就是标准化。这实际上不是很重要。我们曾经以为很重要，但后来发现不是。真正重要的部分是下面的东西。
 4. 我们取这些值，加上一个bias的向量（这里把它叫做beta）。我们之前已经看过了。我们用过这个了。我们像之前一样，加上bias。然后，我们要用另外一个和bias很像的东西，但不是加上它，我们会乘以它。这些参数gamma <img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" /> 和 beta <img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" />是要学习的参数。
 
-记住，在神经网络里，只有两种数字：激活值和参数。这些是参数。是用梯度下降学习到的东西。<img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> 只是一个普通的bias层，<img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" />是一个乘法的bias层。没有人这样叫它，但它就是这样的。它就像bias一样，但我们乘以它，而不是加上它。这就是batch norm。这就是这一层做的事。
+记住，在神经网络里，只有两种数字：激活值和参数。这些是参数。是用梯度下降学习到的东西。<img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> 只是一个普通的bias层，<img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" />是一个做乘法的bias层。没有人这样叫它，但它就是这样的。它就像bias一样，但我们乘以它，而不是加上它。这就是batch norm。这就是这一层做的事。
 
 为什么这可以实现了不起的结果？我不清楚有没有人之前准确地把这写下来。如果有，抱歉这里没有引用它，因为我没有看过。让我解释下。究竟发生了什么。我们的预测值y-hat是权重的函数，参数数量可以达到上百万，它也是一个关于输入的函数。
 
@@ -617,7 +617,7 @@ batch  norm做的是你看到的这个图片上的东西。这是步数（steps�
 
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})\times&space;g&plus;b" title="\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})\times g+b" />
 
-我们多加了两个参数向量。现在它很简单。为了增大区间，这个数<img src="https://latex.codecogs.com/gif.latex?g" title="g" />有一个直接的梯度来增大区间。要改变平均值，这个数 <img src="https://latex.codecogs.com/gif.latex?b" title="b" />有一个直接的梯度来改变平均值。没有相互作用和复杂性，是直来直去的，这就是batch norm做的事。batch norm让使输出变大变小这个重要工作更容易做到。这就是为什么我们能得到这样的结果。
+我们多加了两个参数向量。现在它很简单。这个数<img src="https://latex.codecogs.com/gif.latex?g" title="g" />直接增大区间。这个数 <img src="https://latex.codecogs.com/gif.latex?b" title="b" />直接改变平均值。没有相互作用和复杂性，都是直来直去的，这就是batch norm做的事。batch norm让使输出变大变小这个重要工作更容易做到。这就是为什么我们能得到这样的结果。
 
 这些细节，在某种意义上，不是特别重要。真正重要的是**你肯定需要用它**。如果不用它，也会用类似的东西。现在，有很多其它类型的标准化方法，但batch norm效果很好。我们在fastai里用的其它的标准化方法主要是weight norm，这是最近几个月新开发的。
 
