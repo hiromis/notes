@@ -1,6 +1,6 @@
 # Lesson 6
 
-[Video(YouTube)](https://youtu.be/U7c-nYXrKD4) / [Video(bilibili)](https://www.bilibili.com/video/av54066675) / [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
+[Video(YouTube)](https://youtu.be/U7c-nYXrKD4) / [Video(bilibili)](https://www.bilibili.com/video/av68141999?p=55) / [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
 
 欢迎来到第六课，我们将深入学习计算机视觉、卷积神经网络、什么是卷积，我们还会学习最后的正则化技巧，上周已经学了权重衰减和L2正则化。
 
@@ -956,9 +956,9 @@ learn.save('352')
 
 ![](/lesson6/39.png)
 
-像我们讨论过的，我们需要考虑padding，因为如果你有一个3x3的核，和一个3x3的图片，这只能生成一个像素的输出。这个3x3只有一个地方可以去。如果我们要生成一个多于1个像素的输出。我们需要做这个叫padding的事情，就是在外面添加一圈额外的数字。大多数库做的只是添加一圈0。所以对于3x3的核，每个边都是0。当你这样做paddings时，你可以用3x3的核遍历所有像素，得到和你原来图片相同尺寸的输出。
+像我们讨论过的，我们需要考虑padding，因为如果你有一个3x3的核，和一个3x3的图片，这只能生成一个像素的输出。这个3x3只有一个地方可以去。如果我们要生成一个多于1个像素的输出。我们需要用这个叫padding的东西，就是在外面添加一圈额外的数字。大多数库做的只是添加一圈0。所以对于3x3的核，每个边都是0。当你这样做padding时，你可以用3x3的核遍历所有像素，得到和你原来图片相同尺寸的输出。
 
-就像我们提到的，在fastai里，我们通常不用zero padding。如果可行，我们会尽量用reflection padding，尽管对这些简单的卷积，我们经常用zero padding，因为它在大图片里影响不大。不会有太大差别。
+我们讲过，在fastai里，我们通常不用zero padding。如果可行，我们会尽量用reflection padding，不过对这些简单的卷积，我们经常用zero padding，因为它在大图片里影响不大。不会有太大差别。
 
 这就是卷积。一个卷积神经网络如果只能生成顶部的边时不是很有意义，所以我们要做更多。
 
