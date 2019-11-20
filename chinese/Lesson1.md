@@ -1,5 +1,7 @@
 # 第一课
+
 [主页](http://course-v3.fast.ai/) / [视频(YouTube)](https://youtu.be/BWWm4AzsdLk) /  [视频(bilibili)](https://www.bilibili.com/video/av68141999/?p=1) /  [论坛第一课板块](https://forums.fast.ai/t/lesson-1-official-resources-and-updates/27936) / [论坛](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/1)
+
 
 
 

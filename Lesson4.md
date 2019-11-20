@@ -263,7 +263,7 @@ data_lm = (TextList.from_folder(path)
             .label_for_lm()           
            #We want to do a language model so we label accordingly
             .databunch(bs=bs))
-data_lm.save('tmp_lm')
+data_lm.save('tmp_lm.pkl')
 ```
 
 We can say:
@@ -284,7 +284,7 @@ So if you're doing NLP stuff on Kaggle, for example, or you've just got a smalle
 Since it takes some few minutes, we save it. Later on you can just load it. No need to run it again.
 
 ```python
-data_lm = TextLMDataBunch.load(path, 'tmp_lm', bs=bs)
+data_lm = load_data(path, 'tmp_lm.pkl')
 ```
 
 ```python
@@ -604,7 +604,7 @@ Good question. I guess I still tend to give them a try. But yeah, I don't know. 
 So we start with the data in a data frame, and so we've got an adult sample﹣it's a classic old dataset. It's a pretty small simple old dataset that's good for experimenting with. And it's a CSV file, so you can read it into a data frame with Pandas read CSV (`pd.read_csv`). If your data is in a relational database, Pandas can read from that. If it's in spark or Hadoop, Pandas can read from that. Pandas can read from most stuff that you can throw at it. So that's why we use it as a default starting point.
 
 ```python
-dep_var = '>=50k'
+dep_var = 'salary'
 cat_names = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race']
 cont_names = ['age', 'fnlwgt', 'education-num']
 procs = [FillMissing, Categorify, Normalize]

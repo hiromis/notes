@@ -2,6 +2,7 @@
 
 [Video(YouTube)](https://youtu.be/U7c-nYXrKD4) / [Video(bilibili)](https://www.bilibili.com/video/av68141999?p=55) / [Course Forum](https://forums.fast.ai/t/lesson-6-official-resources-and-updates/31441)
 
+
 欢迎来到第六课，我们将深入学习计算机视觉、卷积神经网络、什么是卷积，我们还会学习最后的正则化技巧，上周已经学了权重衰减和L2正则化。
 
 ### Platform.ai 
@@ -603,6 +604,7 @@ batch  norm做的是你看到的这个图片上的东西。这是步数（steps�
 
 记住，在神经网络里，只有两种数字：激活值和参数。这些是参数。是用梯度下降学习到的东西。<img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> 只是一个普通的bias层，<img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" />是一个做乘法的bias层。没有人这样叫它，但它就是这样的。它就像bias一样，但我们乘以它，而不是加上它。这就是batch norm。这就是这一层做的事。
 
+
 为什么这可以实现了不起的结果？我不清楚有没有人之前准确地把这写下来。如果有，抱歉这里没有引用它，因为我没有看过。让我解释下。究竟发生了什么。我们的预测值y-hat是权重的函数，参数数量可以达到上百万，它也是一个关于输入的函数。
 
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})" title="\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})" />
@@ -618,6 +620,7 @@ batch  norm做的是你看到的这个图片上的东西。这是步数（steps�
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})\times&space;g&plus;b" title="\hat{y}=f(w_{1},w_{2}...w_{1000000},\vec{x})\times g+b" />
 
 我们多加了两个参数向量。现在它很简单。这个数<img src="https://latex.codecogs.com/gif.latex?g" title="g" />直接增大区间。这个数 <img src="https://latex.codecogs.com/gif.latex?b" title="b" />直接改变平均值。没有相互作用和复杂性，都是直来直去的，这就是batch norm做的事。batch norm让使输出变大变小这个重要工作更容易做到。这就是为什么我们能得到这样的结果。
+
 
 这些细节，在某种意义上，不是特别重要。真正重要的是**你肯定需要用它**。如果不用它，也会用类似的东西。现在，有很多其它类型的标准化方法，但batch norm效果很好。我们在fastai里用的其它的标准化方法主要是weight norm，这是最近几个月新开发的。
 
@@ -959,6 +962,7 @@ learn.save('352')
 像我们讨论过的，我们需要考虑padding，因为如果你有一个3x3的核，和一个3x3的图片，这只能生成一个像素的输出。这个3x3只有一个地方可以去。如果我们要生成一个多于1个像素的输出。我们需要用这个叫padding的东西，就是在外面添加一圈额外的数字。大多数库做的只是添加一圈0。所以对于3x3的核，每个边都是0。当你这样做padding时，你可以用3x3的核遍历所有像素，得到和你原来图片相同尺寸的输出。
 
 我们讲过，在fastai里，我们通常不用zero padding。如果可行，我们会尽量用reflection padding，不过对这些简单的卷积，我们经常用zero padding，因为它在大图片里影响不大。不会有太大差别。
+
 
 这就是卷积。一个卷积神经网络如果只能生成顶部的边时不是很有意义，所以我们要做更多。
 

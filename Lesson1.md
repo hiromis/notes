@@ -284,6 +284,7 @@ With this factory method, we can basically say:
 - pat: a regular expression (i.e. pattern) to be used to extract the label from the file name
 - ds_tfm: we'll talk about transforms later
 - size: what size images do you want to work with.
+- bs: batch size (i.e. number of images processed at a time). Set to 16 if memory is not enough.
   
 
 This might seem weird because images have size. This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
@@ -291,7 +292,7 @@ This might seem weird because images have size. This is a shortcoming of current
 
 
 ```python
-data = ImageDataBunch.from_name_re(path_img, fnames, pat, ds_tfms=get_transforms(), size=224)
+data = ImageDataBunch.from_name_re(path_img, fnames, pat, ds_tfms=get_transforms(), size=224, bs=64)
 data.normalize(imagenet_stats)
 ```
 

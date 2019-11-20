@@ -2,6 +2,7 @@
 
 [Video(YouTube)](https://youtu.be/nWpdkZE2_cc) / [Video(bilibli)](https://www.bilibili.com/video/av68141999?p=55) / [Course Forum](https://forums.fast.ai/t/lesson-7-official-resources/32553)
 
+
 欢迎来到第七课！这是课程第一部分的最后一课。这节课内容比较多。不要担心。这是因为，我想让你们在课程第二部分开始之前有足够的事情做。今天讲的一些东西，我不会讲太多细节。只会指出一些东西。我会说，我们今天不会讲它。然后，在课程第二部分，会学到这些内容的细节。今天会很快地学很多东西。你可能要多看几遍，做些实验，来完全理解。我们特意这样做，给你们一些东西，让你们在接下来一两个月里能过得充实有趣。
 
 ![](/lesson7/1.png)

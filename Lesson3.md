@@ -1068,7 +1068,7 @@ metrics=acc_camvid
 ```
 
 ```python
-learn = Learner.create_unet(data, models.resnet34, metrics=metrics)
+learn = unet_learner(data, models.resnet34, metrics=metrics)
 ```
 
 ```python
