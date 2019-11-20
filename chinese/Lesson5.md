@@ -1,6 +1,7 @@
 # Lesson 5
 
-[Video(YouTube)](https://youtu.be/uQtTwhpv7Ew) / [Video(bilibili)](https://www.bilibili.com/video/av49947726) /  [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863) 
+[Video(YouTube)](https://youtu.be/uQtTwhpv7Ew) / [Video(bilibili)](https://www.bilibili.com/video/av68141999/?p=44) /  [Lesson Forum](https://forums.fast.ai/t/lesson-5-official-resources-and-updates/30863) 
+
 
 欢迎来到第5课。我们已经完成了前半部分课程，上节课已经开始了下半部分，现在继续。
 
@@ -98,7 +99,8 @@
 
 ![](/lesson5/7.png)
 
-在协同过滤的例子里，我们调用了`fit_one_cycle`方法，只传入了一个数字。这是合理的，因为在协同过率里，我们只有一层。它里面有几部分。但是没有这样的东西：做一个矩阵相乘，传入激活函数，再做矩阵相乘。
+在协同过滤的例子里，我们调用了`fit_one_cycle`方法，只传入了一个数字。这是合理的，因为在协同过滤里，我们只有一层。它里面有几部分。但是没有这样的东西：做一个矩阵相乘，传入激活函数，再做矩阵相乘。
+
 
 #### 仿射函数（Affine Function） [[20:24](https://youtu.be/uQtTwhpv7Ew?t=1224)]
 
@@ -162,7 +164,7 @@
 
 就是这样，它有有意思的含义。当你用one-hot矩阵乘以别的矩阵时，你可以看到这样的特性，权重矩阵里，只有用户ID输入里值是1的对应的那行才会出来。换句话说，你可以得到和你的输入对应的一个权重矩阵。因为我们计算输出激活值的唯一方式是做两个输入向量的点积。这意味着它们需要相互对应。需要有这样一种方式，这些值对某个用户比较高，这些值对某个电影比较高，这样这个用户就喜欢这个电影。它的含义可能是这样的，**这些数字代表用户兴趣特征和对应的电影特征**。比如，这个电影里有John Travolta，并且这个用户喜欢John Travolta，那么这个用户就喜欢这个电影。
 
-我们没有让这些行代表所有事情。我们没有做任何事情来让这些行代表所有事情。梯度下降可以得出好的结果的唯一方法是，它能不能找出电影偏好是什么以及对应的电影的特征是什么。这里说的潜在的特征被叫做**latent factors**或者**latent features（潜在特征）**。就是这些本来隐藏的，一训练它们马上就出现的东西。
+我们没有让这些行代表所有东西。我们没有做什么事情来让这些行代表所有东西。梯度下降可以得出好的结果的唯一方法是，它能不能找出电影偏好是什么以及对应的电影的特征是什么。这里说的潜在的特征被叫做**latent factors**或者**latent features（潜在特征）**。就是这些本来隐藏的，一训练它们马上就出现的东西。
 
 #### 偏置（Bias） [[33:08](https://youtu.be/uQtTwhpv7Ew?t=1988)]
 
@@ -691,7 +693,7 @@ Embedding是令人惊奇的，我觉得没有人像我这样做过解释。如�
 
 ### 正则化（Regularization）：权重衰减（ Weight Decay） [[1:12:09](https://youtu.be/uQtTwhpv7Ew?t=4329)]
 
-我们在努力确保你们能理解在这个我们构建的这个优异的collab learner模型里的每行代码在做什么。刚才没有讲这个`wd`，`wd`代表weight decay（权重衰减）。什么是权重衰减？它是一种正则化（regularization）。什么是正则化？
+我们要努力确保你们能理解在这个我们构建的这个优异的collab learner模型里的每行代码在做什么。刚才没有讲这个`wd`，`wd`代表weight decay（权重衰减）。什么是权重衰减？它是一种正则化（regularization）。什么是正则化？
 
 ![](/lesson3/1.png)
 
@@ -1103,19 +1105,20 @@ epoch的最后，我们可以说，“太棒了，这是我们的斜率，我们
 
 ![](/lesson5/43.png)
 
-但我做的是用导数乘以0.1，用上一轮的更新结果乘以0.9，把这两个加起来。换句话说，我做的更新不是基于导数，而是导数的1/10和上一次相同方向的90%。这叫做动量。它的含义是，如果想找到最小值，要记住怎样思考要发生什么。
+但我做的是用导数乘以0.1，用上一轮的更新结果乘以0.9，把这两个加起来。换句话说，我做的更新不是基于导数，而是导数的1/10和上一次方向的90%。这叫做动量。想想在寻找最小值时发生了什么。
 
 ![](/lesson5/momentum.gif)
 
-你在这里，你的学习率太小，你还是保持原来的步长。如果你保持原来的步长，如果你还是在上次的结果上添加步长，你的步长会越来越大，最终，它们会走得太远。现在，你的梯度指向动量指着的另外一个方向。这样你可以在这里用很小的步长，然后用小的步长，大一点的步长，更大一点的步长，小步长，更大的步长，就像这样。这就是动量做的。
+你在这里，你的学习率太小，你还是保持原来的步子（step）。如果你保持原来的步子，如果你还是在上次的结果上添加，你的步子会越来越大，最终，它们会走得太远。现在，你的梯度指向动量指着的另外一个方向。这样你可以在这里用很小的步子，然后用小的步子，大一点的步子，更大一点的步子，小步子，更大的步子，就像这样。这就是动量做的。
 
-如果你像这样走的太远，也慢了下来，你最后几步的平均值是这两个之间的地方，不是吗？所以这是一个很普遍的想法：你在第T次的这一步等于某个数（人们经常用alpha）乘以我要做的东西（这里是梯度）加上一减去alpha乘以你上一次的值(<img src="https://latex.codecogs.com/gif.latex?S_{t-1}" title="S_{t-1}" />)：
+如果你像这样走得太远，再慢下来，，你最后几步的平均值是这两个之间的地方，不是吗？所以这是一个很普遍的想法：你在第T次的这一步等于某个数（人们经常用alpha）乘以我要做的东西（这里是梯度）加上一减去alpha乘以你上一次的值(<img src="https://latex.codecogs.com/gif.latex?S_{t-1}" title="S_{t-1}" />)：
 
 <img src="https://latex.codecogs.com/gif.latex?S_{t}=\alpha\cdot&space;g&plus;(1-\alpha&space;)S_{t-1}" title="S_{t}=\alpha\cdot g+(1-\alpha )S_{t-1}" />
 
 这叫做**指数加权移动平均数（exponentially weighted moving average）**。为什么这样叫，你可以想下，这个<img src="https://latex.codecogs.com/gif.latex?(1-\alpha&space;)" title="(1-\alpha )" /> 要乘上去。如果是<img src="https://latex.codecogs.com/gif.latex?S_{t-2}" title="S_{t-2}" />，它会有<img src="https://latex.codecogs.com/gif.latex?(1-\alpha&space;)^{2}" title="(1-\alpha )^{2}" />，如果是<img src="https://latex.codecogs.com/gif.latex?S_{t-3}" title="S_{t-3}" />，它会有<img src="https://latex.codecogs.com/gif.latex?(1-\alpha&space;)^{3}" title="(1-\alpha )^{3}" />。
 
-换句话说，<img src="https://latex.codecogs.com/gif.latex?S_{t}" title="S_{t}" />最终是想让(<img src="https://latex.codecogs.com/gif.latex?\alpha&space;\cdot&space;g" title="\alpha \cdot g" />)加上最近几次的加权平均值，最近的值数权重更高。这样不断上升。这就是动量。它就是基于目前的梯度加上最近几步的指数加权移动平均值，这很有用。这叫做包含了动量的SGD，我们通过改变这个来实现它：
+换句话说，<img src="https://latex.codecogs.com/gif.latex?S_{t}" title="S_{t}" />最终是想让(<img src="https://latex.codecogs.com/gif.latex?\alpha&space;\cdot&space;g" title="\alpha \cdot g" />)加上最近几次的加权平均值，最近的值权重更高。这样不断上升。这就是动量。它就是基于目前的梯度加上最近几步的指数加权移动平均值，这很有用。这叫做包含了动量的SGD，我们通过改变这个来实现它：
+
 
 ```python
 opt = optim.Adam(model.parameters(), lr)
@@ -1163,7 +1166,8 @@ RMSProp和动量很像，但是这次，我们的指数加权移动平均数不�
 learn = Learner(data, Mnist_NN(), loss_func=loss_func, metrics=accuracy)
 ```
 
-我们不想使用`optim.`，会自己创建optimizer和所有这些东西。因为我们要使用learner，learner就是做这些东西的。还是一样，没有魔法。你创建一个learner，说这是data bunch，这是PyTorch `nn.Module`实例，这是损失函数，这是度量（metrics）。记住，度量只是用来打印的。就是这样。然后你得到像`learn.lr_find`这样的好东西，它开始运行，记录下这个：
+我们不想使用`optim.`，会自己创建optimizer和所有这些东西。因为我们要使用learner，learner就是做这些东西的。还是一样，没有魔法。你创建一个learner，这是data bunch，这是PyTorch `nn.Module`实例，这是损失函数，这是度量（metrics）。记住，度量只是用来打印的。就是这样。然后你运行`learn.lr_find`，它记录下这个：
+
 
 ```python
 learn.lr_find()
@@ -1205,7 +1209,8 @@ learn.recorder.plot_lr(show_moms=True)
 
 这是有趣的事情，在右边是动量的图形。当学习率比较小时，动量比较高。为什么？因为我有一个小学习率，但你还在沿着相同的方向走，你可能走得更快。但是，如果你跳很远，不要跳很远，因为那会把你抛出去。当你到了最后，你在微调，但实际上如果你持续在相同的方向走，会更快。所以这个组合叫one cycle，它很简单，但效果令人惊讶。这会让训练快上10倍，非常令人难以置信。
 
-这时去年才发的论文。你们当中的一些人可能看过我上周[对Leslie Smith的采访](https://youtu.be/dxpyg3mP_rU)。他是一个令人惊奇的人，难以置信的谦虚，做了开创性研究，已经60多岁了，这些都令人振奋。
+这是去年才发的论文。你们当中的一些人可能看过我上周[对Leslie Smith的采访](https://youtu.be/dxpyg3mP_rU)。他是一个令人惊奇的人，难以置信的谦虚，做了开创性研究，已经60多岁了，这些都令人振奋。
+
 
 我还会演示一些其他的有趣的事情。当你用fastai画损失度时，它看起来不是这样的：
 
@@ -1261,7 +1266,8 @@ Cross-entropy（交叉熵）损失函数只是另一个损失函数。你们已�
 
 ![](/lesson5/53.png)
 
-有趣的是，这一列（G列）的数，和F列的数完全一样，但是我输入的公式是不同的。我用了一个if函数，因为如果是0的话，不用加任何值。所以实际上，它是指，如果这是一只猫，就取猫激活值（有多少信心这是猫）的log，如果是一只狗，就取1减去猫的激活值（也就是狗的激活值）的log。所以，one-hot编码乘以激活值的和相当于一个`if`函数。 这只是一个矩阵乘法，它和索引查找是一样的（就像我们再embedding里讲过的）。所以，要做交叉熵，你也可以直接找预测值的激活值的log。
+有趣的是，这一列（G列）的数，和F列的数完全一样，但是我输入的公式是不同的。我用了一个if函数，因为如果是0的话，不用加任何值。所以实际上，它是指，如果这是一只猫，就取猫激活值（有多少信心这是猫）的log，如果是一只狗，就取1减去猫的激活值（也就是狗的激活值）的log。所以，one-hot编码乘以激活值的和相当于一个`if`函数。 这只是一个矩阵乘法，它和索引查找是一样的（就像我们在embedding里讲过的）。所以，要做交叉熵，你也可以直接找预测值的激活值的log。
+
 
 这只在这些值加起来等于1时有效。这是你得到荒唐的交叉熵值的一个原因：如果它们加起来不等于1，就会出问题（这就是为什么我说你按错了按钮）。那怎样保证它们加起来等于1呢？你要通过在你的最后一层使用正确的激活函数来保证它们加起来等于1。这里要用的正确的激活函数是**softmax**。softmax是这样一个激活函数：
 

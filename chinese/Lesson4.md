@@ -1,6 +1,6 @@
 # 欢迎来到第四课
 
-[Video(YouTube)](https://youtu.be/C9UdVPE3ynA) /  [Video(bilibili)](https://www.bilibili.com/video/av49946953) / [Lesson Forum](https://forums.fast.ai/t/lesson-4-official-resources-and-updates/30317)
+[Video(YouTube)](https://youtu.be/C9UdVPE3ynA) /  [Video(bilibili)](https://www.bilibili.com/video/av68141999/?p=36) / [Lesson Forum](https://forums.fast.ai/t/lesson-4-official-resources-and-updates/30317)
 
 欢迎来到第四课！我们继续学习这些关键的应用来完成学习旅程。我们已经看了一系列的视觉应用。我们学了分类、定位、图片回归。我们初步接触了NLP。今天我们要深入学习NLP迁移学习。然后我们会学习表格数据和协同过滤，这些都是非常有用的应用。
 
@@ -411,7 +411,7 @@ data_clas = (TextList.from_folder(path, vocab=data_lm.vocab)
 data_clas.save('tmp_clas')
 ```
 
-我们想保证它用了和语言模型一样的单词表。如果语言模型里第10个单词是`the`，我们要保证分类器里第10个单词也是`the` 。不然的话，预训练模型就没有意义了。这就是为什么我们传入语言模型的单词表来保证data bunch用相同的单词表，这是一个重要的步骤。
+我们要保证它使用和语言模型一样的单词表。如果语言模型里第10个单词是`the`，我们要保证分类器里第10个单词也是`the` 。不然的话，预训练模型就没有意义了。这就是为什么我们传入语言模型的单词表来保证data bunch用相同的单词表，这是一个重要的步骤。
 
 `split_by_folder`，记的吗，上次我们随机分割的，但是这次我们需要保证不使用测试集的标签。所以我们按文件夹分割。
 
