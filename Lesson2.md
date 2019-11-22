@@ -841,7 +841,7 @@ You guys asked me that last week. My answer is still the same. I don't know. Eit
 
 ```
 classes = ['black', 'grizzly', 'teddys']
-data2 = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=224).normalize(imagenet_stats)
+data2 = ImageDataBunch.single_from_classes(path, classes, ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
 learn = create_cnn(data2, models.resnet34)
 learn.load('stage-2')
 ```
