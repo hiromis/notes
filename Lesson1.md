@@ -370,7 +370,7 @@ len(data.classes),data.c
  - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
 
 ```python
-learn = create_cnn(data, models.resnet34, metrics=error_rate)
+learn = cnn_learner(data, models.resnet34, metrics=error_rate)
 ```
 
 For now, just know that to create a learner for a convolutional neural network, you just have to tell it two things:
