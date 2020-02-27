@@ -420,7 +420,7 @@ So 94% of the time, we correctly picked the exact right one of those 37 dog and 
 
 
 [[46:43](https://youtu.be/BWWm4AzsdLk?t=2803)]
-We just trained a model. We don't know exactly what that involved or how it happened but we do know that with 3 or 4 lines of code, we've built something which smashed the accuracy of the state-of-the-art of 2012. 6% error certainly sounds like pretty impressive for something that can recognize different dog breeds and cat breeds, but we don't really know why it work, but we will. That's okay.
+We just trained a model. We don't know exactly what that involved or how it happened but we do know that with 3 or 4 lines of code, we've built something which smashed the accuracy of the state-of-the-art of 2012. 6% error certainly sounds like pretty impressive for something that can recognize different dog breeds and cat breeds, but we don't really know why it works, but we will. That's okay.
 
 ### The number one regret of past students:
 
