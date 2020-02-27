@@ -459,7 +459,7 @@ You can now `create_cnn` with this kind of fake data bunch and again, you would 
 ```python
 classes = ['black', 'grizzly', 'teddys']
 data2 = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=224).normalize(imagenet_stats)
-learn = create_cnn(data2, models.resnet34)
+learn = cnn_learner(data2, models.resnet34)
 learn.load('stage-2')
 ```
 
