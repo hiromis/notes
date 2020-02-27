@@ -154,7 +154,7 @@ tfms = get_transforms(flip_vert=True, max_lighting=0.1, max_zoom=1.05, max_warp=
 
 ```python
 np.random.seed(42)
-src = (ImageFileList.from_folder(path)            
+src = (ImageList.from_folder(path)            
        .label_from_csv('train_v2.csv',sep=' ',folder='train-jpg',suffix='.jpg')
        .random_split_by_pct(0.2))
 ```
