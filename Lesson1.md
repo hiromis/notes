@@ -321,7 +321,7 @@ data.show_batch(rows=3, figsize=(7,6))
 
 Something else we are going to learn about is we also use this to do something called data augmentation. So there's actually some randomization in how much and where it crops and stuff like that. 
 
-Basic the basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
+The basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
 
 
 [[31:51](https://youtu.be/BWWm4AzsdLk?t=1911)]
