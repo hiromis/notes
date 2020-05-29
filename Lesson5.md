@@ -890,7 +890,7 @@ torch.Size([64, 10])
 ```
 
 ```python
-[p.shape for p in model.parameters()
+[p.shape for p in model.parameters()]
 ```
 
 ```
